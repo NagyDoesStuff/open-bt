@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://dxqwuwy1r2dm2"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_ncsfa"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_j86v1"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_8nadr"]
+
+[sub_resource type="Animation" id="Animation_j86v1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedBubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13.999995, -19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedBubble:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedBubble:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.19034919, 0.19034919)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedBubble:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ncsfa"]
+resource_name = "default"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedBubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-13.999995, -19), Vector2(-14, 19), Vector2(-13.999995, -19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedBubble:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedBubble:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(0, 0, 1),
+"update": 0,
+"values": [Vector2(0.19034919, 0.19034919), Vector2(0.16, 0.16), Vector2(0.19034919, 0.19034919)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedBubble:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(2.454227, 2.454227, 2.454227, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j86v1"]
+_data = {
+&"RESET": SubResource("Animation_j86v1"),
+&"default": SubResource("Animation_ncsfa")
+}
+
+[node name="Sapper Drone Launcher" type="Node2D" unique_id=122091808]
+script = ExtResource("1_ncsfa")
+cooldown = 3.0
+keybind = "space"
+fixed = true
+category = "Enemy Weapons"
+gp_usage = 4
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble06" parent="." unique_id=126263598 instance=ExtResource("2_j86v1")]
+position = Vector2(5.000001, -14.999998)
+scale = Vector2(0.123045795, 0.123045795)
+
+[node name="Bubble09" parent="." unique_id=1039353022 instance=ExtResource("2_j86v1")]
+position = Vector2(34, -23.999998)
+scale = Vector2(0.123045795, 0.123045795)
+
+[node name="Bubble08" parent="." unique_id=1057963483 instance=ExtResource("2_j86v1")]
+position = Vector2(-16, 0)
+scale = Vector2(0.123045795, 0.123045795)
+
+[node name="Bubble07" parent="." unique_id=758881192 instance=ExtResource("2_j86v1")]
+position = Vector2(4.999999, 14.999999)
+scale = Vector2(0.123045795, 0.123045795)
+
+[node name="Bubble10" parent="." unique_id=2070516568 instance=ExtResource("2_j86v1")]
+position = Vector2(34.000004, 23.999998)
+scale = Vector2(0.123045795, 0.123045795)
+
+[node name="Bubble01" parent="." unique_id=1017794866 instance=ExtResource("2_j86v1")]
+scale = Vector2(0.15983196, 0.15983196)
+
+[node name="Bubble02" parent="." unique_id=800910470 instance=ExtResource("2_j86v1")]
+position = Vector2(18.000002, -23.999998)
+scale = Vector2(0.15983196, 0.15983196)
+
+[node name="Bubble03" parent="." unique_id=1124546776 instance=ExtResource("2_j86v1")]
+position = Vector2(18.000002, 24)
+scale = Vector2(0.15983196, 0.15983196)
+
+[node name="Bubble04" parent="." unique_id=1598164723 instance=ExtResource("2_j86v1")]
+position = Vector2(47, 18)
+scale = Vector2(0.15983196, 0.15983196)
+
+[node name="Bubble05" parent="." unique_id=1360937923 instance=ExtResource("2_j86v1")]
+position = Vector2(47.000004, -18.000002)
+scale = Vector2(0.15983196, 0.15983196)
+
+[node name="AnimatedBubble" parent="." unique_id=1920899285 instance=ExtResource("2_j86v1")]
+position = Vector2(-13.999995, -19)
+scale = Vector2(0.19034919, 0.19034919)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(24, 0)
+script = ExtResource("3_8nadr")
+prj_info = {
+"dmg_info": {
+"amount": 3,
+"type": "dmg"
+},
+"hit_fx": "uid://dqbky1rhsnesm",
+"homing": true,
+"size": 0.66,
+"speed": 750.0,
+"template": "uid://dkhw85rpdp43o",
+"turn_rate": 10.0
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1853602519]
+libraries/ = SubResource("AnimationLibrary_j86v1")
+autoplay = &"default"

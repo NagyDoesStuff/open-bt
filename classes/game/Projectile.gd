@@ -14,6 +14,7 @@ var velocity: Vector2 = Vector2.ZERO
 @export var prj_info: Dictionary = {}
 
 var target: Cluster
+var from: Cluster
 @onready var prj_area: Area2D = $Area2D
 
 @export var lifetime: float = -1.0
@@ -128,6 +129,7 @@ func search_for_target() -> void:
 	target.killed.connect(search_for_target, ConnectFlags.CONNECT_ONE_SHOT)
 
 func follow_target(mode: String, delta: float) -> void:
+	if !target: return
 	match mode:
 		"default":
 			global_rotation = lerp_angle(

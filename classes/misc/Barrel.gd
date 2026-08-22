@@ -48,6 +48,7 @@ func shoot() -> void:
 		prj.global_rotation = global_rotation + randf_range(-gun.spread, gun.spread)
 		prj.prj_info = prj_info
 		prj.team = gun.user.team
+		prj.from = gun.user
 		GlobalClass.world.add_child(prj)
 		
 		if gun.salvo_interval > 0.0:

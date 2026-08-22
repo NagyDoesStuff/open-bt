@@ -69,7 +69,7 @@ prj_info = {
 "hit_fx": "uid://dqbky1rhsnesm",
 "homing": true,
 "size": 1.0,
-"speed": 750.0,
+"speed": 500.0,
 "template": "uid://cec7i8xqn7w3q",
 "turn_rate": 6.0
 }
