@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://dbp4wcqduqrrm"]
+
+[ext_resource type="Script" uid="uid://bdpqrhn3b5dvh" path="res://classes/parts/ChargeGunPart.gd" id="1_th5lx"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_toeyw"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_ofd02"]
+[ext_resource type="Texture2D" uid="uid://dtpxe3vek80oe" path="res://img/bubbles/shock2.png" id="4_toeyw"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="5_7t84g"]
+[ext_resource type="PackedScene" uid="uid://bs6uxsrdh5b31" path="res://scenes/decorations/bubble02.tscn" id="7_rgaxl"]
+
+[sub_resource type="Animation" id="Animation_hmlpk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OrbBubble:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OrbBubble:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OrbBubble:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.08077751, 0.08077751)]
+}
+
+[sub_resource type="Animation" id="Animation_6djs2"]
+resource_name = "charge"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OrbBubble:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.353256, 1.353256, 1.353256, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OrbBubble:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(49.999992, 0), Vector2(90, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OrbBubble:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0.08077751, 0.08077751), Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmlpk"]
+_data = {
+&"RESET": SubResource("Animation_hmlpk"),
+&"charge": SubResource("Animation_6djs2")
+}
+
+[node name="Super Shock Node" type="Node2D" unique_id=733669987 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_th5lx")
+charge_time = 6.0
+animation_player = NodePath("AnimationPlayer")
+keybind = "space"
+fixed = true
+category = "Enemy Weapons"
+gp_usage = 4
+
+[node name="Bubble14" parent="." unique_id=1039353022 instance=ExtResource("4_ofd02")]
+position = Vector2(14.798038, 42.91457)
+scale = Vector2(0.28176862, 0.28176862)
+
+[node name="Bubble15" parent="." unique_id=1605779907 instance=ExtResource("4_ofd02")]
+position = Vector2(14.798038, -42.914574)
+scale = Vector2(0.28176862, 0.28176862)
+
+[node name="Bubble16" parent="." unique_id=49865138 instance=ExtResource("2_toeyw")]
+position = Vector2(14.798128, 62.152134)
+scale = Vector2(0.13021456, 0.13021456)
+
+[node name="Bubble17" parent="." unique_id=1487729484 instance=ExtResource("2_toeyw")]
+position = Vector2(-4.4394383, 51.79345)
+scale = Vector2(0.08941505, 0.08941505)
+
+[node name="Bubble18" parent="." unique_id=684839541 instance=ExtResource("2_toeyw")]
+position = Vector2(14.798128, -60.672318)
+scale = Vector2(0.13021456, 0.13021456)
+
+[node name="Bubble19" parent="." unique_id=21864736 instance=ExtResource("2_toeyw")]
+position = Vector2(-4.4394383, -53.273247)
+scale = Vector2(0.08941505, 0.08941505)
+
+[node name="OrbBubble" type="Sprite2D" parent="." unique_id=511260881]
+position = Vector2(49.999992, 0)
+scale = Vector2(0.08077751, 0.08077751)
+texture = ExtResource("4_toeyw")
+
+[node name="Bubble11" parent="." unique_id=170161300 instance=ExtResource("4_ofd02")]
+position = Vector2(7.399064, -20.717379)
+scale = Vector2(0.17310773, 0.17310773)
+
+[node name="Bubble13" parent="." unique_id=2023746945 instance=ExtResource("4_ofd02")]
+position = Vector2(7.399064, 20.717379)
+scale = Vector2(0.17310773, 0.17310773)
+
+[node name="Bubble02" parent="." unique_id=112659740 instance=ExtResource("7_rgaxl")]
+position = Vector2(-7.399064, 0)
+scale = Vector2(0.2620581, 0.2620581)
+
+[node name="Bubble12" parent="." unique_id=285886297 instance=ExtResource("2_toeyw")]
+position = Vector2(11.838502, 0)
+scale = Vector2(0.17169222, 0.17169222)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1955831747]
+libraries/ = SubResource("AnimationLibrary_hmlpk")
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=704077057]
+position = Vector2(90, 0)
+script = ExtResource("5_7t84g")
+prj_info = {
+"dmg_info": {
+"amount": 3.0,
+"duration": 0.0,
+"type": "dmg"
+},
+"hit_fx": "uid://bwddu713otuhv",
+"homing": false,
+"sin_turn_mode_freq": 3.0,
+"size": 5.0,
+"speed": 300.0,
+"target_mode": "default",
+"template": "uid://wjhxhgu6vrdu",
+"turn_mode": "default",
+"turn_rate": 10.0
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b38hsd5exxpdm" path="res://classes/ui/MainMenu.gd" id="1_sl1te"]
 [ext_resource type="PackedScene" uid="uid://ed6xvuvjcmkd" path="res://scenes/ui/bg.tscn" id="2_fe2o3"]
-[ext_resource type="FontFile" uid="uid://cxtddjit6snrw" path="res://fonts/361_Billo.ttf" id="3_1g8jr"]
-[ext_resource type="AudioStream" uid="uid://3sftrdrd2f3h" path="res://audio/ost/menu.mp3" id="4_m1kxf"]
-[ext_resource type="FontFile" uid="uid://csbqmkfc22gpk" path="res://fonts/484_uni 05_54.ttf" id="4_q85j6"]
+[ext_resource type="FontFile" uid="uid://cxtddjit6snrw" path="res://resources/fonts/361_Billo.ttf" id="3_1g8jr"]
+[ext_resource type="FontFile" uid="uid://csbqmkfc22gpk" path="res://resources/fonts/484_uni 05_54.ttf" id="4_q85j6"]
 [ext_resource type="Texture2D" uid="uid://bb7jtvevhvfds" path="res://img/ui/play_button.png" id="5_x2yvf"]
 [ext_resource type="Texture2D" uid="uid://cjkl8chdx3r1a" path="res://img/ui/editor_button.png" id="6_uhagc"]
 [ext_resource type="Texture2D" uid="uid://k5y3g81me0r5" path="res://img/ui/exit_button.png" id="7_wb0q5"]
+[ext_resource type="Script" uid="uid://da0v0njs2gwal" path="res://classes/audio/Playlist.gd" id="9_8g5eo"]
+[ext_resource type="FontFile" uid="uid://bqmx4aseim6nf" path="res://resources/fonts/369_GoldyRound.ttf" id="9_q85j6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymrjv"]
 font = ExtResource("3_1g8jr")
@@ -59,11 +60,6 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 text = "v1.0 release"
 label_settings = SubResource("LabelSettings_8g5eo")
 
-[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1661090512]
-stream = ExtResource("4_m1kxf")
-volume_db = 6.0
-autoplay = true
-
 [node name="Buttons" type="Control" parent="." unique_id=1937422543]
 layout_mode = 1
 anchors_preset = 15
@@ -72,6 +68,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="FreeModeButton" type="CheckButton" parent="Buttons" unique_id=975470679]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("9_q85j6")
+text = "Free Mode"
+flat = true
 
 [node name="PlayButton" type="TextureButton" parent="Buttons" unique_id=205896272]
 layout_mode = 1
@@ -123,3 +131,8 @@ size_flags_horizontal = 0
 texture_normal = ExtResource("7_wb0q5")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Playlist" type="Node" parent="." unique_id=510082848]
+script = ExtResource("9_8g5eo")
+tracks = Array[String](["uid://bsi7hibh4b6y", "uid://cgobcm6vfp5mo", "uid://b02x8i1aro7u5", "uid://bautmd2akqf23"])
+metadata/_custom_type_script = "uid://da0v0njs2gwal"

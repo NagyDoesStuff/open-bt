@@ -1,7 +1,7 @@
 extends Controller
 class_name AIController
 
-@onready var targ: Cluster = GlobalClass.player_cluster
+@onready var target: Cluster = GlobalClass.player_cluster
 var min_freq: float = 1.0
 var max_freq: float = 2.0
 var turn_dir: int = 0

@@ -1,0 +1,270 @@
+[gd_scene format=3 uid="uid://wc5t8555bitj"]
+
+[ext_resource type="Script" uid="uid://bdpqrhn3b5dvh" path="res://classes/parts/ChargeGunPart.gd" id="1_gw88j"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_wa2uq"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_pfomu"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="4_wa2uq"]
+
+[sub_resource type="Animation" id="Animation_wa2uq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble02:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bubble12:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, -17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bubble13:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, 17)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bubble16:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bubble03:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bubble04:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bubble14:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15, -6)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Bubble15:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14.999999, 5.999999)]
+}
+
+[sub_resource type="Animation" id="Animation_gw88j"]
+resource_name = "charge"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble02:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(16, 0), Vector2(28, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bubble12:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 0),
+"update": 0,
+"values": [Vector2(-9, -17), Vector2(-10, -10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bubble13:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-9, 17), Vector2(-10, 10)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bubble16:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-24, 0), Vector2(-18, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bubble03:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(0.5, 0.5, 1),
+"update": 0,
+"values": [Vector2(5, 0), Vector2(36, 0), Vector2(36, 7)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bubble04:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(0.5, 0.5, 1),
+"update": 0,
+"values": [Vector2(5, 0), Vector2(36, 0), Vector2(36, -7)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bubble14:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(15, -6), Vector2(5, -16)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Bubble15:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(14.999999, 5.999999), Vector2(5, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wa2uq"]
+_data = {
+&"RESET": SubResource("Animation_wa2uq"),
+&"charge": SubResource("Animation_gw88j")
+}
+
+[node name="Chargeable Cannon" type="Node2D" unique_id=9836400 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_gw88j")
+animation_player = NodePath("AnimationPlayer")
+category = "Player Primaries"
+gp_usage = 2
+metadata/_custom_type_script = "uid://bdpqrhn3b5dvh"
+
+[node name="Bubble12" parent="." unique_id=2009834062 instance=ExtResource("4_wa2uq")]
+position = Vector2(-9, -17)
+scale = Vector2(0.13408746, 0.13408746)
+
+[node name="Bubble13" parent="." unique_id=1602998774 instance=ExtResource("4_wa2uq")]
+position = Vector2(-9, 17)
+scale = Vector2(0.13408746, 0.13408746)
+
+[node name="Bubble14" parent="." unique_id=1039353022 instance=ExtResource("4_wa2uq")]
+position = Vector2(15, -6)
+scale = Vector2(0.09628411, 0.09628411)
+
+[node name="Bubble15" parent="." unique_id=822447586 instance=ExtResource("4_wa2uq")]
+position = Vector2(14.999999, 5.999999)
+scale = Vector2(0.09628411, 0.09628411)
+
+[node name="Bubble01" parent="." unique_id=2010651857 instance=ExtResource("2_wa2uq")]
+scale = Vector2(0.28184378, 0.28184378)
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_wa2uq")]
+position = Vector2(16, 0)
+scale = Vector2(0.13, 0.13)
+
+[node name="Bubble03" parent="." unique_id=1239070339 instance=ExtResource("2_wa2uq")]
+position = Vector2(5, 0)
+scale = Vector2(0.06506867, 0.06506867)
+
+[node name="Bubble04" parent="." unique_id=1354048159 instance=ExtResource("2_wa2uq")]
+position = Vector2(5, 0)
+scale = Vector2(0.06506867, 0.06506867)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(44, 0)
+script = ExtResource("3_pfomu")
+prj_info = {
+"dmg_info": {
+"amount": 20,
+"type": "dmg"
+},
+"size": 0.77,
+"speed": 4000.0,
+"template": "uid://bdqax0ph3ys6c"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=698101545]
+libraries/ = SubResource("AnimationLibrary_wa2uq")
+
+[node name="Bubble16" parent="." unique_id=569678657 instance=ExtResource("4_wa2uq")]
+position = Vector2(-24, 0)
+scale = Vector2(0.18230353, 0.18230353)

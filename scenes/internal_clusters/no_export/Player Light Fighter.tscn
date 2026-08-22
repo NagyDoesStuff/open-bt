@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cpk41qcwrot72"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_vk3vx"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="2_y3kg8"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="4_lcems"]
+[ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="5_gwk2c"]
+[ext_resource type="PackedScene" uid="uid://gaeqvwe7agfr" path="res://scenes/parts/pgunpart/AutoGun.tscn" id="5_iuwgs"]
+
+[node name="Player Light Fighter" type="Area2D" unique_id=1226715198]
+script = ExtResource("1_vk3vx")
+team = -1
+speed = 8.0
+turn_rate = 8.0
+drop_value = 0
+max_progress = 14
+max_spawn_amount = 0
+
+[node name="Small Bubble" parent="." unique_id=836217461 instance=ExtResource("2_y3kg8")]
+position = Vector2(-1.552002, -45.794434)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@76" parent="." unique_id=450180834 instance=ExtResource("2_y3kg8")]
+position = Vector2(-0.55200195, 45.794434)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@81" parent="." unique_id=1748194613 instance=ExtResource("2_y3kg8")]
+position = Vector2(-32.885376, -14.397186)
+scale = Vector2(0.74, 0.74)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_81" parent="." unique_id=1328181748 instance=ExtResource("2_y3kg8")]
+position = Vector2(-32.885376, 14.397217)
+scale = Vector2(0.74, 0.74)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@98" parent="." unique_id=878054447 instance=ExtResource("4_lcems")]
+position = Vector2(-16.718689, 33.5907)
+scale = Vector2(1.32, 1.32)
+disabled = true
+editor_mode = true
+
+[node name="Small Dark Bubble" parent="." unique_id=2059722007 instance=ExtResource("4_lcems")]
+position = Vector2(-16.718689, -33.5907)
+scale = Vector2(1.32, 1.32)
+disabled = true
+editor_mode = true
+
+[node name="Medium Bubble" parent="." unique_id=490766434 instance=ExtResource("5_gwk2c")]
+position = Vector2(-0.55200195, 0)
+scale = Vector2(0.91, 0.91)
+disabled = true
+editor_mode = true
+
+[node name="Auto Cannon" parent="." unique_id=122091808 instance=ExtResource("5_iuwgs")]
+position = Vector2(-1, 0)

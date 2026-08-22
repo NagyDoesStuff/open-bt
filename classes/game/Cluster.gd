@@ -23,11 +23,12 @@ var dist_from_center: float = 0.0
 
 var velocity: Vector2 = Vector2.ZERO
 
-var mid_blinking: bool = false
 var enabled: bool = true
 var is_slown_down: bool = false
 var is_jammed: bool = false
 var dead: bool = false
+var force_ai: bool = false
+var force_full_progress: bool = false
 
 ## For player tanks, this serves as the progression variable for unlocking the next class.
 ## For enemy tanks, this serves as the health variable.
@@ -59,10 +60,15 @@ func _ready() -> void:
 	parts = get_parts()
 	
 	if team == 0:
-		GlobalClass.player_cluster = self
-		progress_changed.connect(GlobalClass.world.ui.hud.update_progression_bar)
-		controller = PlayerController.new()
-		max_progress = GlobalClass.world.player_progression_requirement
+		if !force_ai: 
+			controller = PlayerController.new()
+			GlobalClass.player_cluster = self
+			progress_changed.connect(GlobalClass.world.ui.hud.update_progression_bar)
+			max_progress = GlobalClass.world.player_progression_requirement
+		else:
+			search_and_apply_behavior_parts()
+		if force_full_progress:
+			progress = max_progress
 	else:
 		progress = max_progress
 		search_and_apply_behavior_parts()
@@ -83,10 +89,10 @@ func _process(_delta: float) -> void:
 	
 	global_position += velocity
 	if GlobalClass.current_arena and dist_from_center > GlobalClass.ESTIMATED_ARENA_RADIUS * GlobalClass.current_arena.scale.x:
-		if team != 0:
-			kill()
-		else:
+		if self == GlobalClass.player_cluster:
 			GlobalClass.world.transfer_player_to_next_arena((global_position - GlobalClass.current_arena.global_position).angle())
+		else:
+			kill()
 	
 func get_parts() -> Array[Part]:
 	var list: Array[Part]
@@ -95,9 +101,12 @@ func get_parts() -> Array[Part]:
 			list.append(b)
 	return list
 
-func recieve_hit(dmg_info: Dictionary) -> void:
+func recieve_hit(dmg_info: Dictionary, from_angle: float = 0.0) -> void:
 	if !enabled: return
 	match dmg_info["type"]:
+		"punch":
+			velocity += Vector2.RIGHT.rotated(from_angle) * dmg_info["knk"]
+			progress -= dmg_info["amount"]
 		"slowdown":
 			slow_down(dmg_info["amount"], dmg_info["duration"])
 		"jam":
@@ -105,19 +114,20 @@ func recieve_hit(dmg_info: Dictionary) -> void:
 		_:
 			progress -= dmg_info["amount"]
 		
-	if team == 0:
+	if self == GlobalClass.player_cluster:
 		GlobalClass.play_sound("uid://c2wjfumwdpyo")
 
 func check_progress() -> void:
-	if progress == max_progress and team == 0:
+	if progress == max_progress and self == GlobalClass.player_cluster:
 		GlobalClass.world.upgrade_player()
 	
 	if progress == 0:
-		if team == 0:
+		if self == GlobalClass.player_cluster:
 			progress = 1
 			await get_tree().process_frame
 			GlobalClass.world.arenas_travelled = 0
 			GlobalClass.world.transfer_player_to_next_arena(randf_range(0, TAU))
+			GlobalClass.play_sound("uid://dayofekvd0206")
 		else:
 			kill()
 

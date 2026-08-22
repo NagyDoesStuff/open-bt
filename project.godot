@@ -29,6 +29,8 @@ window/size/viewport_height=1080
 window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://35b7ry0aaiak"
+mouse_cursor/custom_image_hotspot=Vector2(8, 0)
 
 [input]
 
@@ -119,4 +121,4 @@ del={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_2d=2

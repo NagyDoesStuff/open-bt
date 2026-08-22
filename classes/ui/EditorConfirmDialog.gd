@@ -24,6 +24,7 @@ func ignore() -> void:
 
 func go_to_editor() -> void:
 	hide()
+	GlobalClass.can_pause = false
 	GlobalClass.world.last_player_position = GlobalClass.player_cluster.global_position
 	GlobalClass.world.ui.toggle_editor(true)
 	GlobalClass.world.ui.hud.hide()

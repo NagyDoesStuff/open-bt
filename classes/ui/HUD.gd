@@ -10,6 +10,8 @@ class_name HUD
 @onready var progression_bar: ProgressBar = $MarginContainer2/Panel/MarginContainer/VBoxContainer/ProgressBar
 @onready var progression_bar_container: MarginContainer = $MarginContainer2
 
+@onready var cluster_search_input_panel: Panel = $MarginContainer/VBoxContainer/Panel
+
 var mid_transition: bool = false
 
 var show_offset: float = 150.0
@@ -26,6 +28,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("enter") and !cluster_search_input.text.is_empty():
 		search_for_cluster(cluster_search_input.text)
+	
+	if GlobalClass.free_mode:
+		cluster_search_input_panel.show()
 
 func search_for_cluster(text: String) -> void:
 	var recieved_text: String = text
@@ -33,6 +38,7 @@ func search_for_cluster(text: String) -> void:
 	if recieved_text.ends_with(" AS_ENEMY"):
 		recieved_text = recieved_text.trim_suffix(" AS_ENEMY")
 		spawn_as_enemy = true
+	
 	var full_path: String = GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/" + recieved_text + ".tscn"
 	if FileAccess.file_exists(full_path):
 		var loaded_cluster: Cluster = ResourceLoader.load(full_path).instantiate()
@@ -48,11 +54,11 @@ func update_progression_bar() -> void:
 	
 	if !mid_transition:
 		mid_transition = true
-		var target_y: float = progression_bar_container.global_position.y - show_offset
-		await create_tween().tween_property(progression_bar_container, "global_position:y", target_y, 0.5).set_trans(Tween.TRANS_CUBIC).finished
+		var targetet_y: float = progression_bar_container.global_position.y - show_offset
+		await create_tween().tween_property(progression_bar_container, "global_position:y", targetet_y, 0.5).set_trans(Tween.TRANS_CUBIC).finished
 	
 		await get_tree().create_timer(3.0).timeout
 	
-		target_y = progression_bar_container.global_position.y + show_offset
-		await create_tween().tween_property(progression_bar_container, "global_position:y", target_y, 0.5).set_trans(Tween.TRANS_CUBIC).finished
+		targetet_y = progression_bar_container.global_position.y + show_offset
+		await create_tween().tween_property(progression_bar_container, "global_position:y", targetet_y, 0.5).set_trans(Tween.TRANS_CUBIC).finished
 		mid_transition = false

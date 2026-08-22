@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b2huxr7sws2km" path="res://classes/ui/HUD.gd" id="1_8qguk"]
 [ext_resource type="StyleBox" uid="uid://c8w544l3ckmgp" path="res://resources/stylebox/01.tres" id="2_8qguk"]
-[ext_resource type="FontFile" uid="uid://csbqmkfc22gpk" path="res://fonts/484_uni 05_54.ttf" id="2_136eg"]
-[ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://fonts/131_Arial.ttf" id="3_136eg"]
+[ext_resource type="FontFile" uid="uid://csbqmkfc22gpk" path="res://resources/fonts/484_uni 05_54.ttf" id="2_136eg"]
+[ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="3_136eg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oj5la"]
 font = ExtResource("2_136eg")

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_6mi7o"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_onfv3"]
 
-[node name="Enemy Machine Gun" type="Node2D" unique_id=122091808]
+[node name="Rotating Machine Gun" type="Node2D" unique_id=122091808]
 script = ExtResource("1_eo08g")
 cooldown = 12.0
 amount_per_salvo = 40

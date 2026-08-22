@@ -1,0 +1,172 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_2v6mp"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="2_nh1ny"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="3_x8hoi"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="4_gjtiq"]
+[ext_resource type="PackedScene" path="res://scenes/parts/pgunpart/SeekerLauncher.tscn" id="5_oe807"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="6_mmbdx"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="7_5k80v"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="8_er25l"]
+[ext_resource type="PackedScene" path="res://scenes/parts/pgunpart/AreaBurstCannon.tscn" id="9_yd02w"]
+[ext_resource type="PackedScene" path="res://scenes/parts/pgunpart/Railgun.tscn" id="10_1gl3h"]
+
+[node name="Deluxe" type="Area2D" unique_id=56926786]
+script = ExtResource("1_2v6mp")
+cluster_class = 2
+
+[node name="_Node2D_104" parent="." unique_id=878054447 instance=ExtResource("2_nh1ny")]
+position = Vector2(41.0188, 38.771362)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@104" parent="." unique_id=285860154 instance=ExtResource("2_nh1ny")]
+position = Vector2(41.0188, -38.771393)
+disabled = true
+editor_mode = true
+
+[node name="Medium Bubble" parent="." unique_id=135919129 instance=ExtResource("3_x8hoi")]
+position = Vector2(46.159424, 0)
+disabled = true
+editor_mode = true
+
+[node name="Large Bubble" parent="." unique_id=1595809139 instance=ExtResource("4_gjtiq")]
+position = Vector2(1.9500122, 0)
+scale = Vector2(0.71, 0.71)
+disabled = true
+editor_mode = true
+
+[node name="Seeker Launcher" parent="." unique_id=122091808 instance=ExtResource("5_oe807")]
+position = Vector2(-56.653076, -51.114258)
+rotation = -3.6309829
+scale = Vector2(0.77, 0.77)
+disabled = true
+editor_mode = true
+
+[node name="Small Dark Bubble" parent="." unique_id=931477680 instance=ExtResource("2_nh1ny")]
+position = Vector2(-33.006226, -45.971405)
+scale = Vector2(1.35, 1.35)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@199" parent="." unique_id=16799022 instance=ExtResource("5_oe807")]
+position = Vector2(-56.653076, 51.114258)
+rotation = 3.6309829
+scale = Vector2(0.77, 0.77)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@68" parent="." unique_id=1875402076 instance=ExtResource("2_nh1ny")]
+position = Vector2(-33.006226, 45.971436)
+scale = Vector2(1.35, 1.35)
+disabled = true
+editor_mode = true
+
+[node name="Small Bubble" parent="." unique_id=2092135434 instance=ExtResource("6_mmbdx")]
+position = Vector2(-48.4281, -68.20007)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@79" parent="." unique_id=1706028745 instance=ExtResource("6_mmbdx")]
+position = Vector2(-48.4281, 68.20007)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@84" parent="." unique_id=1702073874 instance=ExtResource("6_mmbdx")]
+position = Vector2(-21.696838, -70.657135)
+scale = Vector2(0.8, 0.8)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_84" parent="." unique_id=1740783454 instance=ExtResource("6_mmbdx")]
+position = Vector2(-21.696838, 70.657104)
+scale = Vector2(0.8, 0.8)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@91" parent="." unique_id=633604884 instance=ExtResource("2_nh1ny")]
+position = Vector2(-48.4281, 0)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@111" parent="." unique_id=1776852123 instance=ExtResource("6_mmbdx")]
+position = Vector2(30.737549, -55.228546)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_111" parent="." unique_id=1482179516 instance=ExtResource("6_mmbdx")]
+position = Vector2(30.737549, 55.228516)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@118" parent="." unique_id=529239499 instance=ExtResource("6_mmbdx")]
+position = Vector2(62.609436, -33.62857)
+scale = Vector2(0.86, 0.86)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_118" parent="." unique_id=1978525124 instance=ExtResource("6_mmbdx")]
+position = Vector2(62.609436, 33.62854)
+scale = Vector2(0.86, 0.86)
+disabled = true
+editor_mode = true
+
+[node name="Medium Dark Bubble" parent="." unique_id=1462927982 instance=ExtResource("7_5k80v")]
+position = Vector2(-76.18744, 0)
+disabled = true
+editor_mode = true
+
+[node name="Small Light Bubble" parent="." unique_id=1626212586 instance=ExtResource("8_er25l")]
+position = Vector2(-3.1906128, -38.771393)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@134" parent="." unique_id=1922883515 instance=ExtResource("8_er25l")]
+position = Vector2(-3.1906128, 38.771362)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@139" parent="." unique_id=2067595649 instance=ExtResource("8_er25l")]
+position = Vector2(81.11566, -23.342804)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_139" parent="." unique_id=323509168 instance=ExtResource("8_er25l")]
+position = Vector2(81.11566, 23.342773)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@146" parent="." unique_id=1725311068 instance=ExtResource("6_mmbdx")]
+position = Vector2(-85.44061, -30.542816)
+scale = Vector2(0.75, 0.75)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_146" parent="." unique_id=1220346583 instance=ExtResource("6_mmbdx")]
+position = Vector2(-85.44061, 30.542847)
+scale = Vector2(0.75, 0.75)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_153" parent="." unique_id=679342566 instance=ExtResource("6_mmbdx")]
+position = Vector2(-113.19995, 0)
+disabled = true
+editor_mode = true
+
+[node name="Area Burst Cannon" parent="." unique_id=2139372773 instance=ExtResource("9_yd02w")]
+position = Vector2(-77.215576, 0)
+scale = Vector2(0.82, 0.82)
+disabled = true
+editor_mode = true
+
+[node name="Railgun" parent="." unique_id=1308013278 instance=ExtResource("10_1gl3h")]
+position = Vector2(4.0062866, 0)
+scale = Vector2(1.14, 1.14)
+disabled = true
+editor_mode = true

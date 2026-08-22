@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://bd6srsbxxcvcc"]
+
+[ext_resource type="Script" uid="uid://dkkf0mw5rq7mr" path="res://classes/game/Part.gd" id="1_l4bno"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="2_l4bno"]
+[ext_resource type="Script" uid="uid://cve0rm03lq2s7" path="res://classes/misc/Bubble.gd" id="3_rbijb"]
+
+[sub_resource type="Animation" id="Animation_fsqqk"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_x8s67"]
+resource_name = "default"
+length = 1.0666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Pivot2/Pivot3/Pivot4/Pivot5:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Pivot2/Pivot3/Pivot4:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Pivot2/Pivot3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot/Pivot2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsqqk"]
+_data = {
+&"RESET": SubResource("Animation_fsqqk"),
+&"default": SubResource("Animation_x8s67")
+}
+
+[node name="Long Dark Wiggle Cluster" type="Node2D" unique_id=320907701]
+script = ExtResource("1_l4bno")
+metadata/_custom_type_script = "uid://dkkf0mw5rq7mr"
+
+[node name="Pivot" parent="." unique_id=878054447 instance=ExtResource("2_l4bno")]
+rotation = -0.61086524
+script = ExtResource("3_rbijb")
+is_static = false
+
+[node name="Pivot2" parent="Pivot" unique_id=1997379509 instance=ExtResource("2_l4bno")]
+position = Vector2(-28.000002, 0)
+rotation = -0.61086524
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_rbijb")
+is_static = false
+
+[node name="Pivot3" parent="Pivot/Pivot2" unique_id=831500300 instance=ExtResource("2_l4bno")]
+position = Vector2(-28.749996, 0)
+rotation = -0.61086524
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_rbijb")
+is_static = false
+
+[node name="Pivot4" parent="Pivot/Pivot2/Pivot3" unique_id=1087751986 instance=ExtResource("2_l4bno")]
+position = Vector2(-28.125, 0)
+rotation = -0.61086524
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_rbijb")
+is_static = false
+
+[node name="Pivot5" parent="Pivot/Pivot2/Pivot3/Pivot4" unique_id=244334291 instance=ExtResource("2_l4bno")]
+position = Vector2(-27.34375, 0)
+rotation = -0.61086524
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_rbijb")
+is_static = false
+
+[node name="Pivot6" parent="Pivot/Pivot2/Pivot3/Pivot4/Pivot5" unique_id=1527620751 instance=ExtResource("2_l4bno")]
+position = Vector2(-26.855469, 0)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_rbijb")
+is_static = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=479595449]
+libraries/ = SubResource("AnimationLibrary_fsqqk")
+autoplay = &"default"

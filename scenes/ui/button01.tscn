@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwlqr56nh4exq"]
 
-[ext_resource type="FontFile" uid="uid://bqmx4aseim6nf" path="res://fonts/369_GoldyRound.ttf" id="1_nhfkk"]
+[ext_resource type="FontFile" uid="uid://bqmx4aseim6nf" path="res://resources/fonts/369_GoldyRound.ttf" id="1_nhfkk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jn68"]
 content_margin_left = 4.0

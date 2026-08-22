@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://b73e2g06t2qu5"]
 
-[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_w71fe"]
+[ext_resource type="Script" uid="uid://blsl2a8q2mp0n" path="res://classes/parts/AutoGunPart.gd" id="1_w71fe"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_w3efu"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_4dekx"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="4_p6dlo"]
 
-[node name="Railgun" type="Node2D" unique_id=122091808]
+[node name="Railgun" type="Node2D" unique_id=1757355056]
 script = ExtResource("1_w71fe")
+mode = "Lock-on"
 cooldown = 3.0
 keybind = "space"
-category = "Player Primaries"
+category = "Player Secondaries"
 gp_usage = 5
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+metadata/_custom_type_script = "uid://blsl2a8q2mp0n"
 
 [node name="Bubble12" parent="." unique_id=1039353022 instance=ExtResource("2_w3efu")]
 position = Vector2(58.198776, -16.250645)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://na5kkuw8tqvq"]
+
+[ext_resource type="Script" uid="uid://cve0rm03lq2s7" path="res://classes/misc/Bubble.gd" id="1_m436r"]
+[ext_resource type="Texture2D" uid="uid://dpveh2ekbujkj" path="res://img/bubbles/2246.png" id="2_m436r"]
+
+[node name="Bubble44" type="Node2D" unique_id=1039353022]
+script = ExtResource("1_m436r")
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+metadata/_edit_horizontal_guides_ = [-64.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=791916297]
+self_modulate = Color(0.69965345, 0.69965345, 0.69965345, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_m436r")

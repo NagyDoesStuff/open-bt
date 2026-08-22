@@ -7,7 +7,7 @@ func _subready() -> void:
 func ai_cycle() -> void:
 	var time: float = randf_range(min_freq, max_freq)
 	turn(randf_range(min_turn_time_ratio, max_turn_time_ratio), randi_range(-1, 1))
-	get_tree().create_timer(time).timeout.connect(ai_cycle)
+	if get_tree(): get_tree().create_timer(time).timeout.connect(ai_cycle)
 
 func _process(_delta: float) -> void:
 	user.velocity = lerp(

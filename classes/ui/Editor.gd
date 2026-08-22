@@ -120,11 +120,12 @@ func retrieve_avaliable_parts(dir: String) -> void:
 func make_part_select_button(part_path: String) -> void:
 	var button: Button = GlobalClass.BUTTON_01.instantiate()
 	var unpacked_part: Part = load(part_path).instantiate()
-	button.text = unpacked_part.name
-	button.pressed.connect(set.bind("selected_part_path", part_path))
-	category_tab_container.get_node(unpacked_part.category).add_child(button)
+	if unpacked_part.available:
+		button.text = unpacked_part.name
+		button.pressed.connect(set.bind("selected_part_path", part_path))
+		category_tab_container.get_node(unpacked_part.category).add_child(button)
+		print("Loaded path from: " + part_path)
 	unpacked_part.queue_free()
-	print("Loaded path from: " + part_path)
 
 func display_selected_part(part: Part) -> void:
 	if !enabled: return
@@ -296,7 +297,7 @@ func delete_last_dragged() -> void:
 func move_last_dragged(value: int) -> void:
 	if !last_dragged: return
 	if symmetry and last_dragged.linked_via_editor: 
-		edited_cluster.move_child(last_dragged.linked_via_editor, last_dragged.linked_via_editor.get_index() + 1)
+		edited_cluster.move_child(last_dragged.linked_via_editor, last_dragged.linked_via_editor.get_index() + value)
 	edited_cluster.move_child(last_dragged, last_dragged.get_index() + value)
 
 func move_last_dragged_to_top() -> void:

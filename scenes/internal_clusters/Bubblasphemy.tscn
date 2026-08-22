@@ -24,7 +24,7 @@ speed = 1.0
 turn_rate = 0.5
 drop_value = 120
 max_progress = 800
-min_to_available = 105
+min_to_available = 120
 max_spawn_amount = 1
 
 [node name="Medium Dark Bubble4" parent="." unique_id=878054447 instance=ExtResource("4_a3gqj")]

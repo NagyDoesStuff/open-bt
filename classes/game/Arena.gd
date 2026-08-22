@@ -1,7 +1,7 @@
 extends Node2D
 class_name Arena
 
-func spawn_enemies() -> void:
+func spawn_clusters() -> void:
 	var enemies_left_to_spawn: int = int(GlobalClass.DEFAULT_MAX_ENEMIES + (GlobalClass.world.arenas_travelled * GlobalClass.MAX_ENEMIES_INCREMENT_PER_ARENA))
 	var final_spawned_amount: int = 0
 	var enemy_names_spawned: Array[String] = []
@@ -27,6 +27,7 @@ func spawn_enemies() -> void:
 		for x in randi_range(min_enemy_amount, max_enemy_amount):
 			if enemies_left_to_spawn == 0: return
 			var deployable_enemy: Cluster = rand_enemy.duplicate()
+			if !rand_enemy: break
 			deployable_enemy.global_position = global_position + Vector2.from_angle(randf_range(0, TAU)) * randf_range(0, GlobalClass.ESTIMATED_ARENA_RADIUS * 0.8 * scale.length() / 2)
 			deployable_enemy.global_rotation = randf_range(0, TAU)
 			for p in deployable_enemy.get_parts():
@@ -39,5 +40,5 @@ func spawn_enemies() -> void:
 	resize_arena(final_spawned_amount)
 
 func resize_arena(enemy_amount: int) -> void:
-	var targ_scale: Vector2 = GlobalClass.DEFAULT_ARENA_SCALE + Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * enemy_amount)
-	create_tween().tween_property(self, "scale", targ_scale, 2.0).set_trans(Tween.TRANS_SINE)
+	var target_scale: Vector2 = GlobalClass.DEFAULT_ARENA_SCALE + Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * enemy_amount)
+	create_tween().tween_property(self, "scale", target_scale, 2.0).set_trans(Tween.TRANS_SINE)

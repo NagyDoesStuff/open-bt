@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://gaeqvwe7agfr"]
+
+[ext_resource type="Script" uid="uid://blsl2a8q2mp0n" path="res://classes/parts/AutoGunPart.gd" id="1_ub3sl"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_xglee"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_i3tqe"]
+
+[node name="Auto Cannon" type="Node2D" unique_id=122091808]
+script = ExtResource("1_ub3sl")
+cooldown = 0.25
+category = "Player Passives"
+gp_usage = 1
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_xglee")]
+scale = Vector2(0.26718658, 0.26718658)
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_xglee")]
+position = Vector2(20, 0)
+scale = Vector2(0.1015463, 0.1015463)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(29, 0)
+script = ExtResource("3_i3tqe")
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"size": 0.66,
+"speed": 2000.0,
+"template": "uid://cnlneqp8i4qud"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

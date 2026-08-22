@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bljfq7s05u0qm"]
+
+[ext_resource type="Script" uid="uid://b8p4pydnqjfr5" path="res://classes/parts/SpawnerPart.gd" id="1_mf17c"]
+[ext_resource type="PackedScene" uid="uid://cpk41qcwrot72" path="res://scenes/internal_clusters/no_export/Player Light Fighter.tscn" id="2_s4okr"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_wthst"]
+
+[node name="Light Ally Spawner" type="Node2D" unique_id=962284641]
+script = ExtResource("1_mf17c")
+cooldown = 1.0
+spawned_cluster = ExtResource("2_s4okr")
+category = "Player Secondaries"
+gp_usage = 4
+metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
+
+[node name="Bubble12" parent="." unique_id=61188681 instance=ExtResource("4_wthst")]
+position = Vector2(-4.0000014, -20.999998)
+scale = Vector2(0.14421345, 0.14421345)
+
+[node name="Bubble13" parent="." unique_id=242070744 instance=ExtResource("4_wthst")]
+position = Vector2(-4.0000014, 21)
+scale = Vector2(0.14421345, 0.14421345)
+
+[node name="Bubble14" parent="." unique_id=2049258108 instance=ExtResource("4_wthst")]
+position = Vector2(16, 21)
+scale = Vector2(0.2081885, 0.2081885)
+
+[node name="Bubble15" parent="." unique_id=881579760 instance=ExtResource("4_wthst")]
+position = Vector2(16, -21)
+scale = Vector2(0.2081885, 0.2081885)
+
+[node name="Bubble11" parent="." unique_id=1039353022 instance=ExtResource("4_wthst")]
+scale = Vector2(0.3031978, 0.3031978)

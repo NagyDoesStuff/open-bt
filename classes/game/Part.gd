@@ -15,6 +15,7 @@ class_name Part
 @export var editor_mode: bool = false
 @export var is_hovered: bool = false
 @export var gp_usage: int = 0
+@export var available: bool = true
 
 @onready var user: Cluster:
 	get:

@@ -6,6 +6,7 @@
 [node name="Agressor" type="Node2D" unique_id=1961699606]
 script = ExtResource("1_t3fnu")
 category = "Enemy Behaviors"
+gp_usage = 1
 metadata/_custom_type_script = "uid://dny073s7n1p00"
 
 [node name="Bubble11" parent="." unique_id=1039353022 instance=ExtResource("2_lhx7o")]

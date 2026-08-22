@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dfwq6ptb4qeks"]
 
 [ext_resource type="Script" uid="uid://daba0td05hvxq" path="res://classes/ui/PauseMenu.gd" id="1_f6eus"]
-[ext_resource type="FontFile" uid="uid://c6qny5ft6citq" path="res://fonts/142_Arial.ttf" id="2_8uki6"]
-[ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://fonts/131_Arial.ttf" id="3_0bnpd"]
+[ext_resource type="FontFile" uid="uid://c6qny5ft6citq" path="res://resources/fonts/142_Arial.ttf" id="2_8uki6"]
+[ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="3_0bnpd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4foi6"]
 bg_color = Color(1, 1, 1, 0.2509804)

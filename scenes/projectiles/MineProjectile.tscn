@@ -48,6 +48,7 @@ _data = {
 
 [node name="MineProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_wic4j")
+lifetime = 10.0
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1261310356]

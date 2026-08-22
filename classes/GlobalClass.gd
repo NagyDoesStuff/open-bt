@@ -81,10 +81,12 @@ var world: World
 var player_cluster: Cluster
 var loaded_clusters: Array[Cluster]
 var current_arena: Arena
-var can_pause: bool = true
 
-# VARIABLE
+# VARIABLES
 var player_cluster_filename: String = "Basic"
+
+var can_pause: bool = true
+var free_mode: bool = false
 
 func _ready() -> void:
 	create_directories()
@@ -113,13 +115,13 @@ func get_closest_or_farthest(from: Node2D, list: Array, closest: bool) -> Node2D
 func play_sound(
 	file_path: String, volume_db: float = 0.0, 
 	pitch_scale: float = 1.0, pitch_variation: float = 0.0, 
-	volume_variation: float = 0.0, 
+	volume_variation: float = 0.0, parent: Node = self
 ) -> AudioStreamPlayer2D:
 	if file_path.is_empty(): return
 	var pitch: float = pitch_scale + randf_range(-pitch_variation, pitch_variation)
 	var vol: float = volume_db + randf_range(-volume_variation, volume_variation)
 	var audio_node: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
-	get_tree().root.add_child(audio_node)
+	parent.add_child(audio_node)
 	audio_node.stream = load(file_path)
 	audio_node.volume_db = vol
 	audio_node.pitch_scale = pitch
@@ -161,3 +163,18 @@ func create_directories() -> void:
 		DirAccess.make_dir_absolute(GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/")
 		for file in ResourceLoader.list_directory(INTERNAL_CLUSTERS_DIRECTORY):
 			ResourceSaver.save(load(INTERNAL_CLUSTERS_DIRECTORY + file), GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/" + file)
+
+func toggle_free_mode() -> void:
+	free_mode = !free_mode
+
+func append_distance_check(who: Node2D) -> void:
+	var timer: Timer = Timer.new()
+	timer.autostart = true
+	timer.wait_time = 0.1
+	timer.timeout.connect(func () -> void:
+		if GlobalClass.current_arena: 
+			who.dist_from_center = who.global_position.distance_to(GlobalClass.current_arena.global_position)
+			if who.dist_from_center > GlobalClass.ESTIMATED_ARENA_RADIUS * GlobalClass.current_arena.scale.x:
+				who.destroy()
+	)
+	who.add_child(timer)

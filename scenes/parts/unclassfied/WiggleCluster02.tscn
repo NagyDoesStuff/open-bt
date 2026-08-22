@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bce5uupqiyr3u"]
+
+[ext_resource type="Script" uid="uid://dkkf0mw5rq7mr" path="res://classes/game/Part.gd" id="1_7wq3l"]
+[ext_resource type="PackedScene" uid="uid://b03mko8nkkov4" path="res://scenes/decorations/bubble45.tscn" id="2_7wq3l"]
+
+[sub_resource type="Animation" id="Animation_fsqqk"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_x8s67"]
+resource_name = "default"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Pivot2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0142135555, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Pivot2/Pivot3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Pivot2/Pivot3/Pivot4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0142135555, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot/Pivot2/Pivot3/Pivot4/Pivot5:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0142135555, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.6108652381980153, 0.6108652381980153]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsqqk"]
+_data = {
+&"RESET": SubResource("Animation_fsqqk"),
+&"default": SubResource("Animation_x8s67")
+}
+
+[node name="Red Wiggle Cluster" type="Node2D" unique_id=320907701]
+script = ExtResource("1_7wq3l")
+metadata/_custom_type_script = "uid://dkkf0mw5rq7mr"
+
+[node name="Pivot" parent="." unique_id=1039353022 instance=ExtResource("2_7wq3l")]
+rotation = -0.61086524
+scale = Vector2(0.5, 0.5)
+
+[node name="Pivot2" parent="Pivot" unique_id=1530734759 instance=ExtResource("2_7wq3l")]
+position = Vector2(-38.360832, 1.0298707)
+rotation = -0.54514134
+scale = Vector2(0.8, 0.8)
+
+[node name="Pivot3" parent="Pivot/Pivot2" unique_id=1419233796 instance=ExtResource("2_7wq3l")]
+position = Vector2(-39.285614, 0.043291807)
+rotation = -0.61086524
+scale = Vector2(0.8, 0.8)
+
+[node name="Pivot4" parent="Pivot/Pivot2/Pivot3" unique_id=337525869 instance=ExtResource("2_7wq3l")]
+position = Vector2(-37.499527, -0.09685707)
+rotation = -0.54514134
+scale = Vector2(0.8, 0.8)
+
+[node name="Pivot5" parent="Pivot/Pivot2/Pivot3/Pivot4" unique_id=303162355 instance=ExtResource("2_7wq3l")]
+position = Vector2(-39.06221, 0.067643166)
+rotation = -0.54514134
+scale = Vector2(0.8, 0.8)
+
+[node name="Pivot6" parent="Pivot/Pivot2/Pivot3/Pivot4/Pivot5" unique_id=657865247 instance=ExtResource("2_7wq3l")]
+position = Vector2(-39.06064, 0.13498497)
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=479595449]
+libraries/ = SubResource("AnimationLibrary_fsqqk")
+autoplay = &"default"

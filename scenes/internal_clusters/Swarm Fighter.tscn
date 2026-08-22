@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cccmn3ywoa0jf"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_gfs3i"]
+[ext_resource type="PackedScene" uid="uid://dbtk8x4f8y0q0" path="res://scenes/parts/unclassfied/WiggleCluster01.tscn" id="2_f6ydk"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="2_jw0gr"]
+[ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="4_6hrlf"]
+[ext_resource type="PackedScene" uid="uid://c8dvqqcb4fpq4" path="res://scenes/parts/egunpart/BasicGun.tscn" id="5_b7tdm"]
+
+[node name="Swarm Fighter" type="Area2D" unique_id=525293534]
+script = ExtResource("1_gfs3i")
+team = 1
+speed = 4.0
+turn_rate = 4.0
+drop_value = 3
+max_progress = 3
+min_to_available = 15
+max_spawn_amount = 8
+
+[node name="Wiggle Cluster" parent="." unique_id=320907701 instance=ExtResource("2_f6ydk")]
+position = Vector2(-10.697876, 0)
+scale = Vector2(1.35, 1.35)
+disabled = true
+editor_mode = true
+
+[node name="Medium Bubble" parent="." unique_id=437600315 instance=ExtResource("4_6hrlf")]
+position = Vector2(0.4167471, 0)
+scale = Vector2(0.8, 0.8)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@607" parent="." unique_id=2093749340 instance=ExtResource("2_jw0gr")]
+position = Vector2(28.708374, -20.95929)
+scale = Vector2(0.74, 0.74)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_607" parent="." unique_id=271001044 instance=ExtResource("2_jw0gr")]
+position = Vector2(28.708374, 20.95929)
+scale = Vector2(0.74, 0.74)
+disabled = true
+editor_mode = true
+
+[node name="Enemy Basic Cannon" parent="." unique_id=122091808 instance=ExtResource("5_b7tdm")]

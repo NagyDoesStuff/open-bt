@@ -5,7 +5,7 @@ class_name GunBarrel
 
 # "template" is the projectile scene file
 # "dmg_info" types: "dmg", "slowdown" and "jam"
-# "targ_mode" modes: "default" and "mouse"
+# "target_mode" modes: "default" and "mouse"
 # "turn_mode" modes: "default" and "sin"
 
 @export var prj_info: Dictionary = {
@@ -22,7 +22,7 @@ class_name GunBarrel
 	# Homing attributes.
 	"homing": false,
 	"turn_rate": 10.0,
-	"targ_mode": "default",
+	"target_mode": "default",
 	# Turning attributes.
 	"turn_mode": "default",
 	"sin_turn_mode_freq": 3.0

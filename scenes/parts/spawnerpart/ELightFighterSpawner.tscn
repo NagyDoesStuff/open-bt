@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dufym37jcduao"]
+
+[ext_resource type="Script" uid="uid://b8p4pydnqjfr5" path="res://classes/parts/SpawnerPart.gd" id="1_7i11w"]
+[ext_resource type="PackedScene" uid="uid://b371q4wai1w2" path="res://scenes/internal_clusters/no_export/Enemy Light Fighter.tscn" id="2_7i11w"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_oa3qe"]
+
+[sub_resource type="Animation" id="Animation_7i11w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tk5ja"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.281439977927592]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oa3qe"]
+_data = {
+&"RESET": SubResource("Animation_7i11w"),
+&"default": SubResource("Animation_tk5ja")
+}
+
+[node name="Light Fighter Spawner" type="Node2D" unique_id=962284641]
+script = ExtResource("1_7i11w")
+cooldown = 8.0
+spawned_cluster = ExtResource("2_7i11w")
+limit = 10
+category = "Enemy Weapons"
+gp_usage = 4
+metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
+
+[node name="Bubble15" parent="." unique_id=881579760 instance=ExtResource("3_oa3qe")]
+position = Vector2(59, -59)
+scale = Vector2(0.2081885, 0.2081885)
+
+[node name="Bubble16" parent="." unique_id=1039353022 instance=ExtResource("3_oa3qe")]
+position = Vector2(-59, -59)
+scale = Vector2(0.2081885, 0.2081885)
+
+[node name="Bubble17" parent="." unique_id=398432847 instance=ExtResource("3_oa3qe")]
+position = Vector2(59, 59)
+scale = Vector2(0.2081885, 0.2081885)
+
+[node name="Bubble18" parent="." unique_id=1760861317 instance=ExtResource("3_oa3qe")]
+position = Vector2(-59.000008, 58.999996)
+scale = Vector2(0.2081885, 0.2081885)
+
+[node name="Pivot" type="Node2D" parent="." unique_id=225216130]
+
+[node name="Bubble19" parent="Pivot" unique_id=1418840687 instance=ExtResource("3_oa3qe")]
+position = Vector2(56, 0)
+scale = Vector2(0.076954074, 0.076954074)
+
+[node name="Bubble20" parent="Pivot" unique_id=1750989869 instance=ExtResource("3_oa3qe")]
+position = Vector2(16, -48)
+scale = Vector2(0.048116222, 0.048116222)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1055930829]
+libraries/ = SubResource("AnimationLibrary_oa3qe")
+autoplay = &"default"
