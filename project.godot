@@ -121,4 +121,5 @@ del={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-anti_aliasing/quality/msaa_2d=2
+anti_aliasing/quality/msaa_2d=3
+anti_aliasing/screen_space_roughness_limiter/enabled=false

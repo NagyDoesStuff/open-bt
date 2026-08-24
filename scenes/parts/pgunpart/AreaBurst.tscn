@@ -48,6 +48,7 @@ prj_info = {
 "amount": 50,
 "type": "dmg"
 },
+"hit_fx": "uid://bj32jn40b07kx",
 "size": 1.0,
 "speed": 0.0,
 "template": "uid://dbpn7ab4m18jm"

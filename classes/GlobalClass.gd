@@ -23,7 +23,7 @@ const UPGRADE_CHOICES: int = 3
 
 const CLUSTER_CHECK_DIST_FREQ: float = .25
 const ESTIMATED_ARENA_RADIUS: float = 8505.0 / 2.0
-const ARENA_RADIUS_GROW_PER_ENEMY: float = 0.005
+const ARENA_RADIUS_GROW_PER_ENEMY: float = 0.01
 const LAND_ON_ARENA_DIST: float = 0.9
 const MIN_BUBBLE_POINT_SIZE: float = 0.33
 const BUBBLE_POINT_GROW_SIZE: float = 0.025
@@ -37,6 +37,8 @@ const EDITOR_SAVES_DIRECTORY: String = "user://editor/"
 const HIT_COLOR: Color = Color(1.164, 1.164, 1.164, 1.0)
 const SLOWN_DOWN_COLOR: Color = Color(0.937, 0.8, 1.0, 1.0)
 const JAMMED_COLOR: Color = Color(0.8, 1.0, 0.833, 1.0)
+const STUNNED_COLOR: Color = Color(0.75, 0.75, 0.75, 0.784)
+const INFECTED_COLOR: Color = Color(0.82, 0.279, 0.279, 1.0)
 
 const DEFAULT_ARENA_SCALE: Vector2 = Vector2.ONE * 0.2
 

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://mxlrad515qiq"]
+
+[ext_resource type="Script" uid="uid://bn6tpxkfucf2i" path="res://classes/parts/TeleporterPart.gd" id="1_2ba36"]
+[ext_resource type="PackedScene" uid="uid://dxxqyds7wbtxp" path="res://scenes/fx/area_burst_boom.tscn" id="2_rlar2"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_34flv"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="4_rlar2"]
+
+[node name="Advanced Teleporter" type="Node2D" unique_id=122091808]
+script = ExtResource("1_2ba36")
+cooldown = 1.5
+ai_tp_dist = 300.0
+fx = ExtResource("2_rlar2")
+category = "Player Secondaries"
+gp_usage = 3
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("3_34flv")]
+position = Vector2(-15.000001, -15)
+scale = Vector2(0.09388931, 0.09388931)
+
+[node name="Bubble03" parent="." unique_id=1039353022 instance=ExtResource("3_34flv")]
+position = Vector2(15, -15.000001)
+scale = Vector2(0.09388931, 0.09388931)
+
+[node name="Bubble04" parent="." unique_id=1383201186 instance=ExtResource("3_34flv")]
+position = Vector2(15.000001, 15)
+scale = Vector2(0.09388931, 0.09388931)
+
+[node name="Bubble05" parent="." unique_id=614055061 instance=ExtResource("3_34flv")]
+position = Vector2(-15.000001, 15)
+scale = Vector2(0.09388931, 0.09388931)
+
+[node name="Bubble01" parent="." unique_id=1510724904 instance=ExtResource("3_34flv")]
+position = Vector2(-28, 0)
+scale = Vector2(0.22732846, 0.22732846)
+
+[node name="Bubble06" parent="." unique_id=833668270 instance=ExtResource("3_34flv")]
+position = Vector2(28, 0)
+scale = Vector2(0.22732846, 0.22732846)
+
+[node name="Bubble12" parent="." unique_id=925261724 instance=ExtResource("4_rlar2")]
+position = Vector2(0, -15.999999)
+scale = Vector2(0.1666359, 0.1666359)
+
+[node name="Bubble13" parent="." unique_id=1979430545 instance=ExtResource("4_rlar2")]
+position = Vector2(0, 16)
+scale = Vector2(0.1666359, 0.1666359)
+
+[node name="Bubble07" parent="." unique_id=509203413 instance=ExtResource("3_34flv")]
+position = Vector2(3.516674e-06, 0)
+scale = Vector2(0.22732846, 0.22732846)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dm85jhjtmlkhm"]
+
+[ext_resource type="Script" uid="uid://chx5lwtp5vep7" path="res://classes/game/Explosion.gd" id="1_bp8rk"]
+[ext_resource type="PackedScene" uid="uid://dxxqyds7wbtxp" path="res://scenes/fx/area_burst_boom.tscn" id="2_xb1a2"]
+
+[node name="StunBurstExplosion" type="Area2D" unique_id=476644725]
+script = ExtResource("1_bp8rk")
+dmg_info = {
+"amount": 0,
+"duration": 2.0,
+"type": "stun"
+}
+lifetime = 0.5
+radius = 250.0
+metadata/_custom_type_script = "uid://chx5lwtp5vep7"
+
+[node name="AreaBurstBoom" parent="." unique_id=800833179 instance=ExtResource("2_xb1a2")]
+modulate = Color(1, 1, 1, 0.5019608)
+grow_rate = 30.0

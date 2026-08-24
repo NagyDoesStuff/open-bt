@@ -12,7 +12,7 @@ var dist_from_center: float = 0.0
 var accel: float = 0.92
 var add_value: float = 1.0
 
-var can_follow: bool = false
+var force_follow: bool = false
 
 func _ready() -> void:
 	scale = Vector2.ONE * (GlobalClass.MIN_BUBBLE_POINT_SIZE + (add_value * GlobalClass.BUBBLE_POINT_GROW_SIZE))
@@ -32,7 +32,7 @@ func _ready() -> void:
 	area_entered.connect(on_area_entered, ConnectFlags.CONNECT_DEFERRED)
 	
 func _process(_delta: float) -> void:
-	if GlobalClass.player_cluster and !GlobalClass.world.mid_battle and GlobalClass.player_cluster.enabled: 
+	if force_follow or GlobalClass.player_cluster and !GlobalClass.world.mid_battle and GlobalClass.player_cluster.enabled: 
 		velocity += (GlobalClass.player_cluster.global_position - global_position).normalized() * follow_speed
 	global_position += velocity
 	velocity *= accel

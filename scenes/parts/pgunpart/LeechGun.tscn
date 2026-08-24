@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://byv7terysdhc0"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_55s1r"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_kd46a"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_okvq1"]
+
+[node name="Leech Cannon" type="Node2D" unique_id=122091808]
+script = ExtResource("1_55s1r")
+cooldown = 0.2
+spread = 0.1
+category = "Player Primaries"
+gp_usage = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_kd46a")]
+scale = Vector2(0.28184378, 0.28184378)
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_kd46a")]
+position = Vector2(19, 0)
+scale = Vector2(0.10292363, 0.10292363)
+
+[node name="Bubble05" parent="." unique_id=1646062222 instance=ExtResource("2_kd46a")]
+position = Vector2(31, 0)
+scale = Vector2(0.10292363, 0.10292363)
+
+[node name="Bubble03" parent="." unique_id=1999600052 instance=ExtResource("2_kd46a")]
+position = Vector2(-17, -14)
+scale = Vector2(0.15568385, 0.15568385)
+
+[node name="Bubble04" parent="." unique_id=357848560 instance=ExtResource("2_kd46a")]
+position = Vector2(-16, 14)
+scale = Vector2(0.15568385, 0.15568385)
+
+[node name="Bubble06" parent="." unique_id=580304273 instance=ExtResource("2_kd46a")]
+position = Vector2(39, -10)
+scale = Vector2(0.10292363, 0.10292363)
+
+[node name="Bubble07" parent="." unique_id=431230797 instance=ExtResource("2_kd46a")]
+position = Vector2(39, 10)
+scale = Vector2(0.10292363, 0.10292363)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(44, 0)
+script = ExtResource("3_okvq1")
+prj_info = {
+"dmg_info": {
+"amount": 2,
+"type": "steal"
+},
+"size": 0.66,
+"speed": 2000.0,
+"template": "uid://c1xd4a7w7tfn4"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

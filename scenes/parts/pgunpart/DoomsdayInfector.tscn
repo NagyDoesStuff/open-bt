@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c2jwksc3ip0yp"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_k17ep"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_oh2ml"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_omm8a"]
+
+[node name="Doomsday Infector" type="Node2D" unique_id=122091808]
+script = ExtResource("1_k17ep")
+cooldown = 3.0
+keybind = "space"
+category = "Player Primaries"
+gp_usage = 4
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble08" parent="." unique_id=1039353022 instance=ExtResource("2_oh2ml")]
+position = Vector2(-5.9767437, 11.687345)
+scale = Vector2(0.11745442, 0.11745442)
+
+[node name="Bubble09" parent="." unique_id=651734417 instance=ExtResource("2_oh2ml")]
+position = Vector2(-5.9767437, -11.312657)
+scale = Vector2(0.11745442, 0.11745442)
+
+[node name="Bubble01" parent="." unique_id=1682330749 instance=ExtResource("2_oh2ml")]
+position = Vector2(0, -26.687344)
+scale = Vector2(0.19218306, 0.19218306)
+
+[node name="Bubble03" parent="." unique_id=1298421369 instance=ExtResource("2_oh2ml")]
+position = Vector2(0, 26.687342)
+scale = Vector2(0.19218306, 0.19218306)
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_oh2ml")]
+position = Vector2(-10.122311, 0)
+scale = Vector2(0.14190948, 0.14190948)
+
+[node name="Bubble04" parent="." unique_id=2067398103 instance=ExtResource("2_oh2ml")]
+position = Vector2(-11.12231, -41.37469)
+scale = Vector2(0.11745442, 0.11745442)
+
+[node name="Bubble05" parent="." unique_id=1523600002 instance=ExtResource("2_oh2ml")]
+position = Vector2(-11.12231, 41.374695)
+scale = Vector2(0.11745442, 0.11745442)
+
+[node name="Bubble06" parent="." unique_id=1810704511 instance=ExtResource("2_oh2ml")]
+position = Vector2(18.023262, 22.687347)
+scale = Vector2(0.11745442, 0.11745442)
+
+[node name="Bubble07" parent="." unique_id=419412381 instance=ExtResource("2_oh2ml")]
+position = Vector2(18.023262, -22.687347)
+scale = Vector2(0.11745442, 0.11745442)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(21.8019, 0)
+scale = Vector2(0.7786393, 0.7786393)
+script = ExtResource("3_omm8a")
+prj_info = {
+"dmg_info": {
+"amount": 2.0,
+"type": "dmg"
+},
+"hit_fx": "uid://dqbky1rhsnesm",
+"homing": true,
+"size": 2.0,
+"speed": 1500.0,
+"template": "uid://kqhpd4868ion",
+"turn_rate": 10.0
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

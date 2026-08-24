@@ -33,9 +33,9 @@ var force_full_progress: bool = false
 
 ## For player tanks, this serves as the progression variable for unlocking the next class.
 ## For enemy tanks, this serves as the health variable.
-var progress: int = 1:
+var progress: float = 1.0:
 	set(value):
-		progress = clampi(value, 0, max_progress)
+		progress = clampf(value, 0, max_progress)
 		progress_changed.emit()
 		check_progress()
 
@@ -115,6 +115,11 @@ func recieve_hit(dmg_info: Dictionary, from_angle: float = 0.0) -> void:
 			slow_down(dmg_info["amount"], dmg_info["duration"])
 		"jam":
 			jam_weapons(dmg_info["duration"])
+		"stun":
+			stun(dmg_info["duration"])
+		"steal":
+			progress -= dmg_info["amount"]
+			drop_points(dmg_info["amount"], true, true)
 		_:
 			progress -= dmg_info["amount"]
 		
@@ -141,13 +146,18 @@ func kill() -> void:
 	
 	GlobalClass.play_sound("uid://dq4v7w25xntxg")
 	killed.emit()
-	drop_points()
+	drop_points(drop_value)
 	if get_parent():
 		get_parent().remove_child(self)
 	queue_free()
 
-func drop_points() -> void:
-	var avaliable_value_to_convert: int = drop_value
+func drop_points(amount: int, follow: bool = false, remove: bool = false) -> void:
+	if amount <= 0: return
+	if remove: 
+		if amount > drop_value: return
+		drop_value -= amount
+	
+	var avaliable_value_to_convert: int = amount
 	var available_bubble_sizes: Array[int] = GlobalClass.FIXED_BUBBLE_SIZES.duplicate()
 	var values_to_erase: Array[int] = []
 	for size in available_bubble_sizes:
@@ -155,8 +165,8 @@ func drop_points() -> void:
 			values_to_erase.append(size)
 	for value in values_to_erase:
 		available_bubble_sizes.erase(value)
+	if available_bubble_sizes.is_empty(): return
 	
-	print("Picked sizes: " + str(available_bubble_sizes) + " with total drop value of " + str(drop_value))
 	while avaliable_value_to_convert > 0:
 		var bubble_value: int = available_bubble_sizes.pick_random()
 		
@@ -166,12 +176,12 @@ func drop_points() -> void:
 		var pt: BubblePoint = GlobalClass.BUBBLE_POINT.instantiate()
 		pt.add_value = bubble_value
 		pt.global_position = global_position
+		pt.force_follow = follow
 		
 		avaliable_value_to_convert -= bubble_value
-		print("Created bubble with value of " + str(bubble_value))
 		GlobalClass.world.call_deferred("add_child", pt)
 
-func slow_down(mult: float, duration: float) -> void:
+func slow_down(mult: float, duration: float, with_color: bool = true) -> void:
 	if is_slown_down: return
 	is_slown_down = true
 	
@@ -180,27 +190,37 @@ func slow_down(mult: float, duration: float) -> void:
 	speed *= mult
 	turn_rate *= mult
 	
-	modulate = GlobalClass.SLOWN_DOWN_COLOR
+	if with_color: modulate = GlobalClass.SLOWN_DOWN_COLOR
 	
 	await get_tree().create_timer(duration).timeout
 	
-	modulate = Color.WHITE
+	if with_color: modulate = Color.WHITE
 	
 	speed = init_speed
 	turn_rate = init_turn_rate
 	is_slown_down = false
 
-func jam_weapons(duration: float) -> void:
+func jam_weapons(duration: float, with_color: bool = true) -> void:
 	if is_jammed: return
 	is_jammed = true
 	
-	modulate = GlobalClass.JAMMED_COLOR
+	if with_color: modulate = GlobalClass.JAMMED_COLOR
+	
+	await get_tree().create_timer(duration).timeout
+	
+	if with_color: modulate = Color.WHITE
+	
+	is_jammed = false
+
+func stun(duration: float) -> void:
+	slow_down(0.0, duration, false)
+	jam_weapons(0.0, false)
+	
+	modulate = GlobalClass.STUNNED_COLOR
 	
 	await get_tree().create_timer(duration).timeout
 	
 	modulate = Color.WHITE
-	
-	is_jammed = false
 
 func get_used_gp() -> int:
 	var gp: int = 0

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_4ucyv"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_6846y"]
 
-[node name="Enemy 3 Spread Gun" type="Node2D" unique_id=122091808]
+[node name="Enemy 5 Spread Gun" type="Node2D" unique_id=122091808]
 script = ExtResource("1_lgxji")
 cooldown = 1.5
 category = "Enemy Weapons"

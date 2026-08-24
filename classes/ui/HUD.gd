@@ -48,9 +48,9 @@ func search_for_cluster(text: String) -> void:
 			GlobalClass.world.spawn_as_enemy(loaded_cluster)
 
 func update_progression_bar() -> void:
-	progression_bar.value = GlobalClass.player_cluster.progress
+	progression_bar.value = int(GlobalClass.player_cluster.progress)
 	progression_bar.max_value = GlobalClass.player_cluster.max_progress
-	progression_num.text = str(GlobalClass.player_cluster.progress) + "/" + str(GlobalClass.player_cluster.max_progress)
+	progression_num.text = str(int(GlobalClass.player_cluster.progress)) + "/" + str(GlobalClass.player_cluster.max_progress)
 	
 	if !mid_transition:
 		mid_transition = true

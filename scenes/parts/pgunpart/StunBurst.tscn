@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dnairdylbmsuc"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_p2igc"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_qvjp0"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_udxnw"]
+
+[sub_resource type="Animation" id="Animation_qvjp0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_p2igc"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.281439977927592]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qvjp0"]
+_data = {
+&"RESET": SubResource("Animation_qvjp0"),
+&"default": SubResource("Animation_p2igc")
+}
+
+[node name="Stun Burst" type="Node2D" unique_id=122091808]
+script = ExtResource("1_p2igc")
+cooldown = 3.0
+keybind = "space"
+fixed = true
+category = "Player Secondaries"
+gp_usage = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble01" parent="." unique_id=1754767230 instance=ExtResource("2_qvjp0")]
+scale = Vector2(0.28184378, 0.28184378)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+script = ExtResource("3_udxnw")
+prj_info = {
+"dmg_info": {
+"amount": 0,
+"type": "dmg"
+},
+"hit_fx": "uid://bj32jn40b07kx",
+"size": 1.0,
+"speed": 0.0,
+"template": "uid://5qkk56ofxno0"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Pivot" type="Node2D" parent="." unique_id=2088812884]
+
+[node name="Bubble02" parent="Pivot" unique_id=1039353022 instance=ExtResource("2_qvjp0")]
+position = Vector2(56, 0)
+scale = Vector2(0.07764849, 0.07764849)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1888244642]
+libraries/ = SubResource("AnimationLibrary_qvjp0")
+autoplay = &"default"
