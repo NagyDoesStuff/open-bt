@@ -243,7 +243,8 @@ scale = Vector2(0.17888321, 0.17888321)
 libraries/ = SubResource("AnimationLibrary_hmlpk")
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=704077057]
-position = Vector2(26, 0)
+position = Vector2(-38, 0)
+rotation = 3.1415927
 script = ExtResource("5_hmlpk")
 prj_info = {
 "dmg_info": {

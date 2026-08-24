@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dfwq6ptb4qeks"]
 
 [ext_resource type="Script" uid="uid://daba0td05hvxq" path="res://classes/ui/PauseMenu.gd" id="1_f6eus"]
-[ext_resource type="FontFile" uid="uid://c6qny5ft6citq" path="res://resources/fonts/142_Arial.ttf" id="2_8uki6"]
-[ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="3_0bnpd"]
+[ext_resource type="FontFile" uid="uid://cxtddjit6snrw" path="res://resources/fonts/361_Billo.ttf" id="2_f6eus"]
+[ext_resource type="FontFile" uid="uid://dqv2r7jhavyns" path="res://resources/fonts/503_Accidental Presidency.ttf" id="3_f6eus"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4foi6"]
 bg_color = Color(1, 1, 1, 0.2509804)
@@ -17,8 +17,8 @@ corner_radius_bottom_left = 10
 corner_detail = 4
 
 [sub_resource type="LabelSettings" id="LabelSettings_l0ufu"]
-font = ExtResource("2_8uki6")
-font_size = 32
+font = ExtResource("2_f6eus")
+font_size = 128
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngtk0"]
 bg_color = Color(1, 1, 1, 0.2509804)
@@ -122,8 +122,8 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/icon_max_width = 0
-theme_override_fonts/font = ExtResource("3_0bnpd")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_f6eus")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ngtk0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4foi6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4foi6")
@@ -134,8 +134,8 @@ text = "Resume"
 layout_mode = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/icon_max_width = 0
-theme_override_fonts/font = ExtResource("3_0bnpd")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_f6eus")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ngtk0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4foi6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4foi6")

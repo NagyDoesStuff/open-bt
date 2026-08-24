@@ -1,196 +1,129 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dm63l0ll67jpp"]
 
-[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_i8gpj"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="2_wlg3i"]
-[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="3_05n7h"]
-[ext_resource type="PackedScene" path="res://scenes/parts/pgunpart/LargeMachineGun.tscn" id="4_y4gq0"]
-[ext_resource type="Script" path="res://classes/parts/GunPart.gd" id="5_x6raa"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="6_utxal"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble11_dark.tscn" id="7_jdi5g"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble11_normal.tscn" id="8_gjjg5"]
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_i8gpj"]
+[ext_resource type="PackedScene" uid="uid://dc1ruuaqakf21" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="2_wlg3i"]
+[ext_resource type="PackedScene" uid="uid://ba2cnfb75y4mk" path="res://scenes/parts/pgunpart/LargeMachineGun.tscn" id="4_y4gq0"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="6_utxal"]
+[ext_resource type="PackedScene" uid="uid://cj1d1rxssxh8r" path="res://scenes/parts/collisionpart/bubble11_dark.tscn" id="7_jdi5g"]
+[ext_resource type="PackedScene" uid="uid://d2w5ax1x2vnev" path="res://scenes/parts/collisionpart/bubble11_normal.tscn" id="8_gjjg5"]
 
 [node name="Jim Jr" type="Area2D" unique_id=8924096]
 script = ExtResource("1_i8gpj")
 cluster_class = 2
 
-[node name="Medium Dark Bubble" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("2_wlg3i")]
+[node name="Medium Dark Bubble" parent="." unique_id=878054447 instance=ExtResource("2_wlg3i")]
 position = Vector2(-17.729126, 0)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Large Machine Gun" type="Node2D" parent="." unique_id=122091808 instance=ExtResource("4_y4gq0")]
+[node name="Large Machine Gun" parent="." unique_id=122091808 instance=ExtResource("4_y4gq0")]
 position = Vector2(8.541748, 0)
-script = ExtResource("5_x6raa")
-cooldown = 0.15
-category = "Player Primaries"
 disabled = true
 editor_mode = true
-gp_usage = 4
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
-[node name="Small Bubble" type="Node2D" parent="." unique_id=373555849 instance=ExtResource("6_utxal")]
+[node name="Small Bubble" parent="." unique_id=373555849 instance=ExtResource("6_utxal")]
 position = Vector2(-53.09369, -56.82498)
 scale = Vector2(0.74, 0.74)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6201" type="Node2D" parent="." unique_id=389023702 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6201" parent="." unique_id=389023702 instance=ExtResource("6_utxal")]
 position = Vector2(-53.09369, 56.82495)
 scale = Vector2(0.74, 0.74)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6207" type="Node2D" parent="." unique_id=1724824618 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6207" parent="." unique_id=1724824618 instance=ExtResource("6_utxal")]
 position = Vector2(-32.885376, -41.67218)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_6207" type="Node2D" parent="." unique_id=925056655 instance=ExtResource("6_utxal")]
+[node name="_Node2D_6207" parent="." unique_id=925056655 instance=ExtResource("6_utxal")]
 position = Vector2(-32.885376, 41.67218)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6216" type="Node2D" parent="." unique_id=1542829472 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6216" parent="." unique_id=1542829472 instance=ExtResource("6_utxal")]
 position = Vector2(0.45837402, -40.662018)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_6216" type="Node2D" parent="." unique_id=1040138666 instance=ExtResource("6_utxal")]
+[node name="_Node2D_6216" parent="." unique_id=1040138666 instance=ExtResource("6_utxal")]
 position = Vector2(0.45837402, 40.661987)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6224" type="Node2D" parent="." unique_id=164312883 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6224" parent="." unique_id=164312883 instance=ExtResource("6_utxal")]
 position = Vector2(29.760498, -50.763855)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_6224" type="Node2D" parent="." unique_id=1461629201 instance=ExtResource("6_utxal")]
+[node name="_Node2D_6224" parent="." unique_id=1461629201 instance=ExtResource("6_utxal")]
 position = Vector2(29.760498, 50.763855)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6233" type="Node2D" parent="." unique_id=1397293856 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6233" parent="." unique_id=1397293856 instance=ExtResource("6_utxal")]
 position = Vector2(55.020874, -51.774048)
 scale = Vector2(0.74, 0.74)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_6233" type="Node2D" parent="." unique_id=72721033 instance=ExtResource("6_utxal")]
+[node name="_Node2D_6233" parent="." unique_id=72721033 instance=ExtResource("6_utxal")]
 position = Vector2(55.020874, 51.774048)
 scale = Vector2(0.74, 0.74)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6251" type="Node2D" parent="." unique_id=1920675236 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6251" parent="." unique_id=1920675236 instance=ExtResource("6_utxal")]
 position = Vector2(-62.18744, -66.92682)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_6251" type="Node2D" parent="." unique_id=1898251090 instance=ExtResource("6_utxal")]
+[node name="_Node2D_6251" parent="." unique_id=1898251090 instance=ExtResource("6_utxal")]
 position = Vector2(-62.18744, 66.92682)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6271" type="Node2D" parent="." unique_id=367777577 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6271" parent="." unique_id=367777577 instance=ExtResource("6_utxal")]
 position = Vector2(-37.93744, 0)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6277" type="Node2D" parent="." unique_id=1952774311 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6277" parent="." unique_id=1952774311 instance=ExtResource("6_utxal")]
 position = Vector2(-51.072876, 0)
 scale = Vector2(0.69, 0.69)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6285" type="Node2D" parent="." unique_id=493659841 instance=ExtResource("6_utxal")]
+[node name="@Node2D@6285" parent="." unique_id=493659841 instance=ExtResource("6_utxal")]
 position = Vector2(-62.18744, 0)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Dark Yellow Bubble" type="Node2D" parent="." unique_id=1244370914 instance=ExtResource("7_jdi5g")]
+[node name="Dark Yellow Bubble" parent="." unique_id=1244370914 instance=ExtResource("7_jdi5g")]
 position = Vector2(68.15631, -61.875916)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6339" type="Node2D" parent="." unique_id=1146671266 instance=ExtResource("7_jdi5g")]
+[node name="@Node2D@6339" parent="." unique_id=1146671266 instance=ExtResource("7_jdi5g")]
 position = Vector2(68.15631, 61.875916)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Yellow Bubble" type="Node2D" parent="." unique_id=53441213 instance=ExtResource("8_gjjg5")]
+[node name="Yellow Bubble" parent="." unique_id=53441213 instance=ExtResource("8_gjjg5")]
 position = Vector2(72.198, -37.63147)
 scale = Vector2(0.9, 0.9)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@6358" type="Node2D" parent="." unique_id=757913681 instance=ExtResource("8_gjjg5")]
+[node name="@Node2D@6358" parent="." unique_id=757913681 instance=ExtResource("8_gjjg5")]
 position = Vector2(72.198, 37.63147)
 scale = Vector2(0.9, 0.9)
-script = ExtResource("3_05n7h")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"

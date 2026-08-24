@@ -8,9 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://cbkp0m270hr57" path="res://scenes/parts/collisionpart/bubble03_dark.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://b73e2g06t2qu5" path="res://scenes/parts/pgunpart/Railgun.tscn" id="9"]
-[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="10"]
+[ext_resource type="PackedScene" uid="uid://gaeqvwe7agfr" path="res://scenes/parts/pgunpart/AutoGun.tscn" id="10_cicf1"]
 [ext_resource type="PackedScene" uid="uid://drs465sweieiu" path="res://scenes/parts/pgunpart/MachineGun.tscn" id="11"]
-[ext_resource type="PackedScene" uid="uid://cd4xnd1m3octc" path="res://scenes/parts/pgunpart/BasicGun.tscn" id="12"]
 
 [node name="Balrog" type="Area2D" unique_id=1007637731]
 script = ExtResource("1")
@@ -181,14 +180,6 @@ position = Vector2(-2.572876, 0)
 disabled = true
 editor_mode = true
 
-[node name="Railgun" parent="." unique_id=122091808 instance=ExtResource("9")]
-position = Vector2(0.45837402, 0)
-script = ExtResource("10")
-category = "Player Primaries"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
-
 [node name="Machine Gun" parent="." unique_id=1138307096 instance=ExtResource("11")]
 position = Vector2(-104.62494, -75.0083)
 disabled = true
@@ -199,7 +190,7 @@ position = Vector2(-104.62494, 75.0083)
 disabled = true
 editor_mode = true
 
-[node name="Basic Gun" parent="." unique_id=1923613406 instance=ExtResource("12")]
-position = Vector2(-97.552, 0)
-disabled = true
-editor_mode = true
+[node name="Railgun" parent="." unique_id=1757355056 instance=ExtResource("9")]
+
+[node name="Auto Cannon" parent="." unique_id=122091808 instance=ExtResource("10_cicf1")]
+position = Vector2(-98, 0)

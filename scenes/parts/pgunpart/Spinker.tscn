@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bfbjpe8wlclxx"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_ympus"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_3fiog"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_sd1kb"]
+
+[node name="Spinker" type="Node2D" unique_id=122091808]
+script = ExtResource("1_ympus")
+cooldown = 2.4
+amount_per_salvo = 20
+salvo_interval = 0.1
+fixed = true
+auto_shoot = true
+full_turn_amount = 1
+category = "Player Passives"
+gp_usage = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble01" parent="." unique_id=15082858 instance=ExtResource("2_3fiog")]
+scale = Vector2(0.2471731, 0.2471731)
+
+[node name="Bubble02" parent="." unique_id=1039353022 instance=ExtResource("2_3fiog")]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(0.09632883, 0.09632883)
+
+[node name="Bubble03" parent="." unique_id=182115153 instance=ExtResource("2_3fiog")]
+position = Vector2(18.999998, 9.536743e-07)
+scale = Vector2(0.104656115, 0.104656115)
+
+[node name="Bubble04" parent="." unique_id=2047924323 instance=ExtResource("2_3fiog")]
+position = Vector2(-19.000002, 9.536743e-07)
+scale = Vector2(0.104656115, 0.104656115)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(27, 0)
+script = ExtResource("3_sd1kb")
+muted = true
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"size": 0.55,
+"speed": 1000.0,
+"template": "uid://cnlneqp8i4qud"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="GunBarrel2" type="Node2D" parent="." unique_id=698649664]
+position = Vector2(-27, 0)
+rotation = 3.1415927
+script = ExtResource("3_sd1kb")
+muted = true
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"size": 0.55,
+"speed": 1000.0,
+"template": "uid://cnlneqp8i4qud"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

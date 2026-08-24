@@ -11,9 +11,13 @@ var phase_timer: Timer = Timer.new()
 func _subready() -> void:
 	if editor_mode or disabled: return
 	
+	# Delay so the cluster fade-in isn't interupted.
+	await get_tree().create_timer(1.0).timeout
+	
 	phase_timer.timeout.connect(toggle_phase)
 	phase_timer.autostart = true
 	add_child(phase_timer)
+	
 	toggle_phase()
 
 func toggle_phase() -> void:

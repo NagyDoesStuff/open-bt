@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://byrxpb58jvhni" path="res://classes/ui/Editor.gd" id="1_b1cmn"]
 [ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="2_6d1h4"]
 [ext_resource type="StyleBox" uid="uid://c8w544l3ckmgp" path="res://resources/stylebox/01.tres" id="2_x4mk5"]
+[ext_resource type="Texture2D" uid="uid://ri3wmfadomni" path="res://img/bubbles/255.png" id="3_cdtuk"]
 [ext_resource type="LabelSettings" uid="uid://crwwtp3l60tb7" path="res://resources/labelsettings/01.tres" id="3_coh7o"]
 [ext_resource type="Texture2D" uid="uid://dy64dhn0817qu" path="res://img/bubbles/1814.png" id="3_p2r2s"]
 [ext_resource type="Texture2D" uid="uid://b1seh8lakjoii" path="res://img/ui/save_icon.png" id="3_uq5ih"]
@@ -17,12 +18,11 @@
 [ext_resource type="FontFile" uid="uid://c6qny5ft6citq" path="res://resources/fonts/142_Arial.ttf" id="11_p70fw"]
 [ext_resource type="Texture2D" uid="uid://53sencjl08cp" path="res://img/bg.png" id="13_hrj1y"]
 [ext_resource type="Texture2D" uid="uid://dpveh2ekbujkj" path="res://img/bubbles/2246.png" id="13_xbjxy"]
-[ext_resource type="Texture2D" uid="uid://3of6wli6kjpb" path="res://img/bubbles/1818.png" id="14_m77bv"]
 [ext_resource type="Texture2D" uid="uid://dv6m32fw2psqh" path="res://img/ui/6.png" id="14_p2r2s"]
 [ext_resource type="FontFile" uid="uid://cfenaod55v0rd" path="res://resources/fonts/741_GoldyRound_8pt_st.ttf" id="20_cdtuk"]
 [ext_resource type="FontFile" uid="uid://cw7h0rxl357ph" path="res://resources/fonts/156_Arial_10pt_st.ttf" id="20_kv4ft"]
 
-[sub_resource type="Curve" id="Curve_ymrjv"]
+[sub_resource type="Curve" id="Curve_74iyh"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.12783504, 1), 0.0, 0.0, 0, 0, Vector2(0.6350515, 0.94), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
@@ -148,22 +148,19 @@ position = Vector2(983, 558)
 scale = Vector2(0.3591958, 0.24948315)
 texture = ExtResource("13_hrj1y")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="BG" unique_id=1729752112]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="BG" unique_id=2059613719]
 position = Vector2(791, 540)
 amount = 40
-texture = ExtResource("14_m77bv")
+texture = ExtResource("3_cdtuk")
 lifetime = 10.0
 emission_shape = 3
 emission_rect_extents = Vector2(1000, 500)
 gravity = Vector2(0, 0)
-initial_velocity_min = 100.0
-initial_velocity_max = 100.0
-orbit_velocity_min = -0.04
-orbit_velocity_max = 0.04
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
 scale_amount_min = 0.03
 scale_amount_max = 0.06
-scale_amount_curve = SubResource("Curve_ymrjv")
-color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+scale_amount_curve = SubResource("Curve_74iyh")
 
 [node name="SelectIcon" type="Sprite2D" parent="." unique_id=99527726]
 z_index = 1

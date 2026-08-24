@@ -18,7 +18,7 @@ max_progress = 16
 min_to_available = 6
 
 [node name="Seeker Carrier" parent="." unique_id=640133807 instance=ExtResource("2_v8v3d")]
-position = Vector2(23, 0)
+position = Vector2(32, 0)
 scale = Vector2(1.2965816, 1.2965816)
 
 [node name="@Node2D@44" parent="." unique_id=878054447 instance=ExtResource("5_36xh3")]
@@ -27,7 +27,8 @@ disabled = true
 editor_mode = true
 
 [node name="Medium Bubble" parent="." unique_id=2896653 instance=ExtResource("7_8ghra")]
-position = Vector2(0.45837402, -0.5)
+position = Vector2(-11.541626, -0.5)
+scale = Vector2(0.6675835, 0.6675835)
 disabled = true
 editor_mode = true
 
@@ -59,12 +60,12 @@ disabled = true
 editor_mode = true
 
 [node name="Small Bubble" parent="." unique_id=959854636 instance=ExtResource("8_8awlh")]
-position = Vector2(29.760498, -31.621277)
+position = Vector2(43.760498, -67.62128)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@53" parent="." unique_id=682986117 instance=ExtResource("8_8awlh")]
-position = Vector2(29.760498, 30.621277)
+position = Vector2(43.760498, 66.62128)
 disabled = true
 editor_mode = true
 
@@ -81,13 +82,13 @@ disabled = true
 editor_mode = true
 
 [node name="Small Light Bubble" parent="." unique_id=5783655 instance=ExtResource("9_konpm")]
-position = Vector2(43.90631, -28.590698)
+position = Vector2(59.90631, -60.5907)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@68" parent="." unique_id=577970143 instance=ExtResource("9_konpm")]
-position = Vector2(43.90631, 27.590698)
+position = Vector2(59.90631, 59.5907)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true

@@ -1,0 +1,292 @@
+[gd_scene format=3 uid="uid://bx80poiidxus0"]
+
+[ext_resource type="Script" uid="uid://bdpqrhn3b5dvh" path="res://classes/parts/ChargeGunPart.gd" id="1_n8ic2"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_7h7o7"]
+[ext_resource type="Texture2D" uid="uid://cd847ugdtcc6k" path="res://img/bubbles/shock1.png" id="3_x2ql0"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_pnbj3"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="5_k2esn"]
+
+[sub_resource type="Animation" id="Animation_i0nv6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OrbBubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24.000008, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OrbBubble:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15487051, 0.15487051)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OrbBubble:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Base:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Arm:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5235988]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Arm2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.5235988]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Arm:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19, -20)]
+}
+
+[sub_resource type="Animation" id="Animation_xc16d"]
+resource_name = "charge"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OrbBubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(24.000008, 0), Vector2(29, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-4, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OrbBubble:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0.15487051, 0.15487051), Vector2(0.28, 0.28)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OrbBubble:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.353256, 1.353256, 1.353256, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Arm:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.5235988, -0.8726646259971648]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Arm2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [-0.5235988, 0.8726646259971648]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Arm2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(19, 20), Vector2(19, 25)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Arm:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(19, -20), Vector2(19, -25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0nv6"]
+_data = {
+&"RESET": SubResource("Animation_i0nv6"),
+&"charge": SubResource("Animation_xc16d")
+}
+
+[node name="Shock Cannon" type="Node2D" unique_id=733669987 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_n8ic2")
+spread = 0.4
+amount_per_salvo = 3
+salvo_interval = 0.1
+keybind = "space"
+fixed = true
+animation_player = NodePath("AnimationPlayer")
+category = "Player Secondaries"
+gp_usage = 6
+
+[node name="OrbBubble" type="Sprite2D" parent="." unique_id=511260881]
+position = Vector2(24.000008, 0)
+scale = Vector2(0.15487051, 0.15487051)
+texture = ExtResource("3_x2ql0")
+
+[node name="Fixed" type="Node2D" parent="." unique_id=1590270739]
+
+[node name="Bubble23" parent="Fixed" unique_id=2024890137 instance=ExtResource("2_7h7o7")]
+position = Vector2(1.4305115e-05, -20.1193)
+scale = Vector2(0.16396485, 0.16396485)
+
+[node name="Bubble24" parent="Fixed" unique_id=2010275620 instance=ExtResource("2_7h7o7")]
+position = Vector2(1.4305115e-05, 20.119297)
+scale = Vector2(0.16396485, 0.16396485)
+
+[node name="Bubble14" parent="Fixed" unique_id=803774573 instance=ExtResource("4_pnbj3")]
+position = Vector2(-14.589485, -20.1193)
+scale = Vector2(0.093205795, 0.093205795)
+
+[node name="Bubble15" parent="Fixed" unique_id=1024978159 instance=ExtResource("4_pnbj3")]
+position = Vector2(-14.589485, 20.119297)
+scale = Vector2(0.093205795, 0.093205795)
+
+[node name="Bubble22" parent="Fixed" unique_id=1039353022 instance=ExtResource("2_7h7o7")]
+position = Vector2(-15.999998, -7.0000024)
+scale = Vector2(0.074, 0.074)
+
+[node name="Bubble25" parent="Fixed" unique_id=1588316960 instance=ExtResource("2_7h7o7")]
+position = Vector2(-15.999999, 6.999997)
+scale = Vector2(0.074, 0.074)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=704077057]
+position = Vector2(29, -8.742278e-08)
+script = ExtResource("5_k2esn")
+prj_info = {
+"dmg_info": {
+"amount": 1.0,
+"duration": 0.0,
+"type": "dmg"
+},
+"hit_fx": "uid://bwddu713otuhv",
+"homing": false,
+"sin_turn_mode_freq": 3.0,
+"size": 1.25,
+"speed": 500.0,
+"target_mode": "default",
+"template": "uid://dtrrfq0hi5esq",
+"turn_mode": "default",
+"turn_rate": 10.0
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1743076791]
+libraries/ = SubResource("AnimationLibrary_i0nv6")
+
+[node name="Arm" type="Node2D" parent="." unique_id=438369916]
+position = Vector2(19, -20)
+rotation = 0.5235988
+
+[node name="Bubble21" parent="Arm" unique_id=348594134 instance=ExtResource("2_7h7o7")]
+position = Vector2(12.059639, 0.39736366)
+scale = Vector2(0.05806271, 0.05806271)
+
+[node name="Bubble19" parent="Arm" unique_id=347262917 instance=ExtResource("2_7h7o7")]
+scale = Vector2(0.14794223, 0.14794223)
+
+[node name="Arm2" type="Node2D" parent="." unique_id=456941457]
+position = Vector2(19, 20)
+rotation = -0.5235988
+
+[node name="Bubble22" parent="Arm2" unique_id=704577902 instance=ExtResource("2_7h7o7")]
+position = Vector2(12.059641, 1.9073486e-06)
+scale = Vector2(0.05806271, 0.05806271)
+
+[node name="Bubble20" parent="Arm2" unique_id=2040772805 instance=ExtResource("2_7h7o7")]
+position = Vector2(0, 0.39736557)
+scale = Vector2(0.14794223, 0.14794223)
+
+[node name="Base" parent="." unique_id=518034357 instance=ExtResource("4_pnbj3")]
+scale = Vector2(0.20911707, 0.20911707)

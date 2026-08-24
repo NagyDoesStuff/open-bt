@@ -7,6 +7,7 @@
 [node name="Basic" type="Area2D" unique_id=493591574]
 monitoring = false
 script = ExtResource("1_tqnu2")
+available_as_choice = false
 max_progress = 50
 
 [node name="Large Bubble" parent="." unique_id=878054447 instance=ExtResource("2_un82f")]

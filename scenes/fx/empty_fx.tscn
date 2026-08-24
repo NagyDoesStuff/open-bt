@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bj32jn40b07kx"]
+
+[ext_resource type="Script" uid="uid://bdqqcca4fd1l6" path="res://classes/fx/ExplosionFX.gd" id="1_l1fpu"]
+
+[node name="Empty" type="Node2D" unique_id=800833179]
+script = ExtResource("1_l1fpu")
+lifetime = 0.01
+random_rotation = false

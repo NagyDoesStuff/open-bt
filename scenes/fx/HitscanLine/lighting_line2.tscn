@@ -11,7 +11,7 @@ offsets = PackedFloat32Array(0.6875, 1)
 colors = PackedColorArray(0.55, 0.5950001, 1, 1, 1, 1, 1, 0.25882354)
 
 [node name="LightingLine" type="Line2D" unique_id=1820015217]
-width = 3.0
+width = 6.0
 width_curve = SubResource("Curve_5nwvc")
 gradient = SubResource("Gradient_kqog2")
 script = ExtResource("1_wc1ml")

@@ -31,6 +31,7 @@ func on_hit(area: Area2D) -> void:
 			animation_player.play(returning_animation_name)
 			if !muted: 
 				GlobalClass.play_sound(hit_sfx)
-		else:
+		elif from:
 			from.progress += stolen_health
 			destroy()
+		else: destroy()

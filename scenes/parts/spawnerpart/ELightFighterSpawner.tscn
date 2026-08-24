@@ -43,7 +43,7 @@ _data = {
 
 [node name="Light Fighter Spawner" type="Node2D" unique_id=962284641]
 script = ExtResource("1_7i11w")
-cooldown = 8.0
+cooldown = 6.0
 spawned_cluster = ExtResource("2_7i11w")
 limit = 10
 category = "Enemy Weapons"
@@ -51,20 +51,20 @@ gp_usage = 4
 metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
 
 [node name="Bubble15" parent="." unique_id=881579760 instance=ExtResource("3_oa3qe")]
-position = Vector2(59, -59)
-scale = Vector2(0.2081885, 0.2081885)
+position = Vector2(51, -51)
+scale = Vector2(0.2871585, 0.2871585)
 
 [node name="Bubble16" parent="." unique_id=1039353022 instance=ExtResource("3_oa3qe")]
-position = Vector2(-59, -59)
-scale = Vector2(0.2081885, 0.2081885)
+position = Vector2(-51, -51)
+scale = Vector2(0.2871585, 0.2871585)
 
 [node name="Bubble17" parent="." unique_id=398432847 instance=ExtResource("3_oa3qe")]
-position = Vector2(59, 59)
-scale = Vector2(0.2081885, 0.2081885)
+position = Vector2(51, 51)
+scale = Vector2(0.2871585, 0.2871585)
 
 [node name="Bubble18" parent="." unique_id=1760861317 instance=ExtResource("3_oa3qe")]
-position = Vector2(-59.000008, 58.999996)
-scale = Vector2(0.2081885, 0.2081885)
+position = Vector2(-51.000008, 50.999992)
+scale = Vector2(0.2871585, 0.2871585)
 
 [node name="Pivot" type="Node2D" parent="." unique_id=225216130]
 

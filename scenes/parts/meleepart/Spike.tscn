@@ -13,7 +13,7 @@ cooldown = 0.75
 dmg_info = {
 "amount": 3.0,
 "duration": 0.0,
-"knk": 10.0,
+"knk": 30.0,
 "type": "punch"
 }
 category = "Enemy Weapons"

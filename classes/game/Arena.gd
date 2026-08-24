@@ -41,4 +41,4 @@ func spawn_clusters() -> void:
 
 func resize_arena(enemy_amount: int) -> void:
 	var target_scale: Vector2 = GlobalClass.DEFAULT_ARENA_SCALE + Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * enemy_amount)
-	create_tween().tween_property(self, "scale", target_scale, 2.0).set_trans(Tween.TRANS_SINE)
+	create_tween().tween_property(self, "scale", target_scale, 0.5).set_trans(Tween.TRANS_SINE)

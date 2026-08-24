@@ -6,7 +6,7 @@
 
 [node name="3 Parallel Gun" type="Node2D" unique_id=122091808]
 script = ExtResource("1_n6yja")
-cooldown = 2.0
+cooldown = 1.5
 category = "Enemy Weapons"
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
@@ -43,7 +43,7 @@ prj_info = {
 "type": "dmg"
 },
 "size": 0.66,
-"speed": 2000.0,
+"speed": 1500.0,
 "template": "uid://cnlneqp8i4qud"
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
@@ -65,7 +65,7 @@ prj_info = {
 "type": "dmg"
 },
 "size": 0.66,
-"speed": 2000.0,
+"speed": 1500.0,
 "template": "uid://cnlneqp8i4qud"
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
@@ -87,7 +87,7 @@ prj_info = {
 "type": "dmg"
 },
 "size": 0.66,
-"speed": 2000.0,
+"speed": 1500.0,
 "template": "uid://cnlneqp8i4qud"
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"

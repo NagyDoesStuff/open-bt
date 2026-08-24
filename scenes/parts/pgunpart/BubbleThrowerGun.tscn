@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b1vvggttm7fiv"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_rr3gk"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_kn254"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_hdx8u"]
+
+[node name="Bubble Thrower" type="Node2D" unique_id=122091808]
+script = ExtResource("1_rr3gk")
+cooldown = 0.025
+spread = 0.2
+category = "Player Primaries"
+gp_usage = 4
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_kn254")]
+position = Vector2(15, -11)
+scale = Vector2(0.09335596, 0.09335596)
+
+[node name="Bubble03" parent="." unique_id=1039353022 instance=ExtResource("2_kn254")]
+position = Vector2(26.000002, -11.000001)
+scale = Vector2(0.09335596, 0.09335596)
+
+[node name="Bubble04" parent="." unique_id=389272095 instance=ExtResource("2_kn254")]
+position = Vector2(37, -10.999999)
+scale = Vector2(0.09335596, 0.09335596)
+
+[node name="Bubble05" parent="." unique_id=1862048371 instance=ExtResource("2_kn254")]
+position = Vector2(48, -11.000001)
+scale = Vector2(0.09335596, 0.09335596)
+
+[node name="Bubble06" parent="." unique_id=1795005576 instance=ExtResource("2_kn254")]
+position = Vector2(56.000004, -1.1920929e-06)
+scale = Vector2(0.12548794, 0.12548794)
+
+[node name="Bubble07" parent="." unique_id=1204704250 instance=ExtResource("2_kn254")]
+position = Vector2(-27, 0)
+scale = Vector2(0.33505037, 0.33505037)
+
+[node name="Bubble01" parent="." unique_id=175184260 instance=ExtResource("2_kn254")]
+scale = Vector2(0.25059983, 0.25059983)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(64, 0)
+script = ExtResource("3_hdx8u")
+muted = true
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"hit_fx": "uid://bj32jn40b07kx",
+"size": 1.5,
+"speed": 1500.0,
+"template": "uid://bxmpb84xxm3xq"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

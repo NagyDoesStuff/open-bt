@@ -1,7 +1,7 @@
 extends Area2D
 class_name BubblePoint
 
-@onready var spr: Sprite2D = $Sprite2D
+@onready var spr: Sprite2D = $Bubble50/Sprite2D
 
 var velocity: Vector2 = Vector2.ZERO
 

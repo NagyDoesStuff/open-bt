@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://enu3bwfvds38"]
+
+[ext_resource type="Script" uid="uid://bth81h4ilr7w4" path="res://classes/game/Projectile.gd" id="1_pswdc"]
+[ext_resource type="Texture2D" uid="uid://cyhs8n8we5vvn" path="res://img/bubbles/1796.png" id="2_88xgs"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_0w5qe"]
+[ext_resource type="Texture2D" uid="uid://ri3wmfadomni" path="res://img/bubbles/255.png" id="4_88xgs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[node name="ShotgunProjectile" type="Node2D" unique_id=1253201984]
+script = ExtResource("1_pswdc")
+lifetime = 0.4
+min_speed_mult = 0.5
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.2942147, 0.2942147)
+texture = ExtResource("2_88xgs")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("3_0w5qe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=218000023]
+scale = Vector2(0.21442749, 0.21442749)
+texture = ExtResource("4_88xgs")

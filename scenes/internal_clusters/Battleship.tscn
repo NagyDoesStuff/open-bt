@@ -1,0 +1,389 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_8gphf"]
+[ext_resource type="PackedScene" path="res://scenes/parts/spawnerpart/PLightAllySpawner.tscn" id="2_1fska"]
+[ext_resource type="Script" path="res://classes/parts/SpawnerPart.gd" id="3_e2hub"]
+[ext_resource type="PackedScene" path="res://scenes/internal_clusters/no_export/Player Light Fighter.tscn" id="4_sd1lg"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble22_normal.tscn" id="5_8uyvy"]
+[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="6_olq6p"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble04_dark.tscn" id="7_w4xyn"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="8_26anr"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="9_1xkp8"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="10_8h40r"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="11_kytox"]
+[ext_resource type="PackedScene" path="res://scenes/parts/pgunpart/DualLargeMachineGun.tscn" id="12_eid2j"]
+[ext_resource type="Script" path="res://classes/parts/GunPart.gd" id="13_wql48"]
+[ext_resource type="PackedScene" path="res://scenes/parts/pgunpart/AutoGun.tscn" id="14_kowql"]
+[ext_resource type="Script" path="res://classes/parts/AutoGunPart.gd" id="15_33jup"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="16_il2iy"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="17_eqa6d"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_light.tscn" id="18_f6ejv"]
+
+[node name="Battleship" type="Area2D" unique_id=1120002330]
+script = ExtResource("1_8gphf")
+cluster_class = 5
+
+[node name="@Node2D@44034" type="Node2D" parent="." unique_id=962284641 instance=ExtResource("2_1fska")]
+position = Vector2(-7.3031006, 42.88568)
+rotation = 1.5947074
+script = ExtResource("3_e2hub")
+cooldown = 1.0
+spawned_cluster = ExtResource("4_sd1lg")
+category = "Player Secondaries"
+disabled = true
+editor_mode = true
+gp_usage = 4
+metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
+
+[node name="Light Ally Spawner" type="Node2D" parent="." unique_id=1270905293 instance=ExtResource("2_1fska")]
+position = Vector2(-7.3031006, -42.88568)
+rotation = -1.5947074
+script = ExtResource("3_e2hub")
+cooldown = 1.0
+spawned_cluster = ExtResource("4_sd1lg")
+category = "Player Secondaries"
+disabled = true
+editor_mode = true
+gp_usage = 4
+metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
+
+[node name="@Node2D@44134" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("5_8uyvy")]
+position = Vector2(-255.08124, 0)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Huge Dark Bubble" type="Node2D" parent="." unique_id=1782003639 instance=ExtResource("7_w4xyn")]
+position = Vector2(-116.28436, 0)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@43911" type="Node2D" parent="." unique_id=406274718 instance=ExtResource("8_26anr")]
+position = Vector2(-200.59058, -148.82855)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_43911" type="Node2D" parent="." unique_id=881142363 instance=ExtResource("8_26anr")]
+position = Vector2(-200.59058, 148.82855)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Small Light Bubble" type="Node2D" parent="." unique_id=668589074 instance=ExtResource("9_1xkp8")]
+position = Vector2(-130.6781, -125.17142)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@43928" type="Node2D" parent="." unique_id=1245320157 instance=ExtResource("9_1xkp8")]
+position = Vector2(-130.6781, 125.17139)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@43933" type="Node2D" parent="." unique_id=1835541155 instance=ExtResource("9_1xkp8")]
+position = Vector2(-132.73431, -172.48569)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_43933" type="Node2D" parent="." unique_id=1992213736 instance=ExtResource("9_1xkp8")]
+position = Vector2(-132.73431, 172.48572)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Medium Dark Bubble" type="Node2D" parent="." unique_id=325737861 instance=ExtResource("10_8h40r")]
+position = Vector2(-160.49371, -249.62857)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@43942" type="Node2D" parent="." unique_id=133954234 instance=ExtResource("10_8h40r")]
+position = Vector2(-160.49371, 249.62854)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@43947" type="Node2D" parent="." unique_id=107774874 instance=ExtResource("8_26anr")]
+position = Vector2(-59.737488, -270.19998)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_43947" type="Node2D" parent="." unique_id=1329794025 instance=ExtResource("8_26anr")]
+position = Vector2(-59.737488, 270.19995)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@43954" type="Node2D" parent="." unique_id=487352218 instance=ExtResource("9_1xkp8")]
+position = Vector2(-127.59369, -300.02856)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_43954" type="Node2D" parent="." unique_id=2142850317 instance=ExtResource("9_1xkp8")]
+position = Vector2(-127.59369, 300.02856)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@43961" type="Node2D" parent="." unique_id=1953861529 instance=ExtResource("9_1xkp8")]
+position = Vector2(-76.18744, -340.14285)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_43961" type="Node2D" parent="." unique_id=93241634 instance=ExtResource("9_1xkp8")]
+position = Vector2(-76.18744, 340.14282)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Small Dark Bubble" type="Node2D" parent="." unique_id=103472125 instance=ExtResource("11_kytox")]
+position = Vector2(-189.28125, -277.4)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@43978" type="Node2D" parent="." unique_id=83513263 instance=ExtResource("11_kytox")]
+position = Vector2(-189.28125, 277.40002)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44004" type="Node2D" parent="." unique_id=1934337755 instance=ExtResource("10_8h40r")]
+position = Vector2(-6.2749634, 0)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Dual Large MG" type="Node2D" parent="." unique_id=122091808 instance=ExtResource("12_eid2j")]
+position = Vector2(-125.537476, 0)
+scale = Vector2(1.09, 1.09)
+script = ExtResource("13_wql48")
+cooldown = 0.15
+category = "Player Primaries"
+disabled = true
+editor_mode = true
+gp_usage = 5
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="@Node2D@44114" type="Node2D" parent="." unique_id=1585564124 instance=ExtResource("7_w4xyn")]
+position = Vector2(128.40942, 0)
+scale = Vector2(0.89, 0.89)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44051" type="Node2D" parent="." unique_id=879177744 instance=ExtResource("14_kowql")]
+position = Vector2(-203.67499, -149.85712)
+script = ExtResource("15_33jup")
+cooldown = 0.25
+category = "Player Passives"
+disabled = true
+editor_mode = true
+gp_usage = 1
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="_Node2D_44051" type="Node2D" parent="." unique_id=1354477686 instance=ExtResource("14_kowql")]
+position = Vector2(-203.67499, 149.85712)
+script = ExtResource("15_33jup")
+cooldown = 0.25
+category = "Player Passives"
+disabled = true
+editor_mode = true
+gp_usage = 1
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="@Node2D@44060" type="Node2D" parent="." unique_id=1751016973 instance=ExtResource("16_il2iy")]
+position = Vector2(73.91876, -81.971405)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_44060" type="Node2D" parent="." unique_id=1286646307 instance=ExtResource("16_il2iy")]
+position = Vector2(73.91876, 81.971436)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44082" type="Node2D" parent="." unique_id=1608133530 instance=ExtResource("16_il2iy")]
+position = Vector2(171.5907, -88.14282)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_44082" type="Node2D" parent="." unique_id=2083305850 instance=ExtResource("16_il2iy")]
+position = Vector2(171.5907, 88.14282)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44089" type="Node2D" parent="." unique_id=1461039618 instance=ExtResource("9_1xkp8")]
+position = Vector2(211.6875, -106.657135)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_44089" type="Node2D" parent="." unique_id=1094640900 instance=ExtResource("9_1xkp8")]
+position = Vector2(211.6875, 106.657104)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44096" type="Node2D" parent="." unique_id=260788629 instance=ExtResource("9_1xkp8")]
+position = Vector2(91.39691, -123.11426)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_44096" type="Node2D" parent="." unique_id=536635015 instance=ExtResource("9_1xkp8")]
+position = Vector2(91.39691, 123.11426)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Large Bubble" type="Node2D" parent="." unique_id=1100749360 instance=ExtResource("8_26anr")]
+position = Vector2(65.69379, 0)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Auto Cannon" type="Node2D" parent="." unique_id=1911517820 instance=ExtResource("14_kowql")]
+position = Vector2(67.75006, 0)
+script = ExtResource("15_33jup")
+cooldown = 0.25
+category = "Player Passives"
+disabled = true
+editor_mode = true
+gp_usage = 1
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Medium Bubble" type="Node2D" parent="." unique_id=1061626805 instance=ExtResource("16_il2iy")]
+position = Vector2(-227.32184, -40.828552)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44010" type="Node2D" parent="." unique_id=1144297743 instance=ExtResource("16_il2iy")]
+position = Vector2(-227.32184, 40.828552)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Small Bubble" type="Node2D" parent="." unique_id=1564732340 instance=ExtResource("17_eqa6d")]
+position = Vector2(-259.19373, -68.599976)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44140" type="Node2D" parent="." unique_id=50272921 instance=ExtResource("17_eqa6d")]
+position = Vector2(-259.19373, 68.599976)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44146" type="Node2D" parent="." unique_id=1114773463 instance=ExtResource("16_il2iy")]
+position = Vector2(153.08441, 0)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44150" type="Node2D" parent="." unique_id=1700709682 instance=ExtResource("16_il2iy")]
+position = Vector2(204.49072, 0)
+scale = Vector2(0.77, 0.77)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Medium Light Bubble" type="Node2D" parent="." unique_id=1617537412 instance=ExtResource("18_f6ejv")]
+position = Vector2(244.58752, 0)
+scale = Vector2(0.68, 0.68)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@44158" type="Node2D" parent="." unique_id=351195162 instance=ExtResource("9_1xkp8")]
+position = Vector2(276.45947, 0)
+script = ExtResource("6_olq6p")
+category = "Collision"
+disabled = true
+editor_mode = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"

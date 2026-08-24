@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://mqapcm6iitw0"]
 
 [ext_resource type="Script" uid="uid://bvhjko1t3o55w" path="res://classes/ui/EditorConfirmDialog.gd" id="1_ehvgs"]
-[ext_resource type="FontFile" uid="uid://c6qny5ft6citq" path="res://resources/fonts/142_Arial.ttf" id="2_l0ufu"]
-[ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="3_4foi6"]
+[ext_resource type="FontFile" uid="uid://cxtddjit6snrw" path="res://resources/fonts/361_Billo.ttf" id="2_ngtk0"]
+[ext_resource type="FontFile" uid="uid://dqv2r7jhavyns" path="res://resources/fonts/503_Accidental Presidency.ttf" id="3_4foi6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4foi6"]
 bg_color = Color(1, 1, 1, 0.2509804)
@@ -16,8 +16,12 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 4
 
+[sub_resource type="LabelSettings" id="LabelSettings_ngtk0"]
+font = ExtResource("2_ngtk0")
+font_size = 80
+
 [sub_resource type="LabelSettings" id="LabelSettings_l0ufu"]
-font = ExtResource("2_l0ufu")
+font = ExtResource("3_4foi6")
 font_size = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngtk0"]
@@ -61,16 +65,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 400
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_right = 400
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=932701910]
 layout_mode = 2
 
 [node name="Context" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=888988411]
-custom_minimum_size = Vector2(0, 500)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4foi6")
 
@@ -86,16 +90,58 @@ theme_override_constants/margin_top = 70
 theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 70
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Context/MarginContainer" unique_id=1915443150]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Context/MarginContainer" unique_id=1784877072]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Context/MarginContainer/VBoxContainer" unique_id=1915443150]
 layout_mode = 2
 size_flags_vertical = 1
-text = "You have upgraded! Do you wish to change your tank?"
+text = "You have upgraded!"
+label_settings = SubResource("LabelSettings_ngtk0")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Context/MarginContainer/VBoxContainer" unique_id=1126418447]
+layout_mode = 2
+size_flags_vertical = 1
+text = "You are now able to change your tank, or make your own in the editor."
 label_settings = SubResource("LabelSettings_l0ufu")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Choices" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=2131142027]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4foi6")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Choices" unique_id=1121088623]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Choices/MarginContainer" unique_id=1620036724]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Choices/MarginContainer/ScrollContainer" unique_id=1053661719]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 64
+alignment = 1
+
 [node name="Options" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=1930246498]
+custom_maximum_size = Vector2(-1, 100)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_4foi6")
@@ -122,7 +168,7 @@ layout_mode = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/icon_max_width = 0
 theme_override_fonts/font = ExtResource("3_4foi6")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ngtk0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4foi6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4foi6")
@@ -134,7 +180,7 @@ layout_mode = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/icon_max_width = 0
 theme_override_fonts/font = ExtResource("3_4foi6")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ngtk0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4foi6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4foi6")

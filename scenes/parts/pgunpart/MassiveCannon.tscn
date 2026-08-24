@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://bhfy58ur88jhu"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_5bpc5"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_7xg2j"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_tss03"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_uipjh"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="4_mq1l0"]
+
+[sub_resource type="Animation" id="Animation_mq1l0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.22, 2.22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_uipjh"]
+resource_name = "shot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.25, 0),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.22, 2.22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kkjsu"]
+_data = {
+&"RESET": SubResource("Animation_mq1l0"),
+&"shot": SubResource("Animation_uipjh")
+}
+
+[sub_resource type="Curve" id="Curve_kkjsu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.17630057, 1), 0.0, 0.0, 0, 0, Vector2(0.6329479, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_uipjh"]
+offsets = PackedFloat32Array(0, 0.271875, 0.75625, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Massive Cannon" type="Node2D" unique_id=122091808 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_5bpc5")
+cooldown = 4.0
+shot_delay = 1.0
+keybind = "space"
+animation_player = NodePath("AnimationPlayer")
+category = "Player Secondaries"
+gp_usage = 8
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble03" parent="." unique_id=1039353022 instance=ExtResource("2_7xg2j")]
+position = Vector2(-8, -16)
+scale = Vector2(0.21694048, 0.21694048)
+
+[node name="Bubble06" parent="." unique_id=352584548 instance=ExtResource("2_7xg2j")]
+position = Vector2(-5.0000005, -44)
+scale = Vector2(0.21694048, 0.21694048)
+
+[node name="Bubble07" parent="." unique_id=892468559 instance=ExtResource("2_7xg2j")]
+position = Vector2(8, -70)
+scale = Vector2(0.21694048, 0.21694048)
+
+[node name="Bubble04" parent="." unique_id=1864702492 instance=ExtResource("2_7xg2j")]
+position = Vector2(-8, 16)
+scale = Vector2(0.21694048, 0.21694048)
+
+[node name="Bubble14" parent="." unique_id=1606153019 instance=ExtResource("3_uipjh")]
+position = Vector2(-5.1259995e-06, 0)
+scale = Vector2(0.23495454, 0.23495454)
+
+[node name="Bubble18" parent="." unique_id=1780913820 instance=ExtResource("3_uipjh")]
+position = Vector2(-11, -69.99999)
+scale = Vector2(0.09985614, 0.09985614)
+
+[node name="Bubble20" parent="." unique_id=79427661 instance=ExtResource("3_uipjh")]
+position = Vector2(-27.000002, -23.999996)
+scale = Vector2(0.09985614, 0.09985614)
+
+[node name="Bubble21" parent="." unique_id=1927203037 instance=ExtResource("3_uipjh")]
+position = Vector2(-52.999996, -15.999994)
+scale = Vector2(0.09985614, 0.09985614)
+
+[node name="Bubble22" parent="." unique_id=1414608692 instance=ExtResource("3_uipjh")]
+position = Vector2(-27, 24.000013)
+scale = Vector2(0.09985614, 0.09985614)
+
+[node name="Bubble23" parent="." unique_id=150936232 instance=ExtResource("3_uipjh")]
+position = Vector2(-52.999996, 16.000013)
+scale = Vector2(0.09985614, 0.09985614)
+
+[node name="Bubble08" parent="." unique_id=518748824 instance=ExtResource("2_7xg2j")]
+position = Vector2(-5.0000005, 44)
+scale = Vector2(0.21694048, 0.21694048)
+
+[node name="Bubble09" parent="." unique_id=1571883249 instance=ExtResource("2_7xg2j")]
+position = Vector2(8, 70)
+scale = Vector2(0.21694048, 0.21694048)
+
+[node name="Bubble05" parent="." unique_id=1733653362 instance=ExtResource("2_7xg2j")]
+position = Vector2(32, 0)
+scale = Vector2(0.3257048, 0.3257048)
+
+[node name="Bubble16" parent="." unique_id=374137553 instance=ExtResource("2_7xg2j")]
+position = Vector2(-34, 2.8610232e-06)
+scale = Vector2(0.3669106, 0.3669106)
+
+[node name="Bubble19" parent="." unique_id=171937634 instance=ExtResource("3_uipjh")]
+position = Vector2(-11.000007, 70.000015)
+scale = Vector2(0.09985614, 0.09985614)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(156, 0)
+script = ExtResource("3_tss03")
+prj_info = {
+"dmg_info": {
+"amount": 175,
+"type": "dmg"
+},
+"pierce": true,
+"size": 6.0,
+"speed": 750.0,
+"template": "uid://opsflv4mmtu8"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2076540635]
+visible = false
+position = Vector2(156, 0)
+scale = Vector2(2.22, 2.22)
+texture = ExtResource("4_mq1l0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1879913571]
+libraries/ = SubResource("AnimationLibrary_kkjsu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1095695755]
+position = Vector2(156, 0)
+emitting = false
+amount = 10
+texture = ExtResource("4_mq1l0")
+lifetime = 0.33
+emission_shape = 6
+emission_ring_inner_radius = 200.0
+emission_ring_radius = 210.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+radial_accel_min = -5000.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.35
+scale_amount_curve = SubResource("Curve_kkjsu")
+color_ramp = SubResource("Gradient_uipjh")

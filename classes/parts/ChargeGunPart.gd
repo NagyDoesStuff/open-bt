@@ -6,7 +6,6 @@ class_name ChargeGunPart
 @export var charge_ready_sfx: String = "uid://dcnojb63afq44"
 @export var ai_wait_time_before_release: float = 0.5
 
-@export var animation_player: AnimationPlayer
 var charge_timer: Timer = Timer.new()
 
 func _subready() -> void:
@@ -43,7 +42,7 @@ func _process(_delta: float) -> void:
 
 func charge() -> void:
 	if user.team != 0: can_shoot = false
-	animation_player.play(charge_animation_name)
+	if animation_player: animation_player.play(charge_animation_name)
 	charge_timer.start(charge_time)
 
 func complete_charge() -> void:
@@ -66,10 +65,14 @@ func cancel_charge() -> void:
 
 func fire_all_barrels() -> void:
 	can_shoot = false
+	if animation_player and animation_player.has_animation(shot_animation): animation_player.play(shot_animation)
+	cancel_charge()
+	
+	await get_tree().create_timer(shot_delay).timeout
+	
 	for b in barrels:
 		b.shoot()
+		
 	for x in range(full_turn_amount):
 		await create_tween().tween_property(self, "rotation", TAU, amount_per_salvo * salvo_interval).finished
 		rotation = init_rotation
-	
-	cancel_charge()

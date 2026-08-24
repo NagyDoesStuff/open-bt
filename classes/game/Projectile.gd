@@ -21,7 +21,12 @@ var from: Cluster
 
 @export var phase: bool = false
 
+@export var min_speed_mult: float = 1.0
+
+@export_group("Visual")
 @export var spin_rate: float = 0.0
+@export var grow_rate: float = 0.0
+@export var fade_out: bool = false
 
 @export_group("Splitting")
 @export var split_into: PackedScene
@@ -37,6 +42,8 @@ var from: Cluster
 func _ready() -> void:
 	scale = Vector2.ONE * prj_info["size"]
 	init_rot = global_rotation
+	spin_rate *= [-1, 1].pick_random()
+	prj_info["speed"] *= randf_range(min_speed_mult, 1.0)
 	
 	if !phase: prj_area.area_entered.connect(on_hit, ConnectFlags.CONNECT_DEFERRED)
 	
@@ -48,6 +55,7 @@ func _ready() -> void:
 	
 	if lifetime > 0.0:
 		get_tree().create_timer(lifetime).timeout.connect(destroy)
+		if fade_out: create_tween().tween_property(self, "modulate:a", 0.0, lifetime)
 	
 	GlobalClass.append_distance_check(self)
 	
@@ -73,6 +81,8 @@ func _process(delta: float) -> void:
 	if prj_info.has("turn_rate") and prj_info.has("turn_mode") and prj_info["turn_mode"] == "sin" and prj_info.has("sin_turn_mode_freq"):
 		global_rotation = init_rot + sin(t * prj_info["sin_turn_mode_freq"]) * prj_info["turn_rate"]
 	
+	scale += Vector2.ONE * grow_rate * delta
+	
 	for spr in sprites:
 		spr.global_rotation += spin_rate * delta
 	
@@ -80,25 +90,25 @@ func on_hit(area: Area2D) -> void:
 	if area is Cluster and area.team != team: 
 		area.recieve_hit(prj_info["dmg_info"])
 		if !muted: GlobalClass.play_sound(hit_sfx)
-		if prj_info.has("pierce") and !prj_info["pierce"]: return
+		if prj_info.has("pierce") and prj_info["pierce"]: 
+			split()
+			return
 		destroy()
 	if area.get_parent() is Projectile and area.get_parent().team != team and area.get_parent().prj_info.has("homing") and area.get_parent().prj_info["homing"]:
 		area.get_parent().destroy()
-		if prj_info.has("pierce") and !prj_info["pierce"]: return
+		if prj_info.has("pierce") and prj_info["pierce"]: 
+			split()
+			return
 		destroy()
 	if area.get_parent() is PoppablePart and area.get_parent().user.team != team:
 		area.get_parent().destroy()
-		if prj_info.has("pierce") and !prj_info["pierce"]: return
+		if prj_info.has("pierce") and prj_info["pierce"]: 
+			split()
+			return
 		destroy()
 
 func destroy() -> void:
-	if split_into:
-		for x in range(split_amount):
-			var split_result: Node2D = split_into.instantiate()
-			split_result.global_position = global_position + Vector2.RIGHT.rotated(randf_range(0, TAU)) * split_radius * scale
-			split_result.global_rotation = x * (TAU / split_amount)
-			split_result.team = team
-			GlobalClass.world.add_child(split_result)
+	split()
 	
 	var fx: Node2D
 	if prj_info.has("hit_fx"):
@@ -110,7 +120,16 @@ func destroy() -> void:
 	GlobalClass.world.add_child(fx)
 	
 	call_deferred("queue_free")
-	
+
+func split() -> void:
+	if !split_into: return
+	for x in range(split_amount):
+		var split_result: Node2D = split_into.instantiate()
+		split_result.global_position = global_position + Vector2.RIGHT.rotated(randf_range(0, TAU)) * split_radius * scale
+		split_result.global_rotation = x * (TAU / split_amount)
+		split_result.team = team
+		GlobalClass.world.add_child(split_result)
+
 func search_for_target() -> void:
 	# Slight delay so the target isnt the same as the one killed.
 	await get_tree().process_frame
@@ -132,13 +151,13 @@ func follow_target(mode: String, delta: float) -> void:
 	if !target: return
 	match mode:
 		"default":
-			global_rotation = lerp_angle(
+			global_rotation = rotate_toward(
 				global_rotation,
 				(target.global_position - global_position).angle(),
 				delta * prj_info["turn_rate"]
 			)
 		"mouse":
-			global_rotation = lerp_angle(
+			global_rotation = rotate_toward(
 				global_rotation,
 				(get_global_mouse_position() - global_position).angle(),
 				delta * prj_info["turn_rate"]

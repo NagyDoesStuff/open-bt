@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 	
 	if free_cam:
 		global_position += Input.get_vector("cam_mleft", "cam_mright", "cam_mup", "cam_mdown").normalized() * 20
-		zoom = lerp(zoom, Vector2.ONE * 0.75, _delta * 3)
+		zoom = lerp(zoom, Vector2.ONE * 0.5, _delta * 3)
 	elif anchor: 
 		global_position = anchor.global_position
 		zoom = lerp(zoom, Vector2.ONE, _delta * 3)

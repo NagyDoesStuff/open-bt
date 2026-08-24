@@ -41,7 +41,7 @@ func shock_clusters(targets: Array[Cluster]) -> void:
 			
 			await get_tree().process_frame
 			
-			c.recieve_hit(prj_info["dmg_info"])
+			if c: c.recieve_hit(prj_info["dmg_info"])
 			hit_one_target = true
 		await get_tree().create_timer(multishock_interval).timeout
 	if !muted and hit_one_target: 

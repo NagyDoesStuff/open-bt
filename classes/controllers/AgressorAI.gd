@@ -4,9 +4,9 @@ class_name AgressorAI
 var can_turn: bool = false
 
 func _enter_tree() -> void:
-	min_freq *= 2
-	max_freq *= 2
-	min_turn_time_ratio *= 2
+	min_freq *= 0.5
+	max_freq *= 0.5
+	min_turn_time_ratio *= 2.5
 	max_turn_time_ratio *= 2
 
 func _subready() -> void:
@@ -31,13 +31,13 @@ func _process(_delta: float) -> void:
 			user.global_rotation = move_toward(
 				user.global_rotation,
 				(GlobalClass.player_cluster.global_position - user.global_position).angle(),
-				_delta * user.turn_rate * run_to_center_mult
+				_delta * user.turn_rate * run_turn_rate_mult
 			)
 	else:
 		user.global_rotation = move_toward(
 			user.global_rotation,
 			(GlobalClass.current_arena.global_position - user.global_position).angle(),
-			_delta * user.turn_rate * run_to_center_mult
+			_delta * user.turn_rate * run_turn_rate_mult
 		)
 	
 func turn(duration: float) -> void:

@@ -4,6 +4,8 @@ extends Node
 # PRELOADS
 const BUTTON_01: PackedScene = preload("uid://dwlqr56nh4exq")
 
+const TANK_CHOICE_BUTTON: PackedScene = preload("uid://dk4jicmsok44j")
+
 const BUBBLE_POINT: PackedScene = preload("uid://ckebyrul4e710")
 
 const ARENA_TEMPLATE: PackedScene = preload("uid://dylq1171myx2n")
@@ -15,16 +17,17 @@ const SCREEN_FLASH: PackedScene = preload("uid://cays5co474q6y")
 # CONSTANTS
 const ARENA_PUSH_FORCE: int = 100
 const DISTANCE_BETWEEN_ARENAS: int = 800
-const DEFAULT_MAX_ENEMIES: int = 3
+const DEFAULT_MAX_ENEMIES: int = 6
 const MAX_CLASS: int = 6
+const UPGRADE_CHOICES: int = 3
 
 const CLUSTER_CHECK_DIST_FREQ: float = .25
 const ESTIMATED_ARENA_RADIUS: float = 8505.0 / 2.0
-const ARENA_RADIUS_GROW_PER_ENEMY: float = 0.01
+const ARENA_RADIUS_GROW_PER_ENEMY: float = 0.005
 const LAND_ON_ARENA_DIST: float = 0.9
 const MIN_BUBBLE_POINT_SIZE: float = 0.33
 const BUBBLE_POINT_GROW_SIZE: float = 0.025
-const MAX_ENEMIES_INCREMENT_PER_ARENA: float = 0.2
+const MAX_ENEMIES_INCREMENT_PER_ARENA: float = 0.1
 const HIT_BLINK_TIME: float = 0.1
 
 const PARTS_DIRECTORY: String = "res://scenes/parts/"
@@ -35,7 +38,7 @@ const HIT_COLOR: Color = Color(1.164, 1.164, 1.164, 1.0)
 const SLOWN_DOWN_COLOR: Color = Color(0.937, 0.8, 1.0, 1.0)
 const JAMMED_COLOR: Color = Color(0.8, 1.0, 0.833, 1.0)
 
-const DEFAULT_ARENA_SCALE: Vector2 = Vector2.ONE * 0.25
+const DEFAULT_ARENA_SCALE: Vector2 = Vector2.ONE * 0.2
 
 const PROGRESSION_REQUIREMENTS: Array[int] = [
 	100, # CLASS 2
@@ -152,6 +155,9 @@ func freeze_frame(time: float) -> void:
 		# floating_text.velocity = on.linear_velocity * global_delta
 		# arena.add_child(floating_text)
 
+func get_load_location(cluster: Cluster) -> String:
+	return EDITOR_SAVES_DIRECTORY + "saved_tanks/" + cluster.name + ".tscn"
+
 func load_clusters() -> void:
 	for file in ResourceLoader.list_directory(EDITOR_SAVES_DIRECTORY + "saved_tanks/"):
 		var cluster: Cluster = load(EDITOR_SAVES_DIRECTORY + "saved_tanks/" + file).instantiate()
@@ -178,3 +184,9 @@ func append_distance_check(who: Node2D) -> void:
 				who.destroy()
 	)
 	who.add_child(timer)
+
+func get_gp_increment(cluster_class: int) -> int:
+	if cluster_class < 4:
+		return 2
+	else:
+		return 5

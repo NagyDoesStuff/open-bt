@@ -57,7 +57,7 @@ offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "v1.0 release"
+text = "v1.1 release"
 label_settings = SubResource("LabelSettings_8g5eo")
 
 [node name="Buttons" type="Control" parent="." unique_id=1937422543]

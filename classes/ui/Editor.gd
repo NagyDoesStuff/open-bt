@@ -227,7 +227,7 @@ func load_cluster(text: String) -> void:
 	var full_path: String = GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/" + text + ".tscn"
 	if FileAccess.file_exists(full_path):
 		var loaded_cluster: Cluster = load(full_path).instantiate()
-		if GlobalClass.world and loaded_cluster.cluster_class <= GlobalClass.world.player_max_class and loaded_cluster.get_used_gp() <= GlobalClass.world.player_max_gun_points:
+		if GlobalClass.world and loaded_cluster.cluster_class <= GlobalClass.world.max_class and loaded_cluster.get_used_gp() <= GlobalClass.world.max_gp:
 			create_edited_cluster(loaded_cluster)
 			print("Loaded cluster from: " + full_path)
 			load_cluster_input.hide()
@@ -361,7 +361,7 @@ func update_class() -> void:
 		if requirement < farthest_part_distance:
 			determined_class = GlobalClass.CLASS_RADIUS.find(requirement) + 1
 			
-	if GlobalClass.world and GlobalClass.world.player_max_class >= determined_class or debug:
+	if GlobalClass.world and GlobalClass.world.max_class >= determined_class or debug:
 		edited_cluster.cluster_class = determined_class
 	else:
 		delete_last_dragged()
@@ -369,7 +369,7 @@ func update_class() -> void:
 
 func update_available_gp() -> void:
 	if !GlobalClass.world or debug: return
-	var calculated_value: int = GlobalClass.world.player_max_gun_points - edited_cluster.get_used_gp()
+	var calculated_value: int = GlobalClass.world.max_gp - edited_cluster.get_used_gp()
 	if calculated_value >= 0:
 		available_gp = calculated_value
 	else:
@@ -383,7 +383,7 @@ func update_info_ui() -> void:
 	info_label.text = ""
 	if GlobalClass.world:
 		info_label.text += "GP: " + str(available_gp) + "\n"
-		info_label.text += "Max Class: " + str(GlobalClass.world.player_max_class) + "\n"
+		info_label.text += "Max Class: " + str(GlobalClass.world.max_class) + "\n"
 	else:
 		info_label.text += "GP: INF" + "\n"
 		info_label.text += "Max Class: " + str(GlobalClass.MAX_CLASS) + "\n"

@@ -5,14 +5,23 @@
 [ext_resource type="Texture2D" uid="uid://cyhs8n8we5vvn" path="res://img/bubbles/1796.png" id="2_wtrer"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_wc3x2"]
 [ext_resource type="Texture2D" uid="uid://cd847ugdtcc6k" path="res://img/bubbles/shock1.png" id="4_wtrer"]
+[ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="6_nwi0u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
 radius = 16.0
 
+[sub_resource type="Gradient" id="Gradient_nwi0u"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_nwi0u"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="SmallShockProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_01wj8")
 peer_cooldown_remove = 0.95
-shock_cooldown = 0.5
+shock_cooldown = 0.75
 min_shock_cooldown = 0.25
 hitscan_line = ExtResource("2_wc3x2")
 phase = true
@@ -38,3 +47,22 @@ texture = ExtResource("3_wc3x2")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=13422316]
 scale = Vector2(0.24345362, 0.24345362)
 texture = ExtResource("4_wtrer")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=181003984]
+amount = 2
+texture = ExtResource("6_nwi0u")
+lifetime = 0.1
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 17.1
+gravity = Vector2(0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.15
+scale_amount_max = 0.25
+color = Color(0.98333335, 1, 0, 1)
+color_ramp = SubResource("Gradient_nwi0u")
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("Curve_nwi0u")

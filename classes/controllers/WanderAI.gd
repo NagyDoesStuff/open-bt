@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 		user.global_rotation = move_toward(
 			user.global_rotation,
 			(GlobalClass.current_arena.global_position - user.global_position).angle(),
-			_delta * user.turn_rate * run_to_center_mult
+			_delta * user.turn_rate * run_turn_rate_mult
 		)
 	
 func turn(duration: float, dir: int) -> void:

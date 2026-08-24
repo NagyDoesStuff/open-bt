@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://opsflv4mmtu8"]
+
+[ext_resource type="Script" uid="uid://bth81h4ilr7w4" path="res://classes/game/Projectile.gd" id="1_6oji7"]
+[ext_resource type="Texture2D" uid="uid://b67d417d8qpk3" path="res://img/bubbles/1796.png" id="2_5jr31"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_m8adw"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="4_5jr31"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[node name="BasicProjectile" type="Node2D" unique_id=1253201984]
+script = ExtResource("1_6oji7")
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.29267, 0.29267)
+texture = ExtResource("2_5jr31")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("3_m8adw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=746106786]
+scale = Vector2(0.3703529, 0.3703529)
+texture = ExtResource("4_5jr31")

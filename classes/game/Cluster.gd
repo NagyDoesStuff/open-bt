@@ -7,6 +7,7 @@ signal killed()
 @export_group("Info")
 @export var team: int = 0
 @export var cluster_class: int = 1
+@export var available_as_choice: bool = true
 
 @export_group("Stats")
 @export var speed: float = 16.0
@@ -65,6 +66,9 @@ func _ready() -> void:
 			GlobalClass.player_cluster = self
 			progress_changed.connect(GlobalClass.world.ui.hud.update_progression_bar)
 			max_progress = GlobalClass.world.player_progression_requirement
+			if cluster_class >= 4:
+				speed *= 0.5
+				turn_rate *= 0.25
 		else:
 			search_and_apply_behavior_parts()
 		if force_full_progress:

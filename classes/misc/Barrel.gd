@@ -46,7 +46,7 @@ func shoot() -> void:
 		var prj: Projectile = load(prj_info["template"]).instantiate()
 		prj.global_position = global_position
 		prj.global_rotation = global_rotation + randf_range(-gun.spread, gun.spread)
-		prj.prj_info = prj_info
+		prj.prj_info = prj_info.duplicate()
 		prj.team = gun.user.team
 		prj.from = gun.user
 		GlobalClass.world.add_child(prj)
@@ -54,4 +54,4 @@ func shoot() -> void:
 		if gun.salvo_interval > 0.0:
 			if !muted:
 				GlobalClass.play_sound(gun.shoot_fx)
-			await get_tree().create_timer(gun.salvo_interval).timeout
+			if is_instance_valid(get_tree()): await get_tree().create_timer(gun.salvo_interval).timeout

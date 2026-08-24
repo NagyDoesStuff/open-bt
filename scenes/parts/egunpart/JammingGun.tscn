@@ -6,41 +6,41 @@
 
 [node name="Jamming Gun" type="Node2D" unique_id=122091808]
 script = ExtResource("1_60rbh")
-cooldown = 2.6
+cooldown = 2.0
 category = "Enemy Weapons"
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_btvq4")]
-position = Vector2(21, -14)
-scale = Vector2(0.10784993, 0.10784993)
+position = Vector2(16.000002, -14.000001)
+scale = Vector2(0.12843418, 0.12843418)
 
 [node name="Bubble05" parent="." unique_id=1999803219 instance=ExtResource("2_btvq4")]
-position = Vector2(21, 14)
-scale = Vector2(0.10784993, 0.10784993)
+position = Vector2(16.000002, 14)
+scale = Vector2(0.12843418, 0.12843418)
 
 [node name="Bubble06" parent="." unique_id=1315766830 instance=ExtResource("2_btvq4")]
-position = Vector2(34, 14)
-scale = Vector2(0.10784993, 0.10784993)
+position = Vector2(29.000002, 14)
+scale = Vector2(0.11485668, 0.11485668)
 
 [node name="Bubble07" parent="." unique_id=1256933701 instance=ExtResource("2_btvq4")]
-position = Vector2(34, -14)
-scale = Vector2(0.10784993, 0.10784993)
+position = Vector2(29.000002, -14.000001)
+scale = Vector2(0.11485668, 0.11485668)
 
 [node name="Bubble08" parent="." unique_id=1039353022 instance=ExtResource("2_btvq4")]
-position = Vector2(47, 14)
-scale = Vector2(0.10784993, 0.10784993)
+position = Vector2(42, 14)
+scale = Vector2(0.11485668, 0.11485668)
 
 [node name="Bubble09" parent="." unique_id=363490368 instance=ExtResource("2_btvq4")]
-position = Vector2(47, -14)
-scale = Vector2(0.10784993, 0.10784993)
+position = Vector2(42, -14.000001)
+scale = Vector2(0.11485668, 0.11485668)
 
 [node name="Bubble10" parent="." unique_id=1887604535 instance=ExtResource("2_btvq4")]
-position = Vector2(13.000001, -24)
+position = Vector2(12.000001, -23.000002)
 scale = Vector2(0.09149124, 0.09149124)
 
 [node name="Bubble11" parent="." unique_id=2013526360 instance=ExtResource("2_btvq4")]
-position = Vector2(13.000001, 24)
+position = Vector2(12.000001, 23.000002)
 scale = Vector2(0.09149124, 0.09149124)
 
 [node name="Bubble01" parent="." unique_id=366202674 instance=ExtResource("2_btvq4")]

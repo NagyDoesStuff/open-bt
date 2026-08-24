@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cck2d2511f0at"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_53ooa"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="2_3lrql"]
+
+[node name="Little Man" type="Area2D" unique_id=1765181206]
+script = ExtResource("1_53ooa")
+team = 1
+speed = 3.0
+turn_rate = 3.0
+drop_value = 1
+
+[node name="Small Bubble" parent="." unique_id=878054447 instance=ExtResource("2_3lrql")]
+position = Vector2(0.45837402, 0)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@663" parent="." unique_id=1614819814 instance=ExtResource("2_3lrql")]
+position = Vector2(-11.666626, -13.387024)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_663" parent="." unique_id=1684198988 instance=ExtResource("2_3lrql")]
+position = Vector2(-11.666626, 13.387024)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true

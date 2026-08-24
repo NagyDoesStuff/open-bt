@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bb07qxx27vdd"]
+
+[ext_resource type="Script" uid="uid://ckcbefw5wxm43" path="res://classes/parts/MeleePart.gd" id="1_wox3i"]
+[ext_resource type="PackedScene" uid="uid://64ve7n6o0g1x" path="res://scenes/decorations/bubble13.tscn" id="2_apkoa"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_8g0pi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymrjv"]
+size = Vector2(79, 20)
+
+[node name="Dagger" type="Node2D" unique_id=405763063]
+script = ExtResource("1_wox3i")
+dmg_info = {
+"amount": 5.0,
+"duration": 0.0,
+"knk": 5.0,
+"type": "punch"
+}
+category = "Player Passives"
+is_hovered = true
+gp_usage = 2
+metadata/_custom_type_script = "uid://ckcbefw5wxm43"
+
+[node name="Bubble20" parent="." unique_id=1039353022 instance=ExtResource("2_apkoa")]
+position = Vector2(11.000015, -12)
+scale = Vector2(0.09731142, 0.09731142)
+
+[node name="Bubble21" parent="." unique_id=72343660 instance=ExtResource("2_apkoa")]
+position = Vector2(11, 12)
+scale = Vector2(0.09731142, 0.09731142)
+
+[node name="Bubble19" parent="." unique_id=883396603 instance=ExtResource("2_apkoa")]
+position = Vector2(63.000015, 0)
+scale = Vector2(0.09731142, 0.09731142)
+
+[node name="Bubble18" parent="." unique_id=1238265632 instance=ExtResource("2_apkoa")]
+position = Vector2(50, 0)
+scale = Vector2(0.124268465, 0.124268465)
+
+[node name="Bubble17" parent="." unique_id=210620481 instance=ExtResource("2_apkoa")]
+position = Vector2(35, 0)
+scale = Vector2(0.14553331, 0.14553331)
+
+[node name="Bubble16" parent="." unique_id=1192666739 instance=ExtResource("2_apkoa")]
+position = Vector2(20.000002, 0)
+scale = Vector2(0.16803673, 0.16803673)
+
+[node name="Bubble12" parent="." unique_id=2108158600 instance=ExtResource("3_8g0pi")]
+position = Vector2(-9.000002, -14.000001)
+scale = Vector2(0.122599296, 0.122599296)
+
+[node name="Bubble13" parent="." unique_id=759639938 instance=ExtResource("3_8g0pi")]
+position = Vector2(2, -18)
+scale = Vector2(0.08265534, 0.08265534)
+
+[node name="Bubble15" parent="." unique_id=2103280231 instance=ExtResource("3_8g0pi")]
+position = Vector2(2, 18)
+scale = Vector2(0.08265534, 0.08265534)
+
+[node name="Bubble14" parent="." unique_id=351443505 instance=ExtResource("3_8g0pi")]
+position = Vector2(-9.000002, 13.999996)
+scale = Vector2(0.122599296, 0.122599296)
+
+[node name="Bubble11" parent="." unique_id=902829894 instance=ExtResource("3_8g0pi")]
+scale = Vector2(0.24874774, 0.24874774)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=532459886]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2075708698]
+position = Vector2(29.5, 0)
+shape = SubResource("RectangleShape2D_ymrjv")

@@ -6,7 +6,7 @@
 
 [node name="Enemy 3 Spread Gun" type="Node2D" unique_id=122091808]
 script = ExtResource("1_lgxji")
-cooldown = 2.0
+cooldown = 1.5
 category = "Enemy Weapons"
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
