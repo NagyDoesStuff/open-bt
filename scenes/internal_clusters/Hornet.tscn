@@ -1,0 +1,165 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/parts/pgunpart/SeekerLauncher.tscn" id="2"]
+[ext_resource type="Script" path="res://classes/parts/GunPart.gd" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="4"]
+[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="7"]
+
+[node name="Hornet" type="Area2D" unique_id=1662903840]
+script = ExtResource("1")
+team = 0
+cluster_class = 1
+available_as_choice = true
+speed = 16.0
+acceleration = 6.0
+turn_rate = 2.0
+drop_value = 10
+max_progress = 1
+min_to_available = 0
+max_spawn_amount = 3
+
+[node name="Seeker Launcher" type="Node2D" parent="." unique_id=122091808 instance=ExtResource("2")]
+position = Vector2(19.656311, 0)
+script = ExtResource("3")
+turn_rate = 20.0
+cooldown = 2.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 1
+salvo_interval = 0.0
+keybind = "space"
+fixed = true
+auto_shoot = false
+full_turn_amount = 0
+shot_animation = "shot"
+category = "Player Secondaries"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 2
+available = true
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Medium Bubble" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("4")]
+position = Vector2(-0.55200195, 0)
+scale = Vector2(0.73, 0.73)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Small Dark Bubble" type="Node2D" parent="." unique_id=558502759 instance=ExtResource("6")]
+position = Vector2(22.687561, 19.949097)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@143665" type="Node2D" parent="." unique_id=1873123470 instance=ExtResource("6")]
+position = Vector2(22.687561, -19.949097)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Small Light Bubble" type="Node2D" parent="." unique_id=1430746375 instance=ExtResource("7")]
+position = Vector2(8.541748, 28.030579)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@143672" type="Node2D" parent="." unique_id=1412419944 instance=ExtResource("7")]
+position = Vector2(8.541748, -28.030579)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@143677" type="Node2D" parent="." unique_id=1787459116 instance=ExtResource("7")]
+position = Vector2(-19.749939, 21.969482)
+scale = Vector2(0.52, 0.52)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_143677" type="Node2D" parent="." unique_id=377976769 instance=ExtResource("7")]
+position = Vector2(-19.749939, -21.969482)
+scale = Vector2(0.52, 0.52)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@143684" type="Node2D" parent="." unique_id=352437448 instance=ExtResource("7")]
+position = Vector2(-30.864502, 0)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@143690" type="Node2D" parent="." unique_id=1085972720 instance=ExtResource("6")]
+position = Vector2(-30.864502, 30.050964)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_143690" type="Node2D" parent="." unique_id=1486715515 instance=ExtResource("6")]
+position = Vector2(-30.864502, -30.050964)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+gp_usage = 0
+available = true
+metadata/_custom_type_script = "uid://y2smhndmk7x3"

@@ -7,12 +7,10 @@
 [node name="Enemy 360 Spread Gun" type="Node2D" unique_id=122091808]
 script = ExtResource("1_kkjqo")
 cooldown = 1.5
+fixed = true
 category = "Enemy Weapons"
 gp_usage = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
-
-[node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_8anst")]
-scale = Vector2(0.37336063, 0.37336063)
 
 [node name="Bubble06" parent="." unique_id=1584074684 instance=ExtResource("2_8anst")]
 position = Vector2(20, -20)
@@ -218,3 +216,6 @@ prj_info = {
 "template": "uid://cnlneqp8i4qud"
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_8anst")]
+scale = Vector2(0.37336063, 0.37336063)

@@ -25,9 +25,9 @@ speed = 3.0
 acceleration = 6.0
 turn_rate = 2.0
 drop_value = 30
-max_progress = 80
-min_to_available = 50
-max_spawn_amount = 2
+max_progress = 120
+min_to_available = 80
+max_spawn_amount = 1
 
 [node name="_Node2D_42854" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("2")]
 position = Vector2(169.198, -40.152832)

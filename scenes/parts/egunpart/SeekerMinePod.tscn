@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ckfskgtw5ln4b"]
+
+[ext_resource type="Script" uid="uid://dftnav10irjtc" path="res://classes/parts/AfterDeathPart.gd" id="1_ic4kx"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_4r65i"]
+[ext_resource type="PackedScene" uid="uid://bxgaeidyymojm" path="res://scenes/projectiles/SeekerMineProjectilePreStats.tscn" id="2_5pukk"]
+
+[node name="Seeker Mine Pod" type="Node2D" unique_id=122091808]
+script = ExtResource("1_ic4kx")
+split_into = ExtResource("2_5pukk")
+split_amount = 6
+category = "Enemy Weapons"
+gp_usage = 1
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_4r65i")]
+position = Vector2(19.999998, 0)
+scale = Vector2(0.11481556, 0.11481556)
+
+[node name="Bubble03" parent="." unique_id=2087612123 instance=ExtResource("2_4r65i")]
+position = Vector2(40.000015, 0)
+scale = Vector2(0.2489118, 0.2489118)
+
+[node name="Bubble04" parent="." unique_id=1039353022 instance=ExtResource("2_4r65i")]
+position = Vector2(9.999998, -17.320507)
+rotation = -1.0471976
+scale = Vector2(0.11481556, 0.11481556)
+
+[node name="Bubble05" parent="." unique_id=2066182476 instance=ExtResource("2_4r65i")]
+position = Vector2(20.000006, -34.64103)
+rotation = -1.0471976
+scale = Vector2(0.24891181, 0.24891181)
+
+[node name="Bubble06" parent="." unique_id=834600412 instance=ExtResource("2_4r65i")]
+position = Vector2(-10, -17.320507)
+rotation = -2.0943952
+scale = Vector2(0.11481556, 0.11481556)
+
+[node name="Bubble07" parent="." unique_id=2075462790 instance=ExtResource("2_4r65i")]
+position = Vector2(-20.00001, -34.64103)
+rotation = -2.0943952
+scale = Vector2(0.2489118, 0.2489118)
+
+[node name="Bubble08" parent="." unique_id=801563058 instance=ExtResource("2_4r65i")]
+position = Vector2(-19.999998, 1.7484554e-06)
+rotation = 3.1415925
+scale = Vector2(0.11481556, 0.11481556)
+
+[node name="Bubble09" parent="." unique_id=359038999 instance=ExtResource("2_4r65i")]
+position = Vector2(-40.000015, 3.4969123e-06)
+rotation = 3.1415925
+scale = Vector2(0.2489118, 0.2489118)
+
+[node name="Bubble10" parent="." unique_id=2063946267 instance=ExtResource("2_4r65i")]
+position = Vector2(-9.999997, 17.320507)
+rotation = 2.094395
+scale = Vector2(0.11481556, 0.11481556)
+
+[node name="Bubble11" parent="." unique_id=1116000838 instance=ExtResource("2_4r65i")]
+position = Vector2(-20.000004, 34.64103)
+rotation = 2.094395
+scale = Vector2(0.2489118, 0.2489118)
+
+[node name="Bubble12" parent="." unique_id=1714725039 instance=ExtResource("2_4r65i")]
+position = Vector2(9.999997, 17.320507)
+rotation = 1.0471977
+scale = Vector2(0.11481556, 0.11481556)
+
+[node name="Bubble13" parent="." unique_id=1332036937 instance=ExtResource("2_4r65i")]
+position = Vector2(20.000004, 34.64103)
+rotation = 1.0471977
+scale = Vector2(0.2489118, 0.2489118)
+
+[node name="Bubble01" parent="." unique_id=872224580 instance=ExtResource("2_4r65i")]
+scale = Vector2(0.2489118, 0.2489118)

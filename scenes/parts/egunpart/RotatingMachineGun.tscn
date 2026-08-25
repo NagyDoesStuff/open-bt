@@ -54,7 +54,7 @@ prj_info = {
 "amount": 4,
 "type": "dmg"
 },
-"size": 0.77,
+"size": 1.0,
 "speed": 1000.0,
 "template": "uid://cnlneqp8i4qud"
 }

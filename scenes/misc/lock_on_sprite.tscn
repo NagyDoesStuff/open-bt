@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://cpxdyxm6xaq4p"]
+
+[ext_resource type="Texture2D" uid="uid://brkqdnv4xe8s2" path="res://img/ui/lockon.png" id="1_onwhg"]
+[ext_resource type="Texture2D" uid="uid://cw4obbgcfucvu" path="res://img/fx/square.png" id="2_q672h"]
+
+[sub_resource type="Animation" id="Animation_q672h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-379.1963, 10.533218)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bar:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5372549)]
+}
+
+[sub_resource type="Animation" id="Animation_yheu4"]
+resource_name = "hide_bar"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bar:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5372549), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_onwhg"]
+resource_name = "new_target"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-379.1963, 10.533218), Vector2(379.196, 10.533), Vector2(-379.1963, 10.533218)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bar:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5372549)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q672h"]
+_data = {
+&"RESET": SubResource("Animation_q672h"),
+&"hide_bar": SubResource("Animation_yheu4"),
+&"new_target": SubResource("Animation_onwhg")
+}
+
+[node name="LockOnSprite" type="Sprite2D" unique_id=966850616]
+z_index = 1
+scale = Vector2(0.1898756, 0.1898756)
+texture = ExtResource("1_onwhg")
+offset = Vector2(0, -5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=967313158]
+libraries/ = SubResource("AnimationLibrary_q672h")
+
+[node name="Bar" type="Sprite2D" parent="." unique_id=1326543017]
+modulate = Color(1, 1, 1, 0.5372549)
+position = Vector2(-379.1963, 10.533218)
+scale = Vector2(0.12850223, 1.33655)
+texture = ExtResource("2_q672h")

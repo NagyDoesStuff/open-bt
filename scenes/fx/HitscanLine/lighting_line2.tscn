@@ -7,7 +7,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7513966, 1), 0.0, 0.0, 0, 0, V
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_kqog2"]
-offsets = PackedFloat32Array(0.6875, 1)
+offsets = PackedFloat32Array(0.8391167, 1)
 colors = PackedColorArray(0.55, 0.5950001, 1, 1, 1, 1, 1, 0.25882354)
 
 [node name="LightingLine" type="Line2D" unique_id=1820015217]

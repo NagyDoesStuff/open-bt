@@ -4,6 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://c8w544l3ckmgp" path="res://resources/stylebox/01.tres" id="2_8qguk"]
 [ext_resource type="FontFile" uid="uid://csbqmkfc22gpk" path="res://resources/fonts/484_uni 05_54.ttf" id="2_136eg"]
 [ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="3_136eg"]
+[ext_resource type="PackedScene" uid="uid://dwlqr56nh4exq" path="res://scenes/ui/button01.tscn" id="4_136eg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oj5la"]
 font = ExtResource("2_136eg")
@@ -97,6 +98,19 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 placeholder_text = "Insert cluster file name..."
 flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=250315358]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Button01" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=556557092 instance=ExtResource("4_136eg")]
+layout_mode = 2
+text = "+10 arenas"
+
+[node name="Button02" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=448112611 instance=ExtResource("4_136eg")]
+layout_mode = 2
+text = "-10 arenas"
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1863759714]
 custom_minimum_size = Vector2(0, 150)

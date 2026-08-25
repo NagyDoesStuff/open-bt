@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://c8r4iiu5ltfj6"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_ao02q"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_o84p8"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_fhjed"]
+
+[sub_resource type="Animation" id="Animation_qvjp0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p2igc"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.281439977927592]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.353, 1.353, 1.353, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ao02q"]
+_data = {
+&"RESET": SubResource("Animation_qvjp0"),
+&"default": SubResource("Animation_p2igc")
+}
+
+[node name="Stun Gun" type="Node2D" unique_id=122091808]
+script = ExtResource("1_ao02q")
+cooldown = 3.5
+spread = 0.1
+category = "Enemy Weapons"
+gp_usage = 3
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(42.999992, 0)
+script = ExtResource("3_fhjed")
+prj_info = {
+"dmg_info": {
+"amount": 0.0,
+"duration": 2.0,
+"type": "stun"
+},
+"size": 0.8,
+"speed": 3000.0,
+"template": "uid://dtmn4h3d823pl"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Bubble13" parent="." unique_id=1039353022 instance=ExtResource("2_o84p8")]
+position = Vector2(14.000005, -16)
+scale = Vector2(0.113702945, 0.113702945)
+
+[node name="Bubble14" parent="." unique_id=725537454 instance=ExtResource("2_o84p8")]
+position = Vector2(14.000005, 15.999999)
+scale = Vector2(0.113702945, 0.113702945)
+
+[node name="Bubble15" parent="." unique_id=256006978 instance=ExtResource("2_o84p8")]
+position = Vector2(28, 15.999999)
+scale = Vector2(0.113702945, 0.113702945)
+
+[node name="Bubble16" parent="." unique_id=1164593851 instance=ExtResource("2_o84p8")]
+position = Vector2(28, -15.999997)
+scale = Vector2(0.113702945, 0.113702945)
+
+[node name="Bubble17" parent="." unique_id=954459450 instance=ExtResource("2_o84p8")]
+position = Vector2(39.000004, 13.999999)
+scale = Vector2(0.06868546, 0.06868546)
+
+[node name="Bubble18" parent="." unique_id=1402110545 instance=ExtResource("2_o84p8")]
+position = Vector2(39.000004, -13.999997)
+scale = Vector2(0.06868546, 0.06868546)
+
+[node name="Bubble01" parent="." unique_id=366202674 instance=ExtResource("2_o84p8")]
+scale = Vector2(0.32119718, 0.32119718)
+
+[node name="Bubble12" parent="." unique_id=911454339 instance=ExtResource("2_o84p8")]
+position = Vector2(-22.000002, -6.556511e-07)
+scale = Vector2(0.111498244, 0.111498244)
+
+[node name="Pivot" type="Node2D" parent="." unique_id=805324058]
+
+[node name="Bubble02" parent="Pivot" unique_id=978896317 instance=ExtResource("2_o84p8")]
+position = Vector2(52, 0)
+scale = Vector2(0.07764849, 0.07764849)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1992499565]
+libraries/ = SubResource("AnimationLibrary_ao02q")
+autoplay = &"default"

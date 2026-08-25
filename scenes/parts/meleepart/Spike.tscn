@@ -9,11 +9,11 @@ size = Vector2(78, 20)
 
 [node name="Spike" type="Node2D" unique_id=405763063]
 script = ExtResource("1_mv565")
-cooldown = 0.75
+cooldown = 1.0
 dmg_info = {
 "amount": 3.0,
 "duration": 0.0,
-"knk": 30.0,
+"knk": 20.0,
 "type": "punch"
 }
 category = "Enemy Weapons"

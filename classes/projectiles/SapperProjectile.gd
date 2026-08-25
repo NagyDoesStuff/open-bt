@@ -4,7 +4,6 @@ class_name SapperProjectile
 @export var stolen_health_ratio: float = 1.0
 @export var idle_animation_name: String = "idle"
 @export var returning_animation_name: String = "return"
-@export var animation_player: AnimationPlayer
 
 var stolen_health: int = 0
 

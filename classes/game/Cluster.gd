@@ -214,7 +214,7 @@ func jam_weapons(duration: float, with_color: bool = true) -> void:
 
 func stun(duration: float) -> void:
 	slow_down(0.0, duration, false)
-	jam_weapons(0.0, false)
+	jam_weapons(duration, false)
 	
 	modulate = GlobalClass.STUNNED_COLOR
 	

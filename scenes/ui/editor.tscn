@@ -4,7 +4,6 @@
 [ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="2_6d1h4"]
 [ext_resource type="StyleBox" uid="uid://c8w544l3ckmgp" path="res://resources/stylebox/01.tres" id="2_x4mk5"]
 [ext_resource type="Texture2D" uid="uid://ri3wmfadomni" path="res://img/bubbles/255.png" id="3_cdtuk"]
-[ext_resource type="LabelSettings" uid="uid://crwwtp3l60tb7" path="res://resources/labelsettings/01.tres" id="3_coh7o"]
 [ext_resource type="Texture2D" uid="uid://dy64dhn0817qu" path="res://img/bubbles/1814.png" id="3_p2r2s"]
 [ext_resource type="Texture2D" uid="uid://b1seh8lakjoii" path="res://img/ui/save_icon.png" id="3_uq5ih"]
 [ext_resource type="Texture2D" uid="uid://nw1278dx21c2" path="res://img/ui/save_icon_pressed.png" id="4_ceu0q"]
@@ -89,8 +88,24 @@ font_size = 24
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0ct7"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_kv4ft"]
+font = ExtResource("2_6d1h4")
+font_size = 22
+
 [sub_resource type="LabelSettings" id="LabelSettings_74iyh"]
 font = ExtResource("20_cdtuk")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv4ft"]
+bg_color = Color(1, 1, 1, 0.2509804)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2r2s"]
 content_margin_left = 0.0
@@ -572,8 +587,8 @@ offset_bottom = 119.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 1
-text = "DRAG & DROP"
-label_settings = ExtResource("3_coh7o")
+text = "C l i c k   a n d   D r a g   O b j e c t"
+label_settings = SubResource("LabelSettings_kv4ft")
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -593,6 +608,21 @@ vertical_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_x4mk5")
+
+[node name="PartInfoDisplay" type="Panel" parent="HBoxContainer/VBoxContainer2/List" unique_id=230195679]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_right = -400.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-6, 0)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kv4ft")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/List" unique_id=270486970]
 layout_mode = 0

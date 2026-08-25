@@ -36,7 +36,7 @@ func shock_clusters(targets: Array[Cluster]) -> void:
 	for c in targets:
 		if is_instance_valid(c) and c.team != team:
 			var hitline: HitscanLine = hitscan_line.instantiate()
-			hitline.target = c
+			hitline.target_position = c.global_position
 			add_child(hitline)
 			
 			await get_tree().process_frame

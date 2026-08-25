@@ -17,8 +17,11 @@ func drain_hp() -> void:
 	infecting.recieve_hit(prj_info["dmg_info"])
 
 func infect(cluster: Cluster) -> void:
+	var init_infected_mod: Color = cluster.modulate
+	
 	infecting = cluster
 	infecting.modulate = GlobalClass.INFECTED_COLOR
+	destroyed.connect(infecting.set.bind("modulate", init_infected_mod))
 	infecting.killed.connect(
 		func () -> void:
 			mitosis()
@@ -49,7 +52,6 @@ func on_hit(area: Area2D) -> void:
 
 func mitosis() -> void:
 	for x in range(duplicate_amount):
-		print("duplicated bro")
 		var dupe: Projectile = self.duplicate()
 		dupe.global_rotation = x * (TAU / split_amount)
 		dupe.team = team

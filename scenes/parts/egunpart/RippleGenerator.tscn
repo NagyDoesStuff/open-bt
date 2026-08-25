@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bbavgewxfbukk"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_poc3j"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_h1txp"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_qp5wl"]
+
+[node name="Ripple Generator" type="Node2D" unique_id=122091808]
+script = ExtResource("1_poc3j")
+cooldown = 3.0
+keybind = "space"
+fixed = true
+category = "Enemy Weapons"
+gp_usage = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble01" parent="." unique_id=1754767230 instance=ExtResource("2_h1txp")]
+scale = Vector2(0.3064231, 0.3064231)
+
+[node name="Bubble06" parent="." unique_id=1039353022 instance=ExtResource("2_h1txp")]
+scale = Vector2(0.14963649, 0.14963649)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+script = ExtResource("3_qp5wl")
+prj_info = {
+"dmg_info": {
+"amount": 50,
+"type": "dmg"
+},
+"hit_fx": "uid://bj32jn40b07kx",
+"size": 1.0,
+"speed": 0.0,
+"template": "uid://8a60us12jd0y"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

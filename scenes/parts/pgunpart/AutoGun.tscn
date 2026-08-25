@@ -6,6 +6,7 @@
 
 [node name="Auto Cannon" type="Node2D" unique_id=122091808]
 script = ExtResource("1_ub3sl")
+turn_rate = 8.0
 cooldown = 0.25
 category = "Player Passives"
 gp_usage = 1

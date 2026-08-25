@@ -12,6 +12,12 @@ class_name HUD
 
 @onready var cluster_search_input_panel: Panel = $MarginContainer/VBoxContainer/Panel
 
+@onready var arena_button_container: HBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer
+
+@onready var increment_arenas_button: Button = $MarginContainer/VBoxContainer/HBoxContainer/Button01
+@onready var decrement_arenas_button: Button = $MarginContainer/VBoxContainer/HBoxContainer/Button02
+
+
 var mid_transition: bool = false
 
 var show_offset: float = 150.0
@@ -21,6 +27,12 @@ func _ready() -> void:
 		await get_tree().process_frame
 	
 	update_progression_bar()
+	
+	configure_buttons()
+	
+	if GlobalClass.free_mode:
+		cluster_search_input_panel.show()
+		arena_button_container.show()
 
 func _process(_delta: float) -> void:
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
@@ -28,9 +40,10 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("enter") and !cluster_search_input.text.is_empty():
 		search_for_cluster(cluster_search_input.text)
-	
-	if GlobalClass.free_mode:
-		cluster_search_input_panel.show()
+
+func configure_buttons() -> void:
+	increment_arenas_button.pressed.connect(add_arenas_travelled.bind(10))
+	decrement_arenas_button.pressed.connect(add_arenas_travelled.bind(-10))
 
 func search_for_cluster(text: String) -> void:
 	var recieved_text: String = text
@@ -62,3 +75,6 @@ func update_progression_bar() -> void:
 		targetet_y = progression_bar_container.global_position.y + show_offset
 		await create_tween().tween_property(progression_bar_container, "global_position:y", targetet_y, 0.5).set_trans(Tween.TRANS_CUBIC).finished
 		mid_transition = false
+
+func add_arenas_travelled(value: int) -> void:
+	GlobalClass.world.arenas_travelled += value

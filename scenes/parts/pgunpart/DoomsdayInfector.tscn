@@ -8,6 +8,7 @@
 script = ExtResource("1_k17ep")
 cooldown = 3.0
 keybind = "space"
+fixed = true
 category = "Player Secondaries"
 gp_usage = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
@@ -59,7 +60,7 @@ prj_info = {
 },
 "hit_fx": "uid://dqbky1rhsnesm",
 "homing": true,
-"size": 2.0,
+"size": 1.0,
 "speed": 1500.0,
 "template": "uid://kqhpd4868ion",
 "turn_rate": 10.0

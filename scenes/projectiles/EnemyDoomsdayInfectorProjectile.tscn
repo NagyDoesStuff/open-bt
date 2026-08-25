@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://baawj7nla1yk7"]
+
+[ext_resource type="Script" uid="uid://8ojb22n3dicp" path="res://classes/projectiles/InfectorProjectile.gd" id="1_gq5ay"]
+[ext_resource type="Texture2D" uid="uid://b67d417d8qpk3" path="res://img/bubbles/1796.png" id="2_tssv8"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_j27jq"]
+[ext_resource type="Texture2D" uid="uid://cawbbm7twtil2" path="res://img/prj/doomsday_infector.png" id="4_imuk5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[node name="BasicProjectile" type="Node2D" unique_id=1253201984]
+script = ExtResource("1_gq5ay")
+lifetime = 12.0
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.29267, 0.29267)
+texture = ExtResource("2_tssv8")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("3_j27jq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=220595737]
+position = Vector2(-4.999999, 0)
+scale = Vector2(0.21493345, 0.21493345)
+texture = ExtResource("4_imuk5")

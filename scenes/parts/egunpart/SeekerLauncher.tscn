@@ -26,7 +26,7 @@ position = Vector2(39, -11.000001)
 scale = Vector2(0.14327615, 0.14327615)
 
 [node name="Bubble08" parent="." unique_id=1057963483 instance=ExtResource("2_l1rx5")]
-position = Vector2(39.000004, 0)
+position = Vector2(41.000004, 0)
 scale = Vector2(0.14327615, 0.14327615)
 
 [node name="Bubble07" parent="." unique_id=758881192 instance=ExtResource("2_l1rx5")]
@@ -49,7 +49,7 @@ position = Vector2(24, 0)
 script = ExtResource("3_lk3rw")
 prj_info = {
 "dmg_info": {
-"amount": 3,
+"amount": 2,
 "type": "dmg"
 },
 "hit_fx": "uid://dqbky1rhsnesm",

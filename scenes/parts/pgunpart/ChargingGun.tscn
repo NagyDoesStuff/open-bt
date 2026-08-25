@@ -253,7 +253,7 @@ position = Vector2(44, 0)
 script = ExtResource("3_pfomu")
 prj_info = {
 "dmg_info": {
-"amount": 20,
+"amount": 30,
 "type": "dmg"
 },
 "size": 0.77,

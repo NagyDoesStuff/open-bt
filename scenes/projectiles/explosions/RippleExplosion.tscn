@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cu8l0nueafsre"]
+
+[ext_resource type="Script" uid="uid://chx5lwtp5vep7" path="res://classes/game/Explosion.gd" id="1_nqom1"]
+[ext_resource type="PackedScene" uid="uid://dxxqyds7wbtxp" path="res://scenes/fx/area_burst_boom.tscn" id="2_bqimq"]
+
+[node name="RippleExplosion" type="Area2D" unique_id=476644725]
+script = ExtResource("1_nqom1")
+lifetime = 0.5
+radius = 275.0
+knk = 50.0
+metadata/_custom_type_script = "uid://chx5lwtp5vep7"
+
+[node name="AreaBurstBoom" parent="." unique_id=800833179 instance=ExtResource("2_bqimq")]
+modulate = Color(0.17, 0.17, 0.17, 0.8235294)

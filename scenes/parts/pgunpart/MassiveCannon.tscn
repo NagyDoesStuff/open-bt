@@ -103,6 +103,7 @@ script = ExtResource("1_5bpc5")
 cooldown = 4.0
 shot_delay = 1.0
 keybind = "space"
+fixed = true
 animation_player = NodePath("AnimationPlayer")
 category = "Player Secondaries"
 gp_usage = 8

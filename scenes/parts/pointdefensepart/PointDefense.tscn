@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://beb02ien3tmla"]
+
+[ext_resource type="Script" uid="uid://dje1mq6doup1l" path="res://classes/parts/PointDefensePart.gd" id="1_2utwp"]
+[ext_resource type="PackedScene" uid="uid://c46l13cgk1drv" path="res://scenes/fx/HitscanLine/pd_line.tscn" id="2_6vklt"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_eanoe"]
+[ext_resource type="PackedScene" uid="uid://dpy58nuc6ao2x" path="res://scenes/fx/pd_boom.tscn" id="3_2kgov"]
+
+[node name="Point Defense" type="Node2D" unique_id=122091808]
+script = ExtResource("1_2utwp")
+hitscan_line = ExtResource("2_6vklt")
+hit_fx = ExtResource("3_2kgov")
+category = "Player Passives"
+gp_usage = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_eanoe")]
+scale = Vector2(0.23478365, 0.23478365)
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_eanoe")]
+position = Vector2(17, 0)
+scale = Vector2(0.08822559, 0.08822559)
+
+[node name="Bubble03" parent="." unique_id=447021098 instance=ExtResource("2_eanoe")]
+position = Vector2(22.000002, -8.999999)
+scale = Vector2(0.08822559, 0.08822559)
+
+[node name="Bubble04" parent="." unique_id=1574785943 instance=ExtResource("2_eanoe")]
+position = Vector2(22.000002, 8.999999)
+scale = Vector2(0.08822559, 0.08822559)

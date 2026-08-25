@@ -1,8 +1,12 @@
 extends Node2D
 class_name Projectile
 
+signal destroyed()
+
 @onready var player_spr: Sprite2D = $PLAYER
 @onready var other_spr: Sprite2D = $OTHER
+
+@onready var prj_area: Area2D = $Area2D
 
 var sprites: Array[Sprite2D] = []
 
@@ -10,23 +14,27 @@ var dist_from_center: float = 0.0
 var init_rot: float = 0.0
 
 var team: int = 0
+
 var velocity: Vector2 = Vector2.ZERO
-@export var prj_info: Dictionary = {}
 
 var target: Cluster
 var from: Cluster
-@onready var prj_area: Area2D = $Area2D
+
+@export var prj_info: Dictionary = {}
 
 @export var lifetime: float = -1.0
 
 @export var phase: bool = false
 
+@export_group("Movement")
+@export var acceleration: float = 1.0
 @export var min_speed_mult: float = 1.0
 
 @export_group("Visual")
 @export var spin_rate: float = 0.0
 @export var grow_rate: float = 0.0
 @export var fade_out: bool = false
+@export var animation_player: AnimationPlayer
 
 @export_group("Splitting")
 @export var split_into: PackedScene
@@ -71,6 +79,7 @@ func _process(delta: float) -> void:
 	t += delta
 	
 	velocity = Vector2.from_angle(global_rotation) * prj_info["speed"] * delta
+	velocity *= acceleration
 	global_position += velocity
 	
 	if prj_info.has("homing") and prj_info["homing"] and target and prj_info.has("turn_rate") and prj_info.has("target_mode"):
@@ -94,7 +103,7 @@ func on_hit(area: Area2D) -> void:
 			split()
 			return
 		destroy()
-	if area.get_parent() is Projectile and area.get_parent().team != team and area.get_parent().prj_info.has("homing") and area.get_parent().prj_info["homing"]:
+	if area.get_parent() is Projectile and area.get_parent().team != team and area.get_parent().prj_info.has("homing") and area.get_parent().prj_info["homing"] and area.get_parent().prj_area == area:
 		area.get_parent().destroy()
 		if prj_info.has("pierce") and prj_info["pierce"]: 
 			split()
@@ -108,6 +117,8 @@ func on_hit(area: Area2D) -> void:
 		destroy()
 
 func destroy() -> void:
+	destroyed.emit()
+	
 	split()
 	
 	var fx: Node2D

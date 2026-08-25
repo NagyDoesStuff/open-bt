@@ -2,7 +2,7 @@ extends Line2D
 class_name HitscanLine
 
 var origin: Node2D
-var target: Node2D
+var target_position: Vector2
 
 @export var fade_time: float = 0.1
 @export var point_count: int = 6
@@ -21,9 +21,9 @@ func _process(_delta: float) -> void:
 	# Lock position and rotation.
 	global_position = Vector2.ZERO
 	global_rotation = 0.0
-	if origin and target:
+	if origin:
 		points = []
 		for x in range(point_count):
-			var increment: Vector2 = target.global_position - origin.global_position
+			var increment: Vector2 = target_position - origin.global_position
 			var calc: Vector2 = to_local(origin.global_position + x * (increment/point_count))
 			add_point(calc + Vector2.UP.rotated(increment.angle()) * randf_range(0.0, instability))

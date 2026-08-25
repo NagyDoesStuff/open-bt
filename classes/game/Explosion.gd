@@ -8,6 +8,7 @@ class_name Explosion
 }
 @export var lifetime: float = 0.1
 @export var radius: float = 0.0
+@export var knk: float = 5.0
 var team: int = 0
 
 func _ready() -> void:
@@ -24,3 +25,4 @@ func _ready() -> void:
 func deal_dmg(area: Node2D):
 	if area is Cluster and area.team != team:
 		area.recieve_hit(dmg_info)
+		area.velocity += (area.global_position - global_position).normalized() * knk
