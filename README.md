@@ -16,8 +16,8 @@ Notes:
 - Player parts are available for the enemy and so are enemy parts for the player.
 - There is currently a really rare but unfixable bug that causes the game to crash when killing an enemy.
 - To find your tanks:
-  - "home/(user)/.local/share/godot/app_userdata/OpenBT/editor/saved_tanks/" on Linux
-  - "%USERPROFILE%/AppData/Roaming/Godot/app_userdata/OpenBT/editor/saved_tanks/
+  - "home/(user)/.local/share/godot/app_userdata/OpenBT/tanks/user/" on Linux
+  - "%USERPROFILE%/AppData/Roaming/Godot/app_userdata/OpenBT/tanks/user/
 " on Windows
 
 Credits:
