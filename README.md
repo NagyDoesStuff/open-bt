@@ -19,7 +19,6 @@ Notes:
   - "home/(user)/.local/share/godot/app_userdata/OpenBT/editor/saved_tanks/" on Linux
   - "%USERPROFILE%/AppData/Roaming/Godot/app_userdata/OpenBT/editor/saved_tanks/
 " on Windows
-- Upon downloading a new release, please delete backup your creations and delete the "default_tanks/" folder to trigger the game into updating the vanilla tanks.
 
 Credits:
 - Bubble Tanks was made by Hero Interactive (https://www.herointeractive.com)
