@@ -1,13 +1,13 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_2p8iq"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="2_j22u1"]
-[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="3_e1ev0"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="4_g48go"]
-[ext_resource type="PackedScene" path="res://scenes/parts/spawnerpart/ELightFighterSpawner.tscn" id="5_7n3qk"]
-[ext_resource type="Script" path="res://classes/parts/SpawnerPart.gd" id="6_ke305"]
-[ext_resource type="PackedScene" path="res://scenes/internal_clusters/no_export/Enemy Light Fighter.tscn" id="7_tpe56"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="8_6jma2"]
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_2p8iq"]
+[ext_resource type="PackedScene" uid="uid://dc1ruuaqakf21" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="2_j22u1"]
+[ext_resource type="Script" uid="uid://y2smhndmk7x3" path="res://classes/parts/CollisionPart.gd" id="3_e1ev0"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="4_g48go"]
+[ext_resource type="PackedScene" uid="uid://dufym37jcduao" path="res://scenes/parts/spawnerpart/ELightFighterSpawner.tscn" id="5_7n3qk"]
+[ext_resource type="Script" uid="uid://b8p4pydnqjfr5" path="res://classes/parts/SpawnerPart.gd" id="6_ke305"]
+[ext_resource type="PackedScene" uid="uid://b371q4wai1w2" path="res://scenes/internal_clusters/Enemy Light Fighter.tscn" id="7_tpe56"]
+[ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="8_6jma2"]
 
 [node name="Spawner Tank" type="Area2D" unique_id=497111452]
 script = ExtResource("1_2p8iq")

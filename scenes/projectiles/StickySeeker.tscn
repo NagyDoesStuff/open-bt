@@ -23,20 +23,10 @@ scale = Vector2(0.6964186, 0.6964186)
 texture = ExtResource("2_hq63t")
 
 [node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
-position = Vector2(-8, 0)
-scale = Vector2(0.5037909, 0.5037909)
+position = Vector2(-5, 0)
+scale = Vector2(0.4371521, 0.4371521)
 texture = ExtResource("3_02cmo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=598047537]
-scale = Vector2(0.45390105, 0.45390105)
-texture = ExtResource("4_hq63t")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1269337761]
-position = Vector2(-19, -12)
-scale = Vector2(0.21236514, 0.21236514)
-texture = ExtResource("4_hq63t")
-
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=604033815]
-position = Vector2(-19, 12)
-scale = Vector2(0.21236514, 0.21236514)
+scale = Vector2(0.36279336, 0.36279336)
 texture = ExtResource("4_hq63t")

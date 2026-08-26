@@ -23,7 +23,7 @@ const UPGRADE_CHOICES: int = 3
 
 const CLUSTER_CHECK_DIST_FREQ: float = .25
 const ESTIMATED_ARENA_RADIUS: float = 8505.0 / 2.0
-const ARENA_RADIUS_GROW_PER_ENEMY: float = 0.01
+const ARENA_RADIUS_GROW_PER_ENEMY: float = 0.025
 const LAND_ON_ARENA_DIST: float = 0.9
 const MIN_BUBBLE_POINT_SIZE: float = 0.33
 const BUBBLE_POINT_GROW_SIZE: float = 0.025
@@ -32,7 +32,9 @@ const HIT_BLINK_TIME: float = 0.1
 
 const PARTS_DIRECTORY: String = "res://scenes/parts/"
 const INTERNAL_CLUSTERS_DIRECTORY: String = "res://scenes/internal_clusters/"
-const EDITOR_SAVES_DIRECTORY: String = "user://editor/"
+const CLUSTER_FILES_DIRECTORY: String = "user://tanks/"
+const USER_CLUSTERS_DIRECTORY: String = CLUSTER_FILES_DIRECTORY + "user/"
+const GAME_CLUSTERS_DIRECTORY: String = CLUSTER_FILES_DIRECTORY + "game/"
 
 const HIT_COLOR: Color = Color(1.164, 1.164, 1.164, 1.0)
 const SLOWN_DOWN_COLOR: Color = Color(0.937, 0.8, 1.0, 1.0)
@@ -40,7 +42,7 @@ const JAMMED_COLOR: Color = Color(0.8, 1.0, 0.833, 1.0)
 const STUNNED_COLOR: Color = Color(0.75, 0.75, 0.75, 0.784)
 const INFECTED_COLOR: Color = Color(0.82, 0.279, 0.279, 1.0)
 
-const DEFAULT_ARENA_SCALE: Vector2 = Vector2.ONE * 0.2
+const DEFAULT_ARENA_SCALE: Vector2 = Vector2.ONE * 0.15
 
 const PROGRESSION_REQUIREMENTS: Array[int] = [
 	100, # CLASS 2
@@ -89,9 +91,9 @@ var current_arena: Arena
 
 # VARIABLES
 var player_cluster_filename: String = "Basic"
+var game_mode: String = "Normal Mode"
 
 var can_pause: bool = true
-var free_mode: bool = false
 
 func _ready() -> void:
 	create_directories()
@@ -158,22 +160,37 @@ func freeze_frame(time: float) -> void:
 		# arena.add_child(floating_text)
 
 func get_load_location(cluster: Cluster) -> String:
-	return EDITOR_SAVES_DIRECTORY + "saved_tanks/" + cluster.name + ".tscn"
+	for attr in cluster.attributes:
+		match attr:
+			"game_cluster":
+				return GAME_CLUSTERS_DIRECTORY + cluster.name + ".tscn"
+			"user_cluster":
+				return USER_CLUSTERS_DIRECTORY + cluster.name + ".tscn"
+	return ""
 
 func load_clusters() -> void:
-	for file in ResourceLoader.list_directory(EDITOR_SAVES_DIRECTORY + "saved_tanks/"):
-		var cluster: Cluster = load(EDITOR_SAVES_DIRECTORY + "saved_tanks/" + file).instantiate()
+	for file in ResourceLoader.list_directory(USER_CLUSTERS_DIRECTORY):
+		var cluster: Cluster = load(USER_CLUSTERS_DIRECTORY + file).instantiate()
+		loaded_clusters.append(cluster)
+	for file in ResourceLoader.list_directory(GAME_CLUSTERS_DIRECTORY):
+		var cluster: Cluster = load(GAME_CLUSTERS_DIRECTORY + file).instantiate()
 		loaded_clusters.append(cluster)
 
 func create_directories() -> void: 
-	if !DirAccess.dir_exists_absolute(GlobalClass.EDITOR_SAVES_DIRECTORY):
-		DirAccess.make_dir_absolute(GlobalClass.EDITOR_SAVES_DIRECTORY)
-		DirAccess.make_dir_absolute(GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/")
-		for file in ResourceLoader.list_directory(INTERNAL_CLUSTERS_DIRECTORY):
-			ResourceSaver.save(load(INTERNAL_CLUSTERS_DIRECTORY + file), GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/" + file)
+	if !DirAccess.dir_exists_absolute(GlobalClass.CLUSTER_FILES_DIRECTORY):
+		DirAccess.make_dir_absolute(GlobalClass.CLUSTER_FILES_DIRECTORY)
+		
+	if !DirAccess.dir_exists_absolute(GlobalClass.USER_CLUSTERS_DIRECTORY):
+		DirAccess.make_dir_absolute(GlobalClass.USER_CLUSTERS_DIRECTORY)
+		
+	overwrite_game_clusters()
 
-func toggle_free_mode() -> void:
-	free_mode = !free_mode
+func overwrite_game_clusters() -> void:
+	DirAccess.remove_absolute(GlobalClass.GAME_CLUSTERS_DIRECTORY)
+	if !DirAccess.dir_exists_absolute(GlobalClass.GAME_CLUSTERS_DIRECTORY):
+		DirAccess.make_dir_absolute(GlobalClass.GAME_CLUSTERS_DIRECTORY)
+		for file in ResourceLoader.list_directory(INTERNAL_CLUSTERS_DIRECTORY):
+				ResourceSaver.save(load(INTERNAL_CLUSTERS_DIRECTORY + file), GlobalClass.GAME_CLUSTERS_DIRECTORY + file)
 
 func append_distance_check(who: Node2D) -> void:
 	var timer: Timer = Timer.new()

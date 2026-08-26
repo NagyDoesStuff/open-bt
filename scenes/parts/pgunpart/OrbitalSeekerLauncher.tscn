@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://gdttj7d6b0fp"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_25o78"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_lksk0"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_nm7vx"]
+
+[node name="Orbital Seeker Launcher" type="Node2D" unique_id=122091808]
+script = ExtResource("1_25o78")
+cooldown = 1.0
+fixed = true
+auto_shoot = true
+category = "Player Passives"
+gp_usage = 3
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+script = ExtResource("3_nm7vx")
+prj_info = {
+"dmg_info": {
+"amount": 7,
+"type": "dmg"
+},
+"hit_fx": "uid://dqbky1rhsnesm",
+"homing": true,
+"size": 0.9,
+"speed": 1500.0,
+"template": "uid://c8r83pdoqfreo",
+"turn_rate": 10.0
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_lksk0")]
+position = Vector2(25, 0)
+scale = Vector2(0.125, 0.125)
+
+[node name="Bubble03" parent="." unique_id=654475856 instance=ExtResource("2_lksk0")]
+position = Vector2(12.499999, -21.650637)
+rotation = -1.0471976
+scale = Vector2(0.125, 0.125)
+
+[node name="Bubble04" parent="." unique_id=972583768 instance=ExtResource("2_lksk0")]
+position = Vector2(-12.500002, -21.650635)
+rotation = -2.0943952
+scale = Vector2(0.125, 0.125)
+
+[node name="Bubble05" parent="." unique_id=1605825822 instance=ExtResource("2_lksk0")]
+position = Vector2(-25, 2.1855694e-06)
+rotation = 3.1415925
+scale = Vector2(0.125, 0.125)
+
+[node name="Bubble06" parent="." unique_id=1893813969 instance=ExtResource("2_lksk0")]
+position = Vector2(-12.499998, 21.650637)
+rotation = 2.094395
+scale = Vector2(0.125, 0.125)
+
+[node name="Bubble07" parent="." unique_id=853231747 instance=ExtResource("2_lksk0")]
+position = Vector2(12.499998, 21.650637)
+rotation = 1.0471977
+scale = Vector2(0.125, 0.125)
+
+[node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_lksk0")]
+position = Vector2(-1.9073486e-06, -1.9073486e-06)
+scale = Vector2(0.21849424, 0.21849424)

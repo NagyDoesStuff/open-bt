@@ -173,17 +173,18 @@ func save_cluster() -> void:
 	if !enabled: return
 	var init_cluster_pos: Vector2 = edited_cluster.global_position
 	edited_cluster.global_position = Vector2.ZERO
+	edited_cluster.attributes = ["user_cluster"]
 	
 	var saved: PackedScene = PackedScene.new()
 	saved.pack(edited_cluster)
 	
 	edited_cluster.global_position = init_cluster_pos
 	
-	var full_path: String = GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/" + edited_cluster.name + ".tscn"
+	var full_path: String
 	if FileAccess.file_exists(full_path) and GlobalClass.UNOVERWRITTABLE_TANK_NAMES.has(edited_cluster.name):
 		randomize()
 		edited_cluster.name += str(randi())
-		full_path = GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/" + edited_cluster.name + ".tscn"
+	full_path = GlobalClass.USER_CLUSTERS_DIRECTORY + edited_cluster.name + ".tscn"
 	var error = ResourceSaver.save(saved, full_path)
 	if error == OK:
 		print("Saved " + str(saved) + "at path: " + full_path)
@@ -224,17 +225,22 @@ func create_edited_cluster(cluster: Cluster) -> void:
 
 func load_cluster(text: String) -> void:
 	if !enabled: return
-	var full_path: String = GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/" + text + ".tscn"
-	if FileAccess.file_exists(full_path):
-		var loaded_cluster: Cluster = load(full_path).instantiate()
-		if GlobalClass.world and loaded_cluster.cluster_class <= GlobalClass.world.max_class and loaded_cluster.get_used_gp() <= GlobalClass.world.max_gp:
-			create_edited_cluster(loaded_cluster)
-			print("Loaded cluster from: " + full_path)
-			load_cluster_input.hide()
-		elif !debug:
-			print("Could not load cluster, either class or gp is insufficient.")
-		else:
-			create_edited_cluster(loaded_cluster)
+	var possible_paths: Array[String] = [
+		GlobalClass.USER_CLUSTERS_DIRECTORY + text + ".tscn",
+		GlobalClass.GAME_CLUSTERS_DIRECTORY + text + ".tscn"
+	]
+	for p in possible_paths:
+		if FileAccess.file_exists(p):
+			var loaded_cluster: Cluster = load(p).instantiate()
+			if GlobalClass.world and loaded_cluster.cluster_class <= GlobalClass.world.max_class and loaded_cluster.get_used_gp() <= GlobalClass.world.max_gp:
+				create_edited_cluster(loaded_cluster)
+				print("Loaded cluster from: " + p)
+				load_cluster_input.hide()
+			elif !debug:
+				print("Could not load cluster, either class or gp is insufficient.")
+			else:
+				create_edited_cluster(loaded_cluster)
+			break
 	if !debug and GlobalClass.player_cluster:
 		update_tank_info()
 

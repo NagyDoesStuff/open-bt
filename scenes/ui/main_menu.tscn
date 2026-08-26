@@ -6,9 +6,10 @@
 [ext_resource type="FontFile" uid="uid://csbqmkfc22gpk" path="res://resources/fonts/484_uni 05_54.ttf" id="4_q85j6"]
 [ext_resource type="Texture2D" uid="uid://bb7jtvevhvfds" path="res://img/ui/play_button.png" id="5_x2yvf"]
 [ext_resource type="Texture2D" uid="uid://cjkl8chdx3r1a" path="res://img/ui/editor_button.png" id="6_uhagc"]
+[ext_resource type="FontFile" uid="uid://dqv2r7jhavyns" path="res://resources/fonts/503_Accidental Presidency.ttf" id="7_7suek"]
+[ext_resource type="StyleBox" uid="uid://c8w544l3ckmgp" path="res://resources/stylebox/01.tres" id="7_8g5eo"]
 [ext_resource type="Texture2D" uid="uid://k5y3g81me0r5" path="res://img/ui/exit_button.png" id="7_wb0q5"]
 [ext_resource type="Script" uid="uid://da0v0njs2gwal" path="res://classes/audio/Playlist.gd" id="9_8g5eo"]
-[ext_resource type="FontFile" uid="uid://bqmx4aseim6nf" path="res://resources/fonts/369_GoldyRound.ttf" id="9_q85j6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymrjv"]
 font = ExtResource("3_1g8jr")
@@ -17,6 +18,18 @@ font_size = 100
 [sub_resource type="LabelSettings" id="LabelSettings_8g5eo"]
 font = ExtResource("4_q85j6")
 font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7suek"]
+bg_color = Color(1, 1, 1, 0.2509804)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 4
 
 [node name="MainMenu" type="Control" unique_id=1014022432]
 layout_mode = 3
@@ -57,7 +70,7 @@ offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "v1.1 release"
+text = "v1.2 release"
 label_settings = SubResource("LabelSettings_8g5eo")
 
 [node name="Buttons" type="Control" parent="." unique_id=1937422543]
@@ -68,18 +81,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="FreeModeButton" type="CheckButton" parent="Buttons" unique_id=975470679]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -140.0
-offset_bottom = 31.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("9_q85j6")
-text = "Free Mode"
-flat = true
 
 [node name="PlayButton" type="TextureButton" parent="Buttons" unique_id=205896272]
 layout_mode = 1
@@ -98,6 +99,36 @@ scale = Vector2(2, 2)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture_normal = ExtResource("5_x2yvf")
 
+[node name="GameModeSelector" type="OptionButton" parent="Buttons" unique_id=1465819763]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = 157.5
+offset_right = 82.5
+offset_bottom = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_fonts/font = ExtResource("7_7suek")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7suek")
+theme_override_styles/pressed = ExtResource("7_8g5eo")
+theme_override_styles/hover = ExtResource("7_8g5eo")
+theme_override_constants/arrow_margin = 8
+selected = 0
+item_count = 3
+popup/item_0/text = "Normal Mode"
+popup/item_0/id = 0
+popup/item_1/text = "Free Mode"
+popup/item_1/id = 1
+popup/item_2/text = "Beserk Mode"
+popup/item_2/id = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Buttons" unique_id=657444011]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
@@ -106,9 +137,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 720.0
-offset_top = -391.0
+offset_top = -319.0
 offset_right = -720.0
-offset_bottom = -316.0
+offset_bottom = -244.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)

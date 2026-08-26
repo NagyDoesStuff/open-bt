@@ -3,7 +3,10 @@ class_name Arena
 
 func spawn_clusters() -> void:
 	var enemies_left_to_spawn: int = int(GlobalClass.DEFAULT_MAX_ENEMIES + (GlobalClass.world.arenas_travelled * GlobalClass.MAX_ENEMIES_INCREMENT_PER_ARENA))
-	var final_spawned_amount: int = 0
+	if GlobalClass.game_mode == "Beserk Mode":
+		enemies_left_to_spawn *= 2
+	
+	var final_spawned: Array[Cluster] = []
 	var enemy_names_spawned: Array[String] = []
 	
 	while enemies_left_to_spawn > 0:
@@ -30,15 +33,18 @@ func spawn_clusters() -> void:
 			if !rand_enemy: break
 			deployable_enemy.global_position = global_position + Vector2.from_angle(randf_range(0, TAU)) * randf_range(0, GlobalClass.ESTIMATED_ARENA_RADIUS * 0.8 * scale.length() / 2)
 			deployable_enemy.global_rotation = randf_range(0, TAU)
+			if GlobalClass.game_mode == "Beserk Mode":
+				deployable_enemy.team = randi()
 			for p in deployable_enemy.get_parts():
 				p.editor_mode = false
 				p.disabled = false
 			enemies_left_to_spawn -= 1
-			final_spawned_amount += 1
+			final_spawned.append(deployable_enemy)
 			GlobalClass.world.add_child(deployable_enemy)
 	
-	resize_arena(final_spawned_amount)
+	resize_arena(final_spawned)
 
-func resize_arena(enemy_amount: int) -> void:
-	var target_scale: Vector2 = GlobalClass.DEFAULT_ARENA_SCALE + Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * enemy_amount)
-	create_tween().tween_property(self, "scale", target_scale, 0.5).set_trans(Tween.TRANS_SINE)
+func resize_arena(clusters: Array[Cluster]) -> void:
+	scale = GlobalClass.DEFAULT_ARENA_SCALE
+	for c in clusters:
+		scale += Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * c.cluster_class)

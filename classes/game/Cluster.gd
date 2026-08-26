@@ -8,6 +8,9 @@ signal killed()
 @export var team: int = 0
 @export var cluster_class: int = 1
 @export var available_as_choice: bool = true
+@export var attributes: Array[String] = [
+	"game_cluster"
+]
 
 @export_group("Stats")
 @export var speed: float = 16.0
@@ -25,11 +28,11 @@ var dist_from_center: float = 0.0
 var velocity: Vector2 = Vector2.ZERO
 
 var enabled: bool = true
-var is_slown_down: bool = false
-var is_jammed: bool = false
 var dead: bool = false
 var force_ai: bool = false
 var force_full_progress: bool = false
+var is_slown_down: bool = false
+var is_jammed: bool = false
 
 ## For player tanks, this serves as the progression variable for unlocking the next class.
 ## For enemy tanks, this serves as the health variable.
@@ -233,5 +236,7 @@ func search_and_apply_behavior_parts() -> void:
 		if p is BehaviorPart:
 			match p.type:
 				"Agressive": controller = AgressorAI.new()
+				"Wall Flower": controller = WallFlowerAI.new()
+				"Skittish": controller = Skittish.new()
 			return
 	controller = WanderAI.new()

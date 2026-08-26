@@ -13,6 +13,7 @@
 [node name="Guard" type="Area2D" unique_id=722465223]
 script = ExtResource("1_5cein")
 team = 1
+cluster_class = 2
 speed = 2.0
 max_progress = 30
 min_to_available = 12

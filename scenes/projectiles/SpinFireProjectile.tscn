@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://c7x3503u4afoy"]
+
+[ext_resource type="Script" uid="uid://d4jemyfb3l8e3" path="res://classes/projectiles/ShooterProjectile.gd" id="1_cg4m1"]
+[ext_resource type="Texture2D" uid="uid://b67d417d8qpk3" path="res://img/bubbles/1796.png" id="2_50imm"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_5ptb5"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="4_50imm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[sub_resource type="Animation" id="Animation_5ptb5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BarrelSpinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_50imm"]
+resource_name = "default"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BarrelSpinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.281439977927592]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ptb5"]
+_data = {
+&"RESET": SubResource("Animation_5ptb5"),
+&"default": SubResource("Animation_50imm")
+}
+
+[node name="SpinFireProjectile" type="Node2D" unique_id=1253201984 node_paths=PackedStringArray("barrels")]
+script = ExtResource("1_cg4m1")
+barrels = [NodePath("BarrelSpinner/GunBarrel"), NodePath("BarrelSpinner/GunBarrel2"), NodePath("BarrelSpinner/GunBarrel3"), NodePath("BarrelSpinner/GunBarrel4")]
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+scale = Vector2(0.29267, 0.29267)
+texture = ExtResource("2_50imm")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("3_5ptb5")
+
+[node name="BarrelSpinner" type="Node2D" parent="." unique_id=650326399]
+
+[node name="GunBarrel" type="Node2D" parent="BarrelSpinner" unique_id=1094401753 node_paths=PackedStringArray("barrel_user")]
+position = Vector2(17, 0)
+script = ExtResource("4_50imm")
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"size": 0.66,
+"speed": 2000.0,
+"template": "uid://cnlneqp8i4qud"
+}
+barrel_user = NodePath("../..")
+owned_by_gun = false
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="GunBarrel2" type="Node2D" parent="BarrelSpinner" unique_id=1823231020 node_paths=PackedStringArray("barrel_user")]
+position = Vector2(0, 17)
+rotation = 1.5707964
+script = ExtResource("4_50imm")
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"size": 0.66,
+"speed": 2000.0,
+"template": "uid://cnlneqp8i4qud"
+}
+barrel_user = NodePath("../..")
+owned_by_gun = false
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="GunBarrel3" type="Node2D" parent="BarrelSpinner" unique_id=65233527 node_paths=PackedStringArray("barrel_user")]
+position = Vector2(-17, 0)
+rotation = 3.1415927
+script = ExtResource("4_50imm")
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"size": 0.66,
+"speed": 2000.0,
+"template": "uid://cnlneqp8i4qud"
+}
+barrel_user = NodePath("../..")
+owned_by_gun = false
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="GunBarrel4" type="Node2D" parent="BarrelSpinner" unique_id=1693133757 node_paths=PackedStringArray("barrel_user")]
+position = Vector2(0, -17)
+rotation = -1.5707964
+script = ExtResource("4_50imm")
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"size": 0.66,
+"speed": 2000.0,
+"template": "uid://cnlneqp8i4qud"
+}
+barrel_user = NodePath("../..")
+owned_by_gun = false
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1142467086]
+libraries/ = SubResource("AnimationLibrary_5ptb5")
+autoplay = &"default"

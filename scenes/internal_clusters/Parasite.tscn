@@ -1,14 +1,12 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://wihm2iakofc1"]
 
-[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_ch0pr"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="2_70xge"]
-[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="3_tgatg"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="4_y4v28"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="5_14mbh"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="6_ohsbu"]
-[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/SapperDroneLauncher.tscn" id="7_8hqp5"]
-[ext_resource type="Script" path="res://classes/parts/GunPart.gd" id="8_2hnvi"]
-[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/BasicGun.tscn" id="9_nmvcx"]
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_ch0pr"]
+[ext_resource type="PackedScene" uid="uid://dc1ruuaqakf21" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="2_70xge"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="4_y4v28"]
+[ext_resource type="PackedScene" uid="uid://ciaxywhau22p8" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="5_14mbh"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="6_ohsbu"]
+[ext_resource type="PackedScene" uid="uid://dxqwuwy1r2dm2" path="res://scenes/parts/egunpart/SapperDroneLauncher.tscn" id="7_8hqp5"]
+[ext_resource type="PackedScene" uid="uid://c8dvqqcb4fpq4" path="res://scenes/parts/egunpart/BasicGun.tscn" id="9_nmvcx"]
 
 [node name="Parasite" type="Area2D" unique_id=109332588]
 script = ExtResource("1_ch0pr")
@@ -21,177 +19,92 @@ max_progress = 35
 min_to_available = 30
 max_spawn_amount = 2
 
-[node name="Medium Dark Bubble" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("2_70xge")]
-position = Vector2(-42.989502, -64.90646)
-script = ExtResource("3_tgatg")
-category = "Collision"
+[node name="Sapper Drone Launcher" parent="." unique_id=122091808 instance=ExtResource("7_8hqp5")]
+position = Vector2(43, -74)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@82" type="Node2D" parent="." unique_id=313691575 instance=ExtResource("2_70xge")]
-position = Vector2(-42.989502, 64.906494)
-script = ExtResource("3_tgatg")
-category = "Collision"
+[node name="Sapper Drone Launcher2" parent="." unique_id=1866613697 instance=ExtResource("7_8hqp5")]
+position = Vector2(43, 78)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Small Dark Bubble" type="Node2D" parent="." unique_id=473758255 instance=ExtResource("4_y4v28")]
-position = Vector2(-11.666626, -125.51758)
-script = ExtResource("3_tgatg")
-category = "Collision"
+[node name="Sapper Drone Launcher3" parent="." unique_id=1672272669 instance=ExtResource("7_8hqp5")]
+position = Vector2(11, -2)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@99" type="Node2D" parent="." unique_id=1659153909 instance=ExtResource("4_y4v28")]
-position = Vector2(-11.666626, 125.51758)
-script = ExtResource("3_tgatg")
-category = "Collision"
+[node name="Medium Dark Bubble" parent="." unique_id=878054447 instance=ExtResource("2_70xge")]
+position = Vector2(-50.989502, -56.906464)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@104" type="Node2D" parent="." unique_id=1307325896 instance=ExtResource("4_y4v28")]
-position = Vector2(34.81256, -125.51758)
-script = ExtResource("3_tgatg")
-category = "Collision"
+[node name="@Node2D@82" parent="." unique_id=313691575 instance=ExtResource("2_70xge")]
+position = Vector2(-50.989502, 56.906494)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_104" type="Node2D" parent="." unique_id=164312819 instance=ExtResource("4_y4v28")]
-position = Vector2(34.81256, 125.51758)
-script = ExtResource("3_tgatg")
-category = "Collision"
+[node name="Small Dark Bubble" parent="." unique_id=473758255 instance=ExtResource("4_y4v28")]
+position = Vector2(-35.666626, -125.51758)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@111" type="Node2D" parent="." unique_id=1707440282 instance=ExtResource("4_y4v28")]
+[node name="@Node2D@99" parent="." unique_id=1659153909 instance=ExtResource("4_y4v28")]
+position = Vector2(-35.666626, 125.51758)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@104" parent="." unique_id=1307325896 instance=ExtResource("4_y4v28")]
+position = Vector2(10.812561, -125.51758)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_104" parent="." unique_id=164312819 instance=ExtResource("4_y4v28")]
+position = Vector2(10.812561, 125.51758)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@111" parent="." unique_id=1707440282 instance=ExtResource("4_y4v28")]
 position = Vector2(-79.3645, -21.468506)
-script = ExtResource("3_tgatg")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_111" type="Node2D" parent="." unique_id=1383357398 instance=ExtResource("4_y4v28")]
+[node name="_Node2D_111" parent="." unique_id=1383357398 instance=ExtResource("4_y4v28")]
 position = Vector2(-79.3645, 21.468506)
-script = ExtResource("3_tgatg")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Large Bubble" type="Node2D" parent="." unique_id=1650863954 instance=ExtResource("5_14mbh")]
+[node name="Large Bubble" parent="." unique_id=1650863954 instance=ExtResource("5_14mbh")]
 position = Vector2(-43.99994, 0)
 scale = Vector2(0.56, 0.56)
-script = ExtResource("3_tgatg")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Small Bubble" type="Node2D" parent="." unique_id=1278969369 instance=ExtResource("6_ohsbu")]
-position = Vector2(-23.791626, -149.76202)
-script = ExtResource("3_tgatg")
-category = "Collision"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
-
-[node name="@Node2D@120" type="Node2D" parent="." unique_id=847751376 instance=ExtResource("6_ohsbu")]
-position = Vector2(-23.791626, 149.76202)
-script = ExtResource("3_tgatg")
-category = "Collision"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
-
-[node name="@Node2D@125" type="Node2D" parent="." unique_id=337573009 instance=ExtResource("6_ohsbu")]
-position = Vector2(50.979248, -143.7009)
-script = ExtResource("3_tgatg")
-category = "Collision"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
-
-[node name="_Node2D_125" type="Node2D" parent="." unique_id=85701532 instance=ExtResource("6_ohsbu")]
-position = Vector2(50.979248, 143.70093)
-script = ExtResource("3_tgatg")
-category = "Collision"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
-
-[node name="@Node2D@132" type="Node2D" parent="." unique_id=1869182354 instance=ExtResource("6_ohsbu")]
+[node name="@Node2D@132" parent="." unique_id=1869182354 instance=ExtResource("6_ohsbu")]
 position = Vector2(-100.58325, -32.580536)
-script = ExtResource("3_tgatg")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_132" type="Node2D" parent="." unique_id=458916307 instance=ExtResource("6_ohsbu")]
+[node name="_Node2D_132" parent="." unique_id=458916307 instance=ExtResource("6_ohsbu")]
 position = Vector2(-100.58325, 32.580566)
-script = ExtResource("3_tgatg")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Sapper Drone Launcher" type="Node2D" parent="." unique_id=122091808 instance=ExtResource("7_8hqp5")]
-position = Vector2(-3.583252, -35.101868)
-rotation = -6.1601396
-script = ExtResource("8_2hnvi")
-cooldown = 3.0
-keybind = "space"
-fixed = true
-category = "Enemy Weapons"
-disabled = true
-editor_mode = true
-gp_usage = 4
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
-
-[node name="@Node2D@145" type="Node2D" parent="." unique_id=834759129 instance=ExtResource("7_8hqp5")]
-position = Vector2(-3.583252, 35.101868)
-rotation = 6.1601396
-script = ExtResource("8_2hnvi")
-cooldown = 3.0
-keybind = "space"
-fixed = true
-category = "Enemy Weapons"
-disabled = true
-editor_mode = true
-gp_usage = 4
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
-
-[node name="@Node2D@87" type="Node2D" parent="." unique_id=1834566390 instance=ExtResource("5_14mbh")]
-position = Vector2(10.562561, -87.13052)
+[node name="@Node2D@87" parent="." unique_id=1834566390 instance=ExtResource("5_14mbh")]
+position = Vector2(-13.437439, -87.13052)
 scale = Vector2(0.67, 0.67)
-script = ExtResource("3_tgatg")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_87" type="Node2D" parent="." unique_id=333519943 instance=ExtResource("5_14mbh")]
-position = Vector2(10.562561, 87.13049)
+[node name="_Node2D_87" parent="." unique_id=333519943 instance=ExtResource("5_14mbh")]
+position = Vector2(-13.437439, 87.13049)
 scale = Vector2(0.67, 0.67)
-script = ExtResource("3_tgatg")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Enemy Basic Cannon" type="Node2D" parent="." unique_id=1514647221 instance=ExtResource("9_nmvcx")]
+[node name="Enemy Basic Cannon" parent="." unique_id=1514647221 instance=ExtResource("9_nmvcx")]
 position = Vector2(-43.99994, 0)
-script = ExtResource("8_2hnvi")
+scale = Vector2(0.938499, 0.938499)
 cooldown = 2.0
-category = "Enemy Weapons"
 disabled = true
 editor_mode = true
-gp_usage = 1
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"

@@ -19,6 +19,7 @@ var dynamic_cam: DynamicCamera = DynamicCamera.new()
 
 func _ready() -> void:
 	GlobalClass.world = self
+	start_arena.scale = GlobalClass.DEFAULT_ARENA_SCALE
 	GlobalClass.current_arena = start_arena
 	
 	ui.editor.debug = false
@@ -37,7 +38,7 @@ func _ready() -> void:
 	
 	dynamic_cam.anchor = GlobalClass.player_cluster
 	
-	if GlobalClass.free_mode:
+	if GlobalClass.game_mode == "Free Mode":
 		GlobalClass.player_cluster.max_progress = GlobalClass.PROGRESSION_REQUIREMENTS[GlobalClass.MAX_CLASS - 1]
 		player_progression_requirement = GlobalClass.PROGRESSION_REQUIREMENTS[GlobalClass.MAX_CLASS - 1]
 		max_class = GlobalClass.MAX_CLASS
@@ -81,7 +82,7 @@ func transform_player_into(cluster: Cluster) -> void:
 	dynamic_cam.anchor = GlobalClass.player_cluster
 	GlobalClass.player_cluster.team = 0
 	
-	if GlobalClass.free_mode:
+	if GlobalClass.game_mode == "Free Mode":
 		GlobalClass.player_cluster.progress = GlobalClass.player_cluster.max_progress
 
 func spawn_as_enemy(cluster: Cluster) -> void:
@@ -110,10 +111,17 @@ func transfer_player_to_next_arena(angle: float = 0.0) -> void:
 		if c != GlobalClass.player_cluster:
 			c.queue_free()
 	
+	var old_arena: Arena
+	
 	var new_arena: Arena = GlobalClass.ARENA_TEMPLATE.instantiate()
 	new_arena.global_position = GlobalClass.current_arena.global_position + Vector2.RIGHT.rotated(angle) * GlobalClass.ESTIMATED_ARENA_RADIUS + Vector2.RIGHT.rotated(angle) * GlobalClass.DISTANCE_BETWEEN_ARENAS
 	new_arena.scale = GlobalClass.DEFAULT_ARENA_SCALE
 	add_child(new_arena)
+	
+	old_arena = GlobalClass.current_arena
+	GlobalClass.current_arena = new_arena
+	
+	new_arena.spawn_clusters()
 	
 	GlobalClass.player_cluster.enabled = false
 	await create_tween().tween_property(
@@ -122,13 +130,12 @@ func transfer_player_to_next_arena(angle: float = 0.0) -> void:
 		new_arena.global_position + Vector2.LEFT.rotated(angle) * GlobalClass.ESTIMATED_ARENA_RADIUS * GlobalClass.DEFAULT_ARENA_SCALE * GlobalClass.LAND_ON_ARENA_DIST, 
 		1).set_trans(Tween.TRANS_CIRC).finished
 	
-	GlobalClass.current_arena.queue_free()
-	GlobalClass.current_arena = new_arena
 	
 	await get_tree().create_timer(0.1).timeout
 	
 	GlobalClass.player_cluster.enabled = true
-	if new_arena: new_arena.spawn_clusters()
+	
+	old_arena.queue_free()
 	
 	entered_arena.emit()
 	

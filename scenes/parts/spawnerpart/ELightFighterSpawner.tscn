@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dufym37jcduao"]
 
 [ext_resource type="Script" uid="uid://b8p4pydnqjfr5" path="res://classes/parts/SpawnerPart.gd" id="1_7i11w"]
-[ext_resource type="PackedScene" uid="uid://b371q4wai1w2" path="res://scenes/internal_clusters/no_export/Enemy Light Fighter.tscn" id="2_7i11w"]
+[ext_resource type="PackedScene" uid="uid://b371q4wai1w2" path="res://scenes/internal_clusters/Enemy Light Fighter.tscn" id="2_7i11w"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_oa3qe"]
 
 [sub_resource type="Animation" id="Animation_7i11w"]

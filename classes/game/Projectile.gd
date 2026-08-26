@@ -18,7 +18,7 @@ var team: int = 0
 var velocity: Vector2 = Vector2.ZERO
 
 var target: Cluster
-var from: Cluster
+var from: Node2D
 
 @export var prj_info: Dictionary = {}
 
@@ -33,7 +33,8 @@ var from: Cluster
 @export_group("Visual")
 @export var spin_rate: float = 0.0
 @export var grow_rate: float = 0.0
-@export var fade_out: bool = false
+@export var fade_in_time: float = -1.0
+@export var fade_out_time: float = -1.0
 @export var animation_player: AnimationPlayer
 
 @export_group("Splitting")
@@ -48,23 +49,42 @@ var from: Cluster
 @export var hit_sfx: String = "uid://br055er0cj176"
 
 func _ready() -> void:
+	# Set initial values.
 	scale = Vector2.ONE * prj_info["size"]
 	init_rot = global_rotation
 	spin_rate *= [-1, 1].pick_random()
 	prj_info["speed"] *= randf_range(min_speed_mult, 1.0)
 	
-	if !phase: prj_area.area_entered.connect(on_hit, ConnectFlags.CONNECT_DEFERRED)
+	# Phasing
+	if !phase: 
+		prj_area.area_entered.connect(on_hit, ConnectFlags.CONNECT_DEFERRED)
 	
-	if team == 0: other_spr.queue_free()
-	else: player_spr.queue_free()
-	
+	# Targeting.
 	if prj_info.has("homing") and prj_info["homing"]:
 		search_for_target()
 	
-	if lifetime > 0.0:
-		get_tree().create_timer(lifetime).timeout.connect(destroy)
-		if fade_out: create_tween().tween_property(self, "modulate:a", 0.0, lifetime)
+	# Visual
 	
+	if lifetime > 0.0:
+		get_tree().create_timer(lifetime).timeout.connect(lifetime_ran_out)
+	
+	if fade_in_time > 0.0:
+		modulate.a = 0.0
+		create_tween().tween_property(self, "modulate:a", 1.0, fade_in_time)
+	
+	if fade_out_time > 0.0:
+		get_tree().create_timer(lifetime - fade_out_time).timeout.connect(
+			func () -> void:
+				create_tween().tween_property(self, "modulate:a", 0.0, fade_out_time)
+		)
+	
+	# Sprite selection.
+	if team == 0: 
+		other_spr.queue_free()
+	else: 
+		player_spr.queue_free()
+	
+	# Add distance check.
 	GlobalClass.append_distance_check(self)
 	
 	sprites = await get_sprites()
@@ -183,3 +203,6 @@ func get_sprites() -> Array[Sprite2D]:
 			list.append(spr)
 	
 	return list
+
+func lifetime_ran_out() -> void:
+	destroy()

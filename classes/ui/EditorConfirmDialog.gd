@@ -53,7 +53,8 @@ func pick_and_make_choices() -> void:
 	if available_choices.is_empty(): return
 	
 	var already_chosen_names: Array[String] = []
-	for x in GlobalClass.UPGRADE_CHOICES:
+	var upgrade_choices_left: int = GlobalClass.UPGRADE_CHOICES
+	while upgrade_choices_left > 0:
 		var picked: Cluster = available_choices.pick_random()
 		
 		if already_chosen_names.has(picked.name): continue
@@ -74,3 +75,5 @@ func pick_and_make_choices() -> void:
 		dupe.position = button.size / 2
 		dupe.scale = Vector2.ONE * 0.75
 		button.add_child(dupe)
+		
+		upgrade_choices_left -= 1

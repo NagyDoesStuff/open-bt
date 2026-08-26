@@ -9,10 +9,10 @@ class_name MainMenu
 @onready var debug_editor_button: TextureButton = $Buttons/HBoxContainer/DebugEditorButton
 @onready var exit_button: TextureButton = $Buttons/HBoxContainer/ExitButton
 
-@onready var free_mode_button: CheckButton = $Buttons/FreeModeButton
+@onready var game_mode_selector: OptionButton = $Buttons/GameModeSelector
 
 func _ready() -> void:
-	free_mode_button.button_pressed = GlobalClass.free_mode
+	GlobalClass.game_mode = "Normal Mode"
 	buttons_container.hide()
 	configure_buttons()
 	do_intro()
@@ -31,4 +31,7 @@ func configure_buttons() -> void:
 	play_button.pressed.connect(get_tree().change_scene_to_file.bind("uid://cr1hv48vvi5cd"))
 	debug_editor_button.pressed.connect(get_tree().change_scene_to_file.bind("uid://dwgmerdems35x"))
 	exit_button.pressed.connect(get_tree().quit)
-	free_mode_button.pressed.connect(GlobalClass.toggle_free_mode)
+	game_mode_selector.item_selected.connect(set_gamemode)
+
+func set_gamemode(i: int) -> void:
+	GlobalClass.game_mode = game_mode_selector.get_item_text(i)

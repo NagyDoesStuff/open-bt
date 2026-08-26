@@ -26,7 +26,7 @@ func boost_neighbors(targets: Array[Projectile]) -> void:
 	for c in targets:
 		if is_instance_valid(c) and c != self and c is ShockProjectile and c.team == team:
 			var hitline: HitscanLine = hitscan_line.instantiate()
-			hitline.target = c
+			hitline.target_position = c.global_position
 			add_child(hitline)
 			c.shock_cooldown *= peer_cooldown_remove
 		await get_tree().create_timer(multishock_interval).timeout

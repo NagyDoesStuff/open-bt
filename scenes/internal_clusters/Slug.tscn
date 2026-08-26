@@ -9,6 +9,7 @@
 [node name="Slug" type="Area2D" unique_id=1785096305]
 script = ExtResource("1_n3xk8")
 team = 1
+cluster_class = 2
 speed = 2.0
 turn_rate = 1.0
 drop_value = 8
@@ -42,8 +43,8 @@ position = Vector2(51.083374, -0.5)
 disabled = true
 editor_mode = true
 
-[node name="_Node2D_73" parent="@Node2D@67" unique_id=155475023 instance=ExtResource("4_i6pwr")]
-position = Vector2(31.385437, 48.041687)
+[node name="_Node2D_73" parent="." unique_id=155475023 instance=ExtResource("4_i6pwr")]
+position = Vector2(82.46881, 47.541687)
 scale = Vector2(0.75, 0.75)
 disabled = true
 editor_mode = true

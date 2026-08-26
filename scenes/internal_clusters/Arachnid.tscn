@@ -11,6 +11,7 @@
 [node name="arachnid" type="Area2D" unique_id=1578585503]
 script = ExtResource("1")
 team = 1
+cluster_class = 2
 speed = 2.0
 turn_rate = 1.0
 drop_value = 15

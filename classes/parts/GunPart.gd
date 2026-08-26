@@ -39,9 +39,9 @@ func _process(_delta: float) -> void:
 			turn_to(get_global_mouse_position(), _delta)
 		if can_shoot and Input.is_action_pressed(keybind) or can_shoot and auto_shoot:
 			fire_all_barrels()
-	elif GlobalClass.player_cluster:
+	elif user.team != 0 and user.controller and user.controller.target:
 		if !fixed: 
-			turn_to(GlobalClass.player_cluster.global_position, _delta)
+			turn_to(user.controller.target.global_position, _delta)
 		if can_shoot: fire_all_barrels()
 
 func get_barrels() -> Array[GunBarrel]:

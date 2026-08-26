@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://cjmj2amuwwpgk"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_ryq0s"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_t068o"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_ysp36"]
+
+[sub_resource type="Animation" id="Animation_t068o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Muzzle:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Muzzle/Barrel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Muzzle/Barrel2:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-11.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Muzzle/Barrel:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Muzzle/Barrel2:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ysp36"]
+resource_name = "idle"
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Muzzle/Barrel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [11.0, -11.0, 11.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Muzzle/Barrel2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-11.0, 11.0, -11.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Muzzle/Barrel:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Muzzle/Barrel2:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t068o"]
+_data = {
+&"RESET": SubResource("Animation_t068o"),
+&"idle": SubResource("Animation_ysp36")
+}
+
+[node name="Minigun" type="Node2D" unique_id=122091808]
+script = ExtResource("1_ryq0s")
+turn_rate = 8.0
+cooldown = 0.05
+spread = 0.075
+category = "Player Primaries"
+gp_usage = 8
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble01" parent="." unique_id=111457785 instance=ExtResource("2_t068o")]
+scale = Vector2(0.32825145, 0.32825145)
+
+[node name="Bubble03" parent="." unique_id=1999600052 instance=ExtResource("2_t068o")]
+position = Vector2(-25.09889, 18)
+scale = Vector2(0.2115367, 0.2115367)
+
+[node name="Bubble04" parent="." unique_id=919759925 instance=ExtResource("2_t068o")]
+position = Vector2(-25.09889, -18.000002)
+scale = Vector2(0.2115367, 0.2115367)
+
+[node name="Muzzle" type="Node2D" parent="." unique_id=577040052]
+position = Vector2(-5, 0)
+
+[node name="Barrel" type="Node2D" parent="Muzzle" unique_id=218227084]
+position = Vector2(0, 11)
+
+[node name="Bubble02" parent="Muzzle/Barrel" unique_id=1278923371 instance=ExtResource("2_t068o")]
+position = Vector2(28.816416, -0.15254974)
+scale = Vector2(0.12557663, 0.12557663)
+
+[node name="Bubble05" parent="Muzzle/Barrel" unique_id=666731127 instance=ExtResource("2_t068o")]
+position = Vector2(45.480278, -0.15254974)
+scale = Vector2(0.12557663, 0.12557663)
+
+[node name="Bubble07" parent="Muzzle/Barrel" unique_id=1039353022 instance=ExtResource("2_t068o")]
+position = Vector2(62.48027, -0.15254974)
+scale = Vector2(0.12557663, 0.12557663)
+
+[node name="Barrel2" type="Node2D" parent="Muzzle" unique_id=962390343]
+position = Vector2(0, -11)
+
+[node name="Bubble02" parent="Muzzle/Barrel2" unique_id=1651669921 instance=ExtResource("2_t068o")]
+position = Vector2(28.816416, -0.15254974)
+scale = Vector2(0.122544244, 0.122544244)
+
+[node name="Bubble05" parent="Muzzle/Barrel2" unique_id=1540361175 instance=ExtResource("2_t068o")]
+position = Vector2(45.480278, -0.15254974)
+scale = Vector2(0.122544244, 0.122544244)
+
+[node name="Bubble07" parent="Muzzle/Barrel2" unique_id=16512447 instance=ExtResource("2_t068o")]
+position = Vector2(62.48027, -0.15254974)
+scale = Vector2(0.122544244, 0.122544244)
+
+[node name="Barrel3" type="Node2D" parent="Muzzle" unique_id=1351346540]
+
+[node name="Bubble02" parent="Muzzle/Barrel3" unique_id=494003670 instance=ExtResource("2_t068o")]
+position = Vector2(28.816416, -0.15255165)
+scale = Vector2(0.12431598, 0.12431598)
+
+[node name="Bubble05" parent="Muzzle/Barrel3" unique_id=191060623 instance=ExtResource("2_t068o")]
+position = Vector2(45.48028, -0.15255165)
+scale = Vector2(0.12431598, 0.12431598)
+
+[node name="Bubble07" parent="Muzzle/Barrel3" unique_id=914507472 instance=ExtResource("2_t068o")]
+position = Vector2(62.480274, -0.15255165)
+scale = Vector2(0.12431598, 0.12431598)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(74.0368, 0)
+scale = Vector2(1.3587582, 1.3587582)
+script = ExtResource("3_ysp36")
+prj_info = {
+"dmg_info": {
+"amount": 3.0,
+"type": "dmg"
+},
+"size": 0.7,
+"speed": 3000.0,
+"template": "uid://bhlj51tfj7x4r"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1759661531]
+libraries/ = SubResource("AnimationLibrary_t068o")
+autoplay = &"idle"

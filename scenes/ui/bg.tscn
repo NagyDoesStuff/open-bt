@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://ed6xvuvjcmkd"]
 
-[ext_resource type="Texture2D" uid="uid://53sencjl08cp" path="res://img/bg.png" id="1_2xehu"]
+[ext_resource type="Script" uid="uid://beasv7mctq3vk" path="res://classes/misc/Background.gd" id="1_psg4x"]
 [ext_resource type="Texture2D" uid="uid://ri3wmfadomni" path="res://img/bubbles/255.png" id="2_psg4x"]
+
+[sub_resource type="Gradient" id="Gradient_2xehu"]
+colors = PackedColorArray(0.02745098, 0.6392157, 0.7058824, 1, 0.023529412, 0.23921569, 0.3764706, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4m22w"]
+gradient = SubResource("Gradient_2xehu")
+width = 1
+fill_to = Vector2(0, 1)
 
 [sub_resource type="Curve" id="Curve_ymrjv"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.12783504, 1), 0.0, 0.0, 0, 0, Vector2(0.6350515, 0.94), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -9,11 +17,15 @@ point_count = 4
 
 [node name="BG" type="CanvasLayer" unique_id=1923598303]
 layer = -99
+script = ExtResource("1_psg4x")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1901144759]
-position = Vector2(983, 558)
-scale = Vector2(0.3591958, 0.24948315)
-texture = ExtResource("1_2xehu")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1062323265]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_4m22w")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1729752112]
 position = Vector2(791, 540)

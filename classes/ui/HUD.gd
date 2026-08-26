@@ -30,7 +30,7 @@ func _ready() -> void:
 	
 	configure_buttons()
 	
-	if GlobalClass.free_mode:
+	if GlobalClass.game_mode == "Free Mode":
 		cluster_search_input_panel.show()
 		arena_button_container.show()
 
@@ -52,7 +52,7 @@ func search_for_cluster(text: String) -> void:
 		recieved_text = recieved_text.trim_suffix(" AS_ENEMY")
 		spawn_as_enemy = true
 	
-	var full_path: String = GlobalClass.EDITOR_SAVES_DIRECTORY + "saved_tanks/" + recieved_text + ".tscn"
+	var full_path: String = GlobalClass.USER_CLUSTERS_DIRECTORY + recieved_text + ".tscn"
 	if FileAccess.file_exists(full_path):
 		var loaded_cluster: Cluster = ResourceLoader.load(full_path).instantiate()
 		if !spawn_as_enemy:

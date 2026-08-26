@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://ddrlacr3me6om"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_evo8d"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_tffpd"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_ei6et"]
+
+[sub_resource type="Animation" id="Animation_tffpd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_evo8d"]
+resource_name = "default"
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.281439977927592]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tffpd"]
+_data = {
+&"RESET": SubResource("Animation_tffpd"),
+&"default": SubResource("Animation_evo8d")
+}
+
+[node name="Spin-Fire Cannon" type="Node2D" unique_id=122091808]
+script = ExtResource("1_evo8d")
+cooldown = 8.0
+category = "Enemy Weapons"
+gp_usage = 8
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_tffpd")]
+position = Vector2(-14, 0)
+scale = Vector2(0.3055271, 0.3055271)
+
+[node name="Spinner" parent="." unique_id=1121221911 instance=ExtResource("2_tffpd")]
+position = Vector2(13.999999, 0)
+scale = Vector2(0.22615716, 0.22615716)
+
+[node name="Bubble03" parent="." unique_id=503257635 instance=ExtResource("2_tffpd")]
+position = Vector2(7, -16)
+scale = Vector2(0.12915522, 0.12915522)
+
+[node name="Bubble04" parent="." unique_id=1496810404 instance=ExtResource("2_tffpd")]
+position = Vector2(7, 16)
+scale = Vector2(0.12915522, 0.12915522)
+
+[node name="Bubble05" parent="." unique_id=773176507 instance=ExtResource("2_tffpd")]
+position = Vector2(21.000002, 20)
+scale = Vector2(0.10521645, 0.10521645)
+
+[node name="Bubble06" parent="." unique_id=180421686 instance=ExtResource("2_tffpd")]
+position = Vector2(21.000002, -20)
+scale = Vector2(0.10521645, 0.10521645)
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_tffpd")]
+scale = Vector2(0.17522037, 0.17522037)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(28, 0)
+script = ExtResource("3_ei6et")
+prj_info = {
+"dmg_info": {
+"amount": 4,
+"type": "dmg"
+},
+"pierce": true,
+"size": 2.0,
+"speed": 500.0,
+"template": "uid://c7x3503u4afoy"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=758906017]
+libraries/ = SubResource("AnimationLibrary_tffpd")
+autoplay = &"default"

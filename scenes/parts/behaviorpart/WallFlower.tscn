@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cdk8bwwhfcv1b"]
+
+[ext_resource type="Script" uid="uid://dny073s7n1p00" path="res://classes/parts/BehaviorPart.gd" id="1_2bju0"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_rafgq"]
+
+[node name="Wall Flower" type="Node2D" unique_id=1961699606]
+script = ExtResource("1_2bju0")
+type = "Wall Flower"
+category = "Enemy Behaviors"
+gp_usage = 1
+metadata/_custom_type_script = "uid://dny073s7n1p00"
+
+[node name="Bubble11" parent="." unique_id=1039353022 instance=ExtResource("2_rafgq")]
+scale = Vector2(0.0809558, 0.0809558)
+
+[node name="Bubble16" parent="." unique_id=1016406042 instance=ExtResource("2_rafgq")]
+position = Vector2(16, 0)
+scale = Vector2(0.12127318, 0.12127318)
+
+[node name="Bubble17" parent="." unique_id=1425462066 instance=ExtResource("2_rafgq")]
+position = Vector2(4.141105, -15.454813)
+rotation = -1.3089969
+scale = Vector2(0.1212732, 0.1212732)
+
+[node name="Bubble18" parent="." unique_id=1641579832 instance=ExtResource("2_rafgq")]
+position = Vector2(-13.106433, -9.177223)
+rotation = -2.5307274
+scale = Vector2(0.12127329, 0.12127329)
+
+[node name="Bubble19" parent="." unique_id=339271734 instance=ExtResource("2_rafgq")]
+position = Vector2(-13.106433, 9.177222)
+rotation = 2.5307274
+scale = Vector2(0.121273406, 0.121273406)
+
+[node name="Bubble20" parent="." unique_id=243130909 instance=ExtResource("2_rafgq")]
+position = Vector2(4.141104, 15.454813)
+rotation = 1.3089969
+scale = Vector2(0.12127324, 0.12127324)

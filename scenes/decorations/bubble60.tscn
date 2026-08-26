@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://brj0petryq7ir"]
+
+[ext_resource type="Script" uid="uid://cve0rm03lq2s7" path="res://classes/misc/Bubble.gd" id="1_2v28g"]
+[ext_resource type="Texture2D" uid="uid://byvevgfr02w2d" path="res://img/prj/jam_gas.png" id="2_2v28g"]
+
+[node name="Bubble60" type="Node2D" unique_id=1133716164]
+script = ExtResource("1_2v28g")
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+metadata/_edit_horizontal_guides_ = [-64.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=420946210]
+scale = Vector2(0.25542754, 0.25542754)
+texture = ExtResource("2_2v28g")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://br5lc0sp3axdc"]
+
+[ext_resource type="Script" uid="uid://dcm5ydu1isla5" path="res://classes/parts/HealerPart.gd" id="1_haaht"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_1y6fb"]
+[ext_resource type="PackedScene" uid="uid://bmjef0wpq4al5" path="res://scenes/fx/HitscanLine/heal_line.tscn" id="2_haaht"]
+[ext_resource type="PackedScene" uid="uid://bnkkjs64il0x8" path="res://scenes/fx/heal_boom.tscn" id="3_dvxb5"]
+
+[node name="Healer Beam" type="Node2D" unique_id=122091808]
+script = ExtResource("1_haaht")
+hitscan_line = ExtResource("2_haaht")
+hit_fx = ExtResource("3_dvxb5")
+turn_rate = 20.0
+heal_cooldown = 0.05
+heal_amount = 0.1
+category = "Enemy Behaviors"
+gp_usage = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble06" parent="." unique_id=1795005576 instance=ExtResource("2_1y6fb")]
+position = Vector2(46, -1.9073486e-06)
+scale = Vector2(0.12548794, 0.12548794)
+
+[node name="Bubble08" parent="." unique_id=1039353022 instance=ExtResource("2_1y6fb")]
+position = Vector2(26.000002, -20)
+scale = Vector2(0.12548794, 0.12548794)
+
+[node name="Bubble09" parent="." unique_id=860178601 instance=ExtResource("2_1y6fb")]
+position = Vector2(26, 19.999998)
+scale = Vector2(0.12548794, 0.12548794)
+
+[node name="Bubble01" parent="." unique_id=175184260 instance=ExtResource("2_1y6fb")]
+position = Vector2(26, 0)
+scale = Vector2(0.21198913, 0.21198913)
+
+[node name="Bubble07" parent="." unique_id=1204704250 instance=ExtResource("2_1y6fb")]
+position = Vector2(-2.682209e-06, 0)
+scale = Vector2(0.2867324, 0.2867324)

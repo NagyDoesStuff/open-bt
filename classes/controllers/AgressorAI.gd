@@ -26,15 +26,15 @@ func _process(_delta: float) -> void:
 	
 	if !GlobalClass.current_arena or !GlobalClass.player_cluster: return
 	
-	if run_to_center_margin * GlobalClass.current_arena.scale.x > user.dist_from_center:
+	if in_avoid_center_margin():
 		if can_turn:
-			user.global_rotation = move_toward(
+			user.global_rotation = rotate_toward(
 				user.global_rotation,
 				(GlobalClass.player_cluster.global_position - user.global_position).angle(),
 				_delta * user.turn_rate * run_turn_rate_mult
 			)
 	else:
-		user.global_rotation = move_toward(
+		user.global_rotation = rotate_toward(
 			user.global_rotation,
 			(GlobalClass.current_arena.global_position - user.global_position).angle(),
 			_delta * user.turn_rate * run_turn_rate_mult

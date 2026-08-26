@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bljfq7s05u0qm"]
 
 [ext_resource type="Script" uid="uid://b8p4pydnqjfr5" path="res://classes/parts/SpawnerPart.gd" id="1_mf17c"]
-[ext_resource type="PackedScene" uid="uid://cpk41qcwrot72" path="res://scenes/internal_clusters/no_export/Player Light Fighter.tscn" id="2_s4okr"]
+[ext_resource type="PackedScene" uid="uid://cpk41qcwrot72" path="res://scenes/internal_clusters/Player Light Fighter.tscn" id="2_s4okr"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_wthst"]
 
 [node name="Light Ally Spawner" type="Node2D" unique_id=962284641]

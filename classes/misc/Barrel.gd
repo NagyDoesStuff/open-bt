@@ -16,6 +16,7 @@ class_name GunBarrel
 		"duration": 0.0,
 		"amount": 1.0
 	},
+	"pierce": false,
 	"speed": 2000.0,
 	"size": 1.0,
 	"hit_fx": "uid://bwddu713otuhv",
@@ -28,30 +29,42 @@ class_name GunBarrel
 	"sin_turn_mode_freq": 3.0
 }
 
-@onready var gun: GunPart = get_parent()
+@export var barrel_user: Node2D
 
 func _ready() -> void:
-	if gun.disabled or !gun.user: return
+	if barrel_user and barrel_user is Projectile: return
+	else: barrel_user = get_parent()
+	if barrel_user.disabled or !barrel_user.user: return
 	
-	if gun.user.team != 0:
+	if barrel_user.user.team != 0:
 		muted = true
 
 func shoot() -> void:
-	if gun.user.is_jammed: return
+	if barrel_user.user.is_jammed: return
 	
-	if !muted and gun.salvo_interval == 0.0:
-		GlobalClass.play_sound(gun.shoot_fx)
+	if !muted and barrel_user.salvo_interval == 0.0:
+		GlobalClass.play_sound(barrel_user.shoot_fx)
 	
-	for x in range(gun.amount_per_salvo):
+	for x in range(barrel_user.amount_per_salvo):
 		var prj: Projectile = load(prj_info["template"]).instantiate()
 		prj.global_position = global_position
-		prj.global_rotation = global_rotation + randf_range(-gun.spread, gun.spread)
+		prj.global_rotation = global_rotation + randf_range(-barrel_user.spread, barrel_user.spread)
 		prj.prj_info = prj_info.duplicate()
-		prj.team = gun.user.team
-		prj.from = gun.user
+		prj.team = barrel_user.user.team
+		prj.from = barrel_user.user
 		GlobalClass.world.add_child(prj)
 		
-		if gun.salvo_interval > 0.0:
+		if barrel_user.salvo_interval > 0.0:
 			if !muted:
-				GlobalClass.play_sound(gun.shoot_fx)
-			if is_instance_valid(get_tree()): await get_tree().create_timer(gun.salvo_interval).timeout
+				GlobalClass.play_sound(barrel_user.shoot_fx)
+			if is_instance_valid(get_tree()): await get_tree().create_timer(barrel_user.salvo_interval).timeout
+
+func shoot_via_prj() -> void:
+	var prj: Projectile = load(prj_info["template"]).instantiate()
+	prj.global_position = global_position
+	prj.global_rotation = global_rotation
+	prj.prj_info = prj_info.duplicate()
+	prj.velocity += barrel_user.velocity
+	prj.team = barrel_user.team
+	prj.from = barrel_user
+	GlobalClass.world.add_child(prj)
