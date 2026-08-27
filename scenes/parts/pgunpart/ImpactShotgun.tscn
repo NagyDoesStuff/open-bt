@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://b3ccqac3ufi3m"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_k546d"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_ix603"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_2i8w3"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="4_6unnq"]
+
+[sub_resource type="Animation" id="Animation_2cvsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Bubble07:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(43, 9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Bubble08:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(43, -9)]
+}
+
+[sub_resource type="Animation" id="Animation_w4lio"]
+resource_name = "shot"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-6, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Bubble07:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(39, 17), Vector2(43, 9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Bubble08:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(39, -17), Vector2(43, -9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2cvsw"]
+_data = {
+&"RESET": SubResource("Animation_2cvsw"),
+&"shot": SubResource("Animation_w4lio")
+}
+
+[node name="Impact Shotgun" type="Node2D" unique_id=122091808 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_k546d")
+cooldown = 0.4
+spread = 0.3
+amount_per_salvo = 14
+animation_player = NodePath("AnimationPlayer")
+category = "Player Primaries"
+gp_usage = 5
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=129457675]
+
+[node name="Bubble13" parent="Node2D" unique_id=1039353022 instance=ExtResource("3_2i8w3")]
+position = Vector2(-6.000003, -17.999996)
+scale = Vector2(0.15321173, 0.15321173)
+
+[node name="Bubble14" parent="Node2D" unique_id=1953224627 instance=ExtResource("3_2i8w3")]
+position = Vector2(-6.000001, 16.999996)
+scale = Vector2(0.15321173, 0.15321173)
+
+[node name="Bubble03" parent="Node2D" unique_id=387385907 instance=ExtResource("2_ix603")]
+position = Vector2(18, -6)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble04" parent="Node2D" unique_id=1560419007 instance=ExtResource("2_ix603")]
+position = Vector2(18, 6)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble05" parent="Node2D" unique_id=1400368413 instance=ExtResource("2_ix603")]
+position = Vector2(30.999998, 6.9999986)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble07" parent="Node2D" unique_id=968717684 instance=ExtResource("3_2i8w3")]
+position = Vector2(43, 9)
+scale = Vector2(0.09586859, 0.09586859)
+
+[node name="Bubble08" parent="Node2D" unique_id=217068788 instance=ExtResource("3_2i8w3")]
+position = Vector2(43, -9)
+scale = Vector2(0.09586859, 0.09586859)
+
+[node name="Bubble06" parent="Node2D" unique_id=1262060985 instance=ExtResource("2_ix603")]
+position = Vector2(30.999998, -6.999998)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble01" parent="Node2D" unique_id=1294958449 instance=ExtResource("2_ix603")]
+scale = Vector2(0.26278636, 0.26278636)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(24, 0)
+script = ExtResource("4_6unnq")
+prj_info = {
+"dmg_info": {
+"amount": 1.5,
+"knk": 3.0,
+"type": "punch"
+},
+"hit_fx": "uid://k34oup7yqqiv",
+"size": 0.4,
+"speed": 3000.0,
+"template": "uid://be3l5s1dbnk65"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1774210245]
+libraries/ = SubResource("AnimationLibrary_2cvsw")

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://baeeblrq8dmhm"]
+
+[ext_resource type="Script" uid="uid://b8p4pydnqjfr5" path="res://classes/parts/SpawnerPart.gd" id="1_wkt6i"]
+[ext_resource type="PackedScene" uid="uid://borfbxb1yneia" path="res://scenes/internal_clusters/no_export/Player Swarmer Fighter.tscn" id="2_wkt6i"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_6wh1s"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_dll60"]
+
+[node name="Swarmer Ally Spawner" type="Node2D" unique_id=962284641]
+script = ExtResource("1_wkt6i")
+cooldown = 3.0
+spawned_cluster = ExtResource("2_wkt6i")
+spawned_amount = 3
+limit = 6
+category = "Player Secondaries"
+gp_usage = 6
+metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
+
+[node name="Bubble23" parent="." unique_id=1039353022 instance=ExtResource("3_6wh1s")]
+position = Vector2(10.000002, 20)
+scale = Vector2(0.25, 0.25)
+
+[node name="Bubble24" parent="." unique_id=6006789 instance=ExtResource("3_6wh1s")]
+position = Vector2(10, -20.000004)
+scale = Vector2(0.25, 0.25)
+
+[node name="Bubble21" parent="." unique_id=973819074 instance=ExtResource("3_dll60")]
+position = Vector2(-31, -24.999998)
+scale = Vector2(0.14421345, 0.14421345)
+
+[node name="Bubble22" parent="." unique_id=245690515 instance=ExtResource("3_dll60")]
+position = Vector2(-31, 25.000002)
+scale = Vector2(0.14421345, 0.14421345)
+
+[node name="Bubble25" parent="." unique_id=1706797196 instance=ExtResource("3_dll60")]
+position = Vector2(-20.000006, 3.9339066e-06)
+scale = Vector2(0.17, 0.17)
+
+[node name="Bubble14" parent="." unique_id=2049258108 instance=ExtResource("3_dll60")]
+position = Vector2(-13.999992, 22.000002)
+scale = Vector2(0.2, 0.2)
+
+[node name="Bubble15" parent="." unique_id=881579760 instance=ExtResource("3_dll60")]
+position = Vector2(-13.999992, -22.000006)
+scale = Vector2(0.2, 0.2)
+
+[node name="Bubble11" parent="." unique_id=1323148196 instance=ExtResource("3_dll60")]
+scale = Vector2(0.3, 0.3)

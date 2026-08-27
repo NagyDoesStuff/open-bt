@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_5bpc5"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_7xg2j"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_tss03"]
-[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_uipjh"]
 [ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="4_mq1l0"]
 
 [sub_resource type="Animation" id="Animation_mq1l0"]
@@ -125,36 +124,15 @@ scale = Vector2(0.21694048, 0.21694048)
 position = Vector2(-8, 16)
 scale = Vector2(0.21694048, 0.21694048)
 
-[node name="Bubble14" parent="." unique_id=1606153019 instance=ExtResource("3_uipjh")]
-position = Vector2(-5.1259995e-06, 0)
-scale = Vector2(0.23495454, 0.23495454)
-
-[node name="Bubble18" parent="." unique_id=1780913820 instance=ExtResource("3_uipjh")]
-position = Vector2(-11, -69.99999)
-scale = Vector2(0.09985614, 0.09985614)
-
-[node name="Bubble20" parent="." unique_id=79427661 instance=ExtResource("3_uipjh")]
-position = Vector2(-27.000002, -23.999996)
-scale = Vector2(0.09985614, 0.09985614)
-
-[node name="Bubble21" parent="." unique_id=1927203037 instance=ExtResource("3_uipjh")]
-position = Vector2(-52.999996, -15.999994)
-scale = Vector2(0.09985614, 0.09985614)
-
-[node name="Bubble22" parent="." unique_id=1414608692 instance=ExtResource("3_uipjh")]
-position = Vector2(-27, 24.000013)
-scale = Vector2(0.09985614, 0.09985614)
-
-[node name="Bubble23" parent="." unique_id=150936232 instance=ExtResource("3_uipjh")]
-position = Vector2(-52.999996, 16.000013)
-scale = Vector2(0.09985614, 0.09985614)
-
 [node name="Bubble08" parent="." unique_id=518748824 instance=ExtResource("2_7xg2j")]
 position = Vector2(-5.0000005, 44)
 scale = Vector2(0.21694048, 0.21694048)
 
 [node name="Bubble09" parent="." unique_id=1571883249 instance=ExtResource("2_7xg2j")]
 position = Vector2(8, 70)
+scale = Vector2(0.21694048, 0.21694048)
+
+[node name="Bubble10" parent="." unique_id=2072734153 instance=ExtResource("2_7xg2j")]
 scale = Vector2(0.21694048, 0.21694048)
 
 [node name="Bubble05" parent="." unique_id=1733653362 instance=ExtResource("2_7xg2j")]
@@ -164,10 +142,6 @@ scale = Vector2(0.3257048, 0.3257048)
 [node name="Bubble16" parent="." unique_id=374137553 instance=ExtResource("2_7xg2j")]
 position = Vector2(-34, 2.8610232e-06)
 scale = Vector2(0.3669106, 0.3669106)
-
-[node name="Bubble19" parent="." unique_id=171937634 instance=ExtResource("3_uipjh")]
-position = Vector2(-11.000007, 70.000015)
-scale = Vector2(0.09985614, 0.09985614)
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
 position = Vector2(156, 0)
@@ -186,6 +160,7 @@ metadata/_custom_type_script = "uid://o0m4f66riwtm"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2076540635]
 visible = false
+z_index = 1
 position = Vector2(156, 0)
 scale = Vector2(2.22, 2.22)
 texture = ExtResource("4_mq1l0")

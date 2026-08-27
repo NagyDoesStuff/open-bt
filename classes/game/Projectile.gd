@@ -117,7 +117,7 @@ func _process(delta: float) -> void:
 	
 func on_hit(area: Area2D) -> void:
 	if area is Cluster and area.team != team: 
-		area.recieve_hit(prj_info["dmg_info"])
+		area.recieve_hit(prj_info["dmg_info"], global_rotation)
 		if !muted: GlobalClass.play_sound(hit_sfx)
 		if prj_info.has("pierce") and prj_info["pierce"]: 
 			split()

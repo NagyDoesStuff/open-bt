@@ -26,9 +26,8 @@ func _subready() -> void:
 		search_for_target()
 		if GlobalClass.world:
 			GlobalClass.world.entered_arena.connect(search_for_target)
-	
-	if show_lock_on: 
-		GlobalClass.world.add_child(lock_on_icon)
+		if show_lock_on: 
+			GlobalClass.world.add_child(lock_on_icon)
 
 func search_for_target() -> void:
 	# Slight delay so the target isnt the same as the one killed.

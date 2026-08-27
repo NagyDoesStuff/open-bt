@@ -59,6 +59,7 @@ func search_for_cluster(text: String) -> void:
 			GlobalClass.world.transform_player_into(loaded_cluster)
 		else:
 			GlobalClass.world.spawn_as_enemy(loaded_cluster)
+		cluster_search_input.text = ""
 
 func update_progression_bar() -> void:
 	progression_bar.value = int(GlobalClass.player_cluster.progress)

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://enu3bwfvds38"]
 
 [ext_resource type="Script" uid="uid://bth81h4ilr7w4" path="res://classes/game/Projectile.gd" id="1_pswdc"]
-[ext_resource type="Texture2D" uid="uid://cyhs8n8we5vvn" path="res://img/bubbles/1796.png" id="2_88xgs"]
+[ext_resource type="Texture2D" uid="uid://b67d417d8qpk3" path="res://img/bubbles/1796.png" id="2_88xgs"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_0w5qe"]
-[ext_resource type="Texture2D" uid="uid://ri3wmfadomni" path="res://img/bubbles/255.png" id="4_88xgs"]
+[ext_resource type="Texture2D" uid="uid://db36o0gcm4qxo" path="res://img/bubbles/light_pink.png" id="4_88xgs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
 radius = 16.0
@@ -30,5 +30,5 @@ scale = Vector2(0.38491622, 0.38491622)
 texture = ExtResource("3_0w5qe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=218000023]
-scale = Vector2(0.21442749, 0.21442749)
+scale = Vector2(0.36596224, 0.36596224)
 texture = ExtResource("4_88xgs")

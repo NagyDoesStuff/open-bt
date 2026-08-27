@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://borfbxb1yneia"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_hcap7"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="3_1uh7s"]
+[ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="4_pk5qg"]
+[ext_resource type="PackedScene" uid="uid://gaeqvwe7agfr" path="res://scenes/parts/pgunpart/AutoGun.tscn" id="5_aqkr0"]
+
+[node name="Player Swarmer Fighter" type="Area2D" unique_id=1226715198]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_hcap7")
+team = -1
+speed = 10.0
+acceleration = 8.0
+turn_rate = 8.0
+drop_value = 0
+max_progress = 4
+max_spawn_amount = 0
+
+[node name="Small Dark Bubble" parent="." unique_id=2059722007 instance=ExtResource("3_1uh7s")]
+position = Vector2(-19.285725, -26)
+scale = Vector2(1.1560466, 1.1560466)
+disabled = true
+editor_mode = true
+
+[node name="Small Dark Bubble5" parent="." unique_id=1189549287 instance=ExtResource("3_1uh7s")]
+position = Vector2(-37, 0.14285849)
+scale = Vector2(0.7873637, 0.7873637)
+disabled = true
+editor_mode = true
+
+[node name="Small Dark Bubble2" parent="." unique_id=43425165 instance=ExtResource("3_1uh7s")]
+position = Vector2(-19.285725, 26)
+scale = Vector2(1.1560466, 1.1560466)
+disabled = true
+editor_mode = true
+
+[node name="Medium Bubble" parent="." unique_id=490766434 instance=ExtResource("4_pk5qg")]
+position = Vector2(-0.55200195, 0)
+scale = Vector2(0.91, 0.91)
+disabled = true
+editor_mode = true
+
+[node name="Auto Cannon" parent="." unique_id=122091808 instance=ExtResource("5_aqkr0")]
+position = Vector2(-5.714285, 0)

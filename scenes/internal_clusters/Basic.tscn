@@ -14,5 +14,5 @@ max_progress = 50
 scale = Vector2(0.60250455, 0.60250455)
 
 [node name="Basic Gun" parent="." unique_id=122091808 instance=ExtResource("3_68n0s")]
-position = Vector2(-2, 0)
+position = Vector2(-3.0000005, 0)
 scale = Vector2(0.9282861, 0.9282861)

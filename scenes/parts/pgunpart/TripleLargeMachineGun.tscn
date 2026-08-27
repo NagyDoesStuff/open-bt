@@ -68,14 +68,6 @@ scale = Vector2(0.3322528, 0.3322528)
 position = Vector2(-24.861664, 0)
 scale = Vector2(0.42225754, 0.42225754)
 
-[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_vhmyr")]
-position = Vector2(-44.36563, -19.040524)
-scale = Vector2(0.14735681, 0.14735681)
-
-[node name="Bubble05" parent="." unique_id=1435229796 instance=ExtResource("2_vhmyr")]
-position = Vector2(-44.36563, 19.040524)
-scale = Vector2(0.14735681, 0.14735681)
-
 [node name="Bubble06" parent="." unique_id=1419422830 instance=ExtResource("2_vhmyr")]
 position = Vector2(-10.3251095, 58.43876)
 scale = Vector2(0.14735681, 0.14735681)
