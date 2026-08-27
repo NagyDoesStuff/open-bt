@@ -4,9 +4,9 @@ class_name Arena
 func spawn_clusters() -> void:
 	var enemies_left_to_spawn: int = int(GlobalClass.DEFAULT_MAX_ENEMIES + (GlobalClass.world.arenas_travelled * GlobalClass.MAX_ENEMIES_INCREMENT_PER_ARENA))
 	if GlobalClass.game_mode == "Beserk Mode":
-		enemies_left_to_spawn *= 2
+		enemies_left_to_spawn = 100
 	
-	var final_spawned: Array[Cluster] = []
+	var final_spawned: int = 0
 	var enemy_names_spawned: Array[String] = []
 	
 	while enemies_left_to_spawn > 0:
@@ -25,26 +25,35 @@ func spawn_clusters() -> void:
 		
 		var min_enemy_amount: int = 0
 		var max_enemy_amount: int = rand_enemy.max_spawn_amount
-		if rand_enemy.min_to_available == 0:
-			min_enemy_amount = 1
+		
+		if GlobalClass.game_mode == "Beserk Mode":
+			min_enemy_amount = max_enemy_amount
+		
 		for x in randi_range(min_enemy_amount, max_enemy_amount):
 			if enemies_left_to_spawn == 0: return
-			var deployable_enemy: Cluster = rand_enemy.duplicate()
 			if !rand_enemy: break
-			deployable_enemy.global_position = global_position + Vector2.from_angle(randf_range(0, TAU)) * randf_range(0, GlobalClass.ESTIMATED_ARENA_RADIUS * 0.8 * scale.length() / 2)
+			
+			var deployable_enemy: Cluster = rand_enemy.duplicate()
+			deployable_enemy.global_position = global_position + Vector2.from_angle(randf_range(0, TAU)) * randf_range(0, GlobalClass.ESTIMATED_ARENA_RADIUS * 0.9 * scale.length() / 2)
 			deployable_enemy.global_rotation = randf_range(0, TAU)
+			
 			if GlobalClass.game_mode == "Beserk Mode":
 				deployable_enemy.team = randi()
+				@warning_ignore("integer_division")
+				deployable_enemy.drop_value = max(1, deployable_enemy.drop_value * 0.5)
+				
 			for p in deployable_enemy.get_parts():
 				p.editor_mode = false
 				p.disabled = false
+				
 			enemies_left_to_spawn -= 1
-			final_spawned.append(deployable_enemy)
+			final_spawned += 1
+			resize_arena(final_spawned)
 			GlobalClass.world.add_child(deployable_enemy)
-	
-	resize_arena(final_spawned)
 
-func resize_arena(clusters: Array[Cluster]) -> void:
+func resize_arena(value: int) -> void:
 	scale = GlobalClass.DEFAULT_ARENA_SCALE
-	for c in clusters:
-		scale += Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * c.cluster_class)
+	if GlobalClass.game_mode != "Beserk Mode":
+		scale += Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * value)
+	else:
+		scale += Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * value) / 4

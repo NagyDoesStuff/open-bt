@@ -29,7 +29,6 @@ func _subready() -> void:
 	if !user or disabled or !user.enabled: return
 	
 	barrels = get_barrels()
-	lasers = get_lasers()
 
 func _process(_delta: float) -> void:
 	if !user or disabled or !user.enabled: return
@@ -48,13 +47,6 @@ func get_barrels() -> Array[GunBarrel]:
 	var list: Array[GunBarrel] = []
 	for c in get_children():
 		if c is GunBarrel:
-			list.append(c)
-	return list
-
-func get_lasers() -> Array[Laser]:
-	var list: Array[Laser] = []
-	for c in get_children():
-		if c is Laser:
 			list.append(c)
 	return list
 	

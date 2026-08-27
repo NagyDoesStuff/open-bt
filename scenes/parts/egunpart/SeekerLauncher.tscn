@@ -10,7 +10,10 @@ cooldown = 3.0
 keybind = "space"
 fixed = true
 category = "Enemy Weapons"
+summary = "Emits drones which will seek out the target and explode on impact."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that."
 gp_usage = 2
+min_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble04" parent="." unique_id=1535454042 instance=ExtResource("2_l1rx5")]

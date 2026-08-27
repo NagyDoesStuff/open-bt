@@ -208,6 +208,8 @@ keybind = "space"
 fixed = true
 animation_player = NodePath("AnimationPlayer")
 category = "Player Secondaries"
+summary = "Requires charging. Releases 3 projectiles that shock enemy tanks. These projectiles can also boost neighbor projectiles of the same type."
+flavor_text = "Bzzt, bzzt! Seems like these little bubble tanks have absorbed Zeus' power!"
 gp_usage = 6
 
 [node name="OrbBubble" type="Sprite2D" parent="." unique_id=511260881]

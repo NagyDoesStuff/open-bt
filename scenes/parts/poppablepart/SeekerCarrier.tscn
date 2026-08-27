@@ -13,6 +13,8 @@ split_into = ExtResource("2_bhx1n")
 split_radius = 30.0
 split_amount = 6
 category = "Enemy Weapons"
+summary = "Pops and releases 6 Seeker Drones when shot by the player."
+flavor_text = "We've always wondered what sort of dark little secrets were inside of the big yellow bubbles. \"Shoot it. You know you want to.\" says the Carrier."
 gp_usage = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1551408143]

@@ -12,7 +12,6 @@ func _subready() -> void:
 	if !user or disabled or !user.enabled: return
 	
 	barrels = get_barrels()
-	lasers = get_lasers()
 	
 	charge_timer.one_shot = true
 	charge_timer.timeout.connect(complete_charge)

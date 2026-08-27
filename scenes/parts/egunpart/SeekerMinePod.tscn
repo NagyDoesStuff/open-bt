@@ -9,7 +9,10 @@ script = ExtResource("1_ic4kx")
 split_into = ExtResource("2_5pukk")
 split_amount = 6
 category = "Enemy Weapons"
+summary = "When the tank is destroyed, this spawns camouflaged mines that gravitate toward the player's tank when it gets close enough."
+flavor_text = "If the regular mines had the right idea, these things are the Einsteins of the bullet world."
 gp_usage = 1
+max_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_4r65i")]

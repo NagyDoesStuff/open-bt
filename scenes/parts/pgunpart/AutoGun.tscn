@@ -10,6 +10,7 @@ turn_rate = 8.0
 cooldown = 0.25
 category = "Player Passives"
 gp_usage = 1
+min_class = 5
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_xglee")]

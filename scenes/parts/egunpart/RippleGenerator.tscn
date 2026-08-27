@@ -10,7 +10,10 @@ cooldown = 3.0
 keybind = "space"
 fixed = true
 category = "Enemy Weapons"
+summary = "Pushes tanks away."
+flavor_text = "This is my bubble field! You get outta here!"
 gp_usage = 2
+max_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble01" parent="." unique_id=1754767230 instance=ExtResource("2_h1txp")]

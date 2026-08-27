@@ -121,6 +121,7 @@ keybind = "space"
 fixed = true
 category = "Enemy Weapons"
 gp_usage = 4
+min_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble06" parent="." unique_id=126263598 instance=ExtResource("2_j86v1")]

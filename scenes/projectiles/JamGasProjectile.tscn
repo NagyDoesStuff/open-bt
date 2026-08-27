@@ -33,7 +33,6 @@ scale = Vector2(0.149, 0.07)
 texture = ExtResource("2_p2ww2")
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=186248459 node_paths=PackedStringArray("barrel_user")]
-position = Vector2(0, -10)
 script = ExtResource("3_p2ww2")
 prj_info = {
 "dmg_info": {

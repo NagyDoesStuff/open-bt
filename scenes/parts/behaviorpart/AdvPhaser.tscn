@@ -120,7 +120,7 @@ visibility_uptime = 1.0
 invisibility_uptime = 5.0
 transition_time = 0.5
 category = "Enemy Behaviors"
-gp_usage = 2
+gp_usage = 3
 metadata/_custom_type_script = "uid://edd3jhm1uqoy"
 
 [node name="Bubble11" parent="." unique_id=1039353022 instance=ExtResource("2_28cf1")]

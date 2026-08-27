@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ccyvrgqpxqt18"]
+
+[ext_resource type="Script" uid="uid://d4jemyfb3l8e3" path="res://classes/projectiles/ShooterProjectile.gd" id="1_yf2p0"]
+[ext_resource type="Texture2D" uid="uid://b67d417d8qpk3" path="res://img/bubbles/1796.png" id="2_yf2p0"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_kcudt"]
+[ext_resource type="Texture2D" uid="uid://b1ldhhaxvq86b" path="res://img/bubbles/1790.png" id="4_yh21x"]
+[ext_resource type="Texture2D" uid="uid://c0227atmfoubl" path="res://img/bubbles/2223.png" id="5_yf2p0"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="7_kcudt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 20.0
+
+[node name="RocketProjectile" type="Node2D" unique_id=1253201984 node_paths=PackedStringArray("barrels")]
+script = ExtResource("1_yf2p0")
+barrels = [NodePath("GunBarrel")]
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+scale = Vector2(1.5156821, 0.75259197)
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.2942147, 0.2942147)
+texture = ExtResource("2_yf2p0")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("3_kcudt")
+
+[node name="Bubble2" type="Sprite2D" parent="." unique_id=370512564]
+position = Vector2(-23.000004, 0)
+scale = Vector2(0.19806968, 0.19806968)
+texture = ExtResource("4_yh21x")
+
+[node name="Bubble5" type="Sprite2D" parent="." unique_id=362526007]
+position = Vector2(-12.000004, -12.999998)
+scale = Vector2(0.19806968, 0.19806968)
+texture = ExtResource("4_yh21x")
+
+[node name="Bubble6" type="Sprite2D" parent="." unique_id=547059920]
+position = Vector2(-12.000004, 12.999998)
+scale = Vector2(0.19806968, 0.19806968)
+texture = ExtResource("4_yh21x")
+
+[node name="Bubble3" type="Sprite2D" parent="." unique_id=1616868458]
+position = Vector2(8.999998, 0)
+scale = Vector2(0.23382871, 0.11858215)
+texture = ExtResource("5_yf2p0")
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=1062136009 node_paths=PackedStringArray("barrel_user")]
+script = ExtResource("7_kcudt")
+prj_info = {
+"dmg_info": {
+"amount": 0.0,
+"duration": 2.0,
+"type": "jam"
+},
+"hit_fx": "uid://bj32jn40b07kx",
+"homing": false,
+"pierce": true,
+"sin_turn_mode_freq": 3.0,
+"size": 1.0,
+"speed": 0.0,
+"target_mode": "default",
+"template": "uid://c5uvcl23io83",
+"turn_mode": "default",
+"turn_rate": 10.0
+}
+barrel_user = NodePath("..")
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

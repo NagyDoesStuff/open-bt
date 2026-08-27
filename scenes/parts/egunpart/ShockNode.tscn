@@ -190,10 +190,12 @@ _data = {
 [node name="Shock Node" type="Node2D" unique_id=733669987 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_6djs2")
 charge_time = 4.0
-animation_player = NodePath("AnimationPlayer")
 keybind = "space"
 fixed = true
+animation_player = NodePath("AnimationPlayer")
 category = "Enemy Weapons"
+summary = "Requires charging. Releases a projectile that shocks the player tank. These projectiles can also boost neighbor projectiles of the same type."
+flavor_text = "Bzzt, bzzt! Seems like these little bubble tanks have absorbed Zeus' power!"
 gp_usage = 3
 
 [node name="Bubble16" parent="." unique_id=1039353022 instance=ExtResource("3_hmlpk")]

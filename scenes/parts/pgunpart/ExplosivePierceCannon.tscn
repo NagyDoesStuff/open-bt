@@ -10,6 +10,7 @@ script = ExtResource("1_53j27")
 cooldown = 1.0
 category = "Player Primaries"
 gp_usage = 5
+max_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_i6p5t")]

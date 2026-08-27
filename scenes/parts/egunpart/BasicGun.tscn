@@ -8,6 +8,8 @@
 script = ExtResource("1_ls0uj")
 cooldown = 1.5
 category = "Enemy Weapons"
+summary = "Your standard enemy weapon."
+flavor_text = "This is the standard gun on most bad guys. Looks simple, but when facing a few enemies with this weapon it can get tough quick."
 gp_usage = 1
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

@@ -11,6 +11,9 @@ cooldown = 3.0
 keybind = "space"
 fixed = true
 category = "Enemy Weapons"
+summary = "Emits drones which will seek out the target and explode on impact. These ones slow the target down."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that.
+You still don't want to know what makes them sticky."
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

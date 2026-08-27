@@ -8,7 +8,10 @@
 script = ExtResource("1_ai55w")
 cooldown = 2.0
 category = "Enemy Weapons"
+summary = "Fires bigger, slower, more damaging bullets."
+flavor_text = "Making more distructive bullet weapons is a careful and precise science few can comprehend. This gun shoots bigger bullets!"
 gp_usage = 2
+min_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_qs82m")]

@@ -116,7 +116,7 @@ _data = {
 [node name="Phaser" type="Node2D" unique_id=1911839056]
 script = ExtResource("1_m1w7m")
 category = "Enemy Behaviors"
-gp_usage = 1
+gp_usage = 2
 metadata/_custom_type_script = "uid://edd3jhm1uqoy"
 
 [node name="Bubble11" parent="." unique_id=1039353022 instance=ExtResource("2_itn7g")]

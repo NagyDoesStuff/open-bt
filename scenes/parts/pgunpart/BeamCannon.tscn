@@ -1,19 +1,14 @@
 [gd_scene format=3 uid="uid://daw3rbykb8ov4"]
 
-[ext_resource type="Script" uid="uid://dcm5ydu1isla5" path="res://classes/parts/HealerPart.gd" id="1_5fpf2"]
-[ext_resource type="PackedScene" uid="uid://bmjef0wpq4al5" path="res://scenes/fx/HitscanLine/heal_line.tscn" id="2_jcvk4"]
-[ext_resource type="PackedScene" uid="uid://bnkkjs64il0x8" path="res://scenes/fx/heal_boom.tscn" id="3_snlu2"]
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_f10lb"]
+[ext_resource type="Script" uid="uid://c34y1jabduoor" path="res://classes/game/Laser.gd" id="3_dofjf"]
+[ext_resource type="PackedScene" uid="uid://cgtyde5g8fbyu" path="res://scenes/fx/HitscanLine/laser_line.tscn" id="4_5fpf2"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_cdepr"]
 
-[node name="Beam Cannon" type="Node2D" unique_id=122091808]
-script = ExtResource("1_5fpf2")
-hitscan_line = ExtResource("2_jcvk4")
-hit_fx = ExtResource("3_snlu2")
-turn_rate = 20.0
-heal_cooldown = 0.05
-heal_amount = 0.1
+[node name="Beam Cannon" type="Node2D" unique_id=731334309]
+script = ExtResource("1_f10lb")
 category = "Player Primaries"
-gp_usage = 2
+gp_usage = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble08" parent="." unique_id=1039353022 instance=ExtResource("4_cdepr")]
@@ -55,3 +50,15 @@ scale = Vector2(0.15, 0.15)
 [node name="Bubble13" parent="." unique_id=2067710284 instance=ExtResource("4_cdepr")]
 position = Vector2(-20.999996, 25)
 scale = Vector2(0.15, 0.15)
+
+[node name="Laser" type="RayCast2D" parent="." unique_id=1003635991]
+position = Vector2(56, 0)
+script = ExtResource("3_dofjf")
+hitscan_line = ExtResource("4_5fpf2")
+hit_frequency = 0.01
+dmg_info = {
+"amount": 0.4,
+"duration": 0.0,
+"type": "dmg"
+}
+metadata/_custom_type_script = "uid://c34y1jabduoor"

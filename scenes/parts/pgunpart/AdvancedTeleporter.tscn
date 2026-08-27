@@ -12,6 +12,7 @@ ai_tp_dist = 300.0
 fx = ExtResource("2_rlar2")
 category = "Player Secondaries"
 gp_usage = 3
+max_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("3_34flv")]

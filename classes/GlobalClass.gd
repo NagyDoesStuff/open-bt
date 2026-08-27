@@ -4,6 +4,8 @@ extends Node
 # PRELOADS
 const BUTTON_01: PackedScene = preload("uid://dwlqr56nh4exq")
 
+var PART_BUTTON: PackedScene = load("uid://6d8gvhmdwb87")
+
 const TANK_CHOICE_BUTTON: PackedScene = preload("uid://dk4jicmsok44j")
 
 const BUBBLE_POINT: PackedScene = preload("uid://ckebyrul4e710")
@@ -16,7 +18,7 @@ const SCREEN_FLASH: PackedScene = preload("uid://cays5co474q6y")
 
 # CONSTANTS
 const ARENA_PUSH_FORCE: int = 100
-const DISTANCE_BETWEEN_ARENAS: int = 800
+const DISTANCE_BETWEEN_ARENAS: int = 2000
 const DEFAULT_MAX_ENEMIES: int = 6
 const MAX_CLASS: int = 6
 const UPGRADE_CHOICES: int = 3
@@ -29,6 +31,7 @@ const MIN_BUBBLE_POINT_SIZE: float = 0.33
 const BUBBLE_POINT_GROW_SIZE: float = 0.025
 const MAX_ENEMIES_INCREMENT_PER_ARENA: float = 0.1
 const HIT_BLINK_TIME: float = 0.1
+
 
 const PARTS_DIRECTORY: String = "res://scenes/parts/"
 const INTERNAL_CLUSTERS_DIRECTORY: String = "res://scenes/internal_clusters/"

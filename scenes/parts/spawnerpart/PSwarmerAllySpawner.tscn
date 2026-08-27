@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://baeeblrq8dmhm"]
 
 [ext_resource type="Script" uid="uid://b8p4pydnqjfr5" path="res://classes/parts/SpawnerPart.gd" id="1_wkt6i"]
-[ext_resource type="PackedScene" uid="uid://borfbxb1yneia" path="res://scenes/internal_clusters/no_export/Player Swarmer Fighter.tscn" id="2_wkt6i"]
+[ext_resource type="PackedScene" uid="uid://borfbxb1yneia" path="res://scenes/internal_clusters/Player Swarmer Fighter.tscn" id="2_wkt6i"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_6wh1s"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_dll60"]
 
@@ -13,6 +13,7 @@ spawned_amount = 3
 limit = 6
 category = "Player Secondaries"
 gp_usage = 6
+min_class = 4
 metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
 
 [node name="Bubble23" parent="." unique_id=1039353022 instance=ExtResource("3_6wh1s")]

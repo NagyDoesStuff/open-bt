@@ -11,6 +11,7 @@ hitscan_line = ExtResource("2_6vklt")
 hit_fx = ExtResource("3_2kgov")
 category = "Player Passives"
 gp_usage = 2
+min_class = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_eanoe")]

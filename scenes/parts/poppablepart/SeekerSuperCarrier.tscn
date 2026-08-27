@@ -14,6 +14,8 @@ split_into = ExtResource("2_tg6js")
 split_radius = 40.0
 split_amount = 12
 category = "Enemy Weapons"
+summary = "Pops and releases 12 Seeker Drones when shot by the player."
+flavor_text = "\"I dare you.\" says the Super Carrier."
 gp_usage = 2
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1551408143]

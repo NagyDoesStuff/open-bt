@@ -71,11 +71,12 @@ mode = "Lock-on"
 prediction_factor = 2.0
 show_lock_on = true
 turn_rate = 4.0
-cooldown = 3.0
+cooldown = 2.5
 keybind = "space"
 animation_player = NodePath("AnimationPlayer")
 category = "Player Secondaries"
-gp_usage = 5
+gp_usage = 8
+min_class = 4
 metadata/_custom_type_script = "uid://blsl2a8q2mp0n"
 
 [node name="Bubble01" parent="." unique_id=1326003378 instance=ExtResource("3_4dekx")]
@@ -167,6 +168,7 @@ prj_info = {
 "amount": 70,
 "type": "dmg"
 },
+"pierce": true,
 "size": 1.0,
 "speed": 3500.0,
 "template": "uid://bro1xuf3b2qb"

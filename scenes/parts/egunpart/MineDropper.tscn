@@ -120,7 +120,10 @@ script = ExtResource("1_qgynw")
 cooldown = 1.0
 fixed = true
 category = "Enemy Weapons"
+summary = "Drops immobile mines."
+flavor_text = "Most bullets are wasted when they miss their target. Mines have decided to wait, sit still, and contemplate their existence until you hit them."
 gp_usage = 1
+min_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_bwtxv")]

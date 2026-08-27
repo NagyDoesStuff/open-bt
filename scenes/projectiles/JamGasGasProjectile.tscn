@@ -10,11 +10,11 @@ radius = 20.0
 
 [node name="JamGasGasProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_46dmu")
-lifetime = 2.0
+lifetime = 3.0
 spin_rate = 100.0
-grow_rate = 4.0
-fade_in_time = 0.5
-fade_out_time = 0.5
+grow_rate = 2.5
+fade_in_time = 0.25
+fade_out_time = 1.0
 muted = true
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
@@ -34,6 +34,7 @@ scale = Vector2(0.14665203, 0.14665203)
 texture = ExtResource("2_46dmu")
 
 [node name="ExplosionFx" type="Node2D" parent="." unique_id=961270173]
+modulate = Color(1, 1, 1, 0.2509804)
 script = ExtResource("3_tm8vt")
 grow_rate = 0.0
 lifetime = 99.0

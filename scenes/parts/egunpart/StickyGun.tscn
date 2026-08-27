@@ -8,6 +8,9 @@
 script = ExtResource("1_d2s80")
 cooldown = 2.0
 category = "Enemy Weapons"
+summary = "Fires sticky bullets which briefly slow down the player's tank."
+flavor_text = "What makes these bullet so sticky?
+You don't wanna know."
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

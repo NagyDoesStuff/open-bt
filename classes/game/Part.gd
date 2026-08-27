@@ -14,8 +14,17 @@ class_name Part
 @export var disabled: bool = false
 @export var editor_mode: bool = false
 @export var is_hovered: bool = false
+
+@export_multiline("Summary...") var summary: String = "..."
+@export_multiline("Flavor Text...") var flavor_text: String = "..."
+
+@export_group("Availability")
 @export var gp_usage: int = 0
 @export var available: bool = true
+
+@export_subgroup("Class")
+@export_range(1,6) var min_class: int = 1
+@export_range(1,6) var max_class: int = 6
 
 @onready var user: Cluster:
 	get:

@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 class_name Background
 
 @export var color_change_frequency: float = 30.0

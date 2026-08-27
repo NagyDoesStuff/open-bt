@@ -20,7 +20,6 @@ var target: Cluster
 
 func _subready() -> void:
 	barrels = get_barrels()
-	lasers = get_lasers()
 	
 	if !disabled and !editor_mode:
 		search_for_target()

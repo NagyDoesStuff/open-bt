@@ -120,7 +120,10 @@ script = ExtResource("1_oqocu")
 cooldown = 1.0
 fixed = true
 category = "Enemy Weapons"
+summary = "Drops camouflaged mines that gravitate toward the player's tank when it get too close."
+flavor_text = "If the regular mines had the right idea, these things are the Einsteins of the bullet world."
 gp_usage = 2
+min_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble07" parent="." unique_id=1039353022 instance=ExtResource("2_uc40e")]

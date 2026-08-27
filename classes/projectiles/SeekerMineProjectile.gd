@@ -8,6 +8,10 @@ var activated: bool = false
 func _subready() -> void:
 	var activate_area: Area2D = Area2D.new()
 	activate_area.area_entered.connect(activate)
+	activate_area.set_collision_layer_value(1, false)
+	activate_area.set_collision_mask_value(1, false)
+	activate_area.set_collision_layer_value(2, true)
+	activate_area.set_collision_mask_value(2, true)
 	add_child(activate_area)
 	
 	var activate_col: CollisionShape2D = CollisionShape2D.new()

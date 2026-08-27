@@ -11,6 +11,7 @@ fixed = true
 auto_shoot = true
 category = "Player Passives"
 gp_usage = 3
+max_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]

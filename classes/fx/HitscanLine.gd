@@ -26,4 +26,4 @@ func _process(_delta: float) -> void:
 		for x in range(point_count):
 			var increment: Vector2 = target_position - origin.global_position
 			var calc: Vector2 = to_local(origin.global_position + x * (increment/point_count))
-			add_point(calc + Vector2.UP.rotated(increment.angle()) * randf_range(0.0, instability))
+			add_point(calc + Vector2.UP.rotated(increment.angle()) * randf_range(-instability*.5, instability*.5))

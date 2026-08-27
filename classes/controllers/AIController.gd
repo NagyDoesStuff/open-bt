@@ -16,6 +16,10 @@ var run_turn_rate_mult: float = 2.0
 
 func _ready() -> void:
 	add_child(target_detection_area)
+	target_detection_area.set_collision_layer_value(1, false)
+	target_detection_area.set_collision_mask_value(1, false)
+	target_detection_area.set_collision_layer_value(2, true)
+	target_detection_area.set_collision_mask_value(2, true)
 	
 	var col: CollisionShape2D = CollisionShape2D.new()
 	col.shape = CircleShape2D.new()

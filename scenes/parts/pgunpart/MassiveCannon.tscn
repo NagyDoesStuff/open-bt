@@ -105,7 +105,8 @@ keybind = "space"
 fixed = true
 animation_player = NodePath("AnimationPlayer")
 category = "Player Secondaries"
-gp_usage = 8
+gp_usage = 3
+min_class = 5
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble03" parent="." unique_id=1039353022 instance=ExtResource("2_7xg2j")]

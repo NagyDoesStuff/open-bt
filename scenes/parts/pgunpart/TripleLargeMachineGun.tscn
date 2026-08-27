@@ -10,6 +10,7 @@ turn_rate = 4.0
 cooldown = 0.15
 category = "Player Primaries"
 gp_usage = 8
+min_class = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble08" parent="." unique_id=2029952010 instance=ExtResource("2_vhmyr")]

@@ -10,6 +10,7 @@ cooldown = 5.0
 keybind = "space"
 category = "Player Secondaries"
 gp_usage = 2
+min_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble01" parent="." unique_id=366202674 instance=ExtResource("2_5vb2h")]

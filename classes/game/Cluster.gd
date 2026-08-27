@@ -90,6 +90,8 @@ func _ready() -> void:
 			dist_from_center = global_position.distance_to(GlobalClass.current_arena.global_position)
 	)
 	add_child(check_dist_center_timer)
+	
+	set_collision_masks()
 
 func _process(_delta: float) -> void:
 	if !enabled: return
@@ -240,3 +242,9 @@ func search_and_apply_behavior_parts() -> void:
 				"Skittish": controller = Skittish.new()
 			return
 	controller = WanderAI.new()
+
+func set_collision_masks() -> void:
+	set_collision_layer_value(1, true)
+	set_collision_layer_value(2, true)
+	set_collision_mask_value(1, true)
+	set_collision_mask_value(2, true)

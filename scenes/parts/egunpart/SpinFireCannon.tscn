@@ -21,7 +21,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_evo8d"]
 resource_name = "default"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -47,6 +47,7 @@ script = ExtResource("1_evo8d")
 cooldown = 8.0
 category = "Enemy Weapons"
 gp_usage = 8
+min_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble01" parent="." unique_id=1039353022 instance=ExtResource("2_tffpd")]

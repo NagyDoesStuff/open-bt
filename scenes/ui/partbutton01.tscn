@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://6d8gvhmdwb87"]
+
+[ext_resource type="FontFile" uid="uid://bqmx4aseim6nf" path="res://resources/fonts/369_GoldyRound.ttf" id="1_dckb4"]
+[ext_resource type="Script" uid="uid://d30akwavr5108" path="res://classes/ui/PartSelectButton.gd" id="2_8dbrv"]
+[ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="3_gpvtv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jn68"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.35000002, 0.72916675, 1, 0.5019608)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhfkk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.597, 0.38, 0.5058824)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y45o"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.65, 0.85416675, 1, 0.5019608)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dbrv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10500001, 0.121249996, 0.3, 0.5019608)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_6vbba"]
+font = ExtResource("3_gpvtv")
+font_size = 20
+
+[node name="PartButton01" type="Button" unique_id=2045789447]
+custom_minimum_size = Vector2(0, 35)
+offset_right = 136.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_dckb4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jn68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nhfkk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1y45o")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8dbrv")
+text = "TEST BUTTON"
+script = ExtResource("2_8dbrv")
+metadata/_custom_type_script = "uid://d30akwavr5108"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1909488253]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="GP" type="Label" parent="MarginContainer" unique_id=881413006]
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_6vbba")
+horizontal_alignment = 1
+vertical_alignment = 1

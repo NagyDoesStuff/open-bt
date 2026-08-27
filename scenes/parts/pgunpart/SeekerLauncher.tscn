@@ -11,6 +11,7 @@ keybind = "space"
 fixed = true
 category = "Player Secondaries"
 gp_usage = 2
+max_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble02" parent="." unique_id=1039353022 instance=ExtResource("2_vjjxn")]

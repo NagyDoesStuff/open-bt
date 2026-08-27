@@ -1,6 +1,8 @@
 extends Control
 class_name Editor
 
+signal changed_info()
+
 @onready var last_dragged_part_indicator: Sprite2D = $SelectIcon
 
 @onready var drag_and_drop_container: Panel = $HBoxContainer/VBoxContainer2/DragAndDrop
@@ -35,9 +37,10 @@ class_name Editor
 @onready var symmetry_button: CheckButton = $HBoxContainer/VBoxContainer/Options/MarginContainer/HBoxContainer/SymmetryButton
 
 @onready var info_label: Label = $HBoxContainer/VBoxContainer/Display/MarginContainer/Label
-@onready var gp_usage_count: Label = $HBoxContainer/VBoxContainer2/DragAndDrop/GPUsageCount
 
 @onready var category_tab_container: TabContainer = $HBoxContainer/VBoxContainer2/List/MarginContainer/ScrollContainer/TabContainer
+
+@onready var part_info_display: PartInfoDisplay = $PartInfoDisplay
 
 @export var debug: bool = true
 
@@ -47,32 +50,24 @@ var symmetry: bool = true
 
 var available_gp: int = 0
 
-var selected_part_path: String:
-	set(value):
-		selected_part_path = value
-		display_selected_part(load(selected_part_path).instantiate())
-
 var selected_part_type: Part
-
-var dragged_part_path: String:
-	set(value):
-		dragged_part_path = value
-		create_dragged_part(dragged_part_path)
-
 var dragged_part: Part
-
 var last_dragged: Part
 
 var edited_cluster: Cluster
 
+var available_part_paths: Array[String] = []
+
 func _ready() -> void:
+	modulate.a = 0.0
+		
 	await get_tree().process_frame
 	
 	if debug:
 		enabled = true
 		modulate.a = 1.0
+		available_gp = 99999
 	else:
-		modulate.a = 0.0
 		tank_info_container.hide()
 		exit_button.hide()
 	
@@ -115,38 +110,45 @@ func retrieve_avaliable_parts(dir: String) -> void:
 	for subdir in ResourceLoader.list_directory(dir):
 		for file in ResourceLoader.list_directory(dir + subdir):
 			var full_path: String = dir + subdir + file
-			make_part_select_button(full_path)
+			available_part_paths.append(full_path)
+	make_part_select_buttons(available_part_paths)
 
-func make_part_select_button(part_path: String) -> void:
-	var button: Button = GlobalClass.BUTTON_01.instantiate()
-	var unpacked_part: Part = load(part_path).instantiate()
-	if unpacked_part.available:
-		button.text = unpacked_part.name
-		button.pressed.connect(set.bind("selected_part_path", part_path))
-		category_tab_container.get_node(unpacked_part.category).add_child(button)
-		print("Loaded path from: " + part_path)
-	unpacked_part.queue_free()
+func make_part_select_buttons(part_paths: Array[String]) -> void:
+	var parts: Array[Part] = []
+	for path in part_paths:
+		var part: Part = load(path).instantiate()
+		part.disabled = true
+		parts.append(part)
+	parts.sort_custom(func (a, b) -> bool: return a.gp_usage < b.gp_usage)
+	
+	for p in parts:
+		var button: Button = GlobalClass.PART_BUTTON.instantiate()
+		button.part = p
+		button.editor = self
+		if button.part.available:
+			category_tab_container.get_node(button.part.category).add_child(button)
+			button.pressed.connect(display_selected_part.bind(button.part))
+			button.mouse_entered.connect(
+				func () -> void:
+					part_info_display.show()
+					part_info_display.global_position.y = get_global_mouse_position().y - part_info_display.size.y / 2
+					part_info_display.update_text(button.part)
+			)
+			button.mouse_exited.connect(part_info_display.hide)
 
 func display_selected_part(part: Part) -> void:
 	if !enabled: return
-	
 	if selected_part_type: selected_part_type.queue_free()
-	part.disabled = true
-	part.global_position = drag_and_drop_container.global_position + drag_and_drop_container.size / 2
-	selected_part_type = part
-	add_child(part)
 	
-	if part.gp_usage > 0:
-		gp_usage_count.text = "Uses: " + str(part.gp_usage) + " GP"
-	else:
-		gp_usage_count.text = "Doesn't use GP."
-	
+	selected_part_type = part.duplicate()
+	selected_part_type.disabled = true
+	selected_part_type.global_position = drag_and_drop_container.global_position + drag_and_drop_container.size / 2
+	add_child(selected_part_type)
 	print("Displayed new part: " + part.name)
 
-func create_dragged_part(part_path: String) -> Part:
+func create_dragged_part(part: Part) -> Part:
 	if !enabled: return
 	
-	var part: Part = load(part_path).instantiate()
 	part.editor_mode = true
 	part.disabled = true
 	dragged_part = part
@@ -163,11 +165,6 @@ func create_dragged_part(part_path: String) -> Part:
 		mirror_part.linked_via_editor = part
 	
 	return part
-
-func update_dragged_part_path() -> void:
-	if !enabled: return
-	if !selected_part_path: return
-	dragged_part_path = selected_part_path
 	
 func save_cluster() -> void:
 	if !enabled: return
@@ -260,8 +257,12 @@ func update_cluster_float_with_line_edit(_text: String, variable: String, line_e
 	if !enabled: return
 	edited_cluster.set(variable, line_edit.text.to_float())
 
+func update_dragged_part() -> void:
+	if !enabled or !selected_part_type: return
+	create_dragged_part(selected_part_type.duplicate())
+
 func configure_signals() -> void:
-	drag_button.button_down.connect(update_dragged_part_path)
+	drag_button.button_down.connect(update_dragged_part)
 	save_button.pressed.connect(save_cluster)
 	load_button.pressed.connect(toggle_load_input)
 	clear_button.pressed.connect(clear_cluster)
@@ -339,6 +340,7 @@ func update_tank_info() -> void:
 	update_available_gp()
 	update_class()
 	update_info_ui()
+	changed_info.emit()
 
 func clear_cluster() -> void:
 	for p in edited_cluster.get_parts():
@@ -360,7 +362,8 @@ func update_class() -> void:
 	var farthest_part_distance: float
 	if farthest_part:
 		farthest_part_distance = abs(farthest_part.global_position.distance_to(edited_cluster.global_position))
-	else: return
+	else: 
+		return
 	
 	var determined_class: int
 	for requirement in GlobalClass.CLASS_RADIUS:
@@ -374,7 +377,7 @@ func update_class() -> void:
 	print("Class: " + str(determined_class))
 
 func update_available_gp() -> void:
-	if !GlobalClass.world or debug: return
+	if !GlobalClass.world: return
 	var calculated_value: int = GlobalClass.world.max_gp - edited_cluster.get_used_gp()
 	if calculated_value >= 0:
 		available_gp = calculated_value
@@ -387,11 +390,10 @@ func delete_part(part: Part) -> void:
 
 func update_info_ui() -> void:
 	info_label.text = ""
+	info_label.text += "GP: " + str(available_gp) + "\n"
 	if GlobalClass.world:
-		info_label.text += "GP: " + str(available_gp) + "\n"
 		info_label.text += "Max Class: " + str(GlobalClass.world.max_class) + "\n"
 	else:
-		info_label.text += "GP: INF" + "\n"
 		info_label.text += "Max Class: " + str(GlobalClass.MAX_CLASS) + "\n"
 	info_label.text += "Class: " + str(edited_cluster.cluster_class)
 

@@ -10,6 +10,7 @@ cooldown = 0.025
 spread = 0.2
 category = "Player Primaries"
 gp_usage = 4
+max_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_kn254")]

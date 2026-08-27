@@ -14,7 +14,8 @@ class_name HealerPart
 var crr_helping: Cluster
 var heal_timer: Timer = Timer.new()
 
-func _ready() -> void:
+func _subready() -> void:
+	if disabled: return
 	var search_timer: Timer = Timer.new()
 	search_timer.autostart = true
 	search_timer.wait_time = search_cooldown
@@ -26,6 +27,7 @@ func _ready() -> void:
 	add_child(heal_timer)
 
 func _process(delta: float) -> void:
+	if disabled: return
 	if crr_helping:
 		global_rotation = rotate_toward(
 			global_rotation,
