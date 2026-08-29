@@ -1,8 +1,12 @@
 extends Area2D
 class_name Cluster
 
+# Signals
+
 signal progress_changed()
 signal killed()
+
+# Variables
 
 @export_group("Info")
 @export var team: int = 0
@@ -24,15 +28,7 @@ signal killed()
 @export var max_spawn_amount: int = 3
 
 var dist_from_center: float = 0.0
-
-var velocity: Vector2 = Vector2.ZERO
-
-var enabled: bool = true
-var dead: bool = false
-var force_ai: bool = false
-var force_full_progress: bool = false
-var is_slown_down: bool = false
-var is_jammed: bool = false
+var damage_taken: float = 1.0
 
 ## For player tanks, this serves as the progression variable for unlocking the next class.
 ## For enemy tanks, this serves as the health variable.
@@ -41,6 +37,16 @@ var progress: float = 1.0:
 		progress = clampf(value, 0, max_progress)
 		progress_changed.emit()
 		check_progress()
+
+var velocity: Vector2 = Vector2.ZERO
+
+var enabled: bool = true
+var dead: bool = false
+var force_ai: bool = false
+var force_full_progress: bool = false
+var can_fire: bool = true
+
+# Nodes
 
 var parts: Array[Part] = []
 
@@ -52,6 +58,8 @@ var controller: Controller:
 		controller.enabled = true
 		add_child(controller)
 
+var status_fx_manager: StatusEffectManager = StatusEffectManager.new()
+
 func _ready() -> void:
 	modulate.a = 0.0
 	
@@ -60,8 +68,8 @@ func _ready() -> void:
 	create_tween().tween_property(self, "modulate:a", 1.0, 0.5)
 	
 	if !enabled: return
-	
-	parts = get_parts()
+	add_child(status_fx_manager)
+	update_parts()
 	
 	if team == 0:
 		if !force_ai: 
@@ -115,16 +123,20 @@ func recieve_hit(dmg_info: Dictionary, from_angle: float = 0.0) -> void:
 	match dmg_info["type"]:
 		"punch":
 			velocity += Vector2.RIGHT.rotated(from_angle) * dmg_info["knk"]
-			progress -= dmg_info["amount"]
+			progress -= dmg_info["amount"] * damage_taken
 		"slowdown":
-			slow_down(dmg_info["amount"], dmg_info["duration"])
+			status_fx_manager.slow_down(dmg_info["amount"], dmg_info["duration"])
 		"jam":
-			jam_weapons(dmg_info["duration"])
+			status_fx_manager.jam_weapons(dmg_info["duration"])
 		"stun":
-			stun(dmg_info["duration"])
+			status_fx_manager.stun(dmg_info["duration"])
 		"steal":
-			progress -= dmg_info["amount"]
+			progress -= dmg_info["amount"] * damage_taken
 			drop_points(dmg_info["amount"], true, true)
+		"weaken":
+			status_fx_manager.weaken(dmg_info["amount"], dmg_info["duration"])
+		"poison":
+			status_fx_manager.poison(dmg_info["amount"], dmg_info["duration"])
 		_:
 			progress -= dmg_info["amount"]
 		
@@ -186,47 +198,6 @@ func drop_points(amount: int, follow: bool = false, remove: bool = false) -> voi
 		avaliable_value_to_convert -= bubble_value
 		GlobalClass.world.call_deferred("add_child", pt)
 
-func slow_down(mult: float, duration: float, with_color: bool = true) -> void:
-	if is_slown_down: return
-	is_slown_down = true
-	
-	var init_speed: float = speed
-	var init_turn_rate: float = turn_rate
-	speed *= mult
-	turn_rate *= mult
-	
-	if with_color: modulate = GlobalClass.SLOWN_DOWN_COLOR
-	
-	await get_tree().create_timer(duration).timeout
-	
-	if with_color: modulate = Color.WHITE
-	
-	speed = init_speed
-	turn_rate = init_turn_rate
-	is_slown_down = false
-
-func jam_weapons(duration: float, with_color: bool = true) -> void:
-	if is_jammed: return
-	is_jammed = true
-	
-	if with_color: modulate = GlobalClass.JAMMED_COLOR
-	
-	await get_tree().create_timer(duration).timeout
-	
-	if with_color: modulate = Color.WHITE
-	
-	is_jammed = false
-
-func stun(duration: float) -> void:
-	slow_down(0.0, duration, false)
-	jam_weapons(duration, false)
-	
-	modulate = GlobalClass.STUNNED_COLOR
-	
-	await get_tree().create_timer(duration).timeout
-	
-	modulate = Color.WHITE
-
 func get_used_gp() -> int:
 	var gp: int = 0
 	for p in get_parts():
@@ -248,3 +219,6 @@ func set_collision_masks() -> void:
 	set_collision_layer_value(2, true)
 	set_collision_mask_value(1, true)
 	set_collision_mask_value(2, true)
+
+func update_parts() -> void:
+	parts = get_parts()

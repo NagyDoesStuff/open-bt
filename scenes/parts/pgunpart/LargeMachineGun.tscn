@@ -8,6 +8,8 @@
 script = ExtResource("1_5x017")
 cooldown = 0.15
 category = "Player Primaries"
+summary = "Fires heavy bullets at rapid speed."
+flavor_text = "Have you ever wondered what would happen if the Machine Gun and the Heavy Cannon got married?"
 gp_usage = 3
 min_class = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"

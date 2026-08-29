@@ -40,8 +40,6 @@ func _ready() -> void:
 		muted = true
 
 func shoot() -> void:
-	if barrel_user.user.is_jammed: return
-	
 	if !muted and barrel_user.salvo_interval == 0.0:
 		GlobalClass.play_sound(barrel_user.shoot_fx)
 	

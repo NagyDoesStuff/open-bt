@@ -21,7 +21,6 @@ var cooldown_timer: Timer = Timer.new()
 var current_target: Node2D
 
 func _ready() -> void:
-	add_exception(gun.user)
 	target_position = Vector2.RIGHT * laser_range
 	collide_with_areas = true
 	collide_with_bodies = false
@@ -30,12 +29,19 @@ func _ready() -> void:
 	cooldown_timer.wait_time = hit_frequency
 	cooldown_timer.timeout.connect(on_cooldown_ended)
 	add_child(cooldown_timer)
+	
+	if gun.user != GlobalClass.player_cluster:
+		enabled = true
 
 func _process(_delta: float) -> void:
-	if !gun.disabled and gun.user.team == 0:
+	if gun.disabled or !gun.user.can_fire: 
+		enabled = false
+		return
+	
+	if gun.user == GlobalClass.player_cluster:
 		enabled = Input.is_action_pressed("lmb")
 	
-	if enabled and !gun.disabled and get_collider():
+	if enabled and get_collider():
 		hit()
 
 func on_cooldown_ended() -> void:

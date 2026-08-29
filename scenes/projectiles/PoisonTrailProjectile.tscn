@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://d2mmhljx7egs1"]
+
+[ext_resource type="Script" uid="uid://bth81h4ilr7w4" path="res://classes/game/Projectile.gd" id="1_xi8ef"]
+[ext_resource type="Texture2D" uid="uid://c0227atmfoubl" path="res://img/bubbles/2223.png" id="2_dqtjd"]
+[ext_resource type="Script" uid="uid://bdqqcca4fd1l6" path="res://classes/fx/ExplosionFX.gd" id="3_po4e2"]
+[ext_resource type="PackedScene" uid="uid://8ls0hw0t6gkf" path="res://scenes/decorations/bubble61.tscn" id="4_xi8ef"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 20.0
+
+[node name="PoisonTrailProjectile" type="Node2D" unique_id=1253201984]
+script = ExtResource("1_xi8ef")
+lifetime = 2.0
+spin_rate = 100.0
+grow_rate = 2.0
+fade_in_time = 0.25
+fade_out_time = 1.0
+muted = true
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.14569063, 0.14569063)
+texture = ExtResource("2_dqtjd")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.14665203, 0.14665203)
+texture = ExtResource("2_dqtjd")
+
+[node name="ExplosionFx" type="Node2D" parent="." unique_id=961270173]
+modulate = Color(1, 1, 1, 0.2509804)
+script = ExtResource("3_po4e2")
+grow_rate = 0.0
+lifetime = 99.0
+metadata/_custom_type_script = "uid://bdqqcca4fd1l6"
+
+[node name="Bubble60" parent="ExplosionFx" unique_id=1133716164 instance=ExtResource("4_xi8ef")]
+scale = Vector2(0.15538229, 0.15538229)
+
+[node name="Bubble61" parent="ExplosionFx" unique_id=584190181 instance=ExtResource("4_xi8ef")]
+position = Vector2(-11, -11)
+scale = Vector2(0.25458354, 0.25458354)
+
+[node name="Bubble62" parent="ExplosionFx" unique_id=1011230269 instance=ExtResource("4_xi8ef")]
+position = Vector2(-7, 6)
+scale = Vector2(0.09057383, 0.09057383)
+
+[node name="Bubble63" parent="ExplosionFx" unique_id=253426689 instance=ExtResource("4_xi8ef")]
+position = Vector2(9, 18)
+scale = Vector2(0.09057383, 0.09057383)
+
+[node name="Bubble64" parent="ExplosionFx" unique_id=354986 instance=ExtResource("4_xi8ef")]
+position = Vector2(15, -1)
+scale = Vector2(0.10817181, 0.10817181)
+
+[node name="Bubble65" parent="ExplosionFx" unique_id=1714912311 instance=ExtResource("4_xi8ef")]
+position = Vector2(14, -19)
+scale = Vector2(0.16699524, 0.16699524)
+
+[node name="Bubble66" parent="ExplosionFx" unique_id=151814930 instance=ExtResource("4_xi8ef")]
+position = Vector2(-22, 13)
+scale = Vector2(0.16699524, 0.16699524)
+
+[node name="Bubble67" parent="ExplosionFx" unique_id=2108697820 instance=ExtResource("4_xi8ef")]
+position = Vector2(-4, 18)
+scale = Vector2(0.0885124, 0.0885124)

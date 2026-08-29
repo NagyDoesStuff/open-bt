@@ -2,9 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bdpqrhn3b5dvh" path="res://classes/parts/ChargeGunPart.gd" id="1_n8ic2"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_7h7o7"]
+[ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="3_i0nv6"]
 [ext_resource type="Texture2D" uid="uid://cd847ugdtcc6k" path="res://img/bubbles/shock1.png" id="3_x2ql0"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_pnbj3"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="5_k2esn"]
+
+[sub_resource type="Gradient" id="Gradient_upsn1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_6r5rr"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_i0nv6"]
 length = 0.001
@@ -217,7 +226,28 @@ position = Vector2(24.000008, 0)
 scale = Vector2(0.15487051, 0.15487051)
 texture = ExtResource("3_x2ql0")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OrbBubble" unique_id=1703040699]
+scale = Vector2(0.54325134, 0.54325134)
+amount = 1
+texture = ExtResource("3_i0nv6")
+lifetime = 0.1
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color = Color(0.98333335, 1, 0, 1)
+color_ramp = SubResource("Gradient_upsn1")
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("Curve_6r5rr")
+
 [node name="Fixed" type="Node2D" parent="." unique_id=1590270739]
+scale = Vector2(1.1694667, 1.1694667)
 
 [node name="Bubble23" parent="Fixed" unique_id=2024890137 instance=ExtResource("2_7h7o7")]
 position = Vector2(1.4305115e-05, -20.1193)
@@ -279,7 +309,7 @@ scale = Vector2(0.05806271, 0.05806271)
 scale = Vector2(0.14794223, 0.14794223)
 
 [node name="Arm2" type="Node2D" parent="." unique_id=456941457]
-position = Vector2(19, 20)
+position = Vector2(19, 22.310785)
 rotation = -0.5235988
 
 [node name="Bubble22" parent="Arm2" unique_id=704577902 instance=ExtResource("2_7h7o7")]
@@ -291,4 +321,4 @@ position = Vector2(0, 0.39736557)
 scale = Vector2(0.14794223, 0.14794223)
 
 [node name="Base" parent="." unique_id=518034357 instance=ExtResource("4_pnbj3")]
-scale = Vector2(0.20911707, 0.20911707)
+scale = Vector2(0.23510051, 0.23510051)

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cut04hymllyj8"]
+
+[ext_resource type="Script" uid="uid://d4jemyfb3l8e3" path="res://classes/projectiles/ShooterProjectile.gd" id="1_7smps"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="3_epal6"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_ivaed"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_otiv6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[node name="MineTrailProjectile" type="Node2D" unique_id=1253201984 node_paths=PackedStringArray("barrels")]
+script = ExtResource("1_7smps")
+barrels = [NodePath("Barrel")]
+cooldown = 0.25
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+scale = Vector2(0.37738696, 0.37738696)
+texture = ExtResource("3_epal6")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+scale = Vector2(0.38259462, 0.38259462)
+texture = ExtResource("3_otiv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552296440]
+visible = false
+scale = Vector2(0.37242034, 0.37242034)
+texture = ExtResource("3_epal6")
+
+[node name="Barrel" type="Node2D" parent="." unique_id=186248459 node_paths=PackedStringArray("barrel_user")]
+script = ExtResource("3_ivaed")
+prj_info = {
+"dmg_info": {
+"amount": 10,
+"type": "dmg"
+},
+"hit_fx": "uid://dqbky1rhsnesm",
+"size": 0.77,
+"speed": 0.0,
+"template": "uid://lny0dmfixfna"
+}
+barrel_user = NodePath("..")
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

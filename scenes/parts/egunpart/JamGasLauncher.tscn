@@ -9,44 +9,46 @@
 script = ExtResource("1_sa1aa")
 cooldown = 4.0
 category = "Enemy Weapons"
+summary = "Launches a bullet that releases jamming gas."
+flavor_text = "Disgusting indeed, otherwise effective."
 gp_usage = 3
 min_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble12" parent="." unique_id=1039353022 instance=ExtResource("2_mdrce")]
-position = Vector2(-14, -16)
+position = Vector2(-13, -15.000001)
 scale = Vector2(0.13925615, 0.13925615)
 
 [node name="Bubble14" parent="." unique_id=1411428982 instance=ExtResource("2_mdrce")]
 position = Vector2(29.999996, 0)
-scale = Vector2(0.12224304, 0.12224304)
+scale = Vector2(0.109257944, 0.109257944)
 
 [node name="Bubble13" parent="." unique_id=1262327561 instance=ExtResource("2_mdrce")]
-position = Vector2(-14, 15.999998)
+position = Vector2(-13, 15.000001)
 scale = Vector2(0.13925615, 0.13925615)
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_aw5ch")]
-position = Vector2(17.000006, -14)
+position = Vector2(16.000006, -11)
 scale = Vector2(0.1064498, 0.1064498)
 
 [node name="Bubble05" parent="." unique_id=1999803219 instance=ExtResource("2_aw5ch")]
-position = Vector2(17.000006, 14)
+position = Vector2(16.000006, 11.000001)
 scale = Vector2(0.1064498, 0.1064498)
 
 [node name="Bubble06" parent="." unique_id=1315766830 instance=ExtResource("2_aw5ch")]
-position = Vector2(30.000013, 14)
+position = Vector2(29.000013, 11.000001)
 scale = Vector2(0.11485668, 0.11485668)
 
 [node name="Bubble07" parent="." unique_id=1256933701 instance=ExtResource("2_aw5ch")]
-position = Vector2(30.000013, -14)
+position = Vector2(29.000013, -11)
 scale = Vector2(0.11485668, 0.11485668)
 
 [node name="Bubble08" parent="." unique_id=1970784034 instance=ExtResource("2_aw5ch")]
-position = Vector2(43, 14)
+position = Vector2(42, 11.000001)
 scale = Vector2(0.11485668, 0.11485668)
 
 [node name="Bubble09" parent="." unique_id=363490368 instance=ExtResource("2_aw5ch")]
-position = Vector2(43, -14)
+position = Vector2(42, -11)
 scale = Vector2(0.11485668, 0.11485668)
 
 [node name="Bubble01" parent="." unique_id=366202674 instance=ExtResource("2_aw5ch")]
@@ -54,7 +56,7 @@ scale = Vector2(0.32119718, 0.32119718)
 
 [node name="Bubble15" parent="." unique_id=1930804950 instance=ExtResource("2_mdrce")]
 position = Vector2(44.999992, 0)
-scale = Vector2(0.16027468, 0.16027468)
+scale = Vector2(0.14324974, 0.14324974)
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
 position = Vector2(55.999996, 0)

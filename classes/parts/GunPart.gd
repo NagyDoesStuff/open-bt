@@ -27,11 +27,10 @@ var lasers: Array[Laser]
 
 func _subready() -> void:
 	if !user or disabled or !user.enabled: return
-	
-	barrels = get_barrels()
+	update_barrels()
 
 func _process(_delta: float) -> void:
-	if !user or disabled or !user.enabled: return
+	if !user or disabled or !user.enabled or !user.can_fire: return
 	
 	if user == GlobalClass.player_cluster:
 		if user.cluster_class >= 4 and !fixed:
@@ -69,3 +68,6 @@ func turn_to(pos: Vector2, delta: float) -> void:
 		(pos - global_position).angle(),
 		turn_rate * delta
 	)
+
+func update_barrels() -> void:
+	barrels = get_barrels()

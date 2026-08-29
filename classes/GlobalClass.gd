@@ -44,6 +44,8 @@ const SLOWN_DOWN_COLOR: Color = Color(0.937, 0.8, 1.0, 1.0)
 const JAMMED_COLOR: Color = Color(0.8, 1.0, 0.833, 1.0)
 const STUNNED_COLOR: Color = Color(0.75, 0.75, 0.75, 0.784)
 const INFECTED_COLOR: Color = Color(0.82, 0.279, 0.279, 1.0)
+const WEAKENED_COLOR: Color = Color(0.196, 0.144, 0.3, 1.0)
+const POISONED_COLOR: Color = Color(0.421, 0.302, 0.72, 1.0)
 
 const DEFAULT_ARENA_SCALE: Vector2 = Vector2.ONE * 0.15
 
@@ -90,7 +92,7 @@ const PART_CATEGORIES: Array[String] = [
 var world: World
 var player_cluster: Cluster
 var loaded_clusters: Array[Cluster]
-var current_arena: Arena
+var current_arena: Bubblefield
 
 # VARIABLES
 var player_cluster_filename: String = "Basic"

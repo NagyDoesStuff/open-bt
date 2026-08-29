@@ -8,7 +8,9 @@
 script = ExtResource("1_lgxji")
 cooldown = 1.5
 category = "Enemy Weapons"
-gp_usage = 3
+summary = "Fires 5 bullets in 5 directions."
+flavor_text = "Some critics wonder why we never went further to create the 7 Spread. You're looking into the future, but I'm afraid the technology for 7 Spread doesn't exist yet. Or does it?"
+gp_usage = 4
 min_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

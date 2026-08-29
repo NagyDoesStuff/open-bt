@@ -8,6 +8,8 @@
 script = ExtResource("1_76e0o")
 cooldown = 0.25
 category = "Player Primaries"
+summary = "Fires 3 bullets in 3 directions."
+flavor_text = "\"You know what's better than firing one bullet? Firing THREE bullets!\" Says 3 Spred, despite the other weapons criticizing its lack of focus. We'll let you be the judge."
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

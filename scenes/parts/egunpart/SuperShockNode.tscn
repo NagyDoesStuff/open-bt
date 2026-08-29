@@ -5,7 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_ofd02"]
 [ext_resource type="Texture2D" uid="uid://dtpxe3vek80oe" path="res://img/bubbles/shock2.png" id="4_toeyw"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="5_7t84g"]
+[ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="5_rgaxl"]
 [ext_resource type="PackedScene" uid="uid://bs6uxsrdh5b31" path="res://scenes/decorations/bubble02.tscn" id="7_rgaxl"]
+
+[sub_resource type="Gradient" id="Gradient_ofd02"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_7t84g"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_hmlpk"]
 length = 0.001
@@ -28,10 +37,10 @@ tracks/1/path = NodePath("OrbBubble:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector2(32, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -43,7 +52,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.08077751, 0.08077751)]
+"values": [Vector2(0.066, 0.066)]
 }
 
 [sub_resource type="Animation" id="Animation_6djs2"]
@@ -71,7 +80,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(49.999992, 0), Vector2(90, 0)]
+"values": [Vector2(32, 0), Vector2(90, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -83,7 +92,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(0.08077751, 0.08077751), Vector2(0.2, 0.2)]
+"values": [Vector2(0.066, 0.066), Vector2(0.2, 0.2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hmlpk"]
@@ -128,9 +137,29 @@ position = Vector2(-4.4394383, -53.273247)
 scale = Vector2(0.08941505, 0.08941505)
 
 [node name="OrbBubble" type="Sprite2D" parent="." unique_id=511260881]
-position = Vector2(49.999992, 0)
-scale = Vector2(0.08077751, 0.08077751)
+position = Vector2(32, 0)
+scale = Vector2(0.066, 0.066)
 texture = ExtResource("4_toeyw")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OrbBubble" unique_id=1001862855]
+scale = Vector2(3.318819, 3.318819)
+amount = 2
+texture = ExtResource("5_rgaxl")
+lifetime = 0.1
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.15
+scale_amount_max = 0.3
+color = Color(0.98333335, 1, 0, 1)
+color_ramp = SubResource("Gradient_ofd02")
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("Curve_7t84g")
 
 [node name="Bubble11" parent="." unique_id=170161300 instance=ExtResource("4_ofd02")]
 position = Vector2(7.399064, -20.717379)

@@ -10,6 +10,8 @@ cooldown = 3.5
 keybind = "space"
 fixed = true
 category = "Player Secondaries"
+summary = "Fires bullets that explode, dealing damage to an area."
+flavor_text = "You don't need to have really good aim to hit enemies with the Area Burst Cannon. Just aim for the general vicinity."
 gp_usage = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

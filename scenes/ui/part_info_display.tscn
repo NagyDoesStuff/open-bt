@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bqmx4aseim6nf" path="res://resources/fonts/369_GoldyRound.ttf" id="2_20npg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv4ft"]
-bg_color = Color(1, 1, 1, 0.2509804)
+bg_color = Color(0, 0, 0, 0.5019608)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2

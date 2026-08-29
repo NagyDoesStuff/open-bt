@@ -11,6 +11,8 @@ spread = 0.15
 amount_per_salvo = 20
 salvo_interval = 0.1
 category = "Enemy Weapons"
+summary = "Fires many bullets in rapid succession."
+flavor_text = "The Machine Gun just realized that if you keep holding down the trigger, the bullets keep flying out. I hope he keeps this secret to himself."
 gp_usage = 6
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

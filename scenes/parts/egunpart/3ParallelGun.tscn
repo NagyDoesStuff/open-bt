@@ -8,6 +8,8 @@
 script = ExtResource("1_n6yja")
 cooldown = 1.5
 category = "Enemy Weapons"
+summary = "Fires 3 bullets side by side."
+flavor_text = "This weapon is great for kids not ready for the 5 Parallel experience yet."
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

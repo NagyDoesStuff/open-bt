@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_53j27"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_i6p5t"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_bkk4h"]
-[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_i6p5t"]
 
 [node name="Exploding Pierce Cannon" type="Node2D" unique_id=122091808]
 script = ExtResource("1_53j27")
 cooldown = 1.0
 category = "Player Primaries"
+summary = "Fire bullets that pass through enemies, exploding on each impact."
+flavor_text = "Making your enemies explode on impact seems like such a good idea, you'd wonder why every weapon didn't do it."
 gp_usage = 5
 max_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
@@ -19,10 +20,6 @@ scale = Vector2(0.29577842, 0.29577842)
 [node name="Bubble02" parent="." unique_id=877832398 instance=ExtResource("2_i6p5t")]
 position = Vector2(24, 8.000001)
 scale = Vector2(0.13998301, 0.13998301)
-
-[node name="Bubble12" parent="." unique_id=1809987555 instance=ExtResource("3_i6p5t")]
-position = Vector2(-28, 0)
-scale = Vector2(0.21901497, 0.21901497)
 
 [node name="Bubble03" parent="." unique_id=2044319135 instance=ExtResource("2_i6p5t")]
 position = Vector2(24, -8)
@@ -39,6 +36,10 @@ scale = Vector2(0.13998301, 0.13998301)
 [node name="Bubble05" parent="." unique_id=984320693 instance=ExtResource("2_i6p5t")]
 position = Vector2(-12, -23)
 scale = Vector2(0.19210607, 0.19210607)
+
+[node name="Bubble10" parent="." unique_id=1446398786 instance=ExtResource("2_i6p5t")]
+position = Vector2(-28, 0)
+scale = Vector2(0.21413843, 0.21413843)
 
 [node name="Bubble07" parent="." unique_id=1469237852 instance=ExtResource("2_i6p5t")]
 position = Vector2(-33, -15)

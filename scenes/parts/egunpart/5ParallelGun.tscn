@@ -8,6 +8,8 @@
 script = ExtResource("1_jk0l5")
 cooldown = 1.5
 category = "Enemy Weapons"
+summary = "Fires 5 bullet side by side."
+flavor_text = "It took 7 Hero Interactive interns to decide thata giving 5 basic cannons side by side was going to be awesome."
 gp_usage = 4
 min_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"

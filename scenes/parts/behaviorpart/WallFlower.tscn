@@ -7,6 +7,8 @@
 script = ExtResource("1_2bju0")
 type = "Wall Flower"
 category = "Enemy Behaviors"
+summary = "Causes the enemy to circle the edge of the bubblefield."
+flavor_text = "You make me dizzy..."
 metadata/_custom_type_script = "uid://dny073s7n1p00"
 
 [node name="Bubble11" parent="." unique_id=1039353022 instance=ExtResource("2_rafgq")]

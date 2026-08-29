@@ -13,6 +13,8 @@ turn_rate = 20.0
 heal_cooldown = 0.05
 heal_amount = 0.1
 category = "Enemy Behaviors"
+summary = "Allows the enemy to heal other enemies."
+flavor_text = "MEDIC!"
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

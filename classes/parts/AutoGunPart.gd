@@ -5,6 +5,11 @@ class_name AutoGunPart
 	"Auto",
 	"Lock-on"
 ) var mode: String = "Auto"
+@export_enum(
+	"Random",
+	"Strongest Target",
+	"Weakest Target"
+) var targeting_mode: String = "Random"
 @export var prediction_factor: float = 10.0
 
 @export_group("Lock-on Only")
@@ -49,7 +54,7 @@ func search_for_target() -> void:
 		lock_on_icon.get_node("AnimationPlayer").play("hide_bar")
 
 func _process(_delta: float) -> void:
-	if !user or disabled or !user.enabled: return
+	if !user or disabled or !user.enabled or !user.can_fire: return
 	
 	lock_on_icon.visible = is_instance_valid(target)
 	if is_instance_valid(target):

@@ -8,6 +8,8 @@
 script = ExtResource("1_fic24")
 cooldown = 0.15
 category = "Player Primaries"
+summary = "Fires 2 heavy bullets side by side at rapid speed."
+flavor_text = "The Dual Large Machine Gun is so powerful that many people don't believe it even exists! A weapon of a legend, we think you'll like having it on your tank."
 gp_usage = 4
 min_class = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"

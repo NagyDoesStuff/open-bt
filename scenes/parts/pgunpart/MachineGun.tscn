@@ -9,6 +9,8 @@ script = ExtResource("1_d7upl")
 cooldown = 0.125
 spread = 0.1
 category = "Player Primaries"
+summary = "Fires bullets at twice the rate of the Basic Cannon."
+flavor_text = "What's different about the machine gun that makes it fire faster, and where do these bubbles come from anyway? The world may never know."
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

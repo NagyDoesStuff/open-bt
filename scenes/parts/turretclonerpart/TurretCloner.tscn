@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dj63wccgqgn4m"]
+
+[ext_resource type="Script" uid="uid://dy2cdn7ayjly6" path="res://classes/parts/TurretClonerPart.gd" id="1_dqn0k"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_1sf02"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_a5c0q"]
+
+[sub_resource type="Animation" id="Animation_0xey4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5707964]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spinner2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dqn0k"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.281439977927592]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spinner2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6.283185307179586, 0.0017453292519947264]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0xey4"]
+_data = {
+&"RESET": SubResource("Animation_0xey4"),
+&"default": SubResource("Animation_dqn0k")
+}
+
+[node name="Turret Cloner" type="Node2D" unique_id=819863792]
+script = ExtResource("1_dqn0k")
+category = "Enemy Behaviors"
+summary = "Clonest the strongest turret used by the target."
+flavor_text = "Looks like an enemy's dream can become reality! It goes: \"Wow, I wish i had that Dual Large Machine Gun...\" and it soon appears!"
+gp_usage = 8
+metadata/_custom_type_script = "uid://bi81eiq56ggyr"
+
+[node name="Bubble12" parent="." unique_id=112530576 instance=ExtResource("2_1sf02")]
+position = Vector2(-27, 0)
+scale = Vector2(0.2981041, 0.2981041)
+
+[node name="Bubble13" parent="." unique_id=799759964 instance=ExtResource("2_1sf02")]
+position = Vector2(27, 0)
+scale = Vector2(0.2981041, 0.2981041)
+
+[node name="Bubble11" parent="." unique_id=825977985 instance=ExtResource("3_a5c0q")]
+scale = Vector2(0.40207556, 0.40207556)
+
+[node name="Spinner" type="Node2D" parent="." unique_id=2116745497]
+rotation = -1.5707964
+
+[node name="Bubble12" parent="Spinner" unique_id=1039353022 instance=ExtResource("2_1sf02")]
+position = Vector2(0, -64)
+scale = Vector2(0.16028458, 0.16028458)
+
+[node name="Bubble13" parent="Spinner" unique_id=1569405951 instance=ExtResource("2_1sf02")]
+position = Vector2(0, 64)
+scale = Vector2(0.16028458, 0.16028458)
+
+[node name="Spinner2" type="Node2D" parent="." unique_id=1373001737]
+modulate = Color(1.0667647, 1.0667647, 1.0667647, 1)
+
+[node name="Bubble12" parent="Spinner2" unique_id=1626408883 instance=ExtResource("2_1sf02")]
+position = Vector2(0, -90)
+scale = Vector2(0.16028458, 0.16028458)
+
+[node name="Bubble13" parent="Spinner2" unique_id=87021419 instance=ExtResource("2_1sf02")]
+position = Vector2(0, 90)
+scale = Vector2(0.16028458, 0.16028458)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=326170456]
+libraries/ = SubResource("AnimationLibrary_0xey4")
+autoplay = &"default"

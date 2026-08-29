@@ -47,6 +47,8 @@ cooldown = 3.0
 keybind = "space"
 fixed = true
 category = "Player Secondaries"
+summary = "Nearby enemies are stunned and cannot move or attack."
+flavor_text = "Do Bubble Tanks have brains? Maybe they have drivers? Not sure, but somehow this weapon is able to stun those tanks really well."
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

@@ -12,6 +12,8 @@ amount_per_salvo = 10
 salvo_interval = 0.1
 keybind = "space"
 category = "Player Secondaries"
+summary = "Fires ten rockets."
+flavor_text = "You might be able to dodge nine rockets, but ten? Psshhhh."
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

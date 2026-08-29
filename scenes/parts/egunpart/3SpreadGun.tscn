@@ -8,6 +8,8 @@
 script = ExtResource("1_pbxls")
 cooldown = 1.5
 category = "Enemy Weapons"
+summary = "Fires 3 bullets in 3 directions."
+flavor_text = "Getting away from 3 Spread can be difficult. Me? I've moved out of town and changed my name. You can't ever be too safe."
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

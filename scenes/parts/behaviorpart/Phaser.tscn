@@ -116,6 +116,8 @@ _data = {
 [node name="Phaser" type="Node2D" unique_id=1911839056]
 script = ExtResource("1_m1w7m")
 category = "Enemy Behaviors"
+summary = "Causes the enemy to alternate between visible and invisible."
+flavor_text = "Now you see it, now you don't. Oh wait, there it is."
 gp_usage = 2
 metadata/_custom_type_script = "uid://edd3jhm1uqoy"
 

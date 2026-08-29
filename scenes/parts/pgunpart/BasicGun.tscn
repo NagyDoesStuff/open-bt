@@ -8,6 +8,8 @@
 script = ExtResource("1_pxe7f")
 cooldown = 0.25
 category = "Player Primaries"
+summary = "Your standard weapon."
+flavor_text = "The Basic Cannon is unwavering its determination to smite enemies. It may not look like much, but it get s the job done."
 gp_usage = 1
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

@@ -21,7 +21,7 @@ func _subready() -> void:
 		can_shoot = false
 
 func _process(_delta: float) -> void:
-	if !user or disabled or !user.enabled: return
+	if !user or disabled or !user.enabled or !user.can_fire: return
 	
 	if user == GlobalClass.player_cluster:
 		if user.cluster_class >= 4 and !fixed:

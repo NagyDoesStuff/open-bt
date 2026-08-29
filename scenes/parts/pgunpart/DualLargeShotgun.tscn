@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://bnpfdi6xiupme"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_dhjyr"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="2_prfxc"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_ofeey"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="4_vk787"]
+
+[sub_resource type="Animation" id="Animation_2cvsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Arm1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Arm2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_w4lio"]
+resource_name = "shot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-6, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Arm3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-1, 0), Vector2(4, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Arm1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [-0.3490658503988659, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Arm2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.3490658503988659, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2cvsw"]
+_data = {
+&"RESET": SubResource("Animation_2cvsw"),
+&"shot": SubResource("Animation_w4lio")
+}
+
+[node name="Dual Large Shotgun" type="Node2D" unique_id=122091808 node_paths=PackedStringArray("animation_player")]
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_dhjyr")
+spread = 0.3
+amount_per_salvo = 10
+animation_player = NodePath("AnimationPlayer")
+category = "Player Primaries"
+summary = "Shoots lots of small pellets from two barrels."
+flavor_text = "Some call it a Super Shotgun. Some call it the Heavy Shotgun. But personally, I call it Big Timothy."
+gp_usage = 5
+min_class = 3
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(24, 11)
+script = ExtResource("2_prfxc")
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"hit_fx": "uid://k34oup7yqqiv",
+"size": 0.5,
+"speed": 2000.0,
+"template": "uid://enu3bwfvds38"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="GunBarrel2" type="Node2D" parent="." unique_id=1806456226]
+position = Vector2(24, -11)
+script = ExtResource("2_prfxc")
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"hit_fx": "uid://k34oup7yqqiv",
+"size": 0.5,
+"speed": 2000.0,
+"template": "uid://enu3bwfvds38"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1774210245]
+libraries/ = SubResource("AnimationLibrary_2cvsw")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1679243087]
+position = Vector2(-6, 0)
+
+[node name="Arm3" type="Node2D" parent="Node2D" unique_id=460755068]
+position = Vector2(4, 0)
+
+[node name="Bubble03" parent="Node2D/Arm3" unique_id=314919369 instance=ExtResource("3_ofeey")]
+position = Vector2(8.999998, 0)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble04" parent="Node2D/Arm3" unique_id=754223934 instance=ExtResource("3_ofeey")]
+position = Vector2(21.999998, 0)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble05" parent="Node2D/Arm3" unique_id=72035505 instance=ExtResource("3_ofeey")]
+position = Vector2(35, 0)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble06" parent="Node2D" unique_id=702884718 instance=ExtResource("3_ofeey")]
+position = Vector2(0, 11)
+scale = Vector2(0.18290809, 0.18290809)
+
+[node name="Bubble13" parent="Node2D" unique_id=1997459005 instance=ExtResource("4_vk787")]
+position = Vector2(-16, 15)
+scale = Vector2(0.10485903, 0.10485903)
+
+[node name="Bubble01" parent="Node2D" unique_id=62727830 instance=ExtResource("3_ofeey")]
+position = Vector2(0, -11)
+scale = Vector2(0.18290809, 0.18290809)
+
+[node name="Bubble12" parent="Node2D" unique_id=256569310 instance=ExtResource("4_vk787")]
+position = Vector2(-16, -15)
+scale = Vector2(0.10485903, 0.10485903)
+
+[node name="Arm1" type="Node2D" parent="Node2D" unique_id=825503211]
+position = Vector2(0, -15)
+
+[node name="Bubble07" parent="Node2D/Arm1" unique_id=1039353022 instance=ExtResource("3_ofeey")]
+position = Vector2(28, -9)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble08" parent="Node2D/Arm1" unique_id=78249183 instance=ExtResource("3_ofeey")]
+position = Vector2(41, -9)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble03" parent="Node2D/Arm1" unique_id=1836952118 instance=ExtResource("3_ofeey")]
+position = Vector2(14.999998, -6)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Arm2" type="Node2D" parent="Node2D" unique_id=2041011371]
+position = Vector2(0, 15)
+
+[node name="Bubble04" parent="Node2D/Arm2" unique_id=1967327040 instance=ExtResource("3_ofeey")]
+position = Vector2(14.999998, 6)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble05" parent="Node2D/Arm2" unique_id=500346764 instance=ExtResource("3_ofeey")]
+position = Vector2(27.999998, 9)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble06" parent="Node2D/Arm2" unique_id=2069035499 instance=ExtResource("3_ofeey")]
+position = Vector2(41, 9)
+scale = Vector2(0.10799281, 0.10799281)
+
+[node name="Bubble02" parent="Node2D" unique_id=784132545 instance=ExtResource("3_ofeey")]
+position = Vector2(-11, 0)
+scale = Vector2(0.18290809, 0.18290809)

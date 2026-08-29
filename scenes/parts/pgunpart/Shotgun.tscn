@@ -97,6 +97,8 @@ spread = 0.5
 amount_per_salvo = 10
 animation_player = NodePath("AnimationPlayer")
 category = "Player Primaries"
+summary = "Shoots lots of small pellets."
+flavor_text = "Feels like getting hit with a wave of gravel. Not very enjoyable to say the least."
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

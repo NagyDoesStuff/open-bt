@@ -90,9 +90,9 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 6
 
-[sub_resource type="LabelSettings" id="LabelSettings_fkm6v"]
+[sub_resource type="LabelSettings" id="LabelSettings_cdtuk"]
 font = ExtResource("2_6d1h4")
-font_size = 24
+font_size = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0ct7"]
 
@@ -136,18 +136,6 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv4ft"]
-bg_color = Color(1, 1, 1, 0.2509804)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 4
 
 [node name="Editor" type="Control" unique_id=1277885260]
 z_index = 1
@@ -477,7 +465,7 @@ text = "Symmetry Mode"
 layout_mode = 2
 
 [node name="TankInfo" type="Panel" parent="HBoxContainer/VBoxContainer2" unique_id=1845128982]
-custom_minimum_size = Vector2(400, 300)
+custom_minimum_size = Vector2(400, 220)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_x4mk5")
 
@@ -499,31 +487,28 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=1975540303]
 layout_mode = 2
 text = "Tank Info:"
-label_settings = SubResource("LabelSettings_fkm6v")
+label_settings = SubResource("LabelSettings_cdtuk")
 horizontal_alignment = 1
 
 [node name="TeamEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=563232303]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_p70fw")
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("2_x4mk5")
 theme_override_styles/focus = ExtResource("2_x4mk5")
 placeholder_text = "Insert team... (0: player, 1: enemy)"
 alignment = 1
 
-[node name="Spacer" type="Label" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=1847625126]
-layout_mode = 2
-label_settings = SubResource("LabelSettings_fkm6v")
-horizontal_alignment = 1
-
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=1912102750]
 layout_mode = 2
 text = "Parameters for enemies..."
-label_settings = SubResource("LabelSettings_fkm6v")
+label_settings = SubResource("LabelSettings_cdtuk")
 horizontal_alignment = 1
 
 [node name="HPEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=605069671]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_p70fw")
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("2_x4mk5")
 theme_override_styles/focus = ExtResource("2_x4mk5")
 placeholder_text = "Enemy max health..."
@@ -532,6 +517,7 @@ alignment = 1
 [node name="DropEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=1943258716]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_p70fw")
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("2_x4mk5")
 theme_override_styles/focus = ExtResource("2_x4mk5")
 placeholder_text = "Enemy drop amount..."
@@ -540,6 +526,7 @@ alignment = 1
 [node name="SpeedEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=753261379]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_p70fw")
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("2_x4mk5")
 theme_override_styles/focus = ExtResource("2_x4mk5")
 placeholder_text = "Enemy speed..."
@@ -548,6 +535,7 @@ alignment = 1
 [node name="TurnRateEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=1197637285]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_p70fw")
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("2_x4mk5")
 theme_override_styles/focus = ExtResource("2_x4mk5")
 placeholder_text = "Turn rate..."
@@ -556,6 +544,7 @@ alignment = 1
 [node name="MinAvailableEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=1285807492]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_p70fw")
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("2_x4mk5")
 theme_override_styles/focus = ExtResource("2_x4mk5")
 placeholder_text = "Minimum amount of arenas to appear..."
@@ -564,13 +553,14 @@ alignment = 1
 [node name="MaxSpawnEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer2/TankInfo/MarginContainer/VBoxContainer" unique_id=1792996667]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_p70fw")
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("2_x4mk5")
 theme_override_styles/focus = ExtResource("2_x4mk5")
 placeholder_text = "Maximum spawn count..."
 alignment = 1
 
 [node name="DragAndDrop" type="Panel" parent="HBoxContainer/VBoxContainer2" unique_id=1690421690]
-custom_minimum_size = Vector2(400, 300)
+custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_x4mk5")
 
@@ -592,17 +582,17 @@ flat = true
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/DragAndDrop" unique_id=880063885]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -115.0
-offset_right = 170.0
-offset_bottom = 125.0
+anchor_bottom = 1.0
+offset_left = -166.0
+offset_top = -39.0
+offset_right = 166.0
+offset_bottom = -16.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 size_flags_vertical = 1
 text = "C l i c k   a n d   D r a g   O b j e c t"
 label_settings = SubResource("LabelSettings_kv4ft")
@@ -657,4 +647,3 @@ offset_bottom = 865.0
 grow_horizontal = 1
 grow_vertical = 1
 offset_transform_enabled = false
-theme_override_styles/panel = SubResource("StyleBoxFlat_kv4ft")

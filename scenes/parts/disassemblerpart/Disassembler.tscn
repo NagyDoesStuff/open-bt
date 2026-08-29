@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cg3a0ercfmep5"]
+
+[ext_resource type="Script" uid="uid://dgah7opgr4ojj" path="res://classes/parts/DisassemblerPart.gd" id="1_ofviq"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_ivesy"]
+
+[node name="Disassembler" type="Node2D" unique_id=431554886]
+script = ExtResource("1_ofviq")
+category = "Player Passives"
+summary = "Allows the projectiles to pass through the player as long as you hold down the key."
+gp_usage = 4
+max_class = 4
+metadata/_custom_type_script = "uid://dgah7opgr4ojj"
+
+[node name="Bubble11" parent="." unique_id=1039353022 instance=ExtResource("2_ivesy")]
+position = Vector2(0, 25)
+scale = Vector2(0.12729606, 0.12729606)
+
+[node name="Bubble12" parent="." unique_id=665263873 instance=ExtResource("2_ivesy")]
+position = Vector2(17.67767, 17.67767)
+scale = Vector2(0.12729606, 0.12729606)
+
+[node name="Bubble13" parent="." unique_id=1793585617 instance=ExtResource("2_ivesy")]
+position = Vector2(25, -1.0927847e-06)
+scale = Vector2(0.12729606, 0.12729606)
+
+[node name="Bubble14" parent="." unique_id=1539170477 instance=ExtResource("2_ivesy")]
+position = Vector2(17.67767, -17.67767)
+scale = Vector2(0.12729606, 0.12729606)
+
+[node name="Bubble15" parent="." unique_id=1200488517 instance=ExtResource("2_ivesy")]
+position = Vector2(-2.1855694e-06, -25)
+scale = Vector2(0.12729606, 0.12729606)
+
+[node name="Bubble16" parent="." unique_id=1734114960 instance=ExtResource("2_ivesy")]
+position = Vector2(-17.677671, -17.677666)
+scale = Vector2(0.12729606, 0.12729606)
+
+[node name="Bubble17" parent="." unique_id=844148529 instance=ExtResource("2_ivesy")]
+position = Vector2(-25, 2.9812202e-07)
+scale = Vector2(0.12729606, 0.12729606)
+
+[node name="Bubble18" parent="." unique_id=438520182 instance=ExtResource("2_ivesy")]
+position = Vector2(-17.677664, 17.677675)
+scale = Vector2(0.12729606, 0.12729606)
+
+[node name="Bubble19" parent="." unique_id=719479568 instance=ExtResource("2_ivesy")]
+scale = Vector2(0.12729606, 0.12729606)

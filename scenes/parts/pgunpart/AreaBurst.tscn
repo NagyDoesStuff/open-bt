@@ -10,6 +10,8 @@ cooldown = 2.5
 keybind = "space"
 fixed = true
 category = "Player Secondaries"
+summary = "Deals damage to surrounding tanks."
+flavor_text = "For those who want an up close and personal battle and are looking for that more intimate fighting, the Area Burst is for you. Just fly into a group of enemies and let loose."
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

@@ -45,6 +45,8 @@ _data = {
 script = ExtResource("1_woi6h")
 type = "Skittish"
 category = "Enemy Behaviors"
+summary = "Causes the enemy to avoid the player's tank."
+flavor_text = "Fear? Or strategy? You decide."
 metadata/_custom_type_script = "uid://dny073s7n1p00"
 
 [node name="Tail" parent="." unique_id=1039353022 instance=ExtResource("2_tco02")]

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://b47xkfhir3267"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_fxpwm"]
+[ext_resource type="PackedScene" uid="uid://1p0eldp4soi7" path="res://scenes/parts/egunpart/PoisonTrail.tscn" id="2_w7uiq"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="4_dvu76"]
+[ext_resource type="PackedScene" uid="uid://dc1ruuaqakf21" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="6_sucfk"]
+[ext_resource type="PackedScene" uid="uid://dbtk8x4f8y0q0" path="res://scenes/parts/unclassfied/WiggleCluster01.tscn" id="7_7xvnn"]
+[ext_resource type="PackedScene" uid="uid://bu5eiidbljks3" path="res://scenes/parts/behaviorpart/Skittish.tscn" id="9_fxupy"]
+[ext_resource type="PackedScene" uid="uid://ciaxywhau22p8" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="11_3lx15"]
+
+[node name="Pufferfish" type="Area2D" unique_id=1895389151]
+script = ExtResource("1_fxpwm")
+team = 1
+attributes = Array[String](["user_cluster"])
+speed = 4.0
+turn_rate = 3.0
+drop_value = 16
+max_progress = 30
+min_to_available = 40
+max_spawn_amount = 2
+
+[node name="Poison Trail" parent="." unique_id=122091808 instance=ExtResource("2_w7uiq")]
+position = Vector2(-52.54059, 0)
+rotation = -3.1393237
+cooldown = 0.025
+disabled = true
+editor_mode = true
+
+[node name="Small Dark Bubble" parent="." unique_id=878054447 instance=ExtResource("4_dvu76")]
+position = Vector2(7.203186, -62.542847)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@140" parent="." unique_id=1007855553 instance=ExtResource("4_dvu76")]
+position = Vector2(7.203186, 62.542847)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@190" parent="." unique_id=2026454231 instance=ExtResource("4_dvu76")]
+position = Vector2(73.11566, -25.457123)
+scale = Vector2(0.65, 0.65)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_190" parent="." unique_id=757531215 instance=ExtResource("4_dvu76")]
+position = Vector2(75.11566, 25.457153)
+scale = Vector2(0.65, 0.65)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@145" parent="." unique_id=2066886627 instance=ExtResource("4_dvu76")]
+position = Vector2(52.55316, -34.714264)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_145" parent="." unique_id=1190232094 instance=ExtResource("4_dvu76")]
+position = Vector2(54.55316, 34.714233)
+disabled = true
+editor_mode = true
+
+[node name="Medium Dark Bubble" parent="." unique_id=438580813 instance=ExtResource("6_sucfk")]
+position = Vector2(-42.315613, -44.885685)
+scale = Vector2(0.73, 0.73)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@155" parent="." unique_id=44693368 instance=ExtResource("6_sucfk")]
+position = Vector2(-42.315613, 44.885685)
+scale = Vector2(0.73, 0.73)
+disabled = true
+editor_mode = true
+
+[node name="Wiggle Cluster" parent="." unique_id=320907701 instance=ExtResource("7_7xvnn")]
+position = Vector2(-45.51245, 0)
+scale = Vector2(1.2161847, 1.2161847)
+disabled = true
+editor_mode = true
+
+[node name="Skittish" parent="." unique_id=1961699606 instance=ExtResource("9_fxupy")]
+position = Vector2(-5.246826, 0)
+scale = Vector2(0.5, 0.5)
+disabled = true
+editor_mode = true
+
+[node name="Large Bubble" parent="." unique_id=818493478 instance=ExtResource("11_3lx15")]
+position = Vector2(0.92193604, 0)
+scale = Vector2(0.7004668, 0.7004668)
+disabled = true
+editor_mode = true

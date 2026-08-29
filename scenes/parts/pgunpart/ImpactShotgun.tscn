@@ -97,7 +97,9 @@ spread = 0.3
 amount_per_salvo = 14
 animation_player = NodePath("AnimationPlayer")
 category = "Player Primaries"
-gp_usage = 5
+summary = "Shoots lots of small pellets which knock back enemies."
+flavor_text = "Feels like getting hit with a wave of boulders. Definitely not enjoyable."
+gp_usage = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=129457675]

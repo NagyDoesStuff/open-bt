@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://c3hhfeogru6bn"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_j5ah7"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_ycavd"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_vd5wj"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_ycavd"]
+
+[sub_resource type="Animation" id="Animation_vd5wj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gun/L Arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.17453292519943295]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gun/R Arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.17453292519943295]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gun/Blinker:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gun:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xnp6c"]
+resource_name = "default"
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gun/Blinker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.39999998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1.8247963, 1.8247963, 1.8247963, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ycavd"]
+resource_name = "shot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gun/L Arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [-1.3962634015954636, 0.17453292519943295]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gun/R Arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [1.3962634015954636, -0.17453292519943295]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-5, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vd5wj"]
+_data = {
+&"RESET": SubResource("Animation_vd5wj"),
+&"default": SubResource("Animation_xnp6c"),
+&"shot": SubResource("Animation_ycavd")
+}
+
+[node name="Mine Trail Cannon" type="Node2D" unique_id=122091808 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_j5ah7")
+cooldown = 4.0
+full_turn_amount = 1
+animation_player = NodePath("Shot")
+category = "Enemy Weapons"
+summary = "Fires a bullet that leaves a line of mines."
+gp_usage = 3
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(28, 0)
+script = ExtResource("3_vd5wj")
+prj_info = {
+"dmg_info": {
+"amount": 4,
+"type": "dmg"
+},
+"hit_fx": "uid://dqbky1rhsnesm",
+"size": 1.25,
+"speed": 500.0,
+"template": "uid://cut04hymllyj8"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Gun" type="Node2D" parent="." unique_id=1244771965]
+
+[node name="Bubble12" parent="Gun" unique_id=1039353022 instance=ExtResource("3_ycavd")]
+scale = Vector2(0.3072413, 0.3072413)
+
+[node name="Bubble13" parent="Gun" unique_id=1767609341 instance=ExtResource("3_ycavd")]
+position = Vector2(19, 0)
+scale = Vector2(0.12422275, 0.12422275)
+
+[node name="Bubble01" parent="Gun" unique_id=1483154066 instance=ExtResource("2_ycavd")]
+position = Vector2(-22.000002, -24)
+scale = Vector2(0.18721057, 0.18662685)
+
+[node name="Blinker" parent="Gun" unique_id=1123591513 instance=ExtResource("2_ycavd")]
+position = Vector2(-3.000001, 0)
+scale = Vector2(0.18819545, 0.18760866)
+
+[node name="Bubble05" parent="Gun" unique_id=329385615 instance=ExtResource("2_ycavd")]
+position = Vector2(-1, -19)
+scale = Vector2(0.09801334, 0.09770773)
+
+[node name="L Arm" type="Node2D" parent="Gun" unique_id=1488462329]
+position = Vector2(19, -21)
+rotation = 0.17453292
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Bubble07" parent="Gun/L Arm" unique_id=717573300 instance=ExtResource("2_ycavd")]
+position = Vector2(20, 0)
+scale = Vector2(0.09801334, 0.09770773)
+
+[node name="Bubble04" parent="Gun/L Arm" unique_id=1064924886 instance=ExtResource("2_ycavd")]
+scale = Vector2(0.18721057, 0.18662685)
+
+[node name="R Arm" type="Node2D" parent="Gun" unique_id=1140508494]
+position = Vector2(19, 21)
+rotation = -0.17453292
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Bubble07" parent="Gun/R Arm" unique_id=1389909980 instance=ExtResource("2_ycavd")]
+position = Vector2(20, 0)
+scale = Vector2(0.09801334, 0.09770773)
+
+[node name="Bubble04" parent="Gun/R Arm" unique_id=2066684478 instance=ExtResource("2_ycavd")]
+scale = Vector2(0.18721057, 0.18662685)
+
+[node name="Bubble06" parent="Gun" unique_id=1405893644 instance=ExtResource("2_ycavd")]
+position = Vector2(-1.0000021, 19)
+scale = Vector2(0.09801334, 0.09770773)
+
+[node name="Bubble02" parent="Gun" unique_id=887642025 instance=ExtResource("2_ycavd")]
+position = Vector2(-22.000002, 24.000002)
+scale = Vector2(0.18721057, 0.18662685)
+
+[node name="Idle" type="AnimationPlayer" parent="." unique_id=1571031115]
+libraries/ = SubResource("AnimationLibrary_vd5wj")
+autoplay = &"default"
+
+[node name="Shot" type="AnimationPlayer" parent="." unique_id=1540808903]
+libraries/ = SubResource("AnimationLibrary_vd5wj")
+autoplay = &"default"

@@ -4,7 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_6djs2"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_hmlpk"]
 [ext_resource type="Texture2D" uid="uid://cd847ugdtcc6k" path="res://img/bubbles/shock1.png" id="4_hmlpk"]
+[ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="4_lixid"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="5_hmlpk"]
+
+[sub_resource type="Gradient" id="Gradient_wi5ci"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_xjxqd"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Animation" id="Animation_hmlpk"]
 length = 0.001
@@ -210,6 +219,26 @@ scale = Vector2(0.10619806, 0.10619806)
 position = Vector2(-14.000001, 0)
 scale = Vector2(0.24694598, 0.24694598)
 texture = ExtResource("4_hmlpk")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OrbBubble" unique_id=1714116519]
+scale = Vector2(4.0935745, 4.0935745)
+amount = 1
+texture = ExtResource("4_lixid")
+lifetime = 0.1
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 17.1
+gravity = Vector2(0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color = Color(0.98333335, 1, 0, 1)
+color_ramp = SubResource("Gradient_wi5ci")
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("Curve_xjxqd")
 
 [node name="Bubble12" parent="." unique_id=1685376943 instance=ExtResource("3_6djs2")]
 position = Vector2(-3.0000057, -19.999992)

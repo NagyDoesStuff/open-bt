@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dimyh73yl78uf"]
+
+[ext_resource type="Script" uid="uid://bi81eiq56ggyr" path="res://classes/parts/BubbleCollectorPart.gd" id="1_67tbe"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_6abhs"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_up176"]
+
+[node name="Bubble Collector" type="Node2D" unique_id=819863792]
+script = ExtResource("1_67tbe")
+category = "Enemy Behaviors"
+summary = "Collects bubbles before the player tank does so."
+flavor_text = "Woah, these look shiny! Mine now!"
+gp_usage = 2
+metadata/_custom_type_script = "uid://bi81eiq56ggyr"
+
+[node name="Bubble16" parent="." unique_id=1039353022 instance=ExtResource("3_6abhs")]
+position = Vector2(34.999992, 21.000002)
+scale = Vector2(0.1215706, 0.1215706)
+
+[node name="Bubble17" parent="." unique_id=674062783 instance=ExtResource("3_6abhs")]
+position = Vector2(34.999996, -21)
+scale = Vector2(0.1215706, 0.1215706)
+
+[node name="Bubble14" parent="." unique_id=542712897 instance=ExtResource("3_6abhs")]
+position = Vector2(21.999996, 33.000008)
+scale = Vector2(0.23644102, 0.23644102)
+
+[node name="Bubble15" parent="." unique_id=1667766096 instance=ExtResource("3_6abhs")]
+position = Vector2(21.999998, -33.000004)
+scale = Vector2(0.23644102, 0.23644102)
+
+[node name="Bubble12" parent="." unique_id=112530576 instance=ExtResource("3_6abhs")]
+position = Vector2(-5.999996, -35)
+scale = Vector2(0.2981041, 0.2981041)
+
+[node name="Bubble13" parent="." unique_id=799759964 instance=ExtResource("3_6abhs")]
+position = Vector2(-5.999996, 35)
+scale = Vector2(0.2981041, 0.2981041)
+
+[node name="Bubble11" parent="." unique_id=825977985 instance=ExtResource("3_up176")]
+scale = Vector2(0.3154952, 0.3154952)

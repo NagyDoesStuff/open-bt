@@ -8,6 +8,8 @@
 script = ExtResource("1_x8hjm")
 cooldown = 0.6
 category = "Player Primaries"
+summary = "Slow fire-rate, but the bullets can pass through multiple enemies."
+flavor_text = "Unstoppable AND unpoppable. 'Nuff said."
 gp_usage = 3
 max_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"

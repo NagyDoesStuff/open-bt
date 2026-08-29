@@ -18,6 +18,8 @@ dmg_info = {
 }
 category = "Enemy Weapons"
 is_hovered = true
+summary = "Damages and knocks back any opposing tank that collides with it."
+flavor_text = "Can't touch this. Well, actually you can, but we don't reccomend it."
 gp_usage = 2
 metadata/_custom_type_script = "uid://ckcbefw5wxm43"
 

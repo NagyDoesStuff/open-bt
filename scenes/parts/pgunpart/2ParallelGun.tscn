@@ -8,6 +8,8 @@
 script = ExtResource("1_fsd27")
 cooldown = 0.25
 category = "Player Primaries"
+summary = "Fires 2 bullets side by side."
+flavor_text = "The 2 Parallel is an awesome weapon with its 2 focused bullets. Honestly, what CAN'T it do? \"Fire 3 bullets\", says the 3 Parallel."
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

@@ -120,6 +120,8 @@ cooldown = 3.0
 keybind = "space"
 fixed = true
 category = "Enemy Weapons"
+summary = "These drones seek out the player's tank, damage it, then return a portion of life to their creator."
+flavor_text = "The neighborhood has really gotten rough since Sapper Drones came to town. Says the Sapper: \"Hey your life looks good. Can i hold it?\""
 gp_usage = 4
 min_class = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
@@ -178,7 +180,7 @@ prj_info = {
 "hit_fx": "uid://dqbky1rhsnesm",
 "homing": true,
 "size": 0.66,
-"speed": 800.0,
+"speed": 1500.0,
 "template": "uid://dkhw85rpdp43o",
 "turn_rate": 10.0
 }

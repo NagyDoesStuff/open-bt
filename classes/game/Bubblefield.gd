@@ -1,7 +1,15 @@
 extends Node2D
-class_name Arena
+class_name Bubblefield
 
-func spawn_clusters() -> void:
+var bubblefield_type: String = [
+	"normal"
+].pick_random()
+
+func start_spawning() -> void:
+	match bubblefield_type:
+		"normal": normal_spawn()
+
+func normal_spawn() -> void:
 	var enemies_left_to_spawn: int = int(GlobalClass.DEFAULT_MAX_ENEMIES + (GlobalClass.world.arenas_travelled * GlobalClass.MAX_ENEMIES_INCREMENT_PER_ARENA))
 	if GlobalClass.game_mode == "Beserk Mode":
 		enemies_left_to_spawn = 100
@@ -25,6 +33,9 @@ func spawn_clusters() -> void:
 		
 		var min_enemy_amount: int = 0
 		var max_enemy_amount: int = rand_enemy.max_spawn_amount
+		
+		if rand_enemy.min_to_available == 0:
+			min_enemy_amount = 1
 		
 		if GlobalClass.game_mode == "Beserk Mode":
 			min_enemy_amount = max_enemy_amount

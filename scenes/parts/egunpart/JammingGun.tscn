@@ -8,6 +8,8 @@
 script = ExtResource("1_60rbh")
 cooldown = 2.0
 category = "Enemy Weapons"
+summary = "Fires jamming bullets that briefly prevent the player's tank from firing its weapons."
+flavor_text = "Haha, look at them stare you in confusion as they try to keep firing."
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

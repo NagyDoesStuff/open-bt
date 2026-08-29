@@ -8,6 +8,8 @@
 [node name="Beam Cannon" type="Node2D" unique_id=731334309]
 script = ExtResource("1_f10lb")
 category = "Player Primaries"
+summary = "Maintains a beam of energy as long as you hold the fire button."
+flavor_text = "\"I'MA FIRIN' MAH- No. Just no.\" Indeed Hero Interactive."
 gp_usage = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

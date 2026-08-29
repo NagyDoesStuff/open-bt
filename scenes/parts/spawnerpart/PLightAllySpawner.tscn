@@ -9,7 +9,9 @@ script = ExtResource("1_mf17c")
 cooldown = 1.0
 spawned_cluster = ExtResource("2_s4okr")
 category = "Player Secondaries"
-gp_usage = 4
+summary = "Spawns light fighter allies that will fight for you."
+flavor_text = "You know what's more fun than blowing up tanks by yourself? Blowing them up with friends! And with the Ally Spawner, you can buy some friends! You'll be so popular!"
+gp_usage = 2
 min_class = 4
 metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
 

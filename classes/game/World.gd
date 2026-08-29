@@ -11,7 +11,7 @@ var max_gp: int = 0
 var player_progression_requirement: int = GlobalClass.PROGRESSION_REQUIREMENTS[0]
 var last_player_position: Vector2
 
-@onready var start_arena: Arena = $Arena
+@onready var start_arena: Bubblefield = $Bubblefield
 
 @onready var ui: GameUI = $UI
 
@@ -66,6 +66,15 @@ func get_clusters() -> Array[Cluster]:
 	
 	return list
 
+func get_bubble_points() -> Array[BubblePoint]:
+	var list: Array[BubblePoint] = []
+	
+	for c in get_children():
+		if c is BubblePoint:
+			list.append(c)
+	
+	return list
+	
 func transform_player_into(cluster: Cluster) -> void:
 	if GlobalClass.player_cluster: 
 		last_player_position = GlobalClass.player_cluster.global_position
@@ -111,9 +120,9 @@ func transfer_player_to_next_arena(angle: float = 0.0) -> void:
 		if c != GlobalClass.player_cluster:
 			c.queue_free()
 	
-	var old_arena: Arena
+	var old_arena: Bubblefield
 	
-	var new_arena: Arena = GlobalClass.ARENA_TEMPLATE.instantiate()
+	var new_arena: Bubblefield = GlobalClass.ARENA_TEMPLATE.instantiate()
 	new_arena.global_position = GlobalClass.current_arena.global_position + Vector2.RIGHT.rotated(angle) * GlobalClass.ESTIMATED_ARENA_RADIUS + Vector2.RIGHT.rotated(angle) * GlobalClass.DISTANCE_BETWEEN_ARENAS
 	new_arena.scale = GlobalClass.DEFAULT_ARENA_SCALE
 	add_child(new_arena)
@@ -121,7 +130,7 @@ func transfer_player_to_next_arena(angle: float = 0.0) -> void:
 	old_arena = GlobalClass.current_arena
 	GlobalClass.current_arena = new_arena
 	
-	new_arena.spawn_clusters()
+	new_arena.start_spawning()
 	
 	GlobalClass.player_cluster.enabled = false
 	await create_tween().tween_property(
@@ -129,7 +138,6 @@ func transfer_player_to_next_arena(angle: float = 0.0) -> void:
 		"global_position", 
 		new_arena.global_position + Vector2.LEFT.rotated(angle) * GlobalClass.ESTIMATED_ARENA_RADIUS * GlobalClass.DEFAULT_ARENA_SCALE * GlobalClass.LAND_ON_ARENA_DIST, 
 		1).set_trans(Tween.TRANS_CIRC).finished
-	
 	
 	await get_tree().create_timer(0.1).timeout
 	

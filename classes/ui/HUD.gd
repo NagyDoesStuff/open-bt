@@ -52,14 +52,19 @@ func search_for_cluster(text: String) -> void:
 		recieved_text = recieved_text.trim_suffix(" AS_ENEMY")
 		spawn_as_enemy = true
 	
-	var full_path: String = GlobalClass.USER_CLUSTERS_DIRECTORY + recieved_text + ".tscn"
-	if FileAccess.file_exists(full_path):
-		var loaded_cluster: Cluster = ResourceLoader.load(full_path).instantiate()
-		if !spawn_as_enemy:
-			GlobalClass.world.transform_player_into(loaded_cluster)
-		else:
-			GlobalClass.world.spawn_as_enemy(loaded_cluster)
-		cluster_search_input.text = ""
+	var possible_paths: Array[String] = [
+		GlobalClass.USER_CLUSTERS_DIRECTORY + recieved_text + ".tscn",
+		GlobalClass.GAME_CLUSTERS_DIRECTORY + recieved_text + ".tscn"
+	]
+	for p in possible_paths:
+		if FileAccess.file_exists(p):
+			var loaded_cluster: Cluster = ResourceLoader.load(p).instantiate()
+			if !spawn_as_enemy:
+				GlobalClass.world.transform_player_into(loaded_cluster)
+			else:
+				GlobalClass.world.spawn_as_enemy(loaded_cluster)
+			cluster_search_input.text = ""
+			break
 
 func update_progression_bar() -> void:
 	progression_bar.value = int(GlobalClass.player_cluster.progress)
