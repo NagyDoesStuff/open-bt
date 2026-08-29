@@ -10,6 +10,8 @@ Controls:
 - F to activate and deactivate freecam.
 - YGHJ to move freecam.
 - CTRL to not move a part when selected.
+- ESC to pause.
+- = or « to open the console (Free Mode-only).
 
 Notes:
 - Enemies you create on the debug editor (the one at the main menu) appear in-game.
