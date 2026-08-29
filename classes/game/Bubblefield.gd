@@ -67,4 +67,4 @@ func resize_arena(value: int) -> void:
 	if GlobalClass.game_mode != "Beserk Mode":
 		scale += Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * value)
 	else:
-		scale += Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * value) / 4
+		scale += Vector2.ONE * (GlobalClass.ARENA_RADIUS_GROW_PER_ENEMY * value) / 2

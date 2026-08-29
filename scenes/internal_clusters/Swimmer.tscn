@@ -7,7 +7,7 @@
 [node name="Swimmer" type="Area2D" unique_id=1953735444]
 script = ExtResource("1_jlt3y")
 team = 1
-speed = 5.0
+speed = 7.0
 turn_rate = 4.0
 drop_value = 5
 max_progress = 7

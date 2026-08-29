@@ -57,8 +57,10 @@ func pick_and_make_choices() -> void:
 	while upgrade_choices_left > 0:
 		var picked: Cluster = available_choices.pick_random()
 		
-		if already_chosen_names.has(picked.name): continue
-		else: already_chosen_names.append(picked.name)
+		if already_chosen_names.has(picked.name): 
+			continue
+		else: 
+			already_chosen_names.append(picked.name)
 		
 		var dupe: Cluster = picked.duplicate()
 		dupe.enabled = false
@@ -66,8 +68,7 @@ func pick_and_make_choices() -> void:
 		var button: Button = GlobalClass.TANK_CHOICE_BUTTON.instantiate()
 		button.get_node("Panel/Label").text = dupe.name
 		
-		var loaded_path: String = GlobalClass.get_load_location(dupe)
-		button.pressed.connect(pick_choice.bind(load(loaded_path).instantiate()))
+		button.pressed.connect(pick_choice.bind(picked.duplicate()))
 		choices_container.add_child(button)
 		
 		await get_tree().process_frame

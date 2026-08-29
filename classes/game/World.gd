@@ -93,6 +93,9 @@ func transform_player_into(cluster: Cluster) -> void:
 	
 	if GlobalClass.game_mode == "Free Mode":
 		GlobalClass.player_cluster.progress = GlobalClass.player_cluster.max_progress
+	
+	for b in get_bubble_points():
+		b.follow_target = GlobalClass.player_cluster
 
 func spawn_as_enemy(cluster: Cluster) -> void:
 	cluster.team = 1

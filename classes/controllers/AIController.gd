@@ -6,8 +6,8 @@ var target_detection_radius: float = 9999.0
 var target_detection_area: Area2D = Area2D.new()
 var analyze_targets_frequency: float = 1.0
 
-var min_freq: float = 1.0
-var max_freq: float = 2.0
+var min_freq: float = 0.5
+var max_freq: float = 1.5
 var turn_dir: int = 0
 var min_turn_time_ratio: float = 0.25
 var max_turn_time_ratio: float = 0.5

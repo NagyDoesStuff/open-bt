@@ -1,66 +1,47 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bmexami07yjna"]
 
-[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_p813n"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="2_43108"]
-[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="3_18f1a"]
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_p813n"]
+[ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="2_43108"]
 
 [node name="Swimmer Jr" type="Area2D" unique_id=1653162585]
 script = ExtResource("1_p813n")
 team = 1
-speed = 6.0
+speed = 8.0
 turn_rate = 6.0
 drop_value = 2
 max_progress = 2
 
-[node name="Small Light Bubble" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("2_43108")]
+[node name="Small Light Bubble" parent="." unique_id=878054447 instance=ExtResource("2_43108")]
 position = Vector2(2.479248, 0)
-script = ExtResource("3_18f1a")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@541" type="Node2D" parent="." unique_id=393171136 instance=ExtResource("2_43108")]
+[node name="@Node2D@541" parent="." unique_id=393171136 instance=ExtResource("2_43108")]
 position = Vector2(-21.770752, -9.346252)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("3_18f1a")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_541" type="Node2D" parent="." unique_id=994334689 instance=ExtResource("2_43108")]
+[node name="_Node2D_541" parent="." unique_id=994334689 instance=ExtResource("2_43108")]
 position = Vector2(-21.770752, 9.346252)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("3_18f1a")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@548" type="Node2D" parent="." unique_id=974762272 instance=ExtResource("2_43108")]
+[node name="@Node2D@548" parent="." unique_id=974762272 instance=ExtResource("2_43108")]
 position = Vector2(-8.635376, -16.417572)
 scale = Vector2(0.67, 0.67)
-script = ExtResource("3_18f1a")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_548" type="Node2D" parent="." unique_id=644422096 instance=ExtResource("2_43108")]
+[node name="_Node2D_548" parent="." unique_id=644422096 instance=ExtResource("2_43108")]
 position = Vector2(-8.635376, 16.417603)
 scale = Vector2(0.67, 0.67)
-script = ExtResource("3_18f1a")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@555" type="Node2D" parent="." unique_id=737667250 instance=ExtResource("2_43108")]
+[node name="@Node2D@555" parent="." unique_id=737667250 instance=ExtResource("2_43108")]
 position = Vector2(21.677124, 0)
 scale = Vector2(0.55, 0.55)
-script = ExtResource("3_18f1a")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"

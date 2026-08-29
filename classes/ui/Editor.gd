@@ -170,7 +170,6 @@ func save_cluster() -> void:
 	if !enabled: return
 	var init_cluster_pos: Vector2 = edited_cluster.global_position
 	edited_cluster.global_position = Vector2.ZERO
-	edited_cluster.attributes = ["user_cluster"]
 	
 	var saved: PackedScene = PackedScene.new()
 	saved.pack(edited_cluster)

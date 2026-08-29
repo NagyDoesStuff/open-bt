@@ -7,8 +7,8 @@
 [node name="Catch Me If You Can" type="Area2D" unique_id=315247934]
 script = ExtResource("1_ls7at")
 team = 1
-speed = 20.0
-turn_rate = 20.0
+speed = 12.0
+turn_rate = 10.0
 drop_value = 2
 
 [node name="Small Light Bubble" parent="." unique_id=878054447 instance=ExtResource("2_j0hdr")]
@@ -20,12 +20,6 @@ editor_mode = true
 [node name="@Node2D@81" parent="." unique_id=441778341 instance=ExtResource("2_j0hdr")]
 position = Vector2(-7, 15)
 scale = Vector2(0.5, 0.5)
-disabled = true
-editor_mode = true
-
-[node name="_Node2D_82" parent="." unique_id=577464485 instance=ExtResource("2_j0hdr")]
-position = Vector2(26, 0)
-scale = Vector2(0.30486506, 0.30486506)
 disabled = true
 editor_mode = true
 

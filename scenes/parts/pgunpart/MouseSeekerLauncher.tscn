@@ -6,14 +6,14 @@
 
 [node name="Mouse Seeker Launcher" type="Node2D" unique_id=122091808]
 script = ExtResource("1_xv705")
-cooldown = 1.5
+cooldown = 1.0
 keybind = "space"
 fixed = true
 category = "Player Secondaries"
 summary = "Fires seekers which follow your mouse."
 flavor_text = "These little guys can see through the fourth wall."
-gp_usage = 3
-max_class = 3
+gp_usage = 2
+max_class = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
@@ -22,7 +22,7 @@ scale = Vector2(2.3049185, 2.3049185)
 script = ExtResource("3_ibvhc")
 prj_info = {
 "dmg_info": {
-"amount": 10,
+"amount": 5,
 "type": "dmg"
 },
 "hit_fx": "uid://dqbky1rhsnesm",
@@ -36,37 +36,21 @@ prj_info = {
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
 
 [node name="Bubble21" parent="." unique_id=1039353022 instance=ExtResource("2_fke5l")]
-position = Vector2(-1, -17)
-scale = Vector2(0.13415723, 0.13415723)
+position = Vector2(-13, -14.000001)
+scale = Vector2(0.11057185, 0.11057185)
 
 [node name="Bubble22" parent="." unique_id=68985916 instance=ExtResource("2_fke5l")]
-position = Vector2(14.000002, -10)
-scale = Vector2(0.13415723, 0.13415723)
+position = Vector2(3.000002, -8.000001)
+scale = Vector2(0.11057185, 0.11057185)
 
 [node name="Bubble18" parent="." unique_id=1578284667 instance=ExtResource("2_fke5l")]
-position = Vector2(-1, 17)
-scale = Vector2(0.13415723, 0.13415723)
+position = Vector2(-13, 14)
+scale = Vector2(0.11057185, 0.11057185)
 
 [node name="Bubble19" parent="." unique_id=1728580024 instance=ExtResource("2_fke5l")]
-position = Vector2(14.000002, 10)
-scale = Vector2(0.13415723, 0.13415723)
+position = Vector2(3.000002, 8)
+scale = Vector2(0.11660864, 0.11660864)
 
 [node name="Bubble20" parent="." unique_id=1411715756 instance=ExtResource("2_fke5l")]
-position = Vector2(27, 0)
-scale = Vector2(0.13415723, 0.13415723)
-
-[node name="Bubble16" parent="." unique_id=1144700784 instance=ExtResource("2_fke5l")]
-position = Vector2(-16, -24)
-scale = Vector2(0.13415723, 0.13415723)
-
-[node name="Bubble17" parent="." unique_id=742699742 instance=ExtResource("2_fke5l")]
-position = Vector2(-16, 24)
-scale = Vector2(0.13415723, 0.13415723)
-
-[node name="Bubble23" parent="." unique_id=859939068 instance=ExtResource("2_fke5l")]
-position = Vector2(-17, 8)
-scale = Vector2(0.13415723, 0.13415723)
-
-[node name="Bubble24" parent="." unique_id=2132992698 instance=ExtResource("2_fke5l")]
-position = Vector2(-17, -8)
-scale = Vector2(0.13415723, 0.13415723)
+position = Vector2(18.000002, 0)
+scale = Vector2(0.11057185, 0.11057185)

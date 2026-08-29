@@ -25,7 +25,7 @@ const UPGRADE_CHOICES: int = 3
 
 const CLUSTER_CHECK_DIST_FREQ: float = .25
 const ESTIMATED_ARENA_RADIUS: float = 8505.0 / 2.0
-const ARENA_RADIUS_GROW_PER_ENEMY: float = 0.025
+const ARENA_RADIUS_GROW_PER_ENEMY: float = 0.0125
 const LAND_ON_ARENA_DIST: float = 0.9
 const MIN_BUBBLE_POINT_SIZE: float = 0.33
 const BUBBLE_POINT_GROW_SIZE: float = 0.025
@@ -102,6 +102,7 @@ var can_pause: bool = true
 
 func _ready() -> void:
 	create_directories()
+	overwrite_game_clusters()
 	load_clusters()
 
 func get_closest_or_farthest(from: Node2D, list: Array, closest: bool) -> Node2D:
@@ -176,9 +177,11 @@ func get_load_location(cluster: Cluster) -> String:
 func load_clusters() -> void:
 	for file in ResourceLoader.list_directory(USER_CLUSTERS_DIRECTORY):
 		var cluster: Cluster = load(USER_CLUSTERS_DIRECTORY + file).instantiate()
+		cluster.attributes.append("user_cluster")
 		loaded_clusters.append(cluster)
 	for file in ResourceLoader.list_directory(GAME_CLUSTERS_DIRECTORY):
 		var cluster: Cluster = load(GAME_CLUSTERS_DIRECTORY + file).instantiate()
+		cluster.attributes.append("game_cluster")
 		loaded_clusters.append(cluster)
 
 func create_directories() -> void: 
@@ -187,15 +190,12 @@ func create_directories() -> void:
 		
 	if !DirAccess.dir_exists_absolute(GlobalClass.USER_CLUSTERS_DIRECTORY):
 		DirAccess.make_dir_absolute(GlobalClass.USER_CLUSTERS_DIRECTORY)
-		
-	overwrite_game_clusters()
 
 func overwrite_game_clusters() -> void:
 	DirAccess.remove_absolute(GlobalClass.GAME_CLUSTERS_DIRECTORY)
-	if !DirAccess.dir_exists_absolute(GlobalClass.GAME_CLUSTERS_DIRECTORY):
-		DirAccess.make_dir_absolute(GlobalClass.GAME_CLUSTERS_DIRECTORY)
-		for file in ResourceLoader.list_directory(INTERNAL_CLUSTERS_DIRECTORY):
-				ResourceSaver.save(load(INTERNAL_CLUSTERS_DIRECTORY + file), GlobalClass.GAME_CLUSTERS_DIRECTORY + file)
+	DirAccess.make_dir_absolute(GlobalClass.GAME_CLUSTERS_DIRECTORY)
+	for file in ResourceLoader.list_directory(INTERNAL_CLUSTERS_DIRECTORY):
+			ResourceSaver.save(load(INTERNAL_CLUSTERS_DIRECTORY + file), GlobalClass.GAME_CLUSTERS_DIRECTORY + file)
 
 func append_distance_check(who: Node2D) -> void:
 	var timer: Timer = Timer.new()
