@@ -18,7 +18,7 @@ point_count = 2
 
 [sub_resource type="Animation" id="Animation_6djs2"]
 resource_name = "charge"
-length = 2.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -26,7 +26,7 @@ tracks/0/path = NodePath("OrbBubble:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(3.8147569, 3.8147569, 3.8147569, 1)]
@@ -38,7 +38,7 @@ tracks/1/path = NodePath("OrbBubble:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [Vector2(40, 0), Vector2(90, 0)]
@@ -50,7 +50,7 @@ tracks/2/path = NodePath("OrbBubble:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [Vector2(0.25, 0.25), Vector2(0.58, 0.58)]
@@ -65,7 +65,7 @@ _data = {
 script = ExtResource("1_rgaxl")
 turn_rate = 0.0
 cooldown = 99999.0
-shot_delay = 2.0
+shot_delay = 6.0
 fixed = true
 auto_shoot = true
 shot_animation = "charge"
