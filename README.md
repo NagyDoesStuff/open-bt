@@ -7,9 +7,10 @@
 Controls:
 - WASD or arrow keys to move.
 - LMB to shoot (or Space for secondaries).
-- F to activate and deactivate freecam.
-- YGHJ to move freecam.
+- Tab to activate and deactivate the static camera.
 - CTRL to not move a part when selected.
+- ESC to pause.
+- = or « to open the console (Free Mode-only).
 
 Notes:
 - Enemies you create on the debug editor (the one at the main menu) appear in-game.
