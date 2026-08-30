@@ -11,60 +11,68 @@
 script = ExtResource("1_6waxs")
 
 [node name="Medium Dark Bubble" parent="." unique_id=878054447 instance=ExtResource("2_4y4jb")]
-position = Vector2(-7.753113, 48.657227)
+position = Vector2(17.753103, -37.657227)
+rotation = 3.1415925
 scale = Vector2(0.85, 0.85)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@2437" parent="." unique_id=734970636 instance=ExtResource("2_4y4jb")]
-position = Vector2(-7.753113, -48.657227)
+position = Vector2(17.75311, 37.65722)
+rotation = 3.1415925
 scale = Vector2(0.85, 0.85)
 disabled = true
 editor_mode = true
 
-[node name="Medium Bubble" parent="." unique_id=1201564161 instance=ExtResource("4_261np")]
-position = Vector2(-29.343689, 0)
-disabled = true
-editor_mode = true
-
 [node name="Small Bubble" parent="." unique_id=1020270808 instance=ExtResource("5_p4b66")]
-position = Vector2(37.484436, -51.114258)
+position = Vector2(61.515564, 38.114265)
+rotation = 3.1415925
 scale = Vector2(1.09, 1.09)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@2445" parent="." unique_id=743913528 instance=ExtResource("5_p4b66")]
-position = Vector2(37.484436, 51.114258)
+position = Vector2(61.515564, -38.114258)
+rotation = 3.1415925
 scale = Vector2(1.09, 1.09)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@2450" parent="." unique_id=1934921989 instance=ExtResource("5_p4b66")]
-position = Vector2(0.47192383, -78.88568)
+position = Vector2(17.528084, 67.88568)
+rotation = 3.1415925
 scale = Vector2(0.6, 0.6)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_2450" parent="." unique_id=1402266354 instance=ExtResource("5_p4b66")]
-position = Vector2(0.47192383, 78.88568)
+position = Vector2(17.528069, -67.88568)
+rotation = 3.1415925
 scale = Vector2(0.6, 0.6)
 disabled = true
 editor_mode = true
 
 [node name="Small Light Bubble" parent="." unique_id=1033712889 instance=ExtResource("6_3x3ll")]
-position = Vector2(36.4563, -77.85712)
+position = Vector2(62.543716, 64.85712)
+rotation = 3.1415925
 scale = Vector2(0.54, 0.54)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@2459" parent="." unique_id=1788249411 instance=ExtResource("6_3x3ll")]
-position = Vector2(36.4563, 77.85712)
+position = Vector2(62.543686, -64.85712)
+rotation = 3.1415925
 scale = Vector2(0.54, 0.54)
 disabled = true
 editor_mode = true
 
-[node name="Chargeable Cannon" parent="." unique_id=9836400 instance=ExtResource("7_dbmin")]
-position = Vector2(-28.315613, 0)
+[node name="Medium Bubble" parent="." unique_id=1201564161 instance=ExtResource("4_261np")]
+position = Vector2(-0.34368896, 0)
+disabled = true
+editor_mode = true
+
+[node name="Blaster" parent="." unique_id=9836400 instance=ExtResource("7_dbmin")]
+position = Vector2(12.684383, 0)
 scale = Vector2(1.18, 1.18)
 disabled = true
 editor_mode = true

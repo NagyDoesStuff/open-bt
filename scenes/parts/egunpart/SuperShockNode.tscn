@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dbp4wcqduqrrm"]
 
-[ext_resource type="Script" uid="uid://bdpqrhn3b5dvh" path="res://classes/parts/ChargeGunPart.gd" id="1_th5lx"]
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_rgaxl"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_toeyw"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_ofd02"]
-[ext_resource type="Texture2D" uid="uid://dtpxe3vek80oe" path="res://img/bubbles/shock2.png" id="4_toeyw"]
+[ext_resource type="Texture2D" uid="uid://nfgn6i8fwoxy" path="res://img/bubbles/30.png" id="4_rgaxl"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="5_7t84g"]
 [ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="5_rgaxl"]
 [ext_resource type="PackedScene" uid="uid://bs6uxsrdh5b31" path="res://scenes/decorations/bubble02.tscn" id="7_rgaxl"]
@@ -40,7 +40,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(32, 0)]
+"values": [Vector2(40, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -52,47 +52,47 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.066, 0.066)]
+"values": [Vector2(0.25, 0.25)]
 }
 
 [sub_resource type="Animation" id="Animation_6djs2"]
 resource_name = "charge"
-length = 6.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("OrbBubble:modulate")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1.353256, 1.353256, 1.353256, 1)]
+"values": [Color(1, 1, 1, 1), Color(3.8147569, 3.8147569, 3.8147569, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("OrbBubble:position")
 tracks/1/interp = 1
-tracks/1/loop_wrap = true
+tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(32, 0), Vector2(90, 0)]
+"values": [Vector2(40, 0), Vector2(90, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("OrbBubble:scale")
 tracks/2/interp = 1
-tracks/2/loop_wrap = true
+tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(0.066, 0.066), Vector2(0.2, 0.2)]
+"values": [Vector2(0.25, 0.25), Vector2(0.58, 0.58)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hmlpk"]
@@ -101,23 +101,25 @@ _data = {
 &"charge": SubResource("Animation_6djs2")
 }
 
-[node name="Super Shock Node" type="Node2D" unique_id=733669987 node_paths=PackedStringArray("animation_player")]
-script = ExtResource("1_th5lx")
-charge_time = 6.0
-keybind = "space"
+[node name="Super Shock Node" type="Node2D" unique_id=338931736]
+script = ExtResource("1_rgaxl")
+turn_rate = 0.0
+cooldown = 99999.0
+shot_delay = 2.0
 fixed = true
-animation_player = NodePath("AnimationPlayer")
+auto_shoot = true
 category = "Enemy Weapons"
-summary = "Requires charging. Releases a projectile that shocks the player tank. These projectiles can also boost neighbor projectiles of the same type."
-flavor_text = "Bzzt, bzzt! Seems like these little bubble tanks have absorbed Zeus' power!"
-gp_usage = 4
+summary = "Shocks anything nearby."
+flavor_text = "Bzzt, bzzt! Seems these little bubble tanks have harnessed the power of Zeus!"
+gp_usage = 3
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble14" parent="." unique_id=1039353022 instance=ExtResource("4_ofd02")]
 position = Vector2(14.798038, 42.91457)
 scale = Vector2(0.28176862, 0.28176862)
 
 [node name="Bubble15" parent="." unique_id=1605779907 instance=ExtResource("4_ofd02")]
-position = Vector2(14.798038, -42.914574)
+position = Vector2(14.798038, -42.91457)
 scale = Vector2(0.28176862, 0.28176862)
 
 [node name="Bubble16" parent="." unique_id=49865138 instance=ExtResource("2_toeyw")]
@@ -137,13 +139,13 @@ position = Vector2(-4.4394383, -53.273247)
 scale = Vector2(0.08941505, 0.08941505)
 
 [node name="OrbBubble" type="Sprite2D" parent="." unique_id=511260881]
-position = Vector2(32, 0)
-scale = Vector2(0.066, 0.066)
-texture = ExtResource("4_toeyw")
+position = Vector2(40, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_rgaxl")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="OrbBubble" unique_id=1001862855]
-scale = Vector2(3.318819, 3.318819)
-amount = 2
+scale = Vector2(1.1256037, 1.1256037)
+amount = 4
 texture = ExtResource("5_rgaxl")
 lifetime = 0.1
 lifetime_randomness = 0.5
@@ -153,7 +155,7 @@ gravity = Vector2(0, 0)
 angular_velocity_min = -10.0
 angular_velocity_max = 10.0
 angle_max = 360.0
-scale_amount_min = 0.15
+scale_amount_min = 0.2
 scale_amount_max = 0.3
 color = Color(0.98333335, 1, 0, 1)
 color_ramp = SubResource("Gradient_ofd02")
@@ -162,7 +164,7 @@ hue_variation_max = 0.1
 hue_variation_curve = SubResource("Curve_7t84g")
 
 [node name="Bubble11" parent="." unique_id=170161300 instance=ExtResource("4_ofd02")]
-position = Vector2(7.399064, -20.717379)
+position = Vector2(7.399064, -20.71738)
 scale = Vector2(0.17310773, 0.17310773)
 
 [node name="Bubble13" parent="." unique_id=2023746945 instance=ExtResource("4_ofd02")]
@@ -184,19 +186,15 @@ libraries/ = SubResource("AnimationLibrary_hmlpk")
 position = Vector2(90, 0)
 script = ExtResource("5_7t84g")
 prj_info = {
+"attached": true,
 "dmg_info": {
 "amount": 3.0,
 "duration": 0.0,
 "type": "dmg"
 },
-"hit_fx": "uid://bwddu713otuhv",
-"homing": false,
-"sin_turn_mode_freq": 3.0,
-"size": 5.0,
-"speed": 300.0,
-"target_mode": "default",
-"template": "uid://wjhxhgu6vrdu",
-"turn_mode": "default",
-"turn_rate": 10.0
+"hit_fx": "uid://bj32jn40b07kx",
+"size": 1.0,
+"speed": 0.0,
+"template": "uid://cawtjjpo8n8u2"
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"

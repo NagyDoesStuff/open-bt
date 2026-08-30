@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cawtjjpo8n8u2"]
+
+[ext_resource type="Script" uid="uid://cxu50vgg6683q" path="res://classes/projectiles/ShockProjectile.gd" id="1_tulrs"]
+[ext_resource type="PackedScene" uid="uid://bru5k4euwykks" path="res://scenes/fx/HitscanLine/lighting_line2.tscn" id="2_tulrs"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="3_4gnqk"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="4_svu0x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epkgr"]
+radius = 1.0
+
+[node name="SuperShockProjectile" type="Node2D" unique_id=1253201984]
+script = ExtResource("1_tulrs")
+shock_range = 300.0
+shock_cooldown = 0.25
+hitscan_line = ExtResource("2_tulrs")
+phase = true
+muted = true
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.2942147, 0.2942147)
+texture = ExtResource("3_4gnqk")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("4_svu0x")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=445966490]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=576233077]
+shape = SubResource("CircleShape2D_epkgr")
+disabled = true

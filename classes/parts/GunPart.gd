@@ -59,21 +59,31 @@ func get_lasers() -> Array[Laser]:
 			list.append(c)
 	return list
 
-func fire() -> void:
-	can_shoot = false
-	get_tree().create_timer(cooldown).timeout.connect(set.bind("can_shoot", true))
-	if animation_player: animation_player.play(shot_animation)
-	await get_tree().create_timer(shot_delay).timeout
+func fire(power: float = 1.0) -> void:
+	enter_cooldown()
+	
+	if is_instance_valid(animation_player) and animation_player.has_animation(shot_animation): 
+		animation_player.play(shot_animation)
+	
+	if shot_delay > 0.0:
+		await get_tree().create_timer(shot_delay).timeout
 	
 	for b in barrels:
-		b.shoot()
+		b.shoot(power)
 	
 	if full_turn_amount > 0:
-		toggle_lasers(true)
-		for x in range(full_turn_amount):
-			await create_tween().tween_property(self, "rotation", TAU, amount_per_salvo * salvo_interval).finished
-			rotation = init_rotation
-		toggle_lasers(false)
+		spin()
+
+func enter_cooldown() -> void:
+	can_shoot = false
+	get_tree().create_timer(cooldown).timeout.connect(set.bind("can_shoot", true))
+
+func spin() -> void:
+	toggle_lasers(true)
+	for x in range(full_turn_amount):
+		await create_tween().tween_property(self, "rotation", TAU, amount_per_salvo * salvo_interval).finished
+		rotation = init_rotation
+	toggle_lasers(false)
 
 func turn_to(pos: Vector2, delta: float) -> void:
 	global_rotation = rotate_toward(

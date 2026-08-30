@@ -1,233 +1,52 @@
 [gd_scene format=3 uid="uid://cr8sr2jldybf7"]
 
-[ext_resource type="Script" uid="uid://bdpqrhn3b5dvh" path="res://classes/parts/ChargeGunPart.gd" id="1_6djs2"]
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_hmlpk"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_6djs2"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_hmlpk"]
-[ext_resource type="Texture2D" uid="uid://cd847ugdtcc6k" path="res://img/bubbles/shock1.png" id="4_hmlpk"]
+[ext_resource type="PackedScene" uid="uid://dsc3anm0wx63x" path="res://scenes/decorations/bubble31.tscn" id="4_6djs2"]
 [ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="4_lixid"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="5_hmlpk"]
 
-[sub_resource type="Gradient" id="Gradient_wi5ci"]
+[sub_resource type="Gradient" id="Gradient_hmlpk"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="Curve" id="Curve_xjxqd"]
-_limits = [-1.0, 1.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Animation" id="Animation_hmlpk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OrbBubble:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.24694598, 0.24694598)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OrbBubble:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-14.000001, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("OrbBubble:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Bubble17:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-15.000002, 21.000002)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Bubble16:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-14, -20.999998)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Bubble12:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3.0000057, -19.999992)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Bubble13:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3.0000057, 20.000004)]
-}
-
-[sub_resource type="Animation" id="Animation_6djs2"]
-resource_name = "charge"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OrbBubble:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector2(-14.000001, 0), Vector2(-21, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OrbBubble:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.5, 0.5),
-"update": 0,
-"values": [Vector2(0.24694598, 0.24694598), Vector2(0.325, 0.325)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("OrbBubble:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1.353256, 1.353256, 1.353256, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Bubble17:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector2(-15.000002, 21.000002), Vector2(-19, 27)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Bubble16:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector2(-14, -20.999998), Vector2(-19, -27)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Bubble12:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector2(-3.0000057, -19.999992), Vector2(-7, -19)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Bubble13:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector2(-3.0000057, 20.000004), Vector2(-7, 19)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmlpk"]
-_data = {
-&"RESET": SubResource("Animation_hmlpk"),
-&"charge": SubResource("Animation_6djs2")
-}
-
-[node name="Shock Node" type="Node2D" unique_id=733669987 node_paths=PackedStringArray("animation_player")]
-script = ExtResource("1_6djs2")
-charge_time = 4.0
-keybind = "space"
+[node name="Shock Node" type="Node2D" unique_id=1267480583]
+script = ExtResource("1_hmlpk")
+turn_rate = 0.0
+cooldown = 99999.0
 fixed = true
-animation_player = NodePath("AnimationPlayer")
+auto_shoot = true
 category = "Enemy Weapons"
-summary = "Requires charging. Releases a projectile that shocks the player tank. These projectiles can also boost neighbor projectiles of the same type."
-flavor_text = "Bzzt, bzzt! Seems like these little bubble tanks have absorbed Zeus' power!"
-gp_usage = 3
+summary = "Shocks anything nearby."
+flavor_text = "Bzzt, bzzt! Seems these little bubble tanks have harnessed the power of Zeus!"
+gp_usage = 1
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble33" parent="." unique_id=900752476 instance=ExtResource("4_6djs2")]
+position = Vector2(22, 0)
+scale = Vector2(0.17334338, 0.17334338)
+
+[node name="Bubble11" parent="." unique_id=1103479538 instance=ExtResource("3_6djs2")]
+position = Vector2(12.999998, -13.999999)
+scale = Vector2(0.11383278, 0.11383278)
+
+[node name="Bubble12" parent="." unique_id=779667114 instance=ExtResource("3_6djs2")]
+position = Vector2(13.000001, 13.999999)
+scale = Vector2(0.11383278, 0.11383278)
 
 [node name="Bubble16" parent="." unique_id=1039353022 instance=ExtResource("3_hmlpk")]
-position = Vector2(-14, -20.999998)
-scale = Vector2(0.10619806, 0.10619806)
+position = Vector2(-1.1920929e-06, -4.1723254e-07)
+scale = Vector2(0.20578264, 0.20578264)
 
-[node name="Bubble17" parent="." unique_id=1587254008 instance=ExtResource("3_hmlpk")]
-position = Vector2(-15.000002, 21.000002)
-scale = Vector2(0.10619806, 0.10619806)
-
-[node name="OrbBubble" type="Sprite2D" parent="." unique_id=511260881]
-position = Vector2(-14.000001, 0)
-scale = Vector2(0.24694598, 0.24694598)
-texture = ExtResource("4_hmlpk")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="OrbBubble" unique_id=1714116519]
-scale = Vector2(4.0935745, 4.0935745)
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=23942293]
+position = Vector2(24, 0)
+scale = Vector2(0.08503619, 0.08503619)
 amount = 1
 texture = ExtResource("4_lixid")
 lifetime = 0.1
 lifetime_randomness = 0.5
 emission_shape = 2
-emission_sphere_radius = 17.1
+emission_sphere_radius = 128.0
 gravity = Vector2(0, 0)
 angular_velocity_min = -10.0
 angular_velocity_max = 10.0
@@ -235,62 +54,21 @@ angle_max = 360.0
 scale_amount_min = 0.1
 scale_amount_max = 0.2
 color = Color(0.98333335, 1, 0, 1)
-color_ramp = SubResource("Gradient_wi5ci")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
-hue_variation_curve = SubResource("Curve_xjxqd")
+color_ramp = SubResource("Gradient_hmlpk")
 
-[node name="Bubble12" parent="." unique_id=1685376943 instance=ExtResource("3_6djs2")]
-position = Vector2(-3.0000057, -19.999992)
-scale = Vector2(0.13104323, 0.13104323)
-
-[node name="Bubble13" parent="." unique_id=307736359 instance=ExtResource("3_6djs2")]
-position = Vector2(-3.0000057, 20.000004)
-scale = Vector2(0.13104323, 0.13104323)
-
-[node name="Fixed" type="Node2D" parent="." unique_id=1590270739]
-
-[node name="Bubble18" parent="Fixed" unique_id=948007437 instance=ExtResource("3_hmlpk")]
-position = Vector2(15.000008, 17.000004)
-scale = Vector2(0.07614108, 0.07614108)
-
-[node name="Bubble19" parent="Fixed" unique_id=347262917 instance=ExtResource("3_hmlpk")]
-position = Vector2(15.000008, -17.000002)
-scale = Vector2(0.07614108, 0.07614108)
-
-[node name="Bubble14" parent="Fixed" unique_id=803774573 instance=ExtResource("3_6djs2")]
-position = Vector2(23.999987, -11)
-scale = Vector2(0.11572177, 0.11572177)
-
-[node name="Bubble15" parent="Fixed" unique_id=1024978159 instance=ExtResource("3_6djs2")]
-position = Vector2(23.999987, 10.999996)
-scale = Vector2(0.11572177, 0.11572177)
-
-[node name="Bubble11" parent="Fixed" unique_id=518034357 instance=ExtResource("3_6djs2")]
-position = Vector2(7, 0)
-scale = Vector2(0.17888321, 0.17888321)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1955831747]
-libraries/ = SubResource("AnimationLibrary_hmlpk")
-
-[node name="GunBarrel" type="Node2D" parent="." unique_id=704077057]
-position = Vector2(-38, 0)
-rotation = 3.1415927
+[node name="GunBarrel" type="Node2D" parent="." unique_id=140212188]
+position = Vector2(24, 0)
 script = ExtResource("5_hmlpk")
 prj_info = {
+"attached": true,
 "dmg_info": {
-"amount": 1.0,
+"amount": 0.5,
 "duration": 0.0,
 "type": "dmg"
 },
 "hit_fx": "uid://bwddu713otuhv",
-"homing": false,
-"sin_turn_mode_freq": 3.0,
-"size": 1.25,
-"speed": 500.0,
-"target_mode": "default",
-"template": "uid://cxk7iuuw1wiwk",
-"turn_mode": "default",
-"turn_rate": 10.0
+"size": 1.0,
+"speed": 0.0,
+"template": "uid://wd5dx6kcqmk6"
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"

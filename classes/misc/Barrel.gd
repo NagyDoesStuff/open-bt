@@ -39,18 +39,26 @@ func _ready() -> void:
 	if barrel_user.user.team != 0:
 		muted = true
 
-func shoot() -> void:
+func shoot(power: float = 1.0) -> void:
 	if !muted and barrel_user.salvo_interval == 0.0:
 		GlobalClass.play_sound(barrel_user.shoot_fx)
 	
 	for x in range(barrel_user.amount_per_salvo):
+		var dupe_info: Dictionary = prj_info.duplicate(true)
 		var prj: Projectile = load(prj_info["template"]).instantiate()
-		prj.global_position = global_position
 		prj.global_rotation = global_rotation + randf_range(-barrel_user.spread, barrel_user.spread)
-		prj.prj_info = prj_info.duplicate()
 		prj.team = barrel_user.user.team
 		prj.from = barrel_user.user
-		GlobalClass.world.add_child(prj)
+		
+		dupe_info["dmg_info"]["amount"] *= power
+		dupe_info["size"] *= power
+		prj.prj_info = dupe_info
+		
+		if dupe_info.has("attached") and dupe_info["attached"] and barrel_user.user is Cluster:
+			barrel_user.user.add_child(prj)
+		else:
+			GlobalClass.world.add_child(prj)
+		prj.global_position = global_position
 		
 		if barrel_user.salvo_interval > 0.0:
 			if !muted:

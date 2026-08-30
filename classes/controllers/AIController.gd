@@ -39,7 +39,8 @@ func target_analysis() -> void:
 	for a in target_detection_area.get_overlapping_areas():
 		if a is Cluster and a.team != user.team:
 			valid_targets.append(a)
-	if target: target = GlobalClass.get_closest_or_farthest(user, valid_targets, true)
+	var new_target: Cluster = GlobalClass.get_closest_or_farthest(user, valid_targets, true)
+	if new_target: target = new_target
 
 func in_avoid_center_margin() -> bool:
 	if GlobalClass.ESTIMATED_ARENA_RADIUS * GlobalClass.current_arena.scale.length() / 2 - run_to_center_margin < user.dist_from_center:

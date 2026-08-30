@@ -17,5 +17,5 @@ gradient = SubResource("Gradient_kqog2")
 script = ExtResource("1_wc1ml")
 fade_time = 0.33
 point_count = 20
-instability = 10.0
+instability = 20.0
 metadata/_custom_type_script = "uid://vnvc7r14ixvo"
