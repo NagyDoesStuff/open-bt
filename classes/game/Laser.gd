@@ -25,22 +25,18 @@ func _ready() -> void:
 	collide_with_areas = true
 	collide_with_bodies = false
 	hit_from_inside = true
+	enabled = false
 	
 	cooldown_timer.wait_time = hit_frequency
 	cooldown_timer.timeout.connect(on_cooldown_ended)
 	add_child(cooldown_timer)
 	
-	if gun.user != GlobalClass.player_cluster:
-		enabled = true
+	add_exception(gun.user)
 
 func _process(_delta: float) -> void:
 	if gun.disabled or !gun.user.can_fire: 
 		enabled = false
 		return
-	
-	if gun.user == GlobalClass.player_cluster:
-		enabled = Input.is_action_pressed("lmb")
-	
 	if enabled and get_collider():
 		hit()
 
@@ -65,7 +61,7 @@ func hit() -> void:
 		current_target.recieve_hit(dmg_info)
 	elif current_target is Projectile and current_target.team != gun.user.team:
 		current_target.get_parent().destroy()
-	elif current_target is PoppablePart and current_target.team != gun.user.team:
+	elif current_target is PoppablePart and current_target.user.team != gun.user.team:
 		current_target.get_parent().destroy()
 	
 	cooldown_timer.start()

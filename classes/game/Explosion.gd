@@ -12,6 +12,10 @@ class_name Explosion
 var team: int = 0
 
 func _ready() -> void:
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
+	set_collision_layer_value(2, true)
+	set_collision_mask_value(2, true)
 	area_entered.connect(deal_dmg)
 	get_tree().create_timer(lifetime).timeout.connect(queue_free)
 	

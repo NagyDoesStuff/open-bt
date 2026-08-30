@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="4_4bkv2"]
 [ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="5_u0n5d"]
 [ext_resource type="PackedScene" uid="uid://4fsuq8fretcg" path="res://scenes/parts/egunpart/RotatingMachineGun.tscn" id="6_13tt7"]
-[ext_resource type="PackedScene" uid="uid://dufym37jcduao" path="res://scenes/parts/spawnerpart/ELightFighterSpawner.tscn" id="8_2t261"]
 
 [node name="Orbital" type="Area2D" unique_id=1938632622]
 script = ExtResource("1_uf0xs")
@@ -120,10 +119,5 @@ editor_mode = true
 
 [node name="Rotating Machine Gun" parent="." unique_id=122091808 instance=ExtResource("6_13tt7")]
 position = Vector2(16.893799, 0)
-disabled = true
-editor_mode = true
-
-[node name="Light Fighter Spawner" parent="." unique_id=962284641 instance=ExtResource("8_2t261")]
-position = Vector2(15.865662, 0)
 disabled = true
 editor_mode = true

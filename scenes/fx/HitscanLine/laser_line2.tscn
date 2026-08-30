@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ci6t1yl8sklfv"]
+
+[ext_resource type="Script" uid="uid://vnvc7r14ixvo" path="res://classes/fx/HitscanLine.gd" id="1_7akcq"]
+
+[sub_resource type="Curve" id="Curve_5nwvc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.90140843, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_kqog2"]
+offsets = PackedFloat32Array(0.8548896, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 0.25882354)
+
+[node name="Line2D" type="Line2D" unique_id=1820015217]
+width = 7.0
+width_curve = SubResource("Curve_5nwvc")
+gradient = SubResource("Gradient_kqog2")
+script = ExtResource("1_7akcq")
+fade_time = 0.05
+point_count = 200
+instability = 50.0
+metadata/_custom_type_script = "uid://vnvc7r14ixvo"

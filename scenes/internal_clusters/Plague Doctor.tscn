@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://dhwjixmockkt2"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_8q7o0"]
+[ext_resource type="PackedScene" uid="uid://71tcbrk7p8vx" path="res://scenes/parts/egunpart/DoomsdayInfector.tscn" id="2_gp7q8"]
+[ext_resource type="PackedScene" uid="uid://bu5eiidbljks3" path="res://scenes/parts/behaviorpart/Skittish.tscn" id="4_tcxf4"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="6_ougna"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="8_2nbhx"]
+[ext_resource type="PackedScene" uid="uid://dc1ruuaqakf21" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="9_nfdlx"]
+[ext_resource type="PackedScene" uid="uid://ciaxywhau22p8" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="10_2cu88"]
+[ext_resource type="PackedScene" uid="uid://c8r4iiu5ltfj6" path="res://scenes/parts/egunpart/StunGun.tscn" id="11_g1wsc"]
+[ext_resource type="PackedScene" uid="uid://c8dvqqcb4fpq4" path="res://scenes/parts/egunpart/BasicGun.tscn" id="12_lrqtu"]
+
+[node name="Plague Doctor" type="Area2D" unique_id=415157380]
+script = ExtResource("1_8q7o0")
+team = 1
+cluster_class = 2
+speed = 4.0
+turn_rate = 3.0
+max_progress = 50
+min_to_available = 60
+max_spawn_amount = 1
+
+[node name="Enemy Doomsday Infector" parent="." unique_id=122091808 instance=ExtResource("2_gp7q8")]
+position = Vector2(60.42975, 0)
+disabled = true
+editor_mode = true
+
+[node name="Skittish" parent="." unique_id=1961699606 instance=ExtResource("4_tcxf4")]
+position = Vector2(-62.94525, 0)
+disabled = true
+editor_mode = true
+
+[node name="Small Dark Bubble" parent="." unique_id=878054447 instance=ExtResource("6_ougna")]
+position = Vector2(67.16412, 45.818714)
+scale = Vector2(0.81, 0.81)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@1200" parent="." unique_id=865114867 instance=ExtResource("6_ougna")]
+position = Vector2(67.16412, -45.818726)
+scale = Vector2(0.81, 0.81)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@1155" parent="." unique_id=1006110650 instance=ExtResource("8_2nbhx")]
+position = Vector2(33.664124, 59.124268)
+disabled = true
+editor_mode = true
+
+[node name="Small Bubble" parent="." unique_id=2010040039 instance=ExtResource("8_2nbhx")]
+position = Vector2(33.664124, -59.124268)
+disabled = true
+editor_mode = true
+
+[node name="Medium Dark Bubble" parent="." unique_id=1104966665 instance=ExtResource("9_nfdlx")]
+position = Vector2(-88.22651, -69.97778)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@1220" parent="." unique_id=1409661316 instance=ExtResource("9_nfdlx")]
+position = Vector2(-88.22651, 69.97778)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@1234" parent="." unique_id=1483334889 instance=ExtResource("8_2nbhx")]
+position = Vector2(-135.45306, 45.971497)
+scale = Vector2(0.82, 0.82)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_1234" parent="." unique_id=1732561985 instance=ExtResource("8_2nbhx")]
+position = Vector2(-135.45306, -45.971497)
+scale = Vector2(0.82, 0.82)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@1230" parent="." unique_id=1268141104 instance=ExtResource("10_2cu88")]
+position = Vector2(-100.078064, 0)
+scale = Vector2(0.65877074, 0.65877074)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@1241" parent="." unique_id=505206393 instance=ExtResource("8_2nbhx")]
+position = Vector2(-38.968693, 78.58057)
+scale = Vector2(0.83, 0.83)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_1241" parent="." unique_id=594579286 instance=ExtResource("8_2nbhx")]
+position = Vector2(-38.968693, -78.58057)
+scale = Vector2(0.83, 0.83)
+disabled = true
+editor_mode = true
+
+[node name="Large Bubble" parent="." unique_id=1927558326 instance=ExtResource("10_2cu88")]
+position = Vector2(-18.992126, 0)
+scale = Vector2(0.95473623, 0.95473623)
+disabled = true
+editor_mode = true
+
+[node name="Enemy Basic Cannon" parent="." unique_id=1563100442 instance=ExtResource("12_lrqtu")]
+position = Vector2(-88.53119, -69.85763)
+scale = Vector2(0.7909586, 0.7909586)
+disabled = true
+editor_mode = true
+
+[node name="@Node2D@1262" parent="." unique_id=624241594 instance=ExtResource("12_lrqtu")]
+position = Vector2(-88.53119, 69.85766)
+scale = Vector2(0.7909586, 0.7909586)
+disabled = true
+editor_mode = true
+
+[node name="Medium Dark Bubble2" parent="." unique_id=133666845 instance=ExtResource("9_nfdlx")]
+position = Vector2(-78, 0)
+disabled = true
+editor_mode = true
+
+[node name="Stun Gun" parent="Medium Dark Bubble2" unique_id=803778159 instance=ExtResource("11_g1wsc")]
+position = Vector2(59.015686, 0)
+disabled = true
+editor_mode = true

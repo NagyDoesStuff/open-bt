@@ -7,8 +7,8 @@
 script = ExtResource("1_nqom1")
 lifetime = 0.5
 radius = 275.0
-knk = 50.0
+knk = 20.0
 metadata/_custom_type_script = "uid://chx5lwtp5vep7"
 
 [node name="AreaBurstBoom" parent="." unique_id=800833179 instance=ExtResource("2_bqimq")]
-modulate = Color(0.17, 0.17, 0.17, 0.8235294)
+modulate = Color(0.31, 0.31, 0.31, 0.8235294)

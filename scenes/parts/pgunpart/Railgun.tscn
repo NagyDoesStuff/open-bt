@@ -68,6 +68,7 @@ _data = {
 [node name="Railgun" type="Node2D" unique_id=1757355056 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_w71fe")
 mode = "Lock-on"
+targeting_mode = "Strongest Target"
 prediction_factor = 2.0
 show_lock_on = true
 turn_rate = 4.0
@@ -75,7 +76,7 @@ cooldown = 2.5
 keybind = "space"
 animation_player = NodePath("AnimationPlayer")
 category = "Player Secondaries"
-summary = "Locks onto an enemy and fires a powerful piercing bullet when input is recieved."
+summary = "Locks onto the strongest enemy and fires a powerful piercing bullet when input is recieved."
 flavor_text = "Have you ever wondered whats something faster than blinking your eyes? Well, this gun's bullet will answer that for you."
 gp_usage = 8
 min_class = 4

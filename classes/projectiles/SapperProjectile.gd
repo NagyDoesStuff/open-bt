@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 func on_hit(area: Area2D) -> void:
 	if area is Cluster:
-		if area.team != team: 
+		if area.team != team and from: 
 			area.recieve_hit(prj_info["dmg_info"])
 			stolen_health = int(prj_info["dmg_info"]["amount"] * stolen_health_ratio)
 			target = from

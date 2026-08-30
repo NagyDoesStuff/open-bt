@@ -210,7 +210,8 @@ func search_and_apply_behavior_parts() -> void:
 			match p.type:
 				"Agressive": controller = AgressorAI.new()
 				"Wall Flower": controller = WallFlowerAI.new()
-				"Skittish": controller = Skittish.new()
+				"Skittish": controller = SkittishAI.new()
+				"Flocking": controller = FlockingAI.new()
 			return
 	controller = WanderAI.new()
 

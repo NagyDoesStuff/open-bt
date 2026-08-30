@@ -4,7 +4,7 @@ class_name OrbitalSeekerProjectile
 @export var activate_animation_name: String = "activate"
 @export var sensor_radius: float = 150.0
 @export var orbit_rate: float = 4.0
-var orbit_margin: float = 20.0
+var orbit_margin: float = 100.0
 
 var activated: bool = false
 

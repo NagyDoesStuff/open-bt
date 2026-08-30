@@ -124,9 +124,9 @@ selected = 0
 item_count = 3
 popup/item_0/text = "Normal Mode"
 popup/item_0/id = 0
-popup/item_1/text = "Free Mode"
+popup/item_1/text = "Beserk Mode"
 popup/item_1/id = 1
-popup/item_2/text = "Beserk Mode"
+popup/item_2/text = "Developer Mode"
 popup/item_2/id = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Buttons" unique_id=657444011]

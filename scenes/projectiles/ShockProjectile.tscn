@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxu50vgg6683q" path="res://classes/projectiles/ShockProjectile.gd" id="1_01wj8"]
 [ext_resource type="PackedScene" uid="uid://dvbhovo1kkt1a" path="res://scenes/fx/HitscanLine/lighting_line.tscn" id="2_wc3x2"]
-[ext_resource type="Texture2D" uid="uid://cyhs8n8we5vvn" path="res://img/bubbles/1796.png" id="2_wtrer"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="3_nwi0u"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_wc3x2"]
 [ext_resource type="Texture2D" uid="uid://cd847ugdtcc6k" path="res://img/bubbles/shock1.png" id="4_wtrer"]
 [ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="6_nwi0u"]
@@ -37,7 +37,7 @@ shape = SubResource("CircleShape2D_ymrjv")
 [node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
 visible = false
 scale = Vector2(0.2942147, 0.2942147)
-texture = ExtResource("2_wtrer")
+texture = ExtResource("3_nwi0u")
 
 [node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
 visible = false

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://q556ja2qurls"]
+
+[ext_resource type="Script" uid="uid://cdljrv01ij1bq" path="res://classes/projectiles/ProximityMineProjectile.gd" id="1_oww17"]
+[ext_resource type="Texture2D" uid="uid://b67d417d8qpk3" path="res://img/bubbles/1796.png" id="2_cp2ps"]
+[ext_resource type="PackedScene" uid="uid://6cud62ox5xpq" path="res://scenes/projectiles/explosions/ProximityMineExplosion.tscn" id="2_tl7md"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_tl7md"]
+[ext_resource type="Texture2D" uid="uid://b1ldhhaxvq86b" path="res://img/bubbles/1790.png" id="4_fgj0o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[sub_resource type="Animation" id="Animation_80y62"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlinkingBubble:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t152b"]
+resource_name = "default"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlinkingBubble:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(2.454227, 2.454227, 2.454227, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_80y62"]
+_data = {
+&"RESET": SubResource("Animation_80y62"),
+&"default": SubResource("Animation_t152b")
+}
+
+[node name="ProximityMineProjectile" type="Node2D" unique_id=1877721113]
+script = ExtResource("1_oww17")
+sensor_radius = 200.0
+explode_delay = 0.25
+lifetime = 16.0
+acceleration = 0.8
+split_into = ExtResource("2_tl7md")
+metadata/_custom_type_script = "uid://cdljrv01ij1bq"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.2942147, 0.2942147)
+texture = ExtResource("2_cp2ps")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("3_tl7md")
+
+[node name="Bubble" type="Sprite2D" parent="." unique_id=22560994]
+position = Vector2(17.999998, 0)
+scale = Vector2(0.17431666, 0.17431666)
+texture = ExtResource("4_fgj0o")
+
+[node name="Bubble2" type="Sprite2D" parent="." unique_id=171217757]
+position = Vector2(-18, 0)
+scale = Vector2(0.17431666, 0.17431666)
+texture = ExtResource("4_fgj0o")
+
+[node name="Bubble3" type="Sprite2D" parent="." unique_id=1221722275]
+position = Vector2(0, 18)
+scale = Vector2(0.17431666, 0.17431666)
+texture = ExtResource("4_fgj0o")
+
+[node name="Bubble4" type="Sprite2D" parent="." unique_id=723358213]
+position = Vector2(0, -18)
+scale = Vector2(0.17431666, 0.17431666)
+texture = ExtResource("4_fgj0o")
+
+[node name="BlinkingBubble" type="Sprite2D" parent="." unique_id=176871662]
+scale = Vector2(0.38208646, 0.38208646)
+texture = ExtResource("4_fgj0o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=652883770]
+libraries/ = SubResource("AnimationLibrary_80y62")
+autoplay = &"default"

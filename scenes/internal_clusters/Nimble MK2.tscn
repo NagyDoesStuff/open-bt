@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="3_lsa26"]
 [ext_resource type="PackedScene" uid="uid://c8dvqqcb4fpq4" path="res://scenes/parts/egunpart/BasicGun.tscn" id="4_uxyp3"]
 
-[node name="Nimble" type="Area2D" unique_id=406105084]
+[node name="Nimble MK2" type="Area2D" unique_id=406105084]
 script = ExtResource("1_k3cq2")
 team = 1
 speed = 5.0

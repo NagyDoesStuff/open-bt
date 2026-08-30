@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://4lkt5bywiadn"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_wm716"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_2hxgm"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_3y35t"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_3y35t"]
+[ext_resource type="Texture2D" uid="uid://dqka5brpevihb" path="res://img/bubbles/161.png" id="4_3y35t"]
+
+[sub_resource type="Animation" id="Animation_3y35t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animated:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(66, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animated:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animated:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.133, 0.133)]
+}
+
+[sub_resource type="Animation" id="Animation_ti2xt"]
+resource_name = "default"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animated:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(66, 0), Vector2(20, 0), Vector2(66, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animated:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animated:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0.133, 0.133), Vector2(0.19, 0.19), Vector2(0.133, 0.133)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_42o72"]
+_data = {
+&"RESET": SubResource("Animation_3y35t"),
+&"default": SubResource("Animation_ti2xt")
+}
+
+[node name="Proximity Mine Dropper" type="Node2D" unique_id=122091808]
+script = ExtResource("1_wm716")
+cooldown = 1.0
+spread = 0.1
+category = "Enemy Weapons"
+summary = "Fires mines that explode when the player is close enough."
+flavor_text = "These mines are a bit impatient, as they want to explode before the player even touches them."
+gp_usage = 2
+min_class = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Animated" type="Sprite2D" parent="." unique_id=1700984068]
+position = Vector2(66, 0)
+scale = Vector2(0.133, 0.133)
+texture = ExtResource("4_3y35t")
+
+[node name="Bubble01" parent="." unique_id=1466396782 instance=ExtResource("2_3y35t")]
+scale = Vector2(0.23655085, 0.23655085)
+
+[node name="Bubble09" parent="." unique_id=1039353022 instance=ExtResource("2_2hxgm")]
+position = Vector2(66, 1.3113022e-06)
+scale = Vector2(0.18000837, 0.18000837)
+
+[node name="Bubble06" parent="." unique_id=2439115 instance=ExtResource("2_2hxgm")]
+position = Vector2(19, 1.3113022e-06)
+scale = Vector2(0.11582309, 0.11582309)
+
+[node name="Bubble07" parent="." unique_id=1084538515 instance=ExtResource("2_2hxgm")]
+position = Vector2(35.000004, 1.3113023e-06)
+scale = Vector2(0.11546269, 0.11546269)
+
+[node name="Bubble08" parent="." unique_id=1604151673 instance=ExtResource("2_2hxgm")]
+position = Vector2(51, 1.3113023e-06)
+scale = Vector2(0.11546269, 0.11546269)
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_2hxgm")]
+position = Vector2(-15.999999, -19)
+scale = Vector2(0.14440207, 0.14440207)
+
+[node name="Bubble03" parent="." unique_id=265100766 instance=ExtResource("2_2hxgm")]
+position = Vector2(-15.999999, 19)
+scale = Vector2(0.14440207, 0.14440207)
+
+[node name="Bubble04" parent="." unique_id=1894968060 instance=ExtResource("2_2hxgm")]
+position = Vector2(11.000001, 14.000002)
+scale = Vector2(0.12531063, 0.12531063)
+
+[node name="Bubble05" parent="." unique_id=1921711809 instance=ExtResource("2_2hxgm")]
+position = Vector2(11.000001, -13.999998)
+scale = Vector2(0.12531063, 0.12531063)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(84, 0)
+script = ExtResource("3_3y35t")
+prj_info = {
+"dmg_info": {
+"amount": 0,
+"type": "dmg"
+},
+"size": 0.9,
+"speed": 15.0,
+"template": "uid://q556ja2qurls"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=265556937]
+libraries/ = SubResource("AnimationLibrary_42o72")
+autoplay = &"default"

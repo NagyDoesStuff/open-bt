@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkhw85rpdp43o"]
 
 [ext_resource type="Script" uid="uid://c5qekfh7oq1kr" path="res://classes/projectiles/SapperProjectile.gd" id="1_08ove"]
-[ext_resource type="Texture2D" uid="uid://cyhs8n8we5vvn" path="res://img/bubbles/1796.png" id="2_08ove"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="2_08ove"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_s4tu3"]
 [ext_resource type="Texture2D" uid="uid://b1ldhhaxvq86b" path="res://img/bubbles/1790.png" id="4_08ove"]
 

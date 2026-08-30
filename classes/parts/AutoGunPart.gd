@@ -30,6 +30,7 @@ func _subready() -> void:
 		search_for_target()
 		if GlobalClass.world:
 			GlobalClass.world.entered_arena.connect(search_for_target)
+			GlobalClass.world.spawned_cluster.connect(search_for_target)
 		if show_lock_on: 
 			GlobalClass.world.add_child(lock_on_icon)
 
@@ -44,9 +45,21 @@ func search_for_target() -> void:
 			enemies.append(c)
 	
 	if enemies.is_empty(): return
+	var new_target: Cluster
+	match targeting_mode:
+		"Random":
+			new_target = enemies.pick_random()
+		"Strongest Target":
+			enemies.sort_custom(func (a, b) -> bool: return a.get_used_gp() > b.get_used_gp())
+			new_target = enemies[0]
+		"Weakest Target":
+			enemies.sort_custom(func (a, b) -> bool: return a.get_used_gp() < b.get_used_gp())
+			new_target = enemies[0]
 	
-	target = enemies.pick_random()
-	target.killed.connect(search_for_target)
+	if !new_target: return
+	if new_target != target or !target: 
+		target = new_target
+		target.killed.connect(search_for_target)
 	
 	if lock_on_icon and !lock_on_icon.get_node("AnimationPlayer").is_playing():
 		lock_on_icon.get_node("AnimationPlayer").play(lock_on_animation_name)
@@ -61,9 +74,11 @@ func _process(_delta: float) -> void:
 		turn_to(target.global_position + target.velocity * prediction_factor, _delta)
 		match mode:
 			"Auto": 
-				if can_shoot: fire_all_barrels()
+				if can_shoot: fire()
+				toggle_lasers(true)
 			"Lock-on" when user == GlobalClass.player_cluster:
-				if can_shoot and Input.is_action_pressed(keybind): fire_all_barrels()
+				if can_shoot and Input.is_action_pressed(keybind): fire()
+				toggle_lasers(Input.is_action_pressed(keybind))
 				lock_on_icon.global_position = lerp(
 					lock_on_icon.global_position,
 					target.global_position,

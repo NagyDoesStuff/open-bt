@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxu50vgg6683q" path="res://classes/projectiles/ShockProjectile.gd" id="1_04xkx"]
 [ext_resource type="PackedScene" uid="uid://bru5k4euwykks" path="res://scenes/fx/HitscanLine/lighting_line2.tscn" id="2_oo6tw"]
-[ext_resource type="Texture2D" uid="uid://cyhs8n8we5vvn" path="res://img/bubbles/1796.png" id="3_62yar"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="3_62yar"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="4_svpwp"]
 [ext_resource type="Texture2D" uid="uid://dtpxe3vek80oe" path="res://img/bubbles/shock2.png" id="5_oo6tw"]
 [ext_resource type="PackedScene" uid="uid://cm81e7v4x7vwl" path="res://scenes/fx/trail.tscn" id="6_oo6tw"]
@@ -57,7 +57,7 @@ max_point_count = 40
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1280906590]
 amount = 4
 texture = ExtResource("7_62yar")
-lifetime = 0.09999999999999999
+lifetime = 0.1
 lifetime_randomness = 0.5
 emission_shape = 2
 emission_sphere_radius = 17.1

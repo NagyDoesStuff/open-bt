@@ -16,6 +16,10 @@ func _subready() -> void:
 	timer.timeout.connect(collect)
 	add_child(timer)
 	
+	collection_area.set_collision_layer_value(1, false)
+	collection_area.set_collision_mask_value(1, false)
+	collection_area.set_collision_layer_value(2, true)
+	collection_area.set_collision_mask_value(2, true)
 	add_child(collection_area)
 	
 	var col: CollisionShape2D = CollisionShape2D.new()

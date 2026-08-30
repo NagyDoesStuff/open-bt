@@ -14,7 +14,7 @@ limit = 6
 category = "Player Secondaries"
 summary = "Spawns three weak fighter allies that will fight for you."
 flavor_text = "You know what's more fun than blowing up tanks by yourself? Blowing them up with friends! And with the Swarm Ally Spawner, you can buy even more friends! You'll be super popular!"
-gp_usage = 4
+gp_usage = 3
 min_class = 4
 metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
 

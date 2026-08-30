@@ -10,7 +10,7 @@ radius = 16.0
 
 [node name="BasicProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_gq5ay")
-lifetime = 12.0
+lifetime = 8.0
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1261310356]

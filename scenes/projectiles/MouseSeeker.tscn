@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bth81h4ilr7w4" path="res://classes/game/Projectile.gd" id="1_acca5"]
 [ext_resource type="Texture2D" uid="uid://doxw5tx0aky58" path="res://img/prj/pseeker.png" id="2_mmbri"]
 [ext_resource type="Texture2D" uid="uid://bl7y3c64b0umh" path="res://img/prj/eseeker.png" id="3_yp0us"]
-[ext_resource type="PackedScene" uid="uid://64ve7n6o0g1x" path="res://scenes/decorations/bubble13.tscn" id="4_mmbri"]
+[ext_resource type="Texture2D" uid="uid://b1ldhhaxvq86b" path="res://img/bubbles/1790.png" id="4_mmbri"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
 radius = 16.0
@@ -18,13 +18,37 @@ metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 shape = SubResource("CircleShape2D_ymrjv")
 
 [node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
 scale = Vector2(0.6964186, 0.6964186)
 texture = ExtResource("2_mmbri")
 
 [node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
 position = Vector2(-6.0000005, 0)
 scale = Vector2(0.5037909, 0.5037909)
 texture = ExtResource("3_yp0us")
 
-[node name="Bubble13" parent="." unique_id=1039353022 instance=ExtResource("4_mmbri")]
-scale = Vector2(0.12125046, 0.12125046)
+[node name="Bubble5" type="Sprite2D" parent="." unique_id=1243324284]
+position = Vector2(8.999993, -3.5762787e-07)
+scale = Vector2(0.17765829, 0.17765829)
+texture = ExtResource("4_mmbri")
+
+[node name="Bubble6" type="Sprite2D" parent="." unique_id=1522687168]
+position = Vector2(-4.0000052, -6.999999)
+scale = Vector2(0.17765829, 0.17765829)
+texture = ExtResource("4_mmbri")
+
+[node name="Bubble8" type="Sprite2D" parent="." unique_id=708415226]
+position = Vector2(-14.000004, -14.999998)
+scale = Vector2(0.13371211, 0.13371211)
+texture = ExtResource("4_mmbri")
+
+[node name="Bubble9" type="Sprite2D" parent="." unique_id=1255021919]
+position = Vector2(-14.000004, 15.000002)
+scale = Vector2(0.13371211, 0.13371211)
+texture = ExtResource("4_mmbri")
+
+[node name="Bubble7" type="Sprite2D" parent="." unique_id=1510190827]
+position = Vector2(-4.000006, 6.999999)
+scale = Vector2(0.17765829, 0.17765829)
+texture = ExtResource("4_mmbri")

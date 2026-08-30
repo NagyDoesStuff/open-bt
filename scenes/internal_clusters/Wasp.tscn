@@ -20,130 +20,130 @@ min_to_available = 30
 max_spawn_amount = 4
 
 [node name="Large Bubble" parent="." unique_id=878054447 instance=ExtResource("2_tphf8")]
-position = Vector2(17.921936, 0)
+position = Vector2(-0.078063965, 0)
 scale = Vector2(0.75, 0.75)
 disabled = true
 editor_mode = true
 
-[node name="Medium Dark Bubble" parent="." unique_id=706192278 instance=ExtResource("4_wpdyp")]
-position = Vector2(-26.287476, 0)
-scale = Vector2(0.96, 0.96)
-disabled = true
-editor_mode = true
-
 [node name="Small Bubble" parent="." unique_id=1903997054 instance=ExtResource("5_k6vmy")]
-position = Vector2(65.21564, -74.099976)
+position = Vector2(47.215637, -74.099976)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@373" parent="." unique_id=2117840920 instance=ExtResource("5_k6vmy")]
-position = Vector2(65.21564, 74.099976)
+position = Vector2(47.215637, 74.099976)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@382" parent="." unique_id=1881648229 instance=ExtResource("6_502ah")]
-position = Vector2(82.69379, -48.38568)
+position = Vector2(64.69379, -48.38568)
 scale = Vector2(0.69, 0.69)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_382" parent="." unique_id=1021022513 instance=ExtResource("6_502ah")]
-position = Vector2(82.69379, 48.38568)
+position = Vector2(64.69379, 48.38568)
 scale = Vector2(0.69, 0.69)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@364" parent="." unique_id=748994722 instance=ExtResource("6_502ah")]
-position = Vector2(88.86255, -32.957123)
+position = Vector2(70.86255, -32.957123)
 scale = Vector2(0.87, 0.87)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_364" parent="." unique_id=498522560 instance=ExtResource("6_502ah")]
-position = Vector2(88.86255, 32.957153)
+position = Vector2(70.86255, 32.957153)
 scale = Vector2(0.87, 0.87)
 disabled = true
 editor_mode = true
 
 [node name="Small Dark Bubble" parent="." unique_id=304551523 instance=ExtResource("6_502ah")]
-position = Vector2(65.21564, -48.30005)
+position = Vector2(47.215637, -48.30005)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@359" parent="." unique_id=595443240 instance=ExtResource("6_502ah")]
-position = Vector2(65.21564, 48.30005)
+position = Vector2(47.215637, 48.30005)
 disabled = true
 editor_mode = true
 
 [node name="Small Light Bubble" parent="." unique_id=1867541673 instance=ExtResource("7_grb6o")]
-position = Vector2(104.284424, -54.55713)
+position = Vector2(86.284424, -54.55713)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@391" parent="." unique_id=35976452 instance=ExtResource("7_grb6o")]
-position = Vector2(104.284424, 54.55713)
+position = Vector2(86.284424, 54.55713)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="Medium Bubble" parent="." unique_id=2066403110 instance=ExtResource("8_vtvlu")]
-position = Vector2(-13.949951, -74.099976)
+position = Vector2(-31.949944, -74.099976)
 scale = Vector2(0.72, 0.72)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@401" parent="." unique_id=197774425 instance=ExtResource("8_vtvlu")]
-position = Vector2(-13.949951, 74.099976)
+position = Vector2(-31.949944, 74.099976)
 scale = Vector2(0.72, 0.72)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@406" parent="." unique_id=1028537910 instance=ExtResource("7_grb6o")]
-position = Vector2(-34.51245, -98.785706)
+position = Vector2(-52.512444, -98.785706)
 scale = Vector2(0.58, 0.58)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_406" parent="." unique_id=1118890911 instance=ExtResource("7_grb6o")]
-position = Vector2(-34.51245, 98.785706)
+position = Vector2(-52.512444, 98.785706)
 scale = Vector2(0.58, 0.58)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@413" parent="." unique_id=1436717680 instance=ExtResource("7_grb6o")]
-position = Vector2(17.921936, -88.49997)
+position = Vector2(-0.078063965, -88.49997)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_413" parent="." unique_id=1303228058 instance=ExtResource("7_grb6o")]
-position = Vector2(17.921936, 88.5)
+position = Vector2(-0.078063965, 88.5)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@423" parent="." unique_id=551808043 instance=ExtResource("7_grb6o")]
-position = Vector2(-34.51245, -39.12857)
+position = Vector2(-52.51245, -39.12857)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_423" parent="." unique_id=783007325 instance=ExtResource("7_grb6o")]
-position = Vector2(-34.51245, 39.12854)
+position = Vector2(-52.51245, 39.12854)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@430" parent="." unique_id=750331223 instance=ExtResource("7_grb6o")]
-position = Vector2(-72.5531, 0)
+position = Vector2(-90.5531, 0)
+disabled = true
+editor_mode = true
+
+[node name="Medium Dark Bubble" parent="." unique_id=706192278 instance=ExtResource("4_wpdyp")]
+position = Vector2(-44.287483, 0)
+scale = Vector2(0.96, 0.96)
 disabled = true
 editor_mode = true
 
 [node name="Shock Node" parent="." unique_id=733669987 instance=ExtResource("9_blghh")]
-position = Vector2(14.837524, 0)
+position = Vector2(-10.162474, -9.536743e-07)
 scale = Vector2(1.43, 1.43)
 disabled = true
 editor_mode = true

@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://cpbiggq6yukrn"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_6mgb6"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_0tswh"]
+[ext_resource type="Script" uid="uid://c34y1jabduoor" path="res://classes/game/Laser.gd" id="3_0tswh"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_pd2uy"]
+[ext_resource type="PackedScene" uid="uid://ci6t1yl8sklfv" path="res://scenes/fx/HitscanLine/laser_line2.tscn" id="4_0tswh"]
+[ext_resource type="PackedScene" uid="uid://64ve7n6o0g1x" path="res://scenes/decorations/bubble13.tscn" id="4_kxw5i"]
+
+[sub_resource type="Animation" id="Animation_jmnak"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gv0kj"]
+resource_name = "shot"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.99, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.353256, 1.353256, 1.353256, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 2.01, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-7, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1usm8"]
+_data = {
+&"RESET": SubResource("Animation_jmnak"),
+&"shot": SubResource("Animation_gv0kj")
+}
+
+[sub_resource type="Animation" id="Animation_1usm8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gun/Blinker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kxw5i"]
+resource_name = "idle"
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gun/Blinker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(2.454227, 2.454227, 2.454227, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gv0kj"]
+_data = {
+&"RESET": SubResource("Animation_1usm8"),
+&"idle": SubResource("Animation_kxw5i")
+}
+
+[node name="Rotating Death Ray" type="Node2D" unique_id=122091808 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_6mgb6")
+cooldown = 16.0
+shot_delay = 2.0
+amount_per_salvo = 10
+salvo_interval = 1.0
+fixed = true
+full_turn_amount = 1
+animation_player = NodePath("Shot")
+category = "Enemy Weapons"
+summary = "Emits a powerful ray while rotating."
+flavor_text = "Lord have mercy.
+"
+gp_usage = 10
+min_class = 4
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Gun" type="Node2D" parent="." unique_id=755898926]
+
+[node name="Blinker" parent="Gun" unique_id=1249500544 instance=ExtResource("4_kxw5i")]
+position = Vector2(21.999994, 0)
+scale = Vector2(0.16701232, 0.16701232)
+
+[node name="Bubble21" parent="Gun" unique_id=1039353022 instance=ExtResource("3_pd2uy")]
+position = Vector2(51.000004, -9)
+scale = Vector2(0.07346127, 0.07346127)
+
+[node name="Bubble22" parent="Gun" unique_id=656229019 instance=ExtResource("3_pd2uy")]
+position = Vector2(51.000004, 8.999998)
+scale = Vector2(0.07346127, 0.07346127)
+
+[node name="Bubble06" parent="Gun" unique_id=1496062595 instance=ExtResource("3_pd2uy")]
+position = Vector2(-8, -23.000006)
+scale = Vector2(0.13557088, 0.13557088)
+
+[node name="Bubble11" parent="Gun" unique_id=1377861349 instance=ExtResource("2_0tswh")]
+position = Vector2(25, -24)
+scale = Vector2(0.10538807, 0.10538807)
+
+[node name="Bubble12" parent="Gun" unique_id=1618087997 instance=ExtResource("2_0tswh")]
+position = Vector2(38.000004, -20.000006)
+scale = Vector2(0.10538807, 0.10538807)
+
+[node name="Bubble13" parent="Gun" unique_id=1629979305 instance=ExtResource("2_0tswh")]
+position = Vector2(51.000004, -16.000008)
+scale = Vector2(0.10538807, 0.10538807)
+
+[node name="Bubble14" parent="Gun" unique_id=107233481 instance=ExtResource("2_0tswh")]
+position = Vector2(24.999998, 24.000004)
+scale = Vector2(0.10538807, 0.10538807)
+
+[node name="Bubble15" parent="Gun" unique_id=1824836458 instance=ExtResource("2_0tswh")]
+position = Vector2(37.999996, 20.000004)
+scale = Vector2(0.10538807, 0.10538807)
+
+[node name="Bubble16" parent="Gun" unique_id=1758459717 instance=ExtResource("2_0tswh")]
+position = Vector2(50.999996, 16)
+scale = Vector2(0.10538807, 0.10538807)
+
+[node name="Bubble08" parent="Gun" unique_id=209055886 instance=ExtResource("2_0tswh")]
+position = Vector2(-21, -32.000008)
+scale = Vector2(0.13557088, 0.13557088)
+
+[node name="Bubble10" parent="Gun" unique_id=1160998764 instance=ExtResource("2_0tswh")]
+position = Vector2(-21, 31.999992)
+scale = Vector2(0.13557088, 0.13557088)
+
+[node name="Bubble07" parent="Gun" unique_id=1653447831 instance=ExtResource("3_pd2uy")]
+position = Vector2(-7.9999995, 22.999998)
+scale = Vector2(0.13557088, 0.13557088)
+
+[node name="Bubble04" parent="Gun" unique_id=1230954088 instance=ExtResource("2_0tswh")]
+position = Vector2(11.000001, -23.000002)
+scale = Vector2(0.18909158, 0.18909158)
+
+[node name="Bubble05" parent="Gun" unique_id=1740507941 instance=ExtResource("2_0tswh")]
+position = Vector2(11.000001, 23.000002)
+scale = Vector2(0.18909158, 0.18909158)
+
+[node name="Bubble09" parent="Gun" unique_id=725119638 instance=ExtResource("3_pd2uy")]
+position = Vector2(-21, 0)
+scale = Vector2(0.23114431, 0.23114431)
+
+[node name="Bubble17" parent="Gun" unique_id=1679421758 instance=ExtResource("3_pd2uy")]
+position = Vector2(-27.999998, -15.999999)
+scale = Vector2(0.08641472, 0.08641472)
+
+[node name="Bubble18" parent="Gun" unique_id=1765481235 instance=ExtResource("3_pd2uy")]
+position = Vector2(-27.999998, 15.999999)
+scale = Vector2(0.08641472, 0.08641472)
+
+[node name="Bubble01" parent="Gun" unique_id=15082858 instance=ExtResource("2_0tswh")]
+position = Vector2(-2, 0)
+scale = Vector2(0.3071623, 0.3071623)
+
+[node name="Bubble02" parent="Gun" unique_id=1642381733 instance=ExtResource("2_0tswh")]
+position = Vector2(-17, -17.000004)
+scale = Vector2(0.13557088, 0.13557088)
+
+[node name="Bubble03" parent="Gun" unique_id=555878066 instance=ExtResource("2_0tswh")]
+position = Vector2(-17, 16.999996)
+scale = Vector2(0.13557088, 0.13557088)
+
+[node name="Laser" type="RayCast2D" parent="." unique_id=1252314946]
+position = Vector2(29, 0)
+script = ExtResource("3_0tswh")
+hitscan_line = ExtResource("4_0tswh")
+hit_frequency = 0.01
+dmg_info = {
+"amount": 1.0,
+"duration": 0.0,
+"type": "dmg"
+}
+metadata/_custom_type_script = "uid://c34y1jabduoor"
+
+[node name="Shot" type="AnimationPlayer" parent="." unique_id=1350300647]
+libraries/ = SubResource("AnimationLibrary_1usm8")
+
+[node name="Idle" type="AnimationPlayer" parent="." unique_id=1242128942]
+libraries/ = SubResource("AnimationLibrary_gv0kj")
+autoplay = &"idle"

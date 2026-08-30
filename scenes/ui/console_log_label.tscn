@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dnp4rgum7t0ch"]
+
+[ext_resource type="FontFile" uid="uid://bqmx4aseim6nf" path="res://resources/fonts/369_GoldyRound.ttf" id="1_rtq1r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wr8jx"]
+font = ExtResource("1_rtq1r")
+
+[node name="ConsoleLabel" type="Label" unique_id=1490319777]
+size_flags_horizontal = 3
+label_settings = SubResource("LabelSettings_wr8jx")
+horizontal_alignment = 1
+autowrap_mode = 3

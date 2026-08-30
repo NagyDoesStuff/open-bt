@@ -4,14 +4,10 @@
 [ext_resource type="StyleBox" uid="uid://c8w544l3ckmgp" path="res://resources/stylebox/01.tres" id="2_8qguk"]
 [ext_resource type="FontFile" uid="uid://csbqmkfc22gpk" path="res://resources/fonts/484_uni 05_54.ttf" id="2_136eg"]
 [ext_resource type="FontFile" uid="uid://b4r5bp1xanep7" path="res://resources/fonts/131_Arial.ttf" id="3_136eg"]
-[ext_resource type="PackedScene" uid="uid://dwlqr56nh4exq" path="res://scenes/ui/button01.tscn" id="4_136eg"]
+[ext_resource type="PackedScene" uid="uid://c524esfkkjmm6" path="res://scenes/ui/game_console.tscn" id="6_oj5la"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oj5la"]
 font = ExtResource("2_136eg")
-
-[sub_resource type="LabelSettings" id="LabelSettings_bmdha"]
-font = ExtResource("3_136eg")
-font_size = 28
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qguk"]
 content_margin_left = 2.0
@@ -37,7 +33,7 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 6
 
-[sub_resource type="LabelSettings" id="LabelSettings_5nrn4"]
+[sub_resource type="LabelSettings" id="LabelSettings_136eg"]
 font = ExtResource("3_136eg")
 font_size = 20
 
@@ -70,47 +66,10 @@ layout_mode = 2
 text = "FPS: ..."
 label_settings = SubResource("LabelSettings_oj5la")
 
-[node name="ArenasTravelled" type="Label" parent="MarginContainer/VBoxContainer" unique_id=132927787]
+[node name="BubblefieldsTravelled" type="Label" parent="MarginContainer/VBoxContainer" unique_id=132927787]
 layout_mode = 2
-text = "Arenas Travelled: ..."
+text = "Bubblefields travelled: ..."
 label_settings = SubResource("LabelSettings_oj5la")
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=1019900122]
-visible = false
-custom_minimum_size = Vector2(300, 50)
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_styles/panel = ExtResource("2_8qguk")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel" unique_id=2126046860]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ClusterSearch" type="LineEdit" parent="MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=1562212981]
-layout_mode = 2
-placeholder_text = "Insert cluster file name..."
-flat = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=250315358]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="Button01" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=556557092 instance=ExtResource("4_136eg")]
-layout_mode = 2
-text = "+10 arenas"
-
-[node name="Button02" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=448112611 instance=ExtResource("4_136eg")]
-layout_mode = 2
-text = "-10 arenas"
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1863759714]
 custom_minimum_size = Vector2(0, 150)
@@ -122,10 +81,10 @@ anchor_bottom = 1.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 35
 
 [node name="Panel" type="Panel" parent="MarginContainer2" unique_id=1801645151]
 layout_mode = 2
@@ -139,35 +98,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer" unique_id=746651087]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer2/Panel/MarginContainer" unique_id=179941916]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Label" type="Label" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer" unique_id=2005727410]
-layout_mode = 2
-text = "Progress"
-label_settings = SubResource("LabelSettings_bmdha")
-horizontal_alignment = 1
-
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer" unique_id=179941916]
-custom_minimum_size = Vector2(0, 36)
-layout_mode = 2
+size_flags_vertical = 8
 theme_override_styles/background = SubResource("StyleBoxFlat_8qguk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_136eg")
 show_percentage = false
 
-[node name="Numbers" type="Label" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer/ProgressBar" unique_id=748384154]
+[node name="Name" type="Label" parent="MarginContainer2/Panel/MarginContainer" unique_id=2005727410]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Name"
+label_settings = SubResource("LabelSettings_136eg")
+
+[node name="Points" type="Label" parent="MarginContainer2/Panel/MarginContainer" unique_id=1808356303]
+layout_mode = 2
+size_flags_vertical = 0
+text = "... Bubbles left"
+label_settings = SubResource("LabelSettings_136eg")
+horizontal_alignment = 2
+
+[node name="GameConsole" parent="." unique_id=1752345443 instance=ExtResource("6_oj5la")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "?/?"
-label_settings = SubResource("LabelSettings_5nrn4")
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = -600.0
+offset_right = 0.0

@@ -15,11 +15,11 @@ min_class = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_q7h1n")]
-position = Vector2(21, -14)
+position = Vector2(22, -16)
 scale = Vector2(0.125, 0.125)
 
 [node name="Bubble05" parent="." unique_id=1999803219 instance=ExtResource("2_q7h1n")]
-position = Vector2(21, 14)
+position = Vector2(22, 16)
 scale = Vector2(0.125, 0.125)
 
 [node name="Bubble06" parent="." unique_id=1315766830 instance=ExtResource("2_q7h1n")]
@@ -50,11 +50,11 @@ scale = Vector2(0.125, 0.125)
 scale = Vector2(0.32119718, 0.32119718)
 
 [node name="Bubble03" parent="." unique_id=1290105226 instance=ExtResource("2_q7h1n")]
-position = Vector2(-16, -17)
+position = Vector2(-18, -17)
 scale = Vector2(0.125, 0.125)
 
 [node name="Bubble04" parent="." unique_id=1772720469 instance=ExtResource("2_q7h1n")]
-position = Vector2(-16, 17)
+position = Vector2(-18, 17)
 scale = Vector2(0.125, 0.125)
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]

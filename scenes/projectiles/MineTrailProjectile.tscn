@@ -42,7 +42,7 @@ prj_info = {
 "hit_fx": "uid://dqbky1rhsnesm",
 "size": 0.77,
 "speed": 0.0,
-"template": "uid://lny0dmfixfna"
+"template": "uid://jg7upvrifey4"
 }
 barrel_user = NodePath("..")
 metadata/_custom_type_script = "uid://o0m4f66riwtm"

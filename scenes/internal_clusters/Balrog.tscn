@@ -190,7 +190,7 @@ position = Vector2(-104.62494, 75.0083)
 disabled = true
 editor_mode = true
 
-[node name="Railgun" parent="." unique_id=1757355056 instance=ExtResource("9")]
-
 [node name="Auto Cannon" parent="." unique_id=122091808 instance=ExtResource("10_cicf1")]
 position = Vector2(-98, 0)
+
+[node name="Railgun" parent="." unique_id=1757355056 instance=ExtResource("9")]

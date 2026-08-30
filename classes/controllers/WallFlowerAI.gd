@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	if !GlobalClass.current_arena: return
 	
 	var target_angle: float = 0.0
-	if !in_avoid_center_margin():
+	if in_avoid_center_margin():
 		target_angle = (GlobalClass.current_arena.global_position - user.global_position).angle()
 	else:
 		target_angle = (GlobalClass.current_arena.global_position - user.global_position).angle() + PI / 2

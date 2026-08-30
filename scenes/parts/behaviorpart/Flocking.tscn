@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cy3udny53fdh2"]
+
+[ext_resource type="Script" uid="uid://dny073s7n1p00" path="res://classes/parts/BehaviorPart.gd" id="1_jtpbc"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_11ddl"]
+
+[node name="Flocking" type="Node2D" unique_id=1961699606]
+script = ExtResource("1_jtpbc")
+type = "Flocking"
+category = "Enemy Behaviors"
+summary = "Causes the enemy to flock with other enemies."
+flavor_text = "Gangin' up on ya'."
+metadata/_custom_type_script = "uid://dny073s7n1p00"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=167532942]
+scale = Vector2(1.8680775, 1.8680775)
+
+[node name="Bubble7" parent="Node2D" unique_id=1039353022 instance=ExtResource("2_11ddl")]
+position = Vector2(-1.9999971, -8.999997)
+scale = Vector2(0.09542161, 0.09542161)
+
+[node name="Bubble6" parent="Node2D" unique_id=499130874 instance=ExtResource("2_11ddl")]
+position = Vector2(-1.9999971, 8.999999)
+scale = Vector2(0.09542161, 0.09542161)
+
+[node name="Bubble5" parent="Node2D" unique_id=1065044929 instance=ExtResource("2_11ddl")]
+position = Vector2(6.000001, 8.999999)
+scale = Vector2(0.05311043, 0.05311043)
+
+[node name="Bubble4" parent="Node2D" unique_id=768891730 instance=ExtResource("2_11ddl")]
+position = Vector2(6.000001, -9.000002)
+scale = Vector2(0.05311043, 0.05311043)
+
+[node name="Bubble3" parent="Node2D" unique_id=1755502962 instance=ExtResource("2_11ddl")]
+position = Vector2(-9.999998, 8.999999)
+scale = Vector2(0.05311043, 0.05311043)
+
+[node name="Bubble" parent="Node2D" unique_id=149425531 instance=ExtResource("2_11ddl")]
+position = Vector2(-9.999998, -9.000002)
+scale = Vector2(0.05311043, 0.05311043)
+
+[node name="Bubble2" parent="Node2D" unique_id=1016406042 instance=ExtResource("2_11ddl")]
+position = Vector2(-2.861023e-06, 0)
+scale = Vector2(0.12127318, 0.12127318)

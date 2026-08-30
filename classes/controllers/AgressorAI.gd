@@ -27,18 +27,18 @@ func _process(_delta: float) -> void:
 	if !GlobalClass.current_arena or !target: return
 	
 	if in_avoid_center_margin():
+		user.global_rotation = rotate_toward(
+			user.global_rotation,
+			(target.global_position - user.global_position).angle(),
+			_delta * user.turn_rate * run_turn_rate_mult
+		)
+	else:
 		if can_turn:
 			user.global_rotation = rotate_toward(
 				user.global_rotation,
 				(target.global_position - user.global_position).angle(),
 				_delta * user.turn_rate * run_turn_rate_mult
 			)
-	else:
-		user.global_rotation = rotate_toward(
-			user.global_rotation,
-			(target.global_position - user.global_position).angle(),
-			_delta * user.turn_rate * run_turn_rate_mult
-		)
 	
 func turn(duration: float) -> void:
 	can_turn = true

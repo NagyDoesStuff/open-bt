@@ -2,6 +2,7 @@ extends Node2D
 class_name World
 
 signal entered_arena()
+signal spawned_cluster()
 
 var mid_battle: bool = false
 
@@ -38,7 +39,7 @@ func _ready() -> void:
 	
 	dynamic_cam.anchor = GlobalClass.player_cluster
 	
-	if GlobalClass.game_mode == "Free Mode":
+	if GlobalClass.game_mode == "Developer Mode":
 		GlobalClass.player_cluster.max_progress = GlobalClass.PROGRESSION_REQUIREMENTS[GlobalClass.MAX_CLASS - 1]
 		player_progression_requirement = GlobalClass.PROGRESSION_REQUIREMENTS[GlobalClass.MAX_CLASS - 1]
 		max_class = GlobalClass.MAX_CLASS
@@ -91,19 +92,21 @@ func transform_player_into(cluster: Cluster) -> void:
 	dynamic_cam.anchor = GlobalClass.player_cluster
 	GlobalClass.player_cluster.team = 0
 	
-	if GlobalClass.game_mode == "Free Mode":
+	if GlobalClass.game_mode == "Developer Mode":
 		GlobalClass.player_cluster.progress = GlobalClass.player_cluster.max_progress
 	
 	for b in get_bubble_points():
 		b.follow_target = GlobalClass.player_cluster
 
-func spawn_as_enemy(cluster: Cluster) -> void:
-	cluster.team = 1
+func spawn_cluster(cluster: Cluster, team: int) -> void:
+	cluster.team = team
 	cluster.global_position = GlobalClass.player_cluster.global_position
+	cluster.global_rotation = randf_range(0, TAU)
 	for p in cluster.get_parts():
 		p.disabled = false
 		p.editor_mode = false
 	add_child(cluster)
+	spawned_cluster.emit()
 
 func check_battle_state() -> void:
 	await get_tree().create_timer(0.1).timeout

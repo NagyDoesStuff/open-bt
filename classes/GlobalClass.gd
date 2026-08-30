@@ -1,10 +1,10 @@
 extends Node
 ## No need for a class_name, this is an autoload script.
 
-# PRELOADS
-const BUTTON_01: PackedScene = preload("uid://dwlqr56nh4exq")
-
+# LOADS/PRELOADS
 var PART_BUTTON: PackedScene = load("uid://6d8gvhmdwb87")
+
+const BUTTON_01: PackedScene = preload("uid://dwlqr56nh4exq")
 
 const TANK_CHOICE_BUTTON: PackedScene = preload("uid://dk4jicmsok44j")
 
@@ -15,6 +15,8 @@ const ARENA_TEMPLATE: PackedScene = preload("uid://dylq1171myx2n")
 const DEFAULT_HIT_FX: PackedScene = preload("uid://bwddu713otuhv")
 
 const SCREEN_FLASH: PackedScene = preload("uid://cays5co474q6y")
+
+const CONSOLE_LOG_LABEL: PackedScene = preload("uid://dnp4rgum7t0ch")
 
 # CONSTANTS
 const ARENA_PUSH_FORCE: int = 100
@@ -102,7 +104,9 @@ var can_pause: bool = true
 
 func _ready() -> void:
 	create_directories()
+	await get_tree().process_frame
 	overwrite_game_clusters()
+	await get_tree().process_frame
 	load_clusters()
 
 func get_closest_or_farthest(from: Node2D, list: Array, closest: bool) -> Node2D:
@@ -178,10 +182,12 @@ func load_clusters() -> void:
 	for file in ResourceLoader.list_directory(USER_CLUSTERS_DIRECTORY):
 		var cluster: Cluster = load(USER_CLUSTERS_DIRECTORY + file).instantiate()
 		cluster.attributes.append("user_cluster")
+		cluster.name = cluster.name.remove_chars(" ")
 		loaded_clusters.append(cluster)
 	for file in ResourceLoader.list_directory(GAME_CLUSTERS_DIRECTORY):
 		var cluster: Cluster = load(GAME_CLUSTERS_DIRECTORY + file).instantiate()
 		cluster.attributes.append("game_cluster")
+		cluster.name = cluster.name.remove_chars(" ")
 		loaded_clusters.append(cluster)
 
 func create_directories() -> void: 
