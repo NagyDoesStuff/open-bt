@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="3_p0vbi"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="4_qmd4k"]
 [ext_resource type="Texture2D" uid="uid://cw4obbgcfucvu" path="res://img/fx/square.png" id="5_e1rwx"]
+[ext_resource type="Texture2D" uid="uid://cpcn0gd8m18s6" path="res://img/fx/glow.png" id="5_mxumx"]
 [ext_resource type="Texture2D" uid="uid://c36hbk2n275xw" path="res://img/bubbles/38.png" id="6_e1rwx"]
 [ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="7_2bksi"]
 
@@ -99,6 +100,11 @@ texture = ExtResource("3_p0vbi")
 visible = false
 scale = Vector2(0.38491622, 0.38491622)
 texture = ExtResource("4_qmd4k")
+
+[node name="Glow" type="Sprite2D" parent="." unique_id=1468779703]
+modulate = Color(1, 1, 1, 0.49411765)
+scale = Vector2(0.05065271, 0.05065271)
+texture = ExtResource("5_mxumx")
 
 [node name="Rotator" type="Sprite2D" parent="." unique_id=1936095903]
 rotation = 0.7853982

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cdym7khfue1nu"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_eisjo"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_bs7g4"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="4_i60cp"]
+
+[node name="Birdshot" type="Node2D" unique_id=122091808]
+script = ExtResource("1_eisjo")
+spread = 0.05
+amount_per_salvo = 4
+category = "Player Primaries"
+summary = "Shoots some small pellets."
+flavor_text = "Feels like getting hit with a wave of air. Refreshing, but it might end in you getting sick."
+gp_usage = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble02" parent="." unique_id=1039353022 instance=ExtResource("2_bs7g4")]
+position = Vector2(21.732037, 0)
+scale = Vector2(0.18905944, 0.18905944)
+
+[node name="Bubble03" parent="." unique_id=387385907 instance=ExtResource("2_bs7g4")]
+position = Vector2(21.732033, 5.757023e-07)
+scale = Vector2(0.14789514, 0.14789514)
+
+[node name="Bubble08" parent="." unique_id=1469023928 instance=ExtResource("2_bs7g4")]
+position = Vector2(53.122746, 0)
+scale = Vector2(0.10241363, 0.10241363)
+
+[node name="Bubble06" parent="." unique_id=1262060985 instance=ExtResource("2_bs7g4")]
+position = Vector2(37.42739, 3.3102883e-06)
+scale = Vector2(0.115365595, 0.115365595)
+
+[node name="Bubble07" parent="." unique_id=2079936823 instance=ExtResource("2_bs7g4")]
+position = Vector2(-21.732037, 3.3102883e-06)
+scale = Vector2(0.115365595, 0.115365595)
+
+[node name="Bubble01" parent="." unique_id=501727793 instance=ExtResource("2_bs7g4")]
+scale = Vector2(0.22083138, 0.22083138)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(59, 0)
+script = ExtResource("4_i60cp")
+prj_info = {
+"dmg_info": {
+"amount": 1,
+"type": "dmg"
+},
+"hit_fx": "uid://k34oup7yqqiv",
+"size": 0.5,
+"speed": 2500.0,
+"template": "uid://enu3bwfvds38"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
