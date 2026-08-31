@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://fg0hul4d1lcq"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_g8fkf"]
+[ext_resource type="Texture2D" uid="uid://78537j6k0m3x" path="res://img/bubbles/45.png" id="2_yynhw"]
+[ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="3_1p6fv"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="4_fyxdh"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="5_2g4wr"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="6_fpnvw"]
+
+[sub_resource type="Gradient" id="Gradient_upsn1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_6r5rr"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_yynhw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OrbBubble:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g8fkf"]
+resource_name = "shot"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OrbBubble:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yynhw"]
+_data = {
+&"RESET": SubResource("Animation_yynhw"),
+&"shot": SubResource("Animation_g8fkf")
+}
+
+[node name="Lightning Trap Dropper" type="Node2D" unique_id=380670205 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_g8fkf")
+cooldown = 2.0
+spread = 0.4
+animation_player = NodePath("AnimationPlayer")
+category = "Player Primaries"
+summary = "Releases mines that shock enemies when they're too close."
+gp_usage = 3
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=704077057]
+position = Vector2(-28, -8.742278e-08)
+rotation = 3.1415927
+script = ExtResource("6_fpnvw")
+prj_info = {
+"dmg_info": {
+"amount": 1.0,
+"duration": 0.0,
+"type": "dmg"
+},
+"hit_fx": "uid://bwddu713otuhv",
+"size": 1.33,
+"speed": 20.0,
+"template": "uid://ym7dk4rvgqa4"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Bubble16" parent="." unique_id=1039353022 instance=ExtResource("4_fyxdh")]
+position = Vector2(-25, -24.000002)
+scale = Vector2(0.092331804, 0.092331804)
+
+[node name="Bubble17" parent="." unique_id=1580935366 instance=ExtResource("4_fyxdh")]
+position = Vector2(-25.000002, 24)
+scale = Vector2(0.092331804, 0.092331804)
+
+[node name="OrbBubble" type="Sprite2D" parent="." unique_id=511260881]
+position = Vector2(-27.999994, 0)
+scale = Vector2(0.15702458, 0.15702458)
+texture = ExtResource("2_yynhw")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="OrbBubble" unique_id=1703040699]
+scale = Vector2(0.9735287, 0.9735287)
+amount = 2
+texture = ExtResource("3_1p6fv")
+lifetime = 0.1
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+color = Color(0.98333335, 1, 0, 1)
+color_ramp = SubResource("Gradient_upsn1")
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("Curve_6r5rr")
+
+[node name="Bubble18" parent="." unique_id=1889475280 instance=ExtResource("4_fyxdh")]
+position = Vector2(13.000001, 21)
+scale = Vector2(0.092331804, 0.092331804)
+
+[node name="Bubble19" parent="." unique_id=2003399542 instance=ExtResource("4_fyxdh")]
+position = Vector2(13.000001, -21.000002)
+scale = Vector2(0.092331804, 0.092331804)
+
+[node name="Bubble12" parent="." unique_id=839257506 instance=ExtResource("5_2g4wr")]
+position = Vector2(21.000004, -15.000002)
+scale = Vector2(0.10709085, 0.10709085)
+
+[node name="Bubble13" parent="." unique_id=2016195625 instance=ExtResource("5_2g4wr")]
+position = Vector2(-13, -21.000002)
+scale = Vector2(0.10709085, 0.10709085)
+
+[node name="Bubble14" parent="." unique_id=962493274 instance=ExtResource("5_2g4wr")]
+position = Vector2(-13.000002, 21)
+scale = Vector2(0.13465059, 0.13465059)
+
+[node name="Bubble15" parent="." unique_id=869042730 instance=ExtResource("5_2g4wr")]
+position = Vector2(21, 14.999999)
+scale = Vector2(0.10709085, 0.10709085)
+
+[node name="Bubble11" parent="." unique_id=518034357 instance=ExtResource("5_2g4wr")]
+scale = Vector2(0.21362889, 0.21362889)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=765413727]
+libraries/ = SubResource("AnimationLibrary_yynhw")

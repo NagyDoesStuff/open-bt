@@ -10,11 +10,11 @@ var target_position: Vector2
 
 func _ready() -> void:
 	origin = get_parent()
-	scale = Vector2.ONE
 	z_index -= 1
 	
 	await get_tree().process_frame
 	reparent(get_tree().root)
+	scale = Vector2.ONE
 	create_tween().tween_property(self, "modulate:a", 0.0, fade_time).finished.connect(queue_free)
 
 func _process(_delta: float) -> void:

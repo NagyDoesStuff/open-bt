@@ -27,6 +27,10 @@ var from: Node2D
 @export var phase: bool = false
 
 @export_group("Movement")
+@export_enum(
+	"Linear",
+	"Impulse"
+) var movement_type: String = "Linear"
 @export var acceleration: float = 1.0
 @export var min_speed_mult: float = 1.0
 
@@ -55,6 +59,9 @@ func _ready() -> void:
 	spin_rate *= [-1, 1].pick_random()
 	prj_info["speed"] *= randf_range(min_speed_mult, 1.0)
 	
+	if movement_type == "Impulse":
+		velocity = Vector2.from_angle(global_rotation) * prj_info["speed"]
+	
 	# Phasing
 	if !phase: 
 		prj_area.area_entered.connect(on_hit, ConnectFlags.CONNECT_DEFERRED)
@@ -64,7 +71,6 @@ func _ready() -> void:
 		search_for_target()
 	
 	# Visual
-	
 	if lifetime > 0.0:
 		get_tree().create_timer(lifetime).timeout.connect(lifetime_ran_out)
 	
@@ -98,7 +104,8 @@ var t: float = randf_range(0.0, 1.0)
 func _process(delta: float) -> void:
 	t += delta
 	
-	velocity = Vector2.from_angle(global_rotation) * prj_info["speed"] * delta
+	if movement_type == "Linear":
+		velocity = Vector2.from_angle(global_rotation) * prj_info["speed"] * delta
 	velocity *= acceleration
 	global_position += velocity
 	

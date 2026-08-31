@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cpblknojow67u"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_p2515"]
+[ext_resource type="PackedScene" uid="uid://dsc3anm0wx63x" path="res://scenes/decorations/bubble31.tscn" id="2_xfrff"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_xebgi"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="4_r7hc4"]
+[ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="5_fqccb"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="6_4dpep"]
+
+[sub_resource type="Gradient" id="Gradient_hmlpk"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Shock Node" type="Node2D" unique_id=1267480583]
+script = ExtResource("1_p2515")
+turn_rate = 0.0
+cooldown = 99999.0
+fixed = true
+auto_shoot = true
+category = "Player Passives"
+summary = "Shocks anything nearby."
+flavor_text = "Bzzt, bzzt! Seems these little bubble tanks have harnessed the power of Zeus!"
+gp_usage = 1
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble33" parent="." unique_id=900752476 instance=ExtResource("2_xfrff")]
+position = Vector2(22, 0)
+scale = Vector2(0.17334338, 0.17334338)
+
+[node name="Bubble11" parent="." unique_id=1103479538 instance=ExtResource("3_xebgi")]
+position = Vector2(12.999998, -13.999999)
+scale = Vector2(0.11383278, 0.11383278)
+
+[node name="Bubble12" parent="." unique_id=779667114 instance=ExtResource("3_xebgi")]
+position = Vector2(13.000001, 13.999999)
+scale = Vector2(0.11383278, 0.11383278)
+
+[node name="Bubble16" parent="." unique_id=1039353022 instance=ExtResource("4_r7hc4")]
+position = Vector2(-1.1920929e-06, -4.1723254e-07)
+scale = Vector2(0.20578264, 0.20578264)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=23942293]
+position = Vector2(24, 0)
+scale = Vector2(0.08503619, 0.08503619)
+amount = 1
+texture = ExtResource("5_fqccb")
+lifetime = 0.1
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color = Color(0.98333335, 1, 0, 1)
+color_ramp = SubResource("Gradient_hmlpk")
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=140212188]
+position = Vector2(24, 0)
+script = ExtResource("6_4dpep")
+prj_info = {
+"attached": true,
+"dmg_info": {
+"amount": 0.5,
+"duration": 0.0,
+"type": "dmg"
+},
+"hit_fx": "uid://bwddu713otuhv",
+"size": 1.0,
+"speed": 0.0,
+"template": "uid://wd5dx6kcqmk6"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

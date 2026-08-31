@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://ym7dk4rvgqa4"]
+
+[ext_resource type="Script" uid="uid://cxu50vgg6683q" path="res://classes/projectiles/ShockProjectile.gd" id="1_e1rwx"]
+[ext_resource type="PackedScene" uid="uid://dvbhovo1kkt1a" path="res://scenes/fx/HitscanLine/lighting_line.tscn" id="2_e1rwx"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="3_p0vbi"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="4_qmd4k"]
+[ext_resource type="Texture2D" uid="uid://cw4obbgcfucvu" path="res://img/fx/square.png" id="5_e1rwx"]
+[ext_resource type="Texture2D" uid="uid://c36hbk2n275xw" path="res://img/bubbles/38.png" id="6_e1rwx"]
+[ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="7_2bksi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[sub_resource type="Gradient" id="Gradient_5vx1k"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_mxumx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotator:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7853982]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Projectile:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e1rwx"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotator:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.7853982, 7.051130178057091]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Projectile:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.3214009, 0.5, 0.5077137, 0.8, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mxumx"]
+_data = {
+&"RESET": SubResource("Animation_mxumx"),
+&"default": SubResource("Animation_e1rwx")
+}
+
+[node name="ShockMineProjectile" type="Node2D" unique_id=1253201984]
+script = ExtResource("1_e1rwx")
+shock_cooldown = 0.2
+hitscan_line = ExtResource("2_e1rwx")
+phase = true
+movement_type = "Impulse"
+acceleration = 0.9
+hit_sfx = "uid://c0y11c0kk467y"
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.2942147, 0.2942147)
+texture = ExtResource("3_p0vbi")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("4_qmd4k")
+
+[node name="Rotator" type="Sprite2D" parent="." unique_id=1936095903]
+rotation = 0.7853982
+scale = Vector2(0.047993653, 0.047993653)
+texture = ExtResource("5_e1rwx")
+
+[node name="Projectile" type="Sprite2D" parent="." unique_id=13422316]
+scale = Vector2(0.22915691, 0.22915691)
+texture = ExtResource("6_e1rwx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1895501107]
+scale = Vector2(0.12310886, 0.12310886)
+amount = 1
+texture = ExtResource("7_2bksi")
+lifetime = 0.1
+lifetime_randomness = 0.5
+emission_shape = 2
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_max = 360.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_5vx1k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2070818751]
+libraries/ = SubResource("AnimationLibrary_mxumx")
+autoplay = &"default"

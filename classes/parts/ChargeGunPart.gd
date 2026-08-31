@@ -37,13 +37,17 @@ func _process(_delta: float) -> void:
 	elif user.controller.target:
 		if !fixed: 
 			turn_to(GlobalClass.player_cluster.global_position, _delta)
-		if can_shoot and !is_charging:
+		if can_shoot:
 			start_charge()
 
 func start_charge() -> void:
 	if !can_shoot or is_charging: return
 	
+	if user != GlobalClass.player_cluster:
+		can_shoot = false
+	
 	is_charging = true
+	
 	charge_start_time = Time.get_ticks_msec() / 1000.0
 	
 	# Play animation.
@@ -55,7 +59,7 @@ func start_charge() -> void:
 	charge_timer.start()
 
 func stop_and_fire() -> void:
-	if !can_shoot or !is_charging: return
+	if !can_shoot and user == GlobalClass.player_cluster or !is_charging: return
 	
 	is_charging = false
 	charge_timer.stop()
@@ -66,9 +70,6 @@ func stop_and_fire() -> void:
 	
 	var raw_power: float = elapsed / charge_time
 	var final_power: float = clampf(raw_power, min_power, max_power)
-	
-	if user != GlobalClass.player_cluster:
-		await get_tree().create_timer(ai_wait_time_before_release).timeout
 	
 	fire(final_power)
 	
@@ -83,4 +84,5 @@ func charge_completed() -> void:
 	
 	# Fire if AI.
 	if user != GlobalClass.player_cluster: 
+		await get_tree().create_timer(ai_wait_time_before_release).timeout
 		stop_and_fire()

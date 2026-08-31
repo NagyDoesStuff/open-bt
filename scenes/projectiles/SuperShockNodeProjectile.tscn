@@ -10,7 +10,7 @@ radius = 1.0
 
 [node name="SuperShockProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_tulrs")
-shock_range = 300.0
+shock_range = 500.0
 shock_cooldown = 0.25
 hitscan_line = ExtResource("2_tulrs")
 phase = true

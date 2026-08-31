@@ -11,11 +11,6 @@
 [sub_resource type="Gradient" id="Gradient_ofd02"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="Curve" id="Curve_7t84g"]
-_limits = [-1.0, 1.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="Animation" id="Animation_6djs2"]
 resource_name = "charge"
 length = 6.0
@@ -121,9 +116,6 @@ scale_amount_min = 0.2
 scale_amount_max = 0.3
 color = Color(0.98333335, 1, 0, 1)
 color_ramp = SubResource("Gradient_ofd02")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
-hue_variation_curve = SubResource("Curve_7t84g")
 
 [node name="Bubble11" parent="." unique_id=170161300 instance=ExtResource("4_ofd02")]
 position = Vector2(7.399064, -20.71738)

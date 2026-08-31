@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bdpqrhn3b5dvh" path="res://classes/parts/ChargeGunPart.gd" id="1_n8ic2"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_7h7o7"]
+[ext_resource type="Texture2D" uid="uid://78537j6k0m3x" path="res://img/bubbles/45.png" id="2_i0nv6"]
 [ext_resource type="Texture2D" uid="uid://ci2pbrl6i4o17" path="res://img/fx/bzz.png" id="3_i0nv6"]
-[ext_resource type="Texture2D" uid="uid://cd847ugdtcc6k" path="res://img/bubbles/shock1.png" id="3_x2ql0"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_pnbj3"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="5_k2esn"]
 
@@ -39,7 +39,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.15487051, 0.15487051)]
+"values": [Vector2(0.1, 0.1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -101,6 +101,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(19, -20)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Arm2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19, 20)]
+}
 
 [sub_resource type="Animation" id="Animation_xc16d"]
 resource_name = "charge"
@@ -115,7 +127,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(24.000008, 0), Vector2(29, 0)]
+"values": [Vector2(24.000008, 0), Vector2(35, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -139,7 +151,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(0.15487051, 0.15487051), Vector2(0.28, 0.28)]
+"values": [Vector2(0.1, 0.1), Vector2(0.275, 0.275)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -151,7 +163,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1.353256, 1.353256, 1.353256, 1)]
+"values": [Color(1, 1, 1, 1), Color(4.415934, 4.415934, 4.415934, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -187,7 +199,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector2(19, 20), Vector2(19, 25)]
+"values": [Vector2(19, 20), Vector2(18, 34)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -199,7 +211,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(19, -20), Vector2(19, -25)]
+"values": [Vector2(19, -20), Vector2(18, -34)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i0nv6"]
@@ -210,25 +222,22 @@ _data = {
 
 [node name="Shock Cannon" type="Node2D" unique_id=733669987 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_n8ic2")
-spread = 0.4
-amount_per_salvo = 3
-salvo_interval = 0.1
+ai_wait_time_before_release = 1.0
 keybind = "space"
-fixed = true
 animation_player = NodePath("AnimationPlayer")
-category = "Player Secondaries"
-summary = "Requires charging. Releases 3 projectiles that shock enemy tanks. These projectiles can also boost neighbor projectiles of the same type."
-flavor_text = "Bzzt, bzzt! Seems like these little bubble tanks have absorbed Zeus' power!"
-gp_usage = 6
+category = "Enemy Weapons"
+summary = "Requires charging. Releases a detached huge super shock node."
+flavor_text = "Bzzt, bzzt! Seems these little bubble tanks have harnessed the power of Zeus!"
+gp_usage = 8
 
 [node name="OrbBubble" type="Sprite2D" parent="." unique_id=511260881]
 position = Vector2(24.000008, 0)
-scale = Vector2(0.15487051, 0.15487051)
-texture = ExtResource("3_x2ql0")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_i0nv6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="OrbBubble" unique_id=1703040699]
 scale = Vector2(0.54325134, 0.54325134)
-amount = 1
+amount = 4
 texture = ExtResource("3_i0nv6")
 lifetime = 0.1
 lifetime_randomness = 0.5
@@ -278,19 +287,14 @@ position = Vector2(29, -8.742278e-08)
 script = ExtResource("5_k2esn")
 prj_info = {
 "dmg_info": {
-"amount": 1.0,
+"amount": 3.0,
 "duration": 0.0,
 "type": "dmg"
 },
 "hit_fx": "uid://bwddu713otuhv",
-"homing": false,
-"sin_turn_mode_freq": 3.0,
-"size": 1.25,
+"size": 3.0,
 "speed": 500.0,
-"target_mode": "default",
-"template": "uid://dtrrfq0hi5esq",
-"turn_mode": "default",
-"turn_rate": 10.0
+"template": "uid://dtrrfq0hi5esq"
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
 
@@ -309,7 +313,7 @@ scale = Vector2(0.05806271, 0.05806271)
 scale = Vector2(0.14794223, 0.14794223)
 
 [node name="Arm2" type="Node2D" parent="." unique_id=456941457]
-position = Vector2(19, 22.310785)
+position = Vector2(19, 20)
 rotation = -0.5235988
 
 [node name="Bubble22" parent="Arm2" unique_id=704577902 instance=ExtResource("2_7h7o7")]
