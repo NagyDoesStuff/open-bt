@@ -10,12 +10,20 @@ Controls:
 - Tab to activate and deactivate the static camera.
 - CTRL to not move a part when selected.
 - ESC to pause.
-- = or « to open the console (Free Mode-only).
+- = or « to open the console (Developer Mode-only).
+
+Gamemodes:
+- Normal Mode: casual Bubble Tanks gameplay.
+- Beserk Mode: somewhat of a "hardmode", this mode includes:
+  - 50% bubble point drops
+  - all enemies spawn at max amount
+  - all enemies have a different team (a.k.a FFA)
+- Developer Mode: you start with max class and have access to the console.
 
 Notes:
 - Enemies you create on the debug editor (the one at the main menu) appear in-game.
 - Player parts are available for the enemy and so are enemy parts for the player.
-- There is currently a really rare but unfixable bug that causes the game to crash when killing an enemy.
+- There is currently an extremely rare and unfixable bug that causes the game to crash when killing an enemy.
 - To find your tanks:
   - "home/(user)/.local/share/godot/app_userdata/OpenBT/tanks/user/" on Linux
   - "%USERPROFILE%/AppData/Roaming/Godot/app_userdata/OpenBT/tanks/user/
