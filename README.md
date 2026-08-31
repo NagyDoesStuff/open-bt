@@ -12,6 +12,14 @@ Controls:
 - ESC to pause.
 - = or « to open the console (Free Mode-only).
 
+Gamemodes:
+- Normal Mode: casual Bubble Tanks gameplay.
+- Beserk Mode: somewhat of a "hardmode", this mode includes:
+  - 50% bubble point drops
+  - all enemies spawn at max amount
+  - all enemies have a different team (a.k.a FFA)
+- Developer Mode: you start with max class and have access to the console.
+
 Notes:
 - Enemies you create on the debug editor (the one at the main menu) appear in-game.
 - Player parts are available for the enemy and so are enemy parts for the player.
