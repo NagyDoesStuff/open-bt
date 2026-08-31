@@ -21,19 +21,25 @@ disabled = true
 editor_mode = true
 
 [node name="Small Bubble2" parent="." unique_id=1114578196 instance=ExtResource("3_hahkx")]
-position = Vector2(-36.583, 0)
+position = Vector2(-12.583003, -40)
+scale = Vector2(0.86142004, 0.86142004)
+disabled = true
+editor_mode = true
+
+[node name="Small Bubble3" parent="." unique_id=216779587 instance=ExtResource("3_hahkx")]
+position = Vector2(-12.583003, 40)
 scale = Vector2(0.86142004, 0.86142004)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@81" parent="." unique_id=1748194613 instance=ExtResource("3_hahkx")]
-position = Vector2(-15.885375, -31.397186)
+position = Vector2(8.114624, -47.397186)
 scale = Vector2(0.6374508, 0.6374508)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_81" parent="." unique_id=1328181748 instance=ExtResource("3_hahkx")]
-position = Vector2(-15.885376, 31.397217)
+position = Vector2(8.114624, 47.397217)
 scale = Vector2(0.6374508, 0.6374508)
 disabled = true
 editor_mode = true

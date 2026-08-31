@@ -17,7 +17,7 @@ max_spawn_amount = 2
 
 [node name="Medium Dark Bubble" parent="." unique_id=878054447 instance=ExtResource("2_6duyq")]
 position = Vector2(17.635498, 0)
-scale = Vector2(0.89, 0.89)
+scale = Vector2(0.778992, 0.778992)
 disabled = true
 editor_mode = true
 
@@ -48,18 +48,6 @@ scale = Vector2(0.76, 0.76)
 disabled = true
 editor_mode = true
 
-[node name="@Node2D@211" parent="." unique_id=1339955065 instance=ExtResource("7_tbryj")]
-position = Vector2(-7.624939, -37.63147)
-scale = Vector2(0.5, 0.5)
-disabled = true
-editor_mode = true
-
-[node name="_Node2D_211" parent="." unique_id=920876499 instance=ExtResource("7_tbryj")]
-position = Vector2(-7.624939, 37.63147)
-scale = Vector2(0.5, 0.5)
-disabled = true
-editor_mode = true
-
 [node name="@Node2D@218" parent="." unique_id=1569452348 instance=ExtResource("7_tbryj")]
 position = Vector2(37.84381, -21.468506)
 scale = Vector2(0.5, 0.5)
@@ -73,29 +61,29 @@ disabled = true
 editor_mode = true
 
 [node name="@Node2D@230" parent="." unique_id=1106455880 instance=ExtResource("6_56h5b")]
-position = Vector2(-22.781189, -48.7435)
+position = Vector2(-26.781189, -48.7435)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_230" parent="." unique_id=1738740627 instance=ExtResource("6_56h5b")]
-position = Vector2(-22.781189, 48.74353)
+position = Vector2(-26.781189, 48.74353)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@237" parent="." unique_id=183666214 instance=ExtResource("6_56h5b")]
-position = Vector2(-7.624939, -55.81479)
+position = Vector2(-11.624939, -49.81479)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_237" parent="." unique_id=151359307 instance=ExtResource("6_56h5b")]
-position = Vector2(-7.624939, 55.81482)
+position = Vector2(-11.624939, 49.81482)
 disabled = true
 editor_mode = true
 
 [node name="_Node2D_251" parent="." unique_id=1389211544 instance=ExtResource("6_56h5b")]
-position = Vector2(41.885498, 0)
+position = Vector2(44.885498, 0)
 scale = Vector2(0.5, 0.5)
 disabled = true
 editor_mode = true

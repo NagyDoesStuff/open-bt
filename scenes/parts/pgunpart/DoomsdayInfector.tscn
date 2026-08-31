@@ -9,6 +9,7 @@ script = ExtResource("1_k17ep")
 cooldown = 3.0
 keybind = "space"
 fixed = true
+is_clonable = false
 category = "Player Secondaries"
 summary = "Infects enemies, dealing damage over time. Infected enemies spawn 2 more Infectors after death."
 flavor_text = "This weapon breaks every biological warfare treaty ever written."

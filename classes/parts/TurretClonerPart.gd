@@ -23,7 +23,7 @@ func clone() -> void:
 	# Get valid parts (GunParts).
 	var valid_parts: Array[GunPart] = []
 	for p in target_cluster.get_parts():
-		if p is GunPart:
+		if p is GunPart and p.is_clonable:
 			valid_parts.append(p)
 	
 	# Sort valid parts array to get the gun with most GP usage.

@@ -19,4 +19,4 @@ func split() -> void:
 		split_result.global_rotation = x * (TAU / split_amount)
 		split_result.team = user.team
 		split_result.velocity = Vector2.from_angle(randf_range(0, TAU)) * randf_range(min_split_velocity, max_split_velocity)
-		GlobalClass.world.add_child(split_result)
+		GlobalClass.world.call_deferred("add_child", split_result)

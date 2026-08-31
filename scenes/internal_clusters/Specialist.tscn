@@ -1,276 +1,174 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://st5es5rj24wn"]
 
-[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_3m2ik"]
-[ext_resource type="PackedScene" path="res://scenes/parts/behaviorpart/Flocking.tscn" id="2_2icus"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="2_ru2md"]
-[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="3_2icus"]
-[ext_resource type="Script" path="res://classes/parts/BehaviorPart.gd" id="3_2kep1"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="4_2kep1"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="5_o4eut"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="6_26lan"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="7_v01k3"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble03_dark.tscn" id="8_2p2v3"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble05_dark.tscn" id="9_abnyq"]
-[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/ProximityMineDropper.tscn" id="10_wirmj"]
-[ext_resource type="Script" path="res://classes/parts/GunPart.gd" id="11_ult2r"]
-[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/MineTrailCannon.tscn" id="12_0ikp7"]
-[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/3SpreadGun.tscn" id="13_anggn"]
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_3m2ik"]
+[ext_resource type="PackedScene" uid="uid://cy3udny53fdh2" path="res://scenes/parts/behaviorpart/Flocking.tscn" id="2_2icus"]
+[ext_resource type="PackedScene" uid="uid://dc1ruuaqakf21" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="2_ru2md"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="4_2kep1"]
+[ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="5_o4eut"]
+[ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="6_26lan"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="7_v01k3"]
+[ext_resource type="PackedScene" uid="uid://cbkp0m270hr57" path="res://scenes/parts/collisionpart/bubble03_dark.tscn" id="8_2p2v3"]
+[ext_resource type="PackedScene" uid="uid://1b33n4wbucwg" path="res://scenes/parts/collisionpart/bubble05_dark.tscn" id="9_abnyq"]
+[ext_resource type="PackedScene" uid="uid://4lkt5bywiadn" path="res://scenes/parts/egunpart/ProximityMineDropper.tscn" id="10_wirmj"]
+[ext_resource type="PackedScene" uid="uid://c3hhfeogru6bn" path="res://scenes/parts/egunpart/MineTrailCannon.tscn" id="12_0ikp7"]
+[ext_resource type="PackedScene" uid="uid://ddbld2i4fe72w" path="res://scenes/parts/egunpart/3SpreadGun.tscn" id="13_anggn"]
 
 [node name="Specialist" type="Area2D" unique_id=377066502]
 script = ExtResource("1_3m2ik")
 team = 1
 cluster_class = 4
 speed = 3.0
-drop_value = 40
-max_progress = 100
+drop_value = 90
+max_progress = 200
 min_to_available = 70
 max_spawn_amount = 1
 
-[node name="Flocking" type="Node2D" parent="." unique_id=1961699606 instance=ExtResource("2_2icus")]
+[node name="Flocking" parent="." unique_id=1961699606 instance=ExtResource("2_2icus")]
 position = Vector2(26.729248, 0)
 scale = Vector2(1.25, 1.25)
-script = ExtResource("3_2kep1")
-type = "Flocking"
-category = "Enemy Behaviors"
 disabled = true
 editor_mode = true
-summary = "Causes the enemy to flock with other enemies."
-flavor_text = "Gangin' up on ya'."
-metadata/_custom_type_script = "uid://dny073s7n1p00"
 
-[node name="Medium Dark Bubble" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("2_ru2md")]
+[node name="Medium Dark Bubble" parent="." unique_id=878054447 instance=ExtResource("2_ru2md")]
 position = Vector2(-11.415588, -89.17142)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@146" type="Node2D" parent="." unique_id=1044830367 instance=ExtResource("2_ru2md")]
+[node name="@Node2D@146" parent="." unique_id=1044830367 instance=ExtResource("2_ru2md")]
 position = Vector2(-11.415588, 89.17139)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Small Dark Bubble" type="Node2D" parent="." unique_id=2124158634 instance=ExtResource("4_2kep1")]
+[node name="Small Dark Bubble" parent="." unique_id=2124158634 instance=ExtResource("4_2kep1")]
 position = Vector2(30.737549, -44.94284)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@153" type="Node2D" parent="." unique_id=816322400 instance=ExtResource("4_2kep1")]
+[node name="@Node2D@153" parent="." unique_id=816322400 instance=ExtResource("4_2kep1")]
 position = Vector2(30.737549, 44.94287)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Medium Bubble" type="Node2D" parent="." unique_id=590029951 instance=ExtResource("5_o4eut")]
+[node name="Medium Bubble" parent="." unique_id=590029951 instance=ExtResource("5_o4eut")]
 position = Vector2(57.46881, -86.08569)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@160" type="Node2D" parent="." unique_id=126404909 instance=ExtResource("5_o4eut")]
+[node name="@Node2D@160" parent="." unique_id=126404909 instance=ExtResource("5_o4eut")]
 position = Vector2(57.46881, 86.08569)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@165" type="Node2D" parent="." unique_id=1669075830 instance=ExtResource("5_o4eut")]
+[node name="@Node2D@165" parent="." unique_id=1669075830 instance=ExtResource("5_o4eut")]
 position = Vector2(96.53754, -60.3714)
 scale = Vector2(0.77, 0.77)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_165" type="Node2D" parent="." unique_id=427381621 instance=ExtResource("5_o4eut")]
+[node name="_Node2D_165" parent="." unique_id=427381621 instance=ExtResource("5_o4eut")]
 position = Vector2(96.53754, 60.3714)
 scale = Vector2(0.77, 0.77)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Small Light Bubble" type="Node2D" parent="." unique_id=746490078 instance=ExtResource("6_26lan")]
+[node name="Small Light Bubble" parent="." unique_id=746490078 instance=ExtResource("6_26lan")]
 position = Vector2(35.878174, -128.25711)
 scale = Vector2(0.74, 0.74)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@175" type="Node2D" parent="." unique_id=1350713525 instance=ExtResource("6_26lan")]
+[node name="@Node2D@175" parent="." unique_id=1350713525 instance=ExtResource("6_26lan")]
 position = Vector2(35.878174, 128.25708)
 scale = Vector2(0.74, 0.74)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Small Bubble" type="Node2D" parent="." unique_id=1444483671 instance=ExtResource("7_v01k3")]
+[node name="Small Bubble" parent="." unique_id=1444483671 instance=ExtResource("7_v01k3")]
 position = Vector2(-35.06244, -123.11426)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@182" type="Node2D" parent="." unique_id=277560776 instance=ExtResource("7_v01k3")]
+[node name="@Node2D@182" parent="." unique_id=277560776 instance=ExtResource("7_v01k3")]
 position = Vector2(-35.06244, 123.11426)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Large Dark Bubble" type="Node2D" parent="." unique_id=2061352461 instance=ExtResource("8_2p2v3")]
+[node name="Large Dark Bubble" parent="." unique_id=2061352461 instance=ExtResource("8_2p2v3")]
 position = Vector2(-111.14374, -95.342834)
 scale = Vector2(0.83, 0.83)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@191" type="Node2D" parent="." unique_id=1492754326 instance=ExtResource("8_2p2v3")]
+[node name="@Node2D@191" parent="." unique_id=1492754326 instance=ExtResource("8_2p2v3")]
 position = Vector2(-111.14374, 95.342834)
 scale = Vector2(0.83, 0.83)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Huge Dark Bubble Base" type="Node2D" parent="." unique_id=70326314 instance=ExtResource("9_abnyq")]
+[node name="Huge Dark Bubble Base" parent="." unique_id=70326314 instance=ExtResource("9_abnyq")]
 position = Vector2(-54.596863, 0)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@196" type="Node2D" parent="." unique_id=442103665 instance=ExtResource("7_v01k3")]
+[node name="@Node2D@196" parent="." unique_id=442103665 instance=ExtResource("7_v01k3")]
 position = Vector2(-169.74683, -115.914276)
 scale = Vector2(0.71, 0.71)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_196" type="Node2D" parent="." unique_id=440385183 instance=ExtResource("7_v01k3")]
+[node name="_Node2D_196" parent="." unique_id=440385183 instance=ExtResource("7_v01k3")]
 position = Vector2(-169.74683, 115.91431)
 scale = Vector2(0.71, 0.71)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@203" type="Node2D" parent="." unique_id=1099868048 instance=ExtResource("7_v01k3")]
+[node name="@Node2D@203" parent="." unique_id=1099868048 instance=ExtResource("7_v01k3")]
 position = Vector2(-170.77496, -74.77139)
 scale = Vector2(0.72, 0.72)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_203" type="Node2D" parent="." unique_id=1947068817 instance=ExtResource("7_v01k3")]
+[node name="_Node2D_203" parent="." unique_id=1947068817 instance=ExtResource("7_v01k3")]
 position = Vector2(-170.77496, 74.77136)
 scale = Vector2(0.72, 0.72)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Proximity Mine Dropper" type="Node2D" parent="." unique_id=122091808 instance=ExtResource("10_wirmj")]
+[node name="Proximity Mine Dropper" parent="." unique_id=122091808 instance=ExtResource("10_wirmj")]
 z_index = 1
 position = Vector2(-52.54059, 0)
 scale = Vector2(1.39, 1.39)
-script = ExtResource("11_ult2r")
-cooldown = 1.0
-spread = 0.1
-category = "Enemy Weapons"
 disabled = true
 editor_mode = true
-summary = "Fires mines that explode when the player is close enough."
-flavor_text = "These mines are a bit impatient, as they want to explode before the player even touches them."
-gp_usage = 2
-min_class = 2
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
-[node name="@Node2D@255" type="Node2D" parent="." unique_id=1787378180 instance=ExtResource("7_v01k3")]
+[node name="@Node2D@255" parent="." unique_id=1787378180 instance=ExtResource("7_v01k3")]
 position = Vector2(21.484436, -63.457123)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_255" type="Node2D" parent="." unique_id=267719732 instance=ExtResource("7_v01k3")]
+[node name="_Node2D_255" parent="." unique_id=267719732 instance=ExtResource("7_v01k3")]
 position = Vector2(21.484436, 63.457153)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@263" type="Node2D" parent="." unique_id=1084952548 instance=ExtResource("6_26lan")]
+[node name="@Node2D@263" parent="." unique_id=1084952548 instance=ExtResource("6_26lan")]
 position = Vector2(131.49377, -48.028534)
 scale = Vector2(0.71, 0.71)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_263" type="Node2D" parent="." unique_id=1837634567 instance=ExtResource("6_26lan")]
+[node name="_Node2D_263" parent="." unique_id=1837634567 instance=ExtResource("6_26lan")]
 position = Vector2(131.49377, 48.028564)
 scale = Vector2(0.71, 0.71)
-script = ExtResource("3_2icus")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Mine Trail Cannon" type="Node2D" parent="." unique_id=614581250 node_paths=PackedStringArray("animation_player") instance=ExtResource("12_0ikp7")]
+[node name="Mine Trail Cannon" parent="." unique_id=614581250 instance=ExtResource("12_0ikp7")]
 position = Vector2(-114.22809, -97.399994)
-script = ExtResource("11_ult2r")
-cooldown = 4.0
-full_turn_amount = 1
-animation_player = NodePath("Shot")
-category = "Enemy Weapons"
 disabled = true
 editor_mode = true
-summary = "Fires a bullet that leaves a line of mines."
-gp_usage = 3
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
-[node name="Enemy 3 Spread Gun" type="Node2D" parent="." unique_id=205290782 instance=ExtResource("13_anggn")]
+[node name="Enemy 3 Spread Gun" parent="." unique_id=205290782 instance=ExtResource("13_anggn")]
 position = Vector2(-112.171814, 94.94293)
-script = ExtResource("11_ult2r")
-cooldown = 1.5
-category = "Enemy Weapons"
 disabled = true
 editor_mode = true
-summary = "Fires 3 bullets in 3 directions."
-flavor_text = "Getting away from 3 Spread can be difficult. Me? I've moved out of town and changed my name. You can't ever be too safe."
-gp_usage = 3
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"

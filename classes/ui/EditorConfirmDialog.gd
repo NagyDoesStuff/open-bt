@@ -57,7 +57,9 @@ func pick_and_make_choices() -> void:
 	while upgrade_choices_left > 0:
 		var picked: Cluster = available_choices.pick_random()
 		
-		if already_chosen_names.has(picked.name): 
+		if already_chosen_names.has(picked.name):
+			if available_choices.size() < GlobalClass.UPGRADE_CHOICES:
+				upgrade_choices_left -= 1
 			continue
 		else: 
 			already_chosen_names.append(picked.name)

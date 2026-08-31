@@ -6,7 +6,8 @@
 [node name="Disassembler" type="Node2D" unique_id=431554886]
 script = ExtResource("1_ofviq")
 category = "Player Passives"
-summary = "Allows the projectiles to pass through the player as long as you hold down the key."
+summary = "Allows projectiles to pass through the player as long as you hold down the key."
+flavor_text = "Oouh... You look a bit rough there buddy."
 gp_usage = 4
 max_class = 4
 metadata/_custom_type_script = "uid://dgah7opgr4ojj"

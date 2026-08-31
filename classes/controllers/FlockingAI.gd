@@ -23,7 +23,7 @@ func _subready() -> void:
 func ai_cycle() -> void:
 	var time: float = randf_range(min_freq, max_freq)
 	turn(time)
-	get_tree().create_timer(time).timeout.connect(ai_cycle)
+	if get_tree(): get_tree().create_timer(time).timeout.connect(ai_cycle)
 	
 	var valid_clusters: Array[Cluster] = []
 	for c in GlobalClass.world.get_clusters():

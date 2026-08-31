@@ -1,15 +1,12 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bdxmdhkr8u4uw"]
 
-[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_tgejv"]
-[ext_resource type="PackedScene" path="res://scenes/parts/behaviorpart/Phaser.tscn" id="2_o0oi4"]
-[ext_resource type="Script" path="res://classes/parts/PhaserPart.gd" id="3_ebgs8"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="4_mmnf5"]
-[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="5_jtf8s"]
-[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/BasicGun.tscn" id="6_2wx6f"]
-[ext_resource type="Script" path="res://classes/parts/GunPart.gd" id="7_5pt2e"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="8_q7nc2"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="9_ipucd"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="10_cgwn8"]
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_tgejv"]
+[ext_resource type="PackedScene" uid="uid://kb4ft8s4dsy8" path="res://scenes/parts/behaviorpart/Phaser.tscn" id="2_o0oi4"]
+[ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="4_mmnf5"]
+[ext_resource type="PackedScene" uid="uid://c8dvqqcb4fpq4" path="res://scenes/parts/egunpart/BasicGun.tscn" id="6_2wx6f"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="8_q7nc2"]
+[ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="9_ipucd"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="10_cgwn8"]
 
 [node name="Gecko" type="Area2D" unique_id=101810541]
 script = ExtResource("1_tgejv")
@@ -20,145 +17,72 @@ drop_value = 5
 max_progress = 7
 min_to_available = 9
 
-[node name="Phaser" type="Node2D" parent="." unique_id=1911839056 instance=ExtResource("2_o0oi4")]
+[node name="Phaser" parent="." unique_id=1911839056 instance=ExtResource("2_o0oi4")]
 position = Vector2(-43.287476, 0)
 scale = Vector2(0.85, 0.85)
-script = ExtResource("3_ebgs8")
-category = "Enemy Behaviors"
 disabled = true
 editor_mode = true
 gp_usage = 1
-metadata/_custom_type_script = "uid://edd3jhm1uqoy"
 
-[node name="Medium Bubble" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("4_mmnf5")]
+[node name="Medium Bubble" parent="." unique_id=878054447 instance=ExtResource("4_mmnf5")]
 position = Vector2(-0.10620117, 0)
 scale = Vector2(1.16, 1.16)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Enemy Basic Cannon" type="Node2D" parent="." unique_id=122091808 instance=ExtResource("6_2wx6f")]
+[node name="Enemy Basic Cannon" parent="." unique_id=122091808 instance=ExtResource("6_2wx6f")]
 position = Vector2(-0.10620117, 0)
-script = ExtResource("7_5pt2e")
 cooldown = 2.0
-category = "Enemy Weapons"
 disabled = true
 editor_mode = true
-gp_usage = 1
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
-[node name="Small Bubble" type="Node2D" parent="." unique_id=1070957610 instance=ExtResource("8_q7nc2")]
+[node name="Small Bubble" parent="." unique_id=1070957610 instance=ExtResource("8_q7nc2")]
 position = Vector2(56.440674, 0)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@342" type="Node2D" parent="." unique_id=1114990021 instance=ExtResource("8_q7nc2")]
+[node name="@Node2D@342" parent="." unique_id=1114990021 instance=ExtResource("8_q7nc2")]
 position = Vector2(-31.978088, -45.971405)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_342" type="Node2D" parent="." unique_id=587372510 instance=ExtResource("8_q7nc2")]
+[node name="_Node2D_342" parent="." unique_id=587372510 instance=ExtResource("8_q7nc2")]
 position = Vector2(-31.978088, 45.971436)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Small Light Bubble" type="Node2D" parent="." unique_id=650450372 instance=ExtResource("9_ipucd")]
-position = Vector2(-28.893738, -72.714264)
+[node name="Small Light Bubble" parent="." unique_id=650450372 instance=ExtResource("9_ipucd")]
+position = Vector2(-16.893738, -68.714264)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@351" type="Node2D" parent="." unique_id=1137297941 instance=ExtResource("9_ipucd")]
-position = Vector2(-28.893738, 72.71423)
+[node name="@Node2D@351" parent="." unique_id=1137297941 instance=ExtResource("9_ipucd")]
+position = Vector2(-16.893738, 68.71423)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@356" type="Node2D" parent="." unique_id=305030379 instance=ExtResource("9_ipucd")]
-position = Vector2(-57.681213, -35.6857)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("5_jtf8s")
-category = "Collision"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
-
-[node name="_Node2D_356" type="Node2D" parent="." unique_id=1602075037 instance=ExtResource("9_ipucd")]
-position = Vector2(-57.681213, 35.68567)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("5_jtf8s")
-category = "Collision"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
-
-[node name="@Node2D@363" type="Node2D" parent="." unique_id=627070490 instance=ExtResource("9_ipucd")]
-position = Vector2(-7.3031006, -45.971405)
-scale = Vector2(0.62, 0.62)
-script = ExtResource("5_jtf8s")
-category = "Collision"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
-
-[node name="_Node2D_363" type="Node2D" parent="." unique_id=156385022 instance=ExtResource("9_ipucd")]
-position = Vector2(-7.3031006, 45.971436)
-scale = Vector2(0.62, 0.62)
-script = ExtResource("5_jtf8s")
-category = "Collision"
-disabled = true
-editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
-
-[node name="Small Dark Bubble" type="Node2D" parent="." unique_id=662582283 instance=ExtResource("10_cgwn8")]
-position = Vector2(-40.203064, -15.114288)
+[node name="Small Dark Bubble" parent="." unique_id=662582283 instance=ExtResource("10_cgwn8")]
+position = Vector2(-38.203064, -17.114288)
 scale = Vector2(0.6, 0.6)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@379" type="Node2D" parent="." unique_id=109886082 instance=ExtResource("10_cgwn8")]
-position = Vector2(-40.203064, 15.114258)
+[node name="@Node2D@379" parent="." unique_id=109886082 instance=ExtResource("10_cgwn8")]
+position = Vector2(-38.203064, 17.114258)
 scale = Vector2(0.6, 0.6)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@398" type="Node2D" parent="." unique_id=1371600871 instance=ExtResource("9_ipucd")]
+[node name="@Node2D@398" parent="." unique_id=1371600871 instance=ExtResource("9_ipucd")]
 position = Vector2(47.18756, -22.31424)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="_Node2D_398" type="Node2D" parent="." unique_id=2147241493 instance=ExtResource("9_ipucd")]
+[node name="_Node2D_398" parent="." unique_id=2147241493 instance=ExtResource("9_ipucd")]
 position = Vector2(47.18756, 22.314209)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("5_jtf8s")
-category = "Collision"
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"

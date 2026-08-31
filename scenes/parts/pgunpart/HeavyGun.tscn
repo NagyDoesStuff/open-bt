@@ -6,7 +6,7 @@
 
 [node name="Heavy Cannon" type="Node2D" unique_id=122091808]
 script = ExtResource("1_22nyj")
-cooldown = 0.6
+cooldown = 0.45
 category = "Player Primaries"
 summary = "Slower recharge rate but deals heavier damage."
 flavor_text = "Please use responsibly."

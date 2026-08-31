@@ -70,6 +70,8 @@ script = ExtResource("1_ao02q")
 cooldown = 3.5
 spread = 0.1
 category = "Enemy Weapons"
+summary = "Shoots a lightning-fast bullet that stuns the player tank."
+flavor_text = "AAACK! Why did you do that!? You jerk!!!"
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

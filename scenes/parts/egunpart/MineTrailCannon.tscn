@@ -58,7 +58,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_xnp6c"]
 resource_name = "default"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -126,6 +126,7 @@ full_turn_amount = 1
 animation_player = NodePath("Shot")
 category = "Enemy Weapons"
 summary = "Fires a bullet that leaves a line of mines."
+flavor_text = "Seems like the Seeker Mines are a bit jealous of this invention."
 gp_usage = 3
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

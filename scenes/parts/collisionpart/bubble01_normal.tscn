@@ -15,5 +15,6 @@ metadata/_custom_type_script = "uid://y2smhndmk7x3"
 scale = Vector2(0.25, 0.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1320082955]
+visible = false
 scale = Vector2(0.25, 0.25)
 shape = SubResource("CircleShape2D_ymrjv")

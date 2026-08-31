@@ -15,6 +15,7 @@ summary = "Emits drones which will seek out the target and explode on impact. Th
 flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that.
 You still don't want to know what makes them sticky."
 gp_usage = 2
+min_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble12" parent="." unique_id=1039353022 instance=ExtResource("2_lo2j6")]

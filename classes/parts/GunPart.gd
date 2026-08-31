@@ -22,6 +22,9 @@ var can_shoot: bool = true
 @export var shot_animation: String = "shot"
 @export var animation_player: AnimationPlayer
 
+@export_group("Other")
+@export var is_clonable: bool = true
+
 var barrels: Array[GunBarrel]
 var lasers: Array[Laser]
 

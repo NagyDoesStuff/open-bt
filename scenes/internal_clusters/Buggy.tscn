@@ -1,13 +1,10 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dyddmwpaq22yn"]
 
-[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1_1b45y"]
-[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/SeekerMinePod.tscn" id="2_38d0g"]
-[ext_resource type="Script" path="res://classes/parts/AfterDeathPart.gd" id="3_0x2bj"]
-[ext_resource type="PackedScene" path="res://scenes/projectiles/SeekerMineProjectilePreStats.tscn" id="4_jyt5i"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="5_f28l1"]
-[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="6_b0qlp"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="7_j1gql"]
-[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="8_b8hhl"]
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_1b45y"]
+[ext_resource type="PackedScene" uid="uid://ckfskgtw5ln4b" path="res://scenes/parts/egunpart/SeekerMinePod.tscn" id="2_38d0g"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="5_f28l1"]
+[ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="7_j1gql"]
+[ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="8_b8hhl"]
 
 [node name="Buggy" type="Area2D" unique_id=1784298365]
 script = ExtResource("1_1b45y")
@@ -20,51 +17,31 @@ max_progress = 2
 min_to_available = 6
 max_spawn_amount = 4
 
-[node name="Seeker Mine Pod" type="Node2D" parent="." unique_id=122091808 instance=ExtResource("2_38d0g")]
+[node name="Seeker Mine Pod" parent="." unique_id=122091808 instance=ExtResource("2_38d0g")]
 position = Vector2(-0.5843506, 0)
 scale = Vector2(0.76, 0.76)
-script = ExtResource("3_0x2bj")
-split_into = ExtResource("4_jyt5i")
-split_amount = 6
-category = "Enemy Weapons"
 disabled = true
 editor_mode = true
-summary = "When the tank is destroyed, this spawns camouflaged mines that gravitate toward the player's tank when it gets close enough."
-flavor_text = "If the regular mines had the right idea, these things are the Einsteins of the bullet world."
-gp_usage = 1
-max_class = 3
-metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
-[node name="Small Bubble" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("5_f28l1")]
-position = Vector2(37.4563, 0)
-script = ExtResource("6_b0qlp")
-category = "Collision"
+[node name="Small Bubble" parent="." unique_id=878054447 instance=ExtResource("5_f28l1")]
+position = Vector2(35.4563, 0)
+scale = Vector2(1.1768531, 1.1768531)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Medium Bubble" type="Node2D" parent="." unique_id=562624030 instance=ExtResource("7_j1gql")]
-position = Vector2(2.500061, 0)
-script = ExtResource("6_b0qlp")
-category = "Collision"
+[node name="Medium Bubble" parent="." unique_id=562624030 instance=ExtResource("7_j1gql")]
+position = Vector2(-0.49993896, 0)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="Small Light Bubble" type="Node2D" parent="." unique_id=133882387 instance=ExtResource("8_b8hhl")]
-position = Vector2(33.34381, -20.614288)
-scale = Vector2(0.53, 0.53)
-script = ExtResource("6_b0qlp")
-category = "Collision"
+[node name="Small Light Bubble" parent="Medium Bubble" unique_id=133882387 instance=ExtResource("8_b8hhl")]
+position = Vector2(25.843756, -20.614288)
+scale = Vector2(0.58433527, 0.58433527)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
 
-[node name="@Node2D@128" type="Node2D" parent="." unique_id=2113340687 instance=ExtResource("8_b8hhl")]
-position = Vector2(33.34381, 20.614258)
-scale = Vector2(0.53, 0.53)
-script = ExtResource("6_b0qlp")
-category = "Collision"
+[node name="@Node2D@128" parent="Medium Bubble" unique_id=2113340687 instance=ExtResource("8_b8hhl")]
+position = Vector2(25.843756, 20.614258)
+scale = Vector2(0.58433527, 0.58433527)
 disabled = true
 editor_mode = true
-metadata/_custom_type_script = "uid://y2smhndmk7x3"
