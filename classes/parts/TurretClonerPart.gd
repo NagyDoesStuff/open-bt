@@ -17,7 +17,8 @@ func clone() -> void:
 		if c.team != user.team:
 			valid_targets.append(c)
 	
-	# Select random target.
+	# Sort valid targets array to get the cluster with most GP usage.
+	valid_targets.sort_custom(func (a, b) -> bool: return a.get_used_gp() > b.get_used_gp())
 	var target_cluster: Cluster = valid_targets.pick_random()
 	
 	# Get valid parts (GunParts).

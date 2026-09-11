@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dumyuqeii7r4e"]
+
+[ext_resource type="Script" uid="uid://dftnav10irjtc" path="res://classes/parts/AfterDeathPart.gd" id="1_rrd7q"]
+[ext_resource type="PackedScene" uid="uid://dmsuqn0cllqiv" path="res://scenes/internal_clusters/Deadhead.tscn" id="2_rrd7q"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_x6rg3"]
+
+[node name="Deadhead Spawner" type="Node2D" unique_id=122091808]
+script = ExtResource("1_rrd7q")
+split_into = ExtResource("2_rrd7q")
+split_amount = 3
+category = "Enemy Weapons"
+summary = "When the tank is destroyed, this spawns three deadhead tanks."
+flavor_text = "It's like squishing a mother spider, ewww."
+gp_usage = 1
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Small Bubble" parent="." unique_id=1039353022 instance=ExtResource("3_x6rg3")]
+position = Vector2(-11.351948, -14.50916)
+scale = Vector2(0.2025977, 0.2025977)
+
+[node name="_Node2D_72" parent="." unique_id=163018508 instance=ExtResource("3_x6rg3")]
+position = Vector2(-11.351948, 13.870701)
+scale = Vector2(0.2025977, 0.2025977)
+
+[node name="_Node2D_91" parent="." unique_id=1163072408 instance=ExtResource("3_x6rg3")]
+position = Vector2(-11.135931, 34.682583)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_92" parent="." unique_id=370661218 instance=ExtResource("3_x6rg3")]
+position = Vector2(-25.379868, 31.060617)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_93" parent="." unique_id=1762647254 instance=ExtResource("3_x6rg3")]
+position = Vector2(-31.163853, 16.816666)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_95" parent="." unique_id=708354521 instance=ExtResource("3_x6rg3")]
+position = Vector2(-31.109844, -15.563191)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_96" parent="." unique_id=191741153 instance=ExtResource("3_x6rg3")]
+position = Vector2(-25.379868, -30.753134)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_97" parent="." unique_id=1556214297 instance=ExtResource("3_x6rg3")]
+position = Vector2(-11.135931, -35.321102)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_88" parent="." unique_id=1815467688 instance=ExtResource("3_x6rg3")]
+position = Vector2(28.947834, -14.941233)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_89" parent="." unique_id=1552499411 instance=ExtResource("3_x6rg3")]
+position = Vector2(35.00184, 0.19470882)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_90" parent="." unique_id=1323694640 instance=ExtResource("3_x6rg3")]
+position = Vector2(28.595886, 14.600665)
+scale = Vector2(0.10805863, 0.10805863)
+
+[node name="_Node2D_77" parent="." unique_id=5692276 instance=ExtResource("3_x6rg3")]
+position = Vector2(14.189935, -0.31922728)
+scale = Vector2(0.2025977, 0.2025977)

@@ -6,7 +6,7 @@ signal spawned_cluster()
 
 var mid_battle: bool = false
 
-var arenas_travelled: int = 0
+var bubblefields_cleared: int = 0
 var max_class: int = 1
 var max_gp: int = 0
 var player_progression_requirement: int = GlobalClass.PROGRESSION_REQUIREMENTS[0]
@@ -17,6 +17,8 @@ var last_player_position: Vector2
 @onready var ui: GameUI = $UI
 
 var dynamic_cam: DynamicCamera = DynamicCamera.new()
+
+var boss: Cluster
 
 func _ready() -> void:
 	GlobalClass.world = self
@@ -35,16 +37,24 @@ func _ready() -> void:
 	ui.add_child(flash)
 	flash.flash()
 	
+	GlobalClass.set_playlist(
+		load("res://scenes/misc/playlists/world_playlist.tscn").instantiate()
+	)
+	
+	# Await a frame so the player node is ready.
 	await get_tree().process_frame
 	
 	dynamic_cam.anchor = GlobalClass.player_cluster
 	
 	if GlobalClass.game_mode == "Developer Mode":
 		GlobalClass.player_cluster.max_progress = GlobalClass.PROGRESSION_REQUIREMENTS[GlobalClass.MAX_CLASS - 1]
+		GlobalClass.player_cluster.progress = GlobalClass.player_cluster.max_progress - 1.0
 		player_progression_requirement = GlobalClass.PROGRESSION_REQUIREMENTS[GlobalClass.MAX_CLASS - 1]
 		max_class = GlobalClass.MAX_CLASS
-		max_gp = int(INF)
-		GlobalClass.player_cluster.progress = GlobalClass.player_cluster.max_progress
+		max_gp = 99999
+		ui.editor.debug = true
+	else:
+		ui.editor.debug = false
 		
 func generate_arena() -> void:
 	pass
@@ -109,17 +119,17 @@ func spawn_cluster(cluster: Cluster, team: int) -> void:
 	spawned_cluster.emit()
 
 func check_battle_state() -> void:
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().process_frame
 	for c in get_clusters():
-		if c.team != 0:
+		if c.team != GlobalClass.player_cluster.team:
 			mid_battle = true
 			return
+	bubblefields_cleared += 1
 	mid_battle = false
 	for p in get_projectiles():
 		p.destroy()
 
 func transfer_player_to_next_arena(angle: float = 0.0) -> void:
-	arenas_travelled += 1
 	GlobalClass.player_cluster.velocity = Vector2.ZERO
 	
 	for c in get_clusters():
@@ -158,8 +168,31 @@ func upgrade_player() -> void:
 	
 	max_class += 1
 	max_gp += GlobalClass.get_gp_increment(max_class)
+	
 	if len(GlobalClass.PROGRESSION_REQUIREMENTS) >= max_class:
 		player_progression_requirement = GlobalClass.PROGRESSION_REQUIREMENTS[max_class - 1]
 		GlobalClass.player_cluster.max_progress = GlobalClass.PROGRESSION_REQUIREMENTS[max_class - 1]
+	
+	open_editor()
+
+func open_editor() -> void:
 	GlobalClass.player_cluster.progress = 1
 	ui.editor_confirm_dialog.activate()
+
+func turn_into_boss(cluster: Cluster) -> void:
+	boss = cluster
+	boss.progress_changed.connect(ui.hud.update_boss_bar)
+	boss.killed.connect(on_boss_completed, ConnectFlags.CONNECT_ONE_SHOT)
+	GlobalClass.player_cluster.killed.connect(on_boss_completed, ConnectFlags.CONNECT_ONE_SHOT)
+	create_tween().tween_property(ui.hud.boss_bar, "modulate:a", 1.0, 1.0)
+	GlobalClass.set_playlist(
+		load("res://scenes/misc/playlists/boss_playlist.tscn").instantiate()
+	)
+	GlobalClass.current_arena.locked = true
+
+func on_boss_completed() -> void:
+	create_tween().tween_property(ui.hud.boss_bar, "modulate:a", 0.0, 1.0)
+	GlobalClass.set_playlist(
+		load("res://scenes/misc/playlists/world_playlist.tscn").instantiate()
+	)
+	GlobalClass.current_arena.locked = false

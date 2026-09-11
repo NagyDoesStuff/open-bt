@@ -79,7 +79,6 @@ category = "Player Secondaries"
 summary = "Locks onto the strongest enemy and fires a powerful piercing bullet when input is recieved."
 flavor_text = "Have you ever wondered whats something faster than blinking your eyes? Well, this gun's bullet will answer that for you."
 gp_usage = 8
-min_class = 4
 metadata/_custom_type_script = "uid://blsl2a8q2mp0n"
 
 [node name="Bubble01" parent="." unique_id=1326003378 instance=ExtResource("3_4dekx")]
@@ -168,7 +167,7 @@ scale = Vector2(1.1607604, 1.1607604)
 script = ExtResource("4_p6dlo")
 prj_info = {
 "dmg_info": {
-"amount": 70,
+"amount": 60,
 "type": "dmg"
 },
 "pierce": true,

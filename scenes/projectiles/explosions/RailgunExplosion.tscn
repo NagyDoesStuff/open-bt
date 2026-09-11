@@ -5,14 +5,11 @@
 
 [node name="AreaBurstExplosion" type="Area2D" unique_id=476644725]
 script = ExtResource("1_5rhj2")
-dmg_info = {
-"amount": 20,
-"duration": 0.0,
-"type": "dmg"
-}
 lifetime = 0.5
-radius = 150.0
+radius = 60.0
 metadata/_custom_type_script = "uid://chx5lwtp5vep7"
 
 [node name="RailgunBoom" parent="." unique_id=800833179 instance=ExtResource("2_x1oyq")]
-modulate = Color(0.62, 0.86700004, 1, 1)
+modulate = Color(0.49, 0.82150006, 1, 0.3372549)
+scale = Vector2(0.21702781, 0.21702781)
+grow_rate = 20.0

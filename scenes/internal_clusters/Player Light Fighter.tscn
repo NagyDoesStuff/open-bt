@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpk41qcwrot72"]
 
 [ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_vk3vx"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_e4ab7"]
 [ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="2_y3kg8"]
 [ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="4_lcems"]
 [ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="5_gwk2c"]
@@ -8,20 +9,38 @@
 
 [node name="Player Light Fighter" type="Area2D" unique_id=1226715198]
 script = ExtResource("1_vk3vx")
-team = -1
+team = -2
 speed = 8.0
 turn_rate = 8.0
 drop_value = 0
 max_progress = 14
 max_spawn_amount = 0
 
+[node name="Bubble11" parent="." unique_id=1039353022 instance=ExtResource("2_e4ab7")]
+position = Vector2(3, -41)
+scale = Vector2(0.26245236, 0.26245236)
+
+[node name="Bubble13" parent="." unique_id=721467353 instance=ExtResource("2_e4ab7")]
+position = Vector2(24, -41)
+scale = Vector2(0.12875849, 0.12875849)
+
+[node name="Bubble12" parent="." unique_id=487745309 instance=ExtResource("2_e4ab7")]
+position = Vector2(3, 41.000004)
+scale = Vector2(0.26245236, 0.26245236)
+
+[node name="Bubble14" parent="." unique_id=1030148600 instance=ExtResource("2_e4ab7")]
+position = Vector2(24, 40.999996)
+scale = Vector2(0.12875849, 0.12875849)
+
 [node name="Small Bubble" parent="." unique_id=836217461 instance=ExtResource("2_y3kg8")]
-position = Vector2(-1.552002, -45.794434)
+position = Vector2(22.447998, -21.794434)
+scale = Vector2(0.77505064, 0.77505064)
 disabled = true
 editor_mode = true
 
 [node name="@Node2D@76" parent="." unique_id=450180834 instance=ExtResource("2_y3kg8")]
-position = Vector2(-0.55200195, 45.794434)
+position = Vector2(23.447998, 21.794434)
+scale = Vector2(0.77505064, 0.77505064)
 disabled = true
 editor_mode = true
 
@@ -38,14 +57,14 @@ disabled = true
 editor_mode = true
 
 [node name="@Node2D@98" parent="." unique_id=878054447 instance=ExtResource("4_lcems")]
-position = Vector2(-16.718689, 33.5907)
-scale = Vector2(1.32, 1.32)
+position = Vector2(-19.718689, 31.590698)
+scale = Vector2(1.0736228, 1.0736228)
 disabled = true
 editor_mode = true
 
 [node name="Small Dark Bubble" parent="." unique_id=2059722007 instance=ExtResource("4_lcems")]
-position = Vector2(-16.718689, -33.5907)
-scale = Vector2(1.32, 1.32)
+position = Vector2(-20.718689, -31.590706)
+scale = Vector2(1.0736228, 1.0736228)
 disabled = true
 editor_mode = true
 

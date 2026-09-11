@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://cbkp0m270hr57" path="res://scenes/parts/collisionpart/bubble03_dark.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://b73e2g06t2qu5" path="res://scenes/parts/pgunpart/Railgun.tscn" id="9"]
-[ext_resource type="PackedScene" uid="uid://gaeqvwe7agfr" path="res://scenes/parts/pgunpart/AutoGun.tscn" id="10_cicf1"]
 [ext_resource type="PackedScene" uid="uid://drs465sweieiu" path="res://scenes/parts/pgunpart/MachineGun.tscn" id="11"]
 
 [node name="Balrog" type="Area2D" unique_id=1007637731]
@@ -189,8 +188,5 @@ editor_mode = true
 position = Vector2(-104.62494, 75.0083)
 disabled = true
 editor_mode = true
-
-[node name="Auto Cannon" parent="." unique_id=122091808 instance=ExtResource("10_cicf1")]
-position = Vector2(-98, 0)
 
 [node name="Railgun" parent="." unique_id=1757355056 instance=ExtResource("9")]

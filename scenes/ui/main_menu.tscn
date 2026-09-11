@@ -9,7 +9,6 @@
 [ext_resource type="FontFile" uid="uid://dqv2r7jhavyns" path="res://resources/fonts/503_Accidental Presidency.ttf" id="7_7suek"]
 [ext_resource type="StyleBox" uid="uid://c8w544l3ckmgp" path="res://resources/stylebox/01.tres" id="7_8g5eo"]
 [ext_resource type="Texture2D" uid="uid://k5y3g81me0r5" path="res://img/ui/exit_button.png" id="7_wb0q5"]
-[ext_resource type="Script" uid="uid://da0v0njs2gwal" path="res://classes/audio/Playlist.gd" id="9_8g5eo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymrjv"]
 font = ExtResource("3_1g8jr")
@@ -70,7 +69,7 @@ offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "v1.2 release"
+text = "v1.3 release"
 label_settings = SubResource("LabelSettings_8g5eo")
 
 [node name="Buttons" type="Control" parent="." unique_id=1937422543]
@@ -148,6 +147,7 @@ theme_override_constants/separation = 100
 alignment = 1
 
 [node name="DebugEditorButton" type="TextureButton" parent="Buttons/HBoxContainer" unique_id=24744236]
+visible = false
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -162,8 +162,3 @@ size_flags_horizontal = 0
 texture_normal = ExtResource("7_wb0q5")
 ignore_texture_size = true
 stretch_mode = 5
-
-[node name="Playlist" type="Node" parent="." unique_id=510082848]
-script = ExtResource("9_8g5eo")
-tracks = Array[String](["uid://bsi7hibh4b6y", "uid://cgobcm6vfp5mo", "uid://b02x8i1aro7u5", "uid://bautmd2akqf23"])
-metadata/_custom_type_script = "uid://da0v0njs2gwal"

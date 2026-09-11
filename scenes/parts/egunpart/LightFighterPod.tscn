@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cn4iuvufvph0k"]
+
+[ext_resource type="Script" uid="uid://dftnav10irjtc" path="res://classes/parts/AfterDeathPart.gd" id="1_wisg7"]
+[ext_resource type="PackedScene" uid="uid://b371q4wai1w2" path="res://scenes/internal_clusters/Enemy Light Fighter.tscn" id="2_wisg7"]
+[ext_resource type="PackedScene" uid="uid://d2w5ax1x2vnev" path="res://scenes/parts/collisionpart/bubble11_normal.tscn" id="3_k006i"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_mnsry"]
+
+[node name="Light Fighter Pod" type="Node2D" unique_id=122091808]
+script = ExtResource("1_wisg7")
+split_into = ExtResource("2_wisg7")
+split_amount = 3
+category = "Enemy Weapons"
+summary = "When the tank is destroyed, this spawns three light fighter enemies."
+flavor_text = "It's like squishing a mother spider. Except the babies bite!"
+gp_usage = 2
+min_class = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Small Bubble" parent="." unique_id=878054447 instance=ExtResource("3_k006i")]
+position = Vector2(-5.998946, -26.892412)
+scale = Vector2(0.76850486, 0.76850486)
+
+[node name="_Node2D_72" parent="." unique_id=588128972 instance=ExtResource("3_k006i")]
+position = Vector2(-5.998946, 26.012331)
+scale = Vector2(0.76850486, 0.76850486)
+
+[node name="_Node2D_77" parent="." unique_id=5692276 instance=ExtResource("3_mnsry")]
+scale = Vector2(0.31898087, 0.31898087)
+
+[node name="_Node2D_97" parent="." unique_id=1556214297 instance=ExtResource("3_mnsry")]
+position = Vector2(8.083331, -40.417694)
+scale = Vector2(0.09649156, 0.09649156)
+
+[node name="_Node2D_91" parent="." unique_id=1163072408 instance=ExtResource("3_mnsry")]
+position = Vector2(8.083331, 39.537533)
+scale = Vector2(0.09649156, 0.09649156)
+
+[node name="_Node2D_89" parent="." unique_id=1552499411 instance=ExtResource("3_mnsry")]
+position = Vector2(-20.674227, -14.894559)
+scale = Vector2(0.09649156, 0.09649156)
+
+[node name="_Node2D_90" parent="." unique_id=1323694640 instance=ExtResource("3_mnsry")]
+position = Vector2(-21.233814, 14.612497)
+scale = Vector2(0.09649156, 0.09649156)

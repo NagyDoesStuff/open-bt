@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c3r20o3r8lxuf"]
+
+[ext_resource type="Script" uid="uid://cxu50vgg6683q" path="res://classes/projectiles/ShockProjectile.gd" id="1_vmfox"]
+[ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="3_nkf1w"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="4_v2tgn"]
+[ext_resource type="Texture2D" uid="uid://cpcn0gd8m18s6" path="res://img/fx/glow.png" id="5_4k5a1"]
+[ext_resource type="Texture2D" uid="uid://c7psc11jmwv8n" path="res://img/bubbles/14.png" id="6_24t4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[sub_resource type="Curve" id="Curve_ymrjv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_4m22w"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="ThermalAreaProjectile" type="Node2D" unique_id=1253201984]
+script = ExtResource("1_vmfox")
+shock_range = 10.0
+shock_cooldown = 2.0
+prj_info = {
+"dmg_info": {
+"amount": 1.0,
+"type": "dmg"
+},
+"hit_fx": "uid://bj32jn40b07kx",
+"size": 2.0,
+"speed": 0.0
+}
+lifetime = 4.0
+phase = true
+acceleration = 0.0
+spin_rate = -20.0
+grow_rate = 0.5
+fade_in_time = 1.0
+fade_out_time = 1.0
+muted = true
+hit_sfx = ""
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+scale = Vector2(1.3862957, 1.3862957)
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.2942147, 0.2942147)
+texture = ExtResource("3_nkf1w")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("4_v2tgn")
+
+[node name="Glow" type="Sprite2D" parent="." unique_id=233451159]
+modulate = Color(1, 0.36666667, 0, 1)
+self_modulate = Color(1, 1, 1, 0.39215687)
+scale = Vector2(0.046592124, 0.046592124)
+texture = ExtResource("5_4k5a1")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=643094176]
+scale = Vector2(1.3862957, 1.3862957)
+amount = 2
+texture = ExtResource("6_24t4u")
+lifetime = 0.5
+emission_shape = 2
+emission_sphere_radius = 22.5
+gravity = Vector2(0, 0)
+scale_amount_min = 0.2
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_ymrjv")
+color_ramp = SubResource("Gradient_4m22w")

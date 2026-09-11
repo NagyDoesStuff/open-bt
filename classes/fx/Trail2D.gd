@@ -3,6 +3,7 @@ class_name Trail2D
 
 @export var point_freq: float = 0.01
 @export var max_point_count: int = 50
+@export var instability: float = 0.0
 
 @onready var user: Node2D = get_parent()
 
@@ -28,7 +29,8 @@ func _process(_delta: float) -> void:
 
 func place_point() -> void:
 	if user: 
-		add_point(to_local(user.global_position))
+		var pt: Vector2 = user.global_position + Vector2.UP * randf_range(-instability*.5, instability*.5)
+		add_point(to_local(pt))
 	else: 
 		remove_point(0)
 	while get_point_count() > max_point_count:

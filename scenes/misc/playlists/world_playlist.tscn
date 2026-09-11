@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://wppdohm17ehp"]
+
+[ext_resource type="Script" uid="uid://da0v0njs2gwal" path="res://classes/audio/Playlist.gd" id="1_1eq2y"]
+
+[node name="WorldPlaylist" type="Node" unique_id=618537568]
+script = ExtResource("1_1eq2y")
+tracks = Array[String](["uid://cd4jsrk7bu1jc", "uid://csi8cdkw7rmar", "uid://pulpvqumactk", "uid://csecmvk83iuqw"])
+metadata/_custom_type_script = "uid://da0v0njs2gwal"

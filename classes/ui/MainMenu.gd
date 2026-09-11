@@ -16,6 +16,10 @@ func _ready() -> void:
 	buttons_container.hide()
 	configure_buttons()
 	do_intro()
+	
+	GlobalClass.set_playlist(
+		load("res://scenes/misc/playlists/main_menu_playlist.tscn").instantiate()
+	)
 
 func do_intro() -> void:
 	await create_tween().tween_property(title, "global_position:y", 200, 2.0).set_trans(Tween.TRANS_EXPO).finished

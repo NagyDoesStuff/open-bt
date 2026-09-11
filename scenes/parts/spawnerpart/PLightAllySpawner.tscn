@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cpk41qcwrot72" path="res://scenes/internal_clusters/Player Light Fighter.tscn" id="2_s4okr"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="4_wthst"]
 
-[node name="Light Ally Spawner" type="Node2D" unique_id=962284641]
+[node name="Light Fighter Ally Spawner" type="Node2D" unique_id=962284641]
 script = ExtResource("1_mf17c")
 cooldown = 1.0
 spawned_cluster = ExtResource("2_s4okr")

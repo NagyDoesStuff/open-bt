@@ -14,10 +14,10 @@ func _process(_delta: float) -> void:
 	if !GlobalClass.current_arena: return
 	
 	var target_angle: float = 0.0
-	if in_avoid_center_margin():
+	if in_avoid_center_margin() and user.die_to_border:
 		target_angle = (GlobalClass.current_arena.global_position - user.global_position).angle()
 	else:
-		target_angle = (GlobalClass.current_arena.global_position - user.global_position).angle() + PI / 2
+		target_angle = (GlobalClass.current_arena.global_position - user.global_position).angle() + (PI / 2) * orbit_side
 		
 	user.global_rotation = rotate_toward(
 		user.global_rotation,

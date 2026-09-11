@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://0gxa2j3ktws8"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_csqj1"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_pfajr"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_dj4ht"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="4_pfajr"]
+
+[node name="Thermal Ball Launcher" type="Node2D" unique_id=122091808]
+script = ExtResource("1_csqj1")
+spread = 0.05
+category = "Player Primaries"
+summary = "Sends a heated projectile that pierces enemies but slows-down over time."
+flavor_text = "The sheer heat this weapon radius is enough to warn enemies of your presence."
+gp_usage = 2
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_pfajr")]
+position = Vector2(17, -16)
+scale = Vector2(0.09526674, 0.09526674)
+
+[node name="Bubble03" parent="." unique_id=786101216 instance=ExtResource("2_pfajr")]
+position = Vector2(32, -16)
+scale = Vector2(0.09526674, 0.09526674)
+
+[node name="Bubble05" parent="." unique_id=1729121 instance=ExtResource("2_pfajr")]
+position = Vector2(17, 16)
+scale = Vector2(0.09526674, 0.09526674)
+
+[node name="Bubble06" parent="." unique_id=1923009636 instance=ExtResource("2_pfajr")]
+position = Vector2(32, 16)
+scale = Vector2(0.09526674, 0.09526674)
+
+[node name="Bubble04" parent="." unique_id=1733482949 instance=ExtResource("2_pfajr")]
+position = Vector2(48, 0)
+scale = Vector2(0.14325227, 0.14325227)
+
+[node name="Bubble07" parent="." unique_id=2035366628 instance=ExtResource("2_pfajr")]
+position = Vector2(25.000008, 0)
+scale = Vector2(0.21426709, 0.21426709)
+
+[node name="Bubble01" parent="." unique_id=1072895782 instance=ExtResource("2_pfajr")]
+scale = Vector2(0.19423144, 0.19423144)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(60, 0)
+script = ExtResource("3_dj4ht")
+prj_info = {
+"dmg_info": {
+"amount": 2,
+"type": "dmg"
+},
+"hit_fx": "uid://dxxqyds7wbtxp",
+"pierce": true,
+"size": 0.8,
+"speed": 20.0,
+"template": "uid://btdds5ywf7ueb"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Bubble12" parent="." unique_id=1277029602 instance=ExtResource("4_pfajr")]
+position = Vector2(-16, 0)
+scale = Vector2(0.2288018, 0.2288018)

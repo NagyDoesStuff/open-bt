@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d2k1cj7feom7"]
+
+[ext_resource type="Script" uid="uid://b8p4pydnqjfr5" path="res://classes/parts/SpawnerPart.gd" id="1_rept6"]
+[ext_resource type="PackedScene" uid="uid://ddm3xm634t7n6" path="res://scenes/internal_clusters/Player Light Rammer.tscn" id="2_rept6"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_ctsi6"]
+[ext_resource type="PackedScene" uid="uid://64ve7n6o0g1x" path="res://scenes/decorations/bubble13.tscn" id="4_bl67d"]
+
+[node name="Light Rammer Ally Spawner" type="Node2D" unique_id=962284641]
+script = ExtResource("1_rept6")
+cooldown = 1.0
+spawned_cluster = ExtResource("2_rept6")
+category = "Player Secondaries"
+summary = "Spawns light fighter allies that will ram enemies for you."
+flavor_text = "You know what's more fun than blowing up tanks by yourself? Blowing them up with friends! And with the Ally Spawner, you can buy some friends! You'll be so popular!"
+gp_usage = 2
+min_class = 4
+metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
+
+[node name="Bubble18" parent="." unique_id=1039353022 instance=ExtResource("4_bl67d")]
+position = Vector2(19, 7.999997)
+scale = Vector2(0.13756302, 0.13756302)
+
+[node name="Bubble19" parent="." unique_id=527543801 instance=ExtResource("4_bl67d")]
+position = Vector2(19, -8.000003)
+scale = Vector2(0.13756302, 0.13756302)
+
+[node name="Bubble14" parent="." unique_id=2049258108 instance=ExtResource("3_ctsi6")]
+position = Vector2(7.9999995, 21.000002)
+scale = Vector2(0.2081885, 0.2081885)
+
+[node name="Bubble15" parent="." unique_id=881579760 instance=ExtResource("3_ctsi6")]
+position = Vector2(7.9999995, -21.000002)
+scale = Vector2(0.2081885, 0.2081885)
+
+[node name="Bubble11" parent="." unique_id=456473695 instance=ExtResource("3_ctsi6")]
+scale = Vector2(0.3031978, 0.3031978)

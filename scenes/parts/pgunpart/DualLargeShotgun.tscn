@@ -112,7 +112,7 @@ category = "Player Primaries"
 summary = "Shoots lots of small pellets from two barrels."
 flavor_text = "Some call it a Super Shotgun. Some call it the Heavy Shotgun. But personally, I call it Big Timothy."
 gp_usage = 5
-min_class = 3
+min_class = 4
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]

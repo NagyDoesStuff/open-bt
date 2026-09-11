@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://btdds5ywf7ueb"]
+
+[ext_resource type="Script" uid="uid://boxc7flv15i3x" path="res://classes/projectiles/ComboProjectile.gd" id="1_2aqpy"]
+[ext_resource type="Texture2D" uid="uid://b67d417d8qpk3" path="res://img/bubbles/1796.png" id="2_2aqpy"]
+[ext_resource type="PackedScene" uid="uid://c3r20o3r8lxuf" path="res://scenes/projectiles/ThermalAreaProjectile.tscn" id="2_emtcp"]
+[ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_gxiwi"]
+[ext_resource type="Texture2D" uid="uid://dpveh2ekbujkj" path="res://img/bubbles/2246.png" id="4_2aqpy"]
+[ext_resource type="PackedScene" uid="uid://cm81e7v4x7vwl" path="res://scenes/fx/trail.tscn" id="5_gxiwi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 16.0
+
+[node name="ThermalProjectile" type="Node2D" unique_id=1253201984]
+script = ExtResource("1_2aqpy")
+combo_amount = 6
+target_tag = "oil"
+result_projectile = ExtResource("2_emtcp")
+lifetime = 4.0
+movement_type = "Impulse"
+acceleration = 0.98
+spin_rate = -20.0
+grow_rate = 0.5
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1261310356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1817978696]
+shape = SubResource("CircleShape2D_ymrjv")
+
+[node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
+visible = false
+scale = Vector2(0.29267, 0.29267)
+texture = ExtResource("2_2aqpy")
+
+[node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
+visible = false
+scale = Vector2(0.38491622, 0.38491622)
+texture = ExtResource("3_gxiwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1918799318]
+scale = Vector2(0.1434156, 0.1434156)
+texture = ExtResource("4_2aqpy")
+
+[node name="Trail2D" parent="." unique_id=897987515 instance=ExtResource("5_gxiwi")]
+width = 16.0
+default_color = Color(1, 0, 0, 0.78431374)
+instability = 20.0

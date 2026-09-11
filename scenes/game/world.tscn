@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dylq1171myx2n" path="res://scenes/game/bubblefield.tscn" id="3_d8brc"]
 [ext_resource type="PackedScene" uid="uid://ed6xvuvjcmkd" path="res://scenes/ui/bg.tscn" id="3_qd3kh"]
 [ext_resource type="PackedScene" uid="uid://b3wc4thnism81" path="res://scenes/ui/gameui.tscn" id="4_a33jj"]
-[ext_resource type="Script" uid="uid://da0v0njs2gwal" path="res://classes/audio/Playlist.gd" id="6_q5tta"]
 [ext_resource type="PackedScene" uid="uid://ca5xoi8esggy4" path="res://scenes/internal_clusters/Basic.tscn" id="6_vn813"]
 
 [node name="World" type="Node2D" unique_id=1679681722]
@@ -16,10 +15,5 @@ script = ExtResource("1_g5t8f")
 
 [node name="Bubblefield" parent="." unique_id=1872830080 instance=ExtResource("3_d8brc")]
 scale = Vector2(0.15, 0.15)
-
-[node name="Playlist" type="Node" parent="." unique_id=913563789]
-script = ExtResource("6_q5tta")
-tracks = Array[String](["uid://b0nyjb7y4vfs4", "uid://dwrbe0pyue3hb", "uid://cyde3ffk475lx", "uid://c3epuiyu2qheb"])
-metadata/_custom_type_script = "uid://da0v0njs2gwal"
 
 [node name="Basic" parent="." unique_id=493591574 instance=ExtResource("6_vn813")]

@@ -10,15 +10,15 @@ func _process(_delta: float) -> void:
 		_delta * user.acceleration
 	)
 	
-	if !user.controller.target or !GlobalClass.current_arena: return
+	if !target or !GlobalClass.current_arena: return
 	
 	var target_angle: float = 0.0
-	if in_avoid_center_margin():
+	if in_avoid_center_margin() and user.die_to_border:
 		target_angle = (GlobalClass.current_arena.global_position - user.global_position).angle()
 	elif in_run_from_target_margin():
-		target_angle = (user.global_position - user.controller.target.global_position).angle()
+		target_angle = (user.global_position - target.global_position).angle()
 	else:
-		target_angle = (user.controller.target.global_position - user.global_position).angle() + PI / 2
+		target_angle = (target.global_position - user.global_position).angle() + (PI / 2) * orbit_side
 		
 	user.global_rotation = rotate_toward(
 		user.global_rotation,
@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 	)
 
 func in_run_from_target_margin() -> bool:
-	if user.global_position.distance_to(user.controller.target.global_position) < run_from_target_margin:
+	if user.global_position.distance_to(target.global_position) < run_from_target_margin:
 		return true
 	else:
 		return false

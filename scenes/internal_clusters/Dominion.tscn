@@ -14,6 +14,7 @@
 [node name="Dominion" type="Area2D" unique_id=493591574]
 monitoring = false
 script = ExtResource("1_i3aco")
+cluster_class = 2
 max_progress = 50
 
 [node name="Small Bubble7" parent="." unique_id=482713087 instance=ExtResource("4_7w5pw")]

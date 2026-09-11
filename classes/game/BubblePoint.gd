@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 	global_position += velocity
 	velocity *= accel
 	
-	if force_follow or follow_target and !GlobalClass.world.mid_battle and follow_target.enabled: 
+	if force_follow and is_instance_valid(follow_target) or is_instance_valid(follow_target) and !GlobalClass.world.mid_battle and follow_target.enabled: 
 		velocity += (follow_target.global_position - global_position).normalized() * follow_speed
 	
 	if GlobalClass.current_arena and dist_from_center > GlobalClass.ESTIMATED_ARENA_RADIUS * GlobalClass.current_arena.scale.x:

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="3_6wh1s"]
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_dll60"]
 
-[node name="Swarmer Ally Spawner" type="Node2D" unique_id=962284641]
+[node name="Swarmer Fighter Ally Spawner" type="Node2D" unique_id=962284641]
 script = ExtResource("1_wkt6i")
 cooldown = 3.0
 spawned_cluster = ExtResource("2_wkt6i")

@@ -47,7 +47,7 @@ rotation = -0.7853982
 script = ExtResource("3_6846y")
 prj_info = {
 "dmg_info": {
-"amount": 1,
+"amount": 2,
 "type": "dmg"
 },
 "size": 0.66,
@@ -62,7 +62,7 @@ rotation = 0.5235988
 script = ExtResource("3_6846y")
 prj_info = {
 "dmg_info": {
-"amount": 1,
+"amount": 2,
 "type": "dmg"
 },
 "size": 0.66,
@@ -84,7 +84,7 @@ position = Vector2(43, 0)
 script = ExtResource("3_6846y")
 prj_info = {
 "dmg_info": {
-"amount": 1,
+"amount": 2,
 "type": "dmg"
 },
 "size": 0.66,
@@ -109,7 +109,7 @@ rotation = 1.3089969
 script = ExtResource("3_6846y")
 prj_info = {
 "dmg_info": {
-"amount": 1,
+"amount": 2,
 "type": "dmg"
 },
 "size": 0.66,
@@ -134,7 +134,7 @@ rotation = -1.3089969
 script = ExtResource("3_6846y")
 prj_info = {
 "dmg_info": {
-"amount": 1,
+"amount": 2,
 "type": "dmg"
 },
 "size": 0.66,

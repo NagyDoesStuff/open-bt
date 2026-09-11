@@ -10,7 +10,7 @@ var can_defend: bool = true
 
 var area: Area2D = Area2D.new()
 
-func _ready() -> void:
+func _subready() -> void:
 	add_child(area)
 	
 	var col: CollisionShape2D = CollisionShape2D.new()

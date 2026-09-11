@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ddm3xm634t7n6"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_2v6cc"]
+[ext_resource type="PackedScene" uid="uid://c112j1bagf5s3" path="res://scenes/parts/behaviorpart/Agressor.tscn" id="2_2v6cc"]
+[ext_resource type="PackedScene" uid="uid://cfbkygbgyls84" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="3_4qmor"]
+[ext_resource type="PackedScene" uid="uid://bxek8hxos1ywv" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="4_1q7pm"]
+[ext_resource type="PackedScene" uid="uid://dc1ruuaqakf21" path="res://scenes/parts/collisionpart/bubble02_dark.tscn" id="4_2v6cc"]
+[ext_resource type="PackedScene" uid="uid://bb07qxx27vdd" path="res://scenes/parts/meleepart/Dagger.tscn" id="5_5mt13"]
+
+[node name="Player Light Rammer" type="Area2D" unique_id=1226715198]
+script = ExtResource("1_2v6cc")
+team = -2
+speed = 12.0
+turn_rate = 10.0
+drop_value = 0
+max_progress = 14
+max_spawn_amount = 0
+
+[node name="Dagger" parent="." unique_id=405763063 instance=ExtResource("5_5mt13")]
+position = Vector2(7, -1)
+scale = Vector2(0.9104228, 0.9104228)
+
+[node name="Agressor" parent="." unique_id=1961699606 instance=ExtResource("2_2v6cc")]
+position = Vector2(-19, 1.4210855e-14)
+rotation = -3.1415927
+scale = Vector2(1.2137126, 1.2137126)
+
+[node name="@Node2D@81" parent="." unique_id=1748194613 instance=ExtResource("3_4qmor")]
+position = Vector2(-17.885376, -26.397186)
+scale = Vector2(0.5847569, 0.5847569)
+disabled = true
+editor_mode = true
+
+[node name="_Node2D_81" parent="." unique_id=1328181748 instance=ExtResource("3_4qmor")]
+position = Vector2(-17.885376, 26.397217)
+scale = Vector2(0.5847569, 0.5847569)
+disabled = true
+editor_mode = true
+
+[node name="Medium Bubble" parent="." unique_id=878054447 instance=ExtResource("4_2v6cc")]
+position = Vector2(-15.552002, 0)
+scale = Vector2(0.6188457, 0.6188457)
+
+[node name="Small Bubble" parent="." unique_id=267715557 instance=ExtResource("4_1q7pm")]
+position = Vector2(-1.552002, -25.794434)
+scale = Vector2(0.77505064, 0.77505064)
+
+[node name="_Node2D_76" parent="." unique_id=2084787965 instance=ExtResource("4_1q7pm")]
+position = Vector2(-0.55200195, 25.794434)
+scale = Vector2(0.77505064, 0.77505064)

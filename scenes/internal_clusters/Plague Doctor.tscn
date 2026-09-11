@@ -115,7 +115,8 @@ position = Vector2(-78, 0)
 disabled = true
 editor_mode = true
 
-[node name="Stun Gun" parent="Medium Dark Bubble2" unique_id=803778159 instance=ExtResource("11_g1wsc")]
-position = Vector2(59.015686, 0)
+[node name="Stun Gun" parent="." unique_id=803778159 instance=ExtResource("11_g1wsc")]
+position = Vector2(-18.984314, 0)
+scale = Vector2(1.2630103, 1.2630103)
 disabled = true
 editor_mode = true

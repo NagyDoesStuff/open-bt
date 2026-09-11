@@ -7,7 +7,6 @@ signal progress_changed()
 signal killed()
 
 # Variables
-
 @export_group("Info")
 @export var team: int = 0
 @export var cluster_class: int = 1
@@ -26,6 +25,11 @@ signal killed()
 @export_group("Spawn Settings")
 @export var min_to_available: int = 0
 @export var max_spawn_amount: int = 3
+@export_subgroup("Bosses")
+@export var boss_tier: int = 1
+
+@export_group("Miscellanious")
+@export var die_to_border: bool = true
 
 var dist_from_center: float = 0.0
 var damage_taken: float = 1.0
@@ -107,8 +111,11 @@ func _process(_delta: float) -> void:
 	global_position += velocity
 	if GlobalClass.current_arena and dist_from_center > GlobalClass.ESTIMATED_ARENA_RADIUS * GlobalClass.current_arena.scale.x:
 		if self == GlobalClass.player_cluster:
-			GlobalClass.world.transfer_player_to_next_arena((global_position - GlobalClass.current_arena.global_position).angle())
-		else:
+			if !GlobalClass.current_arena.locked:
+				GlobalClass.world.transfer_player_to_next_arena((global_position - GlobalClass.current_arena.global_position).angle())
+			else:
+				velocity += (GlobalClass.current_arena.global_position - global_position).normalized()*10.0
+		elif die_to_border:
 			kill()
 	
 func get_parts() -> Array[Part]:
@@ -123,7 +130,7 @@ func recieve_hit(dmg_info: Dictionary, from_angle: float = 0.0) -> void:
 	match dmg_info["type"]:
 		"punch":
 			velocity += Vector2.RIGHT.rotated(from_angle) * dmg_info["knk"]
-			progress -= dmg_info["amount"] * damage_taken
+			hurt(dmg_info["amount"] * damage_taken)
 		"slowdown":
 			status_fx_manager.slow_down(dmg_info["amount"], dmg_info["duration"])
 		"jam":
@@ -131,17 +138,14 @@ func recieve_hit(dmg_info: Dictionary, from_angle: float = 0.0) -> void:
 		"stun":
 			status_fx_manager.stun(dmg_info["duration"])
 		"steal":
-			progress -= dmg_info["amount"] * damage_taken
+			hurt(dmg_info["amount"] * damage_taken)
 			drop_points(dmg_info["amount"], true, true)
 		"weaken":
 			status_fx_manager.weaken(dmg_info["amount"], dmg_info["duration"])
 		"poison":
 			status_fx_manager.poison(dmg_info["amount"], dmg_info["duration"])
 		_:
-			progress -= dmg_info["amount"]
-		
-	if self == GlobalClass.player_cluster:
-		GlobalClass.play_sound("uid://c2wjfumwdpyo")
+			hurt(dmg_info["amount"])
 
 func check_progress() -> void:
 	if progress == max_progress and self == GlobalClass.player_cluster:
@@ -151,7 +155,7 @@ func check_progress() -> void:
 		if self == GlobalClass.player_cluster:
 			progress = 1
 			await get_tree().process_frame
-			GlobalClass.world.arenas_travelled = 0
+			GlobalClass.world.bubblefields_cleared = 0
 			GlobalClass.world.transfer_player_to_next_arena(randf_range(0, TAU))
 			GlobalClass.play_sound("uid://dayofekvd0206")
 		else:
@@ -198,6 +202,15 @@ func drop_points(amount: int, follow: bool = false, remove: bool = false) -> voi
 		avaliable_value_to_convert -= bubble_value
 		GlobalClass.world.call_deferred("add_child", pt)
 
+func hurt(dmg: float) -> void:
+	if dmg >= 1.0:
+		GlobalClass.make_dmg_num_text(self, max(1, clampf(dmg, 0, progress)))
+	else:
+		GlobalClass.make_dmg_num_text(self, dmg, true)
+	progress -= dmg
+	if self == GlobalClass.player_cluster:
+		GlobalClass.play_sound("uid://c2wjfumwdpyo")
+
 func get_used_gp() -> int:
 	var gp: int = 0
 	for p in get_parts():
@@ -212,6 +225,7 @@ func search_and_apply_behavior_parts() -> void:
 				"Wall Flower": controller = WallFlowerAI.new()
 				"Skittish": controller = SkittishAI.new()
 				"Flocking": controller = FlockingAI.new()
+				"Lock On": controller = LockOnAI.new()
 			return
 	controller = WanderAI.new()
 

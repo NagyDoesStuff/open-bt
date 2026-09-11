@@ -8,7 +8,7 @@
 [node name="Player Swarmer Fighter" type="Area2D" unique_id=1226715198]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_hcap7")
-team = -1
+team = -2
 speed = 10.0
 acceleration = 8.0
 turn_rate = 8.0
@@ -41,4 +41,4 @@ disabled = true
 editor_mode = true
 
 [node name="Auto Cannon" parent="." unique_id=122091808 instance=ExtResource("5_aqkr0")]
-position = Vector2(-5.714285, 0)
+position = Vector2(1.1920929e-06, 0)

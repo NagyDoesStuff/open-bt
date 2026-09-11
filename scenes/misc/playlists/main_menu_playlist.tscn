@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://0snx0313wl3l"]
+
+[ext_resource type="Script" uid="uid://da0v0njs2gwal" path="res://classes/audio/Playlist.gd" id="1_qew8e"]
+
+[node name="MainMenuPlaylist" type="Node" unique_id=88080320]
+script = ExtResource("1_qew8e")
+tracks = Array[String](["uid://s55mc7odk6gg", "uid://oxt6jncn22wx", "uid://cda35wtexxi6r", "uid://cw6vehm0wr088"])
+metadata/_custom_type_script = "uid://da0v0njs2gwal"

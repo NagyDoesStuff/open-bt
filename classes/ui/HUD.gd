@@ -9,11 +9,15 @@ class_name HUD
 @onready var progression_bar: ProgressBar = $MarginContainer2/Panel/MarginContainer/ProgressBar
 @onready var progression_bar_container: MarginContainer = $MarginContainer2
 
+@onready var boss_bar: ProgressBar = $MarginContainer3/BossBar
+
 var mid_transition: bool = false
 
 var show_offset: float = 150.0
 
 func _ready() -> void:
+	boss_bar.modulate.a = 0.0
+	
 	if !GlobalClass.world: return
 	
 	for x in range(2):
@@ -25,7 +29,7 @@ func _process(_delta: float) -> void:
 	if !GlobalClass.world: return
 	
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
-	bubblefields_travelled_label.text = "Bubblefields travelled: " + str(GlobalClass.world.arenas_travelled)
+	bubblefields_travelled_label.text = "Bubblefields cleared: " + str(GlobalClass.world.bubblefields_cleared)
 
 func update_progression_bar() -> void:
 	progression_bar.value = int(GlobalClass.player_cluster.progress)
@@ -43,3 +47,7 @@ func update_progression_bar() -> void:
 		target_y = progression_bar_container.global_position.y + show_offset
 		await create_tween().tween_property(progression_bar_container, "global_position:y", target_y, 0.5).set_trans(Tween.TRANS_CUBIC).finished
 		mid_transition = false
+
+func update_boss_bar() -> void:
+	boss_bar.value = GlobalClass.world.boss.progress
+	boss_bar.max_value = GlobalClass.world.boss.max_progress

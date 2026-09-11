@@ -14,7 +14,15 @@ var max_turn_time_ratio: float = 0.5
 var run_to_center_margin: float = 100.0
 var run_turn_rate_mult: float = 2.0
 
+var orbit_side: int = 1
+
+var ready_delay: float = 1.0
+
 func _ready() -> void:
+	set_process(false)
+	await get_tree().create_timer(ready_delay).timeout
+	set_process(true)
+	
 	add_child(target_detection_area)
 	target_detection_area.set_collision_layer_value(1, false)
 	target_detection_area.set_collision_mask_value(1, false)
@@ -31,6 +39,8 @@ func _ready() -> void:
 	analysis_timer.autostart = true
 	analysis_timer.timeout.connect(target_analysis)
 	add_child(analysis_timer)
+	
+	orbit_side = [-1, 1].pick_random()
 	
 	_subready()
 

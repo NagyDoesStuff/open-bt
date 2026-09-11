@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://blquqrr27ie0h"]
+
+[ext_resource type="Script" uid="uid://oebpyf6g60pp" path="res://classes/misc/Nextbot.gd" id="1_y8ewm"]
+[ext_resource type="Texture2D" uid="uid://bv4xtv6wl4o1a" path="res://img/misc/jorik.png" id="2_he7yd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
+radius = 74.00676
+
+[node name="JorikNextbot" type="Area2D" unique_id=829375986]
+script = ExtResource("1_y8ewm")
+speed = 50.0
+damage = 10.0
+metadata/_custom_type_script = "uid://oebpyf6g60pp"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1774702919]
+texture = ExtResource("2_he7yd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=262131341]
+shape = SubResource("CircleShape2D_ymrjv")

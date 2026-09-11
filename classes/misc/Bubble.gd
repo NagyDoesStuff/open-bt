@@ -4,7 +4,7 @@ class_name Bubble
 @export var is_static: bool = false
 var init_scale: Vector2 = Vector2.ONE
 
-var grow_freq: float = 4.0
+var grow_freq: float = 3.0
 var grow_amplitude: float = 0.15
 var grow_freq_variation: float = 0.5
 var grow_amplitude_variation: float = 0.33

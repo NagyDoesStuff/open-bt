@@ -78,10 +78,10 @@ func read_command(cmd: String, args: Array[String]) -> void:
 				if c != GlobalClass.player_cluster:
 					c.kill()
 			console_log("Successfully killed all tanks!")
-		"settravelled":
+		"setcleared":
 			if !args.is_empty():
-				GlobalClass.world.arenas_travelled = int(args[0])
-				console_log("Set bubblefields travelled to " + args[0] + " !")
+				GlobalClass.world.bubblefields_cleared = int(args[0])
+				console_log("Set bubblefields cleared to " + args[0] + " !")
 			else:
 				console_log("No value provided for command '" + cmd + "'!")
 		"setbfsize":
@@ -99,13 +99,15 @@ func read_command(cmd: String, args: Array[String]) -> void:
 			console_log("")
 			for c in GlobalClass.loaded_clusters:
 				if c.team == 0:
-					console_log("- " + c.name + " (player tank)")
+					console_log("- " + c.name + " (player tank) " + str(c.get_used_gp()) + " GP")
 				elif c.team == 1:
-					console_log("- " + c.name + " (enemy tank)")
+					console_log("- " + c.name + " (enemy tank) " + str(c.get_used_gp()) + " GP")
 				else:
-					console_log("- " + c.name + " (team id " + str(c.team) + ")")
+					console_log("- " + c.name + " (team id " + str(c.team) + ") " + str(c.get_used_gp()) + " GP")
 			console_log("------------------------------------------------------")
 			console_log("")
+		"editor":
+			GlobalClass.world.open_editor()
 		_:
 			console_log("There is no such command as '" + cmd + "'!")
 
@@ -146,11 +148,13 @@ func log_instructions() -> void:
 	console_log("")
 	console_log("- killall: kills all tanks (player excluded)")
 	console_log("")
-	console_log("- settravelled [value]: sets the amount of bubblefields traveled")
+	console_log("- setcleared [value]: sets the amount of bubblefields cleared")
 	console_log("")
 	console_log("- setbfsize [value]: sets the size of the current bubblefield")
 	console_log("")
 	console_log("- cinfo [value]: logs the loaded cluster names and teams")
+	console_log("")
+	console_log("- editor: opens the editor (warning: you lose all progress!)")
 	console_log("")
 	console_log("------------------------------------------------------")
 	console_log("")

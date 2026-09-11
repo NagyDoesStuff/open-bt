@@ -43,7 +43,6 @@ signal changed_info()
 @onready var part_info_display: PartInfoDisplay = $PartInfoDisplay
 
 @export var debug: bool = true
-
 var enabled: bool = false
 var mid_transition: bool = false
 var symmetry: bool = true
@@ -60,16 +59,11 @@ var available_part_paths: Array[String] = []
 
 func _ready() -> void:
 	modulate.a = 0.0
+	exit_button.hide()
+	if !debug:
+		tank_info_container.hide()
 		
 	await get_tree().process_frame
-	
-	if debug:
-		enabled = true
-		modulate.a = 1.0
-		available_gp = 99999
-	else:
-		tank_info_container.hide()
-		exit_button.hide()
 	
 	make_category_containers()
 	
@@ -78,6 +72,8 @@ func _ready() -> void:
 	create_template()
 	
 	configure_signals()
+	
+	update_tank_info()
 	
 func _process(_delta: float) -> void:
 	if !enabled: return
@@ -187,12 +183,11 @@ func save_cluster() -> void:
 	else:
 		print("Saving failed.")
 	
-	if !debug:
-		GlobalClass.player_cluster_filename = edited_cluster.name
-		GlobalClass.world.ui.toggle_editor(false)
-		GlobalClass.world.ui.hud.show()
-		GlobalClass.world.transform_player_into(load(full_path).instantiate())
-		GlobalClass.can_pause = true
+	GlobalClass.player_cluster_filename = edited_cluster.name
+	GlobalClass.world.ui.toggle_editor(false)
+	GlobalClass.world.ui.hud.show()
+	GlobalClass.world.transform_player_into(load(full_path).instantiate())
+	GlobalClass.can_pause = true
 
 func update_cluster_name(text: String) -> void:
 	edited_cluster.name = text

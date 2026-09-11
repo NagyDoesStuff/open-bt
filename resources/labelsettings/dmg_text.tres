@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://o1q0mkiv30xm"]
+
+[ext_resource type="FontFile" uid="uid://bqmx4aseim6nf" path="res://resources/fonts/369_GoldyRound.ttf" id="1_io32j"]
+
+[resource]
+font = ExtResource("1_io32j")
+font_size = 32
+font_color = Color(0.6, 0.9, 1, 1)
+outline_size = 16
+outline_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
+shadow_size = 10

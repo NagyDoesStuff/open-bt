@@ -48,7 +48,7 @@ func _process(_delta: float) -> void:
 	
 	if !GlobalClass.current_arena: return
 	
-	if in_avoid_center_margin():
+	if in_avoid_center_margin() and user.die_to_border:
 		# Avoid 
 		user.speed = init_speed
 		user.global_rotation = rotate_toward(

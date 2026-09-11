@@ -60,7 +60,7 @@ func _ready() -> void:
 	prj_info["speed"] *= randf_range(min_speed_mult, 1.0)
 	
 	if movement_type == "Impulse":
-		velocity = Vector2.from_angle(global_rotation) * prj_info["speed"]
+		velocity += Vector2.from_angle(global_rotation) * prj_info["speed"]
 	
 	# Phasing
 	if !phase: 
@@ -109,9 +109,9 @@ func _process(delta: float) -> void:
 	velocity *= acceleration
 	global_position += velocity
 	
-	if prj_info.has("homing") and prj_info["homing"] and target and prj_info.has("turn_rate") and prj_info.has("target_mode"):
-		follow_target(prj_info["target_mode"], delta)
-	elif prj_info.has("homing") and prj_info["homing"] and target and prj_info.has("turn_rate"):
+	if prj_info.has("homing") and prj_info["homing"] and target and prj_info.has("turn_rate") and prj_info.has("targ_mode"):
+		follow_target(prj_info["targ_mode"], delta)
+	if prj_info.has("homing") and prj_info["homing"] and target and prj_info.has("turn_rate") and !prj_info.has("targ_mode"):
 		follow_target("default", delta)
 	
 	if prj_info.has("turn_rate") and prj_info.has("turn_mode") and prj_info["turn_mode"] == "sin" and prj_info.has("sin_turn_mode_freq"):
@@ -119,8 +119,9 @@ func _process(delta: float) -> void:
 	
 	scale += Vector2.ONE * grow_rate * delta
 	
-	for spr in sprites:
-		spr.global_rotation += spin_rate * delta
+	for n in get_children():
+		if n is Node2D:
+			n.global_rotation += spin_rate * delta
 	
 func on_hit(area: Area2D) -> void:
 	if area is Cluster and area.team != team: 

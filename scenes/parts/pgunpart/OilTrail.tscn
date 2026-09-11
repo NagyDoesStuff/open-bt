@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://crvh3qflk2cm"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_7ucwa"]
+[ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_8id73"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="3_5jm1y"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="4_kkcmy"]
+
+[node name="Oil Trail" type="Node2D" unique_id=122091808]
+script = ExtResource("1_7ucwa")
+cooldown = 0.05
+spread = 0.05
+keybind = "space"
+fixed = true
+category = "Player Secondaries"
+summary = "Unleashes a trail of oil."
+flavor_text = "Seems useless, but why so expensive? It's now your job to find out."
+gp_usage = 4
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble12" parent="." unique_id=1039353022 instance=ExtResource("2_8id73")]
+position = Vector2(-19.000004, -11)
+scale = Vector2(0.09038225, 0.09038225)
+
+[node name="Bubble16" parent="." unique_id=237486137 instance=ExtResource("2_8id73")]
+position = Vector2(7.999995, -32)
+scale = Vector2(0.09038225, 0.09038225)
+
+[node name="Bubble17" parent="." unique_id=355326054 instance=ExtResource("2_8id73")]
+position = Vector2(7.999995, 32)
+scale = Vector2(0.09038225, 0.09038225)
+
+[node name="Bubble13" parent="." unique_id=874243917 instance=ExtResource("2_8id73")]
+position = Vector2(-19.000004, 11.000003)
+scale = Vector2(0.09038225, 0.09038225)
+
+[node name="Bubble04" parent="." unique_id=1411792804 instance=ExtResource("3_5jm1y")]
+position = Vector2(25, 12)
+scale = Vector2(0.10368522, 0.10368522)
+
+[node name="Bubble05" parent="." unique_id=623941421 instance=ExtResource("3_5jm1y")]
+position = Vector2(25, -12)
+scale = Vector2(0.10368522, 0.10368522)
+
+[node name="Bubble02" parent="." unique_id=2018338484 instance=ExtResource("3_5jm1y")]
+position = Vector2(13.999999, -19)
+scale = Vector2(0.16808827, 0.16808827)
+
+[node name="Bubble03" parent="." unique_id=628474427 instance=ExtResource("3_5jm1y")]
+position = Vector2(13.999999, 19)
+scale = Vector2(0.16808827, 0.16808827)
+
+[node name="Bubble01" parent="." unique_id=175184260 instance=ExtResource("3_5jm1y")]
+scale = Vector2(0.29162854, 0.29162854)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(24, 0)
+script = ExtResource("4_kkcmy")
+muted = true
+prj_info = {
+"dmg_info": {
+"amount": 0.0,
+"duration": 1.0,
+"type": "slowdown"
+},
+"hit_fx": "uid://bj32jn40b07kx",
+"pierce": true,
+"size": 2.0,
+"speed": 10.0,
+"template": "uid://c2h66tttx44ep"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"

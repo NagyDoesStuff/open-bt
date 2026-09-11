@@ -1,0 +1,789 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://classes/game/Cluster.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="2"]
+[ext_resource type="Script" path="res://classes/parts/CollisionPart.gd" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_normal.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/SeekerLauncher.tscn" id="5"]
+[ext_resource type="Script" path="res://classes/parts/GunPart.gd" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/parts/poppablepart/SeekerCarrier.tscn" id="7"]
+[ext_resource type="Script" path="res://classes/parts/PoppablePart.gd" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/PreStatsSeeker.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://scenes/parts/collisionpart/bubble01_dark.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/StickySeekerLauncher.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/parts/spawnerpart/ELightFighterSpawner.tscn" id="13"]
+[ext_resource type="Script" path="res://classes/parts/SpawnerPart.gd" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/internal_clusters/Enemy Light Fighter.tscn" id="15"]
+[ext_resource type="PackedScene" path="res://scenes/parts/pointdefensepart/PointDefense.tscn" id="16"]
+[ext_resource type="Script" path="res://classes/parts/PointDefensePart.gd" id="17"]
+[ext_resource type="PackedScene" path="res://scenes/fx/HitscanLine/pd_line.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://scenes/fx/pd_boom.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://scenes/parts/poppablepart/SeekerSuperCarrier.tscn" id="20"]
+[ext_resource type="PackedScene" path="res://scenes/parts/egunpart/RotatingMachineGun.tscn" id="21"]
+
+[node name="Carrier" type="Area2D" unique_id=1630849971]
+script = ExtResource("1")
+team = 1
+cluster_class = 4
+available_as_choice = false
+attributes = Array[String](["game_cluster"])
+speed = 1.0
+acceleration = 6.0
+turn_rate = 0.5
+drop_value = 300
+max_progress = 245
+min_to_available = 80
+max_spawn_amount = 1
+
+[node name="Large Bubble" type="Node2D" parent="." unique_id=878054447 instance=ExtResource("2")]
+position = Vector2(111.35162, 0)
+scale = Vector2(1.15, 1.15)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Small Bubble" type="Node2D" parent="." unique_id=168813441 instance=ExtResource("4")]
+position = Vector2(-252.39838, -26.51947)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@187" type="Node2D" parent="." unique_id=593604318 instance=ExtResource("4")]
+position = Vector2(-252.39838, 26.51947)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@192" type="Node2D" parent="." unique_id=1712798700 instance=ExtResource("4")]
+position = Vector2(111.35162, -81.06946)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_192" type="Node2D" parent="." unique_id=40979719 instance=ExtResource("4")]
+position = Vector2(111.35162, 81.06946)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@199" type="Node2D" parent="." unique_id=495614207 instance=ExtResource("4")]
+position = Vector2(180.31256, -44.70279)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_199" type="Node2D" parent="." unique_id=878028725 instance=ExtResource("4")]
+position = Vector2(180.31256, 44.70276)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@224" type="Node2D" parent="." unique_id=122091808 instance=ExtResource("5")]
+position = Vector2(-259.9765, -28.792358)
+rotation = -2.7529078
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 3.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 1
+salvo_interval = 0.0
+keybind = "space"
+fixed = true
+auto_shoot = false
+full_turn_amount = 0
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Emits drones which will seek out the target and explode on impact."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that."
+gp_usage = 2
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="_Node2D_224" type="Node2D" parent="." unique_id=816703461 instance=ExtResource("5")]
+position = Vector2(-259.9765, 28.792358)
+rotation = 2.7529078
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 3.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 1
+salvo_interval = 0.0
+keybind = "space"
+fixed = true
+auto_shoot = false
+full_turn_amount = 0
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Emits drones which will seek out the target and explode on impact."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that."
+gp_usage = 2
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Seeker Carrier" type="Node2D" parent="." unique_id=491092105 instance=ExtResource("7")]
+position = Vector2(-31.874939, -62.88611)
+script = ExtResource("8")
+split_into = ExtResource("9")
+split_radius = 30.0
+split_amount = 6
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Pops and releases 6 Seeker Drones when shot by the player."
+flavor_text = "We've always wondered what sort of dark little secrets were inside of the big yellow bubbles. \"Shoot it. You know you want to.\" says the Carrier."
+gp_usage = 1
+available = true
+min_class = 1
+max_class = 6
+
+[node name="@Node2D@232" type="Node2D" parent="." unique_id=390174324 instance=ExtResource("7")]
+position = Vector2(-32.63275, 59.0979)
+script = ExtResource("8")
+split_into = ExtResource("9")
+split_radius = 30.0
+split_amount = 6
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Pops and releases 6 Seeker Drones when shot by the player."
+flavor_text = "We've always wondered what sort of dark little secrets were inside of the big yellow bubbles. \"Shoot it. You know you want to.\" says the Carrier."
+gp_usage = 1
+available = true
+min_class = 1
+max_class = 6
+
+[node name="Medium Bubble" type="Node2D" parent="." unique_id=594748125 instance=ExtResource("10")]
+position = Vector2(-81.13275, -50.006256)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@210" type="Node2D" parent="." unique_id=20807859 instance=ExtResource("10")]
+position = Vector2(-81.13275, 50.006226)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@215" type="Node2D" parent="." unique_id=489547328 instance=ExtResource("10")]
+position = Vector2(15.109436, -52.279175)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_215" type="Node2D" parent="." unique_id=1391145005 instance=ExtResource("10")]
+position = Vector2(15.109436, 52.279175)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Enemy Seeker Launcher" type="Node2D" parent="." unique_id=1552984479 instance=ExtResource("5")]
+position = Vector2(73.461, -69.704865)
+rotation = -2.1059144
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 3.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 1
+salvo_interval = 0.0
+keybind = "space"
+fixed = true
+auto_shoot = false
+full_turn_amount = 0
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Emits drones which will seek out the target and explode on impact."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that."
+gp_usage = 2
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="@Node2D@162" type="Node2D" parent="." unique_id=384699798 instance=ExtResource("5")]
+position = Vector2(73.461, 69.704834)
+rotation = 2.1059144
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 3.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 1
+salvo_interval = 0.0
+keybind = "space"
+fixed = true
+auto_shoot = false
+full_turn_amount = 0
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Emits drones which will seek out the target and explode on impact."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that."
+gp_usage = 2
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="@Node2D@166" type="Node2D" parent="." unique_id=736069293 instance=ExtResource("5")]
+position = Vector2(148.48444, -65.15903)
+rotation = -0.9932669
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 3.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 1
+salvo_interval = 0.0
+keybind = "space"
+fixed = true
+auto_shoot = false
+full_turn_amount = 0
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Emits drones which will seek out the target and explode on impact."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that."
+gp_usage = 2
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="_Node2D_166" type="Node2D" parent="." unique_id=916516004 instance=ExtResource("5")]
+position = Vector2(148.48444, 65.15906)
+rotation = 0.9932669
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 3.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 1
+salvo_interval = 0.0
+keybind = "space"
+fixed = true
+auto_shoot = false
+full_turn_amount = 0
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Emits drones which will seek out the target and explode on impact."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that."
+gp_usage = 2
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="@Node2D@253" type="Node2D" parent="." unique_id=1373310970 instance=ExtResource("11")]
+position = Vector2(-113.71869, -65.15903)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_253" type="Node2D" parent="." unique_id=1297114615 instance=ExtResource("11")]
+position = Vector2(-113.71869, 65.15906)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@260" type="Node2D" parent="." unique_id=1322889844 instance=ExtResource("11")]
+position = Vector2(62.851624, -47.733337)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_260" type="Node2D" parent="." unique_id=1456872693 instance=ExtResource("11")]
+position = Vector2(62.851624, 47.733337)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@267" type="Node2D" parent="." unique_id=163362684 instance=ExtResource("11")]
+position = Vector2(192.43756, -52.279175)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_267" type="Node2D" parent="." unique_id=1730762428 instance=ExtResource("11")]
+position = Vector2(192.43756, 52.279175)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@274" type="Node2D" parent="." unique_id=2014802121 instance=ExtResource("11")]
+position = Vector2(-62.18744, -81.06946)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_274" type="Node2D" parent="." unique_id=200925241 instance=ExtResource("11")]
+position = Vector2(-59.15619, 87.88818)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Enemy Sticky Seeker Launcher" type="Node2D" parent="." unique_id=2089741553 instance=ExtResource("12")]
+position = Vector2(233.3595, 0)
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 3.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 1
+salvo_interval = 0.0
+keybind = "space"
+fixed = true
+auto_shoot = false
+full_turn_amount = 0
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Emits drones which will seek out the target and explode on impact. These ones slow the target down."
+flavor_text = "Bubblefields don't offer many good hiding places. If you're still alive, seekers will find you and put an end to that.
+You still don't want to know what makes them sticky."
+gp_usage = 2
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Light Fighter Spawner" type="Node2D" parent="." unique_id=962284641 instance=ExtResource("13")]
+position = Vector2(-30.359314, 0)
+script = ExtResource("14")
+keybind = "space"
+cooldown = 6.0
+spawned_cluster = ExtResource("15")
+spawned_amount = 1
+limit = 10
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Creates small fighter enemies."
+flavor_text = "Taking up the family business of attacking tanks is fine and good, but Enemy Spawner would love to have at least one kid be a doctor."
+gp_usage = 4
+available = true
+min_class = 3
+max_class = 6
+metadata/_custom_type_script = "uid://b8p4pydnqjfr5"
+
+[node name="@Node2D@247" type="Node2D" parent="." unique_id=197740836 instance=ExtResource("4")]
+position = Vector2(-31.874939, -54.552094)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_247" type="Node2D" parent="." unique_id=292090095 instance=ExtResource("4")]
+position = Vector2(-31.874939, 54.552124)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="@Node2D@241" type="Node2D" parent="." unique_id=1629561798 instance=ExtResource("10")]
+position = Vector2(205.32043, -16.670135)
+scale = Vector2(0.68, 0.68)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="_Node2D_241" type="Node2D" parent="." unique_id=1937150713 instance=ExtResource("10")]
+position = Vector2(205.32043, 16.670166)
+scale = Vector2(0.68, 0.68)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Point Defense" type="Node2D" parent="." unique_id=1905282848 instance=ExtResource("16")]
+position = Vector2(-31.874939, -54.552094)
+script = ExtResource("17")
+hitscan_line = ExtResource("18")
+hit_fx = ExtResource("19")
+hit_range = 500.0
+cooldown = 0.4
+turn_time = 0.025
+category = "Player Passives"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Targets enemy projectiles with short-range bursts."
+flavor_text = "You fire at me, I fire at you."
+gp_usage = 2
+available = true
+min_class = 4
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Seeker Super Carrier" type="Node2D" parent="." unique_id=640133807 instance=ExtResource("20")]
+position = Vector2(-171.31244, -84.100006)
+script = ExtResource("8")
+split_into = ExtResource("9")
+split_radius = 40.0
+split_amount = 12
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Pops and releases 12 Seeker Drones when shot by the player."
+flavor_text = "\"I dare you.\" says the Super Carrier."
+gp_usage = 2
+available = true
+min_class = 1
+max_class = 6
+
+[node name="@Node2D@313" type="Node2D" parent="." unique_id=240139628 instance=ExtResource("20")]
+position = Vector2(-171.31244, 84.099976)
+script = ExtResource("8")
+split_into = ExtResource("9")
+split_radius = 40.0
+split_amount = 12
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Pops and releases 12 Seeker Drones when shot by the player."
+flavor_text = "\"I dare you.\" says the Super Carrier."
+gp_usage = 2
+available = true
+min_class = 1
+max_class = 6
+
+[node name="@Node2D@306" type="Node2D" parent="." unique_id=512890337 instance=ExtResource("2")]
+position = Vector2(-171.31244, 0)
+scale = Vector2(1.18, 1.18)
+script = ExtResource("3")
+category = "Collision"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "..."
+flavor_text = "..."
+gp_usage = 0
+available = true
+min_class = 1
+max_class = 6
+metadata/_custom_type_script = "uid://y2smhndmk7x3"
+
+[node name="Rotating Machine Gun" type="Node2D" parent="." unique_id=1637724848 instance=ExtResource("21")]
+position = Vector2(-182.67963, 0)
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 12.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 40
+salvo_interval = 0.1
+keybind = "lmb"
+fixed = true
+auto_shoot = false
+full_turn_amount = 1
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Shoots many powerful bullets in a circle."
+flavor_text = "Don't mock the fact that this weapon freaks out and shoots everywhere, this is the gun that makes many BT3 players break down and cry."
+gp_usage = 7
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="@Node2D@324" type="Node2D" parent="." unique_id=1134929180 instance=ExtResource("21")]
+position = Vector2(120.44537, 0)
+rotation = -3.037571
+script = ExtResource("6")
+turn_rate = 20.0
+cooldown = 12.0
+shoot_fx = "uid://dfx02l3ac3xjd"
+spread = 0.0
+shot_delay = 0.0
+amount_per_salvo = 40
+salvo_interval = 0.1
+keybind = "lmb"
+fixed = true
+auto_shoot = false
+full_turn_amount = 1
+shot_animation = "shot"
+is_clonable = true
+category = "Enemy Weapons"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Shoots many powerful bullets in a circle."
+flavor_text = "Don't mock the fact that this weapon freaks out and shoots everywhere, this is the gun that makes many BT3 players break down and cry."
+gp_usage = 7
+available = true
+min_class = 2
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="@Node2D@248" type="Node2D" parent="." unique_id=350137534 instance=ExtResource("16")]
+position = Vector2(-29.854126, 54.29541)
+script = ExtResource("17")
+hitscan_line = ExtResource("18")
+hit_fx = ExtResource("19")
+hit_range = 500.0
+cooldown = 0.4
+turn_time = 0.025
+category = "Player Passives"
+disabled = true
+editor_mode = true
+is_hovered = false
+summary = "Targets enemy projectiles with short-range bursts."
+flavor_text = "You fire at me, I fire at you."
+gp_usage = 2
+available = true
+min_class = 4
+max_class = 6
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"

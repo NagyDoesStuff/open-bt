@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 	
 	if !GlobalClass.current_arena: return
 	
-	if in_avoid_center_margin():
+	if in_avoid_center_margin() and user.die_to_border:
 		user.global_rotation = rotate_toward(
 			user.global_rotation,
 			(GlobalClass.current_arena.global_position - user.global_position).angle(),

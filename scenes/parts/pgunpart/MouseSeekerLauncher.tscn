@@ -6,7 +6,7 @@
 
 [node name="Mouse Seeker Launcher" type="Node2D" unique_id=122091808]
 script = ExtResource("1_xv705")
-cooldown = 1.0
+cooldown = 1.25
 keybind = "space"
 fixed = true
 category = "Player Secondaries"
@@ -31,7 +31,7 @@ prj_info = {
 "speed": 1500.0,
 "targ_mode": "mouse",
 "template": "uid://cfbybhf5v32mb",
-"turn_rate": 10.0
+"turn_rate": 30.0
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
 

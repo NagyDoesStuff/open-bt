@@ -5,11 +5,12 @@ class_name StatusEffectManager
 
 var is_slown_down: bool = false
 var is_weakened: bool = false
+var is_stunned: bool = false
 var health_drain: float = -1.0
 
 func _process(_delta: float) -> void:
 	if health_drain > 0.0:
-		cluster.progress -= health_drain
+		cluster.hurt(health_drain)
 
 func slow_down(mult: float, duration: float, with_color: bool = true) -> void:
 	if is_slown_down: return
@@ -22,7 +23,7 @@ func slow_down(mult: float, duration: float, with_color: bool = true) -> void:
 	
 	if with_color: cluster.modulate = GlobalClass.SLOWN_DOWN_COLOR
 	
-	await get_tree().create_timer(duration).timeout
+	if get_tree(): await get_tree().create_timer(duration).timeout
 	
 	if with_color: cluster.modulate = Color.WHITE
 	
@@ -43,6 +44,9 @@ func jam_weapons(duration: float, with_color: bool = true) -> void:
 	cluster.can_fire = false
 
 func stun(duration: float) -> void:
+	if is_stunned: return
+	is_stunned = true
+	
 	slow_down(0.0, duration, false)
 	jam_weapons(duration, false)
 	
@@ -51,6 +55,7 @@ func stun(duration: float) -> void:
 	await get_tree().create_timer(duration).timeout
 	
 	cluster.modulate = Color.WHITE
+	is_stunned = false
 
 func weaken(dmg_taken: float, duration: float, with_color: bool = true) -> void:
 	if is_weakened: return

@@ -18,12 +18,32 @@ const SCREEN_FLASH: PackedScene = preload("uid://cays5co474q6y")
 
 const CONSOLE_LOG_LABEL: PackedScene = preload("uid://dnp4rgum7t0ch")
 
+const DMG_TEXT_SETTINGS: LabelSettings = preload("uid://o1q0mkiv30xm")
+
 # CONSTANTS
 const ARENA_PUSH_FORCE: int = 100
 const DISTANCE_BETWEEN_ARENAS: int = 2000
 const DEFAULT_MAX_ENEMIES: int = 6
 const MAX_CLASS: int = 6
 const UPGRADE_CHOICES: int = 3
+const BOSS_SPAWN_INTERVALS: Array[Dictionary] = [
+	{
+		"requirement": 25,
+		"tier": 1
+	},
+	{
+		"requirement": 50,
+		"tier": 2
+	},
+	{
+		"requirement": 75,
+		"tier": 3
+	},
+	{
+		"requirement": 100,
+		"tier": 4
+	}
+]
 
 const CLUSTER_CHECK_DIST_FREQ: float = .25
 const ESTIMATED_ARENA_RADIUS: float = 8505.0 / 2.0
@@ -33,7 +53,6 @@ const MIN_BUBBLE_POINT_SIZE: float = 0.33
 const BUBBLE_POINT_GROW_SIZE: float = 0.025
 const MAX_ENEMIES_INCREMENT_PER_ARENA: float = 0.1
 const HIT_BLINK_TIME: float = 0.1
-
 
 const PARTS_DIRECTORY: String = "res://scenes/parts/"
 const INTERNAL_CLUSTERS_DIRECTORY: String = "res://scenes/internal_clusters/"
@@ -95,6 +114,7 @@ var world: World
 var player_cluster: Cluster
 var loaded_clusters: Array[Cluster]
 var current_arena: Bubblefield
+var crr_playlist: Playlist
 
 # VARIABLES
 var player_cluster_filename: String = "Basic"
@@ -160,14 +180,20 @@ func freeze_frame(time: float) -> void:
 	await get_tree().create_timer(time).timeout
 	get_tree().paused = false
 
-	# func make_dmg_num_text(on: Cluster, dmg: float) -> void:
-		# var floating_text: FloatingText = FloatingText.new()
-		# floating_text.text = str(int(dmg))
-		# floating_text.label_settings = load("res://godot_resources/taunt_label_settings_template.tres").duplicate()
-		# floating_text.label_settings.font_color = Color.RED
-		# floating_text.global_position = on.global_position
-		# floating_text.velocity = on.linear_velocity * global_delta
-		# arena.add_child(floating_text)
+func make_dmg_num_text(on: Cluster, dmg: float, show_decimals: bool = false) -> void:
+	var floating_text: FloatingText = FloatingText.new()
+	if !show_decimals:
+		floating_text.text = str(int(dmg))
+	else:
+		floating_text.text = str(dmg)
+	
+	floating_text.label_settings = DMG_TEXT_SETTINGS.duplicate()
+	floating_text.label_settings.font_size += int(dmg)
+	
+	floating_text.global_position = on.global_position
+	floating_text.velocity = on.velocity
+	
+	GlobalClass.world.add_child(floating_text)
 
 func get_load_location(cluster: Cluster) -> String:
 	for attr in cluster.attributes:
@@ -220,3 +246,8 @@ func get_gp_increment(cluster_class: int) -> int:
 		return 2
 	else:
 		return 5
+
+func set_playlist(playlist: Playlist) -> void:
+	if crr_playlist: crr_playlist.queue_free()
+	crr_playlist = playlist
+	add_child(crr_playlist)

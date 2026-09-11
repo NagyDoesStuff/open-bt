@@ -60,13 +60,15 @@ func shock_clusters(targets: Array[Cluster]) -> void:
 	var hit_one_target: bool = false
 	for c in targets:
 		if is_instance_valid(c) and c.team != team:
-			var hitline: HitscanLine = hitscan_line.instantiate()
-			hitline.target_position = c.global_position
-			add_child(hitline)
+			if hitscan_line: 
+				var hitline: HitscanLine = hitscan_line.instantiate()
+				hitline.target_position = c.global_position
+				add_child(hitline)
 			
-			await get_tree().process_frame
+				await get_tree().process_frame
 			
-			if c: c.recieve_hit(prj_info["dmg_info"])
+			if c:
+				c.recieve_hit(prj_info["dmg_info"])
 			hit_one_target = true
 		await get_tree().create_timer(multishock_interval).timeout
 	if !muted and hit_one_target: 

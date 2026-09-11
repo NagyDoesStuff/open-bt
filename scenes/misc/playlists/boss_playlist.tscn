@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dx13iew1aifwn"]
+
+[ext_resource type="Script" uid="uid://da0v0njs2gwal" path="res://classes/audio/Playlist.gd" id="1_xx15c"]
+
+[node name="BossPlaylist" type="Node" unique_id=618537568]
+script = ExtResource("1_xx15c")
+tracks = Array[String](["uid://d3oq15pkpyaho"])
+metadata/_custom_type_script = "uid://da0v0njs2gwal"

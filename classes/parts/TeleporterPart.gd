@@ -26,10 +26,10 @@ func tp() -> void:
 	
 	if user.team == 0:
 		user.global_position = get_global_mouse_position()
-	else:
+	elif user.controller.target and GlobalClass.current_arena and user.controller.target.dist_from_center < GlobalClass.ESTIMATED_ARENA_RADIUS * GlobalClass.current_arena.scale.x:
 		user.global_position += Vector2.from_angle(
-			(GlobalClass.player_cluster.global_position - user.global_position).angle()
-		) * ((GlobalClass.player_cluster.global_position - user.global_position).length() - ai_tp_dist)
+			(user.controller.target.global_position - user.global_position).angle()
+		) * ((user.controller.target.global_position - user.global_position).length() - ai_tp_dist)
 	
 	get_tree().create_timer(cooldown).timeout.connect(set.bind("can_tp", true))
 	

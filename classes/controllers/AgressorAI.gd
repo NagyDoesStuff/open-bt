@@ -15,7 +15,7 @@ func _subready() -> void:
 func ai_cycle() -> void:
 	var time: float = randf_range(min_freq, max_freq)
 	turn(randf_range(min_turn_time_ratio, max_turn_time_ratio))
-	get_tree().create_timer(time).timeout.connect(ai_cycle)
+	if get_tree(): get_tree().create_timer(time).timeout.connect(ai_cycle)
 
 func _process(_delta: float) -> void:
 	user.velocity = lerp(
@@ -24,20 +24,20 @@ func _process(_delta: float) -> void:
 		_delta * user.acceleration
 	)
 	
-	if !GlobalClass.current_arena or !target: return
+	if !GlobalClass.current_arena: return
 	
 	if in_avoid_center_margin():
 		user.global_rotation = rotate_toward(
 			user.global_rotation,
-			(target.global_position - user.global_position).angle(),
+			(GlobalClass.current_arena.global_position - user.global_position).angle(),
 			_delta * user.turn_rate * run_turn_rate_mult
 		)
-	else:
+	elif target:
 		if can_turn:
 			user.global_rotation = rotate_toward(
 				user.global_rotation,
 				(target.global_position - user.global_position).angle(),
-				_delta * user.turn_rate * run_turn_rate_mult
+				_delta * user.turn_rate
 			)
 	
 func turn(duration: float) -> void:

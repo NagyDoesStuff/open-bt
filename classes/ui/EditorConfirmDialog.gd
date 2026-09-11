@@ -47,7 +47,7 @@ func pick_and_make_choices() -> void:
 	for c in GlobalClass.loaded_clusters:
 		var c_gp: int = c.get_used_gp()
 		var min_gp: int = GlobalClass.world.max_gp - GlobalClass.get_gp_increment(GlobalClass.world.max_class)
-		if c.team == 0 and c.available_as_choice and c.cluster_class <= GlobalClass.world.max_class and c_gp <= GlobalClass.world.max_gp and c_gp > min_gp:
+		if c.team == GlobalClass.player_cluster.team and c.available_as_choice and c.cluster_class <= GlobalClass.world.max_class and c_gp <= GlobalClass.world.max_gp and c_gp > min_gp:
 			available_choices.append(c)
 	available_choices.shuffle()
 	if available_choices.is_empty(): return
