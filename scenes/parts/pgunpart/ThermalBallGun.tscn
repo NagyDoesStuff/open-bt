@@ -14,29 +14,33 @@ flavor_text = "The sheer heat this weapon radius is enough to warn enemies of yo
 gp_usage = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
+[node name="Bubble12" parent="." unique_id=1277029602 instance=ExtResource("4_pfajr")]
+position = Vector2(-8, 13.999998)
+scale = Vector2(0.11263714, 0.11263714)
+
+[node name="Bubble13" parent="." unique_id=1039353022 instance=ExtResource("4_pfajr")]
+position = Vector2(-8, -13.999998)
+scale = Vector2(0.11263714, 0.11263714)
+
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_pfajr")]
-position = Vector2(17, -16)
+position = Vector2(15, -14)
 scale = Vector2(0.09526674, 0.09526674)
 
 [node name="Bubble03" parent="." unique_id=786101216 instance=ExtResource("2_pfajr")]
-position = Vector2(32, -16)
+position = Vector2(27, -14)
 scale = Vector2(0.09526674, 0.09526674)
 
 [node name="Bubble05" parent="." unique_id=1729121 instance=ExtResource("2_pfajr")]
-position = Vector2(17, 16)
+position = Vector2(15, 14)
 scale = Vector2(0.09526674, 0.09526674)
 
 [node name="Bubble06" parent="." unique_id=1923009636 instance=ExtResource("2_pfajr")]
-position = Vector2(32, 16)
+position = Vector2(27, 14)
 scale = Vector2(0.09526674, 0.09526674)
 
-[node name="Bubble04" parent="." unique_id=1733482949 instance=ExtResource("2_pfajr")]
-position = Vector2(48, 0)
-scale = Vector2(0.14325227, 0.14325227)
-
 [node name="Bubble07" parent="." unique_id=2035366628 instance=ExtResource("2_pfajr")]
-position = Vector2(25.000008, 0)
-scale = Vector2(0.21426709, 0.21426709)
+position = Vector2(18.00001, 0)
+scale = Vector2(0.13373971, 0.13373971)
 
 [node name="Bubble01" parent="." unique_id=1072895782 instance=ExtResource("2_pfajr")]
 scale = Vector2(0.19423144, 0.19423144)
@@ -49,14 +53,10 @@ prj_info = {
 "amount": 2,
 "type": "dmg"
 },
-"hit_fx": "uid://dxxqyds7wbtxp",
+"hit_fx": "uid://bwsfm8ws7rtbe",
 "pierce": true,
 "size": 0.8,
 "speed": 20.0,
 "template": "uid://btdds5ywf7ueb"
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
-
-[node name="Bubble12" parent="." unique_id=1277029602 instance=ExtResource("4_pfajr")]
-position = Vector2(-16, 0)
-scale = Vector2(0.2288018, 0.2288018)

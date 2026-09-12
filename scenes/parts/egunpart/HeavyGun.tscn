@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_qs82m"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_lbwu4"]
 
-[node name="Enemy Heavy Cannon" type="Node2D" unique_id=122091808]
+[node name="Heavy Cannon" type="Node2D" unique_id=122091808]
 script = ExtResource("1_ai55w")
 cooldown = 2.0
 category = "Enemy Weapons"

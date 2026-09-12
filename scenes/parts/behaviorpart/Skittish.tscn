@@ -51,7 +51,7 @@ metadata/_custom_type_script = "uid://dny073s7n1p00"
 
 [node name="Tail" parent="." unique_id=1039353022 instance=ExtResource("2_tco02")]
 position = Vector2(-11, -12)
-scale = Vector2(0.09542161, 0.09542161)
+scale = Vector2(0.0762969, 0.0762969)
 
 [node name="Fixed" parent="." unique_id=1016406042 instance=ExtResource("2_tco02")]
 position = Vector2(-2.861023e-06, 0)

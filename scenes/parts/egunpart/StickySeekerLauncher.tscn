@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_63emi"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_lo2j6"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_lo2j6"]
+[ext_resource type="PackedScene" uid="uid://2fp82y2qu0kh" path="res://scenes/parts/egunpart/SeekerLauncher.tscn" id="5_lo2j6"]
 
 [node name="Enemy Sticky Seeker Launcher" type="Node2D" unique_id=122091808]
 script = ExtResource("1_wmf06")
@@ -18,31 +19,39 @@ gp_usage = 2
 min_class = 2
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
-[node name="Bubble12" parent="." unique_id=1039353022 instance=ExtResource("2_lo2j6")]
-position = Vector2(26, 0)
-scale = Vector2(0.12296387, 0.12296387)
-
 [node name="Bubble04" parent="." unique_id=1535454042 instance=ExtResource("2_63emi")]
-position = Vector2(25.999998, 12.999999)
-scale = Vector2(0.14327615, 0.14327615)
+position = Vector2(23, 12.999999)
+scale = Vector2(0.09992092, 0.09992092)
 
 [node name="Bubble05" parent="." unique_id=471696156 instance=ExtResource("2_63emi")]
-position = Vector2(25.999998, -12.999999)
-scale = Vector2(0.14327615, 0.14327615)
+position = Vector2(23, -12.999999)
+scale = Vector2(0.09992092, 0.09992092)
+
+[node name="Bubble06" parent="." unique_id=1039353022 instance=ExtResource("2_63emi")]
+position = Vector2(34, 9.999998)
+scale = Vector2(0.09992092, 0.09992092)
+
+[node name="Bubble07" parent="." unique_id=412622642 instance=ExtResource("2_63emi")]
+position = Vector2(34, -9.999997)
+scale = Vector2(0.09992092, 0.09992092)
 
 [node name="Bubble02" parent="." unique_id=1253369999 instance=ExtResource("2_63emi")]
 position = Vector2(11.000001, -14.000001)
-scale = Vector2(0.18611045, 0.18611045)
+scale = Vector2(0.1297936, 0.1297936)
 
 [node name="Bubble03" parent="." unique_id=1176472043 instance=ExtResource("2_63emi")]
 position = Vector2(11, 14.000001)
-scale = Vector2(0.18611045, 0.18611045)
+scale = Vector2(0.1297936, 0.1297936)
 
 [node name="Bubble01" parent="." unique_id=1017794866 instance=ExtResource("2_63emi")]
 scale = Vector2(0.18611045, 0.18611045)
 
+[node name="Bubble12" parent="." unique_id=2112014899 instance=ExtResource("2_lo2j6")]
+position = Vector2(37, 0)
+scale = Vector2(0.13211055, 0.13211055)
+
 [node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
-position = Vector2(24, 0)
+position = Vector2(21, 0)
 script = ExtResource("3_lo2j6")
 prj_info = {
 "dmg_info": {
@@ -58,3 +67,6 @@ prj_info = {
 "turn_rate": 6.0
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Enemy Seeker Launcher" parent="." unique_id=1718917277 instance=ExtResource("5_lo2j6")]
+position = Vector2(1, 50)

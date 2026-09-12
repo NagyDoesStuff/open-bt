@@ -18,31 +18,31 @@ metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 
 [node name="Bubble04" parent="." unique_id=1535454042 instance=ExtResource("2_l1rx5")]
 position = Vector2(25.999998, 12.999999)
-scale = Vector2(0.14327615, 0.14327615)
+scale = Vector2(0.11722112, 0.11722112)
 
 [node name="Bubble05" parent="." unique_id=471696156 instance=ExtResource("2_l1rx5")]
 position = Vector2(25.999998, -12.999999)
-scale = Vector2(0.14327615, 0.14327615)
+scale = Vector2(0.11722112, 0.11722112)
 
 [node name="Bubble06" parent="." unique_id=126263598 instance=ExtResource("2_l1rx5")]
 position = Vector2(39, -11.000001)
-scale = Vector2(0.14327615, 0.14327615)
+scale = Vector2(0.11722112, 0.11722112)
 
 [node name="Bubble08" parent="." unique_id=1057963483 instance=ExtResource("2_l1rx5")]
 position = Vector2(41.000004, 0)
-scale = Vector2(0.14327615, 0.14327615)
+scale = Vector2(0.11722112, 0.11722112)
 
 [node name="Bubble07" parent="." unique_id=758881192 instance=ExtResource("2_l1rx5")]
 position = Vector2(39, 11.000001)
-scale = Vector2(0.14327615, 0.14327615)
+scale = Vector2(0.11722112, 0.11722112)
 
 [node name="Bubble02" parent="." unique_id=1039353022 instance=ExtResource("2_l1rx5")]
 position = Vector2(11.000001, -14.000001)
-scale = Vector2(0.18611045, 0.18611045)
+scale = Vector2(0.15226592, 0.15226592)
 
 [node name="Bubble03" parent="." unique_id=1176472043 instance=ExtResource("2_l1rx5")]
 position = Vector2(11, 14.000001)
-scale = Vector2(0.18611045, 0.18611045)
+scale = Vector2(0.15226592, 0.15226592)
 
 [node name="Bubble01" parent="." unique_id=1017794866 instance=ExtResource("2_l1rx5")]
 scale = Vector2(0.18611045, 0.18611045)

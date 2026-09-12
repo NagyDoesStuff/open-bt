@@ -20,7 +20,7 @@ scale = Vector2(0.26718658, 0.26718658)
 
 [node name="Bubble02" parent="." unique_id=1278923371 instance=ExtResource("2_xglee")]
 position = Vector2(20, 0)
-scale = Vector2(0.1015463, 0.1015463)
+scale = Vector2(0.1, 0.1)
 
 [node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
 position = Vector2(29, 0)

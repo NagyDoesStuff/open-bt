@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxu50vgg6683q" path="res://classes/projectiles/ShockProjectile.gd" id="1_vmfox"]
 [ext_resource type="Texture2D" uid="uid://c4q2dolrsrhng" path="res://img/bubbles/718.png" id="3_nkf1w"]
+[ext_resource type="Texture2D" uid="uid://cea6wmvt7g2r" path="res://img/prj/bubble_thrower.png" id="4_odiaq"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="4_v2tgn"]
 [ext_resource type="Texture2D" uid="uid://cpcn0gd8m18s6" path="res://img/fx/glow.png" id="5_4k5a1"]
 [ext_resource type="Texture2D" uid="uid://c7psc11jmwv8n" path="res://img/bubbles/14.png" id="6_24t4u"]
@@ -18,8 +19,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="ThermalAreaProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_vmfox")
-shock_range = 10.0
-shock_cooldown = 2.0
+shock_range = 16.0
 prj_info = {
 "dmg_info": {
 "amount": 1.0,
@@ -32,7 +32,7 @@ prj_info = {
 lifetime = 4.0
 phase = true
 acceleration = 0.0
-spin_rate = -20.0
+spin_rate = 5.0
 grow_rate = 0.5
 fade_in_time = 1.0
 fade_out_time = 1.0
@@ -57,10 +57,14 @@ scale = Vector2(0.38491622, 0.38491622)
 texture = ExtResource("4_v2tgn")
 
 [node name="Glow" type="Sprite2D" parent="." unique_id=233451159]
-modulate = Color(1, 0.36666667, 0, 1)
-self_modulate = Color(1, 1, 1, 0.39215687)
-scale = Vector2(0.046592124, 0.046592124)
+modulate = Color(1, 0.36666667, 0, 0.2509804)
+scale = Vector2(0.031716816, 0.031716816)
 texture = ExtResource("5_4k5a1")
+
+[node name="Glow2" type="Sprite2D" parent="." unique_id=1408582046]
+modulate = Color(1, 0.35000002, 0, 0.101960786)
+scale = Vector2(0.2241379, 0.2241379)
+texture = ExtResource("4_odiaq")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=643094176]
 scale = Vector2(1.3862957, 1.3862957)

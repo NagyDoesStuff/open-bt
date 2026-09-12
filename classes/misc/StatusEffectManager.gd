@@ -4,6 +4,7 @@ class_name StatusEffectManager
 @onready var cluster: Cluster = get_parent()
 
 var is_slown_down: bool = false
+var is_jammed: bool = false
 var is_weakened: bool = false
 var is_stunned: bool = false
 var health_drain: float = -1.0
@@ -32,8 +33,9 @@ func slow_down(mult: float, duration: float, with_color: bool = true) -> void:
 	is_slown_down = false
 
 func jam_weapons(duration: float, with_color: bool = true) -> void:
-	if cluster.can_fire: return
-	cluster.can_fire = true
+	if is_jammed: return
+	is_jammed = true
+	cluster.can_fire = false
 	
 	if with_color: cluster.modulate = GlobalClass.JAMMED_COLOR
 	
@@ -41,7 +43,8 @@ func jam_weapons(duration: float, with_color: bool = true) -> void:
 	
 	if with_color: cluster.modulate = Color.WHITE
 	
-	cluster.can_fire = false
+	cluster.can_fire = true
+	is_jammed = false
 
 func stun(duration: float) -> void:
 	if is_stunned: return

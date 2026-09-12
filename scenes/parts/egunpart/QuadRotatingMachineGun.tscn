@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bjxh21bpw0eyn"]
+
+[ext_resource type="Script" uid="uid://cnks88tcy6mbk" path="res://classes/parts/GunPart.gd" id="1_x8wqr"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_sql7g"]
+[ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_myewh"]
+
+[node name="Triple RMG" type="Node2D" unique_id=122091808]
+script = ExtResource("1_x8wqr")
+cooldown = 12.0
+amount_per_salvo = 40
+salvo_interval = 0.1
+fixed = true
+full_turn_amount = 1
+category = "Enemy Weapons"
+summary = "Shoots many powerful bullets in a circle, in four directions!"
+flavor_text = "Yes. Yes this is indeed a thing."
+gp_usage = 10
+min_class = 3
+metadata/_custom_type_script = "uid://cnks88tcy6mbk"
+
+[node name="Bubble04" parent="." unique_id=1236736568 instance=ExtResource("2_sql7g")]
+position = Vector2(28, 10.999997)
+scale = Vector2(0.08116657, 0.08116657)
+
+[node name="Bubble05" parent="." unique_id=773687794 instance=ExtResource("2_sql7g")]
+position = Vector2(28, -12.000002)
+scale = Vector2(0.08116657, 0.08116657)
+
+[node name="Bubble06" parent="." unique_id=554003442 instance=ExtResource("2_sql7g")]
+position = Vector2(41.000004, -7.000002)
+scale = Vector2(0.11480325, 0.11480325)
+
+[node name="Bubble07" parent="." unique_id=1138910896 instance=ExtResource("2_sql7g")]
+position = Vector2(41.000004, 6.999999)
+scale = Vector2(0.11480325, 0.11480325)
+
+[node name="Bubble08" parent="." unique_id=1953326734 instance=ExtResource("2_sql7g")]
+position = Vector2(55, 1.7881396e-07)
+scale = Vector2(0.18610285, 0.18610285)
+
+[node name="GunBarrel" type="Node2D" parent="." unique_id=756519995]
+position = Vector2(69, 0)
+script = ExtResource("3_myewh")
+prj_info = {
+"dmg_info": {
+"amount": 4,
+"type": "dmg"
+},
+"size": 1.0,
+"speed": 800.0,
+"template": "uid://cnlneqp8i4qud"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Bubble09" parent="." unique_id=171161904 instance=ExtResource("2_sql7g")]
+position = Vector2(16, 15.999999)
+scale = Vector2(0.099845976, 0.099845976)
+
+[node name="Bubble10" parent="." unique_id=1856528888 instance=ExtResource("2_sql7g")]
+position = Vector2(15.999999, -16)
+scale = Vector2(0.099845976, 0.099845976)
+
+[node name="Bubble11" parent="." unique_id=528060227 instance=ExtResource("2_sql7g")]
+position = Vector2(-4.705775, -26.150633)
+rotation = -0.5235988
+scale = Vector2(0.07074881, 0.07074881)
+
+[node name="Bubble12" parent="." unique_id=2139841581 instance=ExtResource("2_sql7g")]
+position = Vector2(-20.294231, -17.150633)
+rotation = -0.5235988
+scale = Vector2(0.07074881, 0.07074881)
+
+[node name="Bubble15" parent="." unique_id=280057930 instance=ExtResource("2_sql7g")]
+position = Vector2(-18.000002, -31.176914)
+rotation = -0.5235988
+scale = Vector2(0.14507961, 0.14507961)
+
+[node name="GunBarrel2" type="Node2D" parent="." unique_id=1077887787]
+position = Vector2(-26.000002, -45.03332)
+rotation = -2.0943952
+script = ExtResource("3_myewh")
+prj_info = {
+"dmg_info": {
+"amount": 4,
+"type": "dmg"
+},
+"size": 1.0,
+"speed": 800.0,
+"template": "uid://cnlneqp8i4qud"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Bubble13" parent="." unique_id=1039353022 instance=ExtResource("2_sql7g")]
+position = Vector2(-20.29423, 17.15063)
+rotation = -2.6179936
+scale = Vector2(0.07074881, 0.07074881)
+
+[node name="Bubble14" parent="." unique_id=934841172 instance=ExtResource("2_sql7g")]
+position = Vector2(-4.705775, 26.150635)
+rotation = -2.6179936
+scale = Vector2(0.07074881, 0.07074881)
+
+[node name="Bubble16" parent="." unique_id=770602438 instance=ExtResource("2_sql7g")]
+position = Vector2(-18.000004, 31.176912)
+rotation = -2.6179936
+scale = Vector2(0.14507961, 0.14507961)
+
+[node name="GunBarrel3" type="Node2D" parent="." unique_id=909552458]
+position = Vector2(-26.000008, 45.033314)
+rotation = 2.0943952
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("3_myewh")
+prj_info = {
+"dmg_info": {
+"amount": 4,
+"type": "dmg"
+},
+"size": 1.0,
+"speed": 800.0,
+"template": "uid://cnlneqp8i4qud"
+}
+metadata/_custom_type_script = "uid://o0m4f66riwtm"
+
+[node name="Bubble01" parent="." unique_id=15082858 instance=ExtResource("2_sql7g")]
+scale = Vector2(0.34458026, 0.34458026)

@@ -210,6 +210,7 @@ func hurt(dmg: float) -> void:
 	progress -= dmg
 	if self == GlobalClass.player_cluster:
 		GlobalClass.play_sound("uid://c2wjfumwdpyo")
+		GlobalClass.world.dynamic_cam.add_shake(0.05)
 
 func get_used_gp() -> int:
 	var gp: int = 0

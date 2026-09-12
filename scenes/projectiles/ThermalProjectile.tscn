@@ -4,11 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://b67d417d8qpk3" path="res://img/bubbles/1796.png" id="2_2aqpy"]
 [ext_resource type="PackedScene" uid="uid://c3r20o3r8lxuf" path="res://scenes/projectiles/ThermalAreaProjectile.tscn" id="2_emtcp"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_gxiwi"]
-[ext_resource type="Texture2D" uid="uid://dpveh2ekbujkj" path="res://img/bubbles/2246.png" id="4_2aqpy"]
+[ext_resource type="Texture2D" uid="uid://c7psc11jmwv8n" path="res://img/bubbles/14.png" id="5_emtcp"]
 [ext_resource type="PackedScene" uid="uid://cm81e7v4x7vwl" path="res://scenes/fx/trail.tscn" id="5_gxiwi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ymrjv"]
 radius = 16.0
+
+[sub_resource type="Gradient" id="Gradient_emtcp"]
+colors = PackedColorArray(1, 0, 0.016666412, 0, 1, 0.2833333, 0, 0.5019608)
 
 [node name="ThermalProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_2aqpy")
@@ -38,10 +41,12 @@ scale = Vector2(0.38491622, 0.38491622)
 texture = ExtResource("3_gxiwi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1918799318]
-scale = Vector2(0.1434156, 0.1434156)
-texture = ExtResource("4_2aqpy")
+scale = Vector2(0.35519305, 0.35519305)
+texture = ExtResource("5_emtcp")
 
 [node name="Trail2D" parent="." unique_id=897987515 instance=ExtResource("5_gxiwi")]
-width = 16.0
-default_color = Color(1, 0, 0, 0.78431374)
+width = 26.0
+gradient = SubResource("Gradient_emtcp")
+point_freq = 0.005
+max_point_count = 10
 instability = 20.0
