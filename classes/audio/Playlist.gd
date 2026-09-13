@@ -2,6 +2,7 @@ extends Node
 class_name Playlist
 
 @export var can_repeat: bool = true
+@export var volume_db: float = 0.0
 @export var tracks: Array[String] = []
 @onready var current: String = tracks.pick_random()
 
@@ -13,5 +14,5 @@ func pick_music() -> void:
 	var available_options: Array[String] = tracks
 	if !can_repeat: available_options.erase(current)
 	current = tracks.pick_random()
-	var player: AudioStreamPlayer2D = GlobalClass.play_sound(current, 0.0, 1.0, 0.0, 0.0, self)
+	var player: AudioStreamPlayer2D = GlobalClass.play_sound(current, volume_db, 1.0, 0.0, 0.0, self)
 	if player: player.finished.connect(pick_music)

@@ -1,0 +1,470 @@
+[gd_scene format=3 uid="uid://dru4noij8xbph"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_inc1g"]
+[ext_resource type="PackedScene" uid="uid://ciaxywhau22p8" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="2_33ld0"]
+[ext_resource type="PackedScene" uid="uid://dylq1171myx2n" path="res://scenes/game/bubblefield.tscn" id="4_b5tpo"]
+[ext_resource type="PackedScene" uid="uid://c1dmb8tflp2kj" path="res://scenes/parts/egunpart/MineDropper.tscn" id="5_ek7j1"]
+[ext_resource type="PackedScene" uid="uid://bd6srsbxxcvcc" path="res://scenes/parts/unclassfied/WiggleCluster04.tscn" id="6_dbpmm"]
+[ext_resource type="PackedScene" uid="uid://dbp4wcqduqrrm" path="res://scenes/parts/egunpart/SuperShockNode.tscn" id="7_0m28v"]
+[ext_resource type="PackedScene" uid="uid://cbkp0m270hr57" path="res://scenes/parts/collisionpart/bubble03_dark.tscn" id="8_lojis"]
+[ext_resource type="PackedScene" uid="uid://b32cfsjgp2kna" path="res://scenes/parts/collisionpart/bubble04_dark.tscn" id="9_h7osb"]
+[ext_resource type="PackedScene" uid="uid://cinxeboghexyr" path="res://scenes/decorations/bubble47.tscn" id="10_dgthj"]
+[ext_resource type="PackedScene" uid="uid://bth6wn1aioxkx" path="res://scenes/parts/collisionpart/bubble05_normal.tscn" id="11_bk1e5"]
+[ext_resource type="PackedScene" uid="uid://ngmf4knbngye" path="res://scenes/parts/collisionpart/bubble02_normal.tscn" id="12_pw17m"]
+[ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="13_os6nu"]
+[ext_resource type="PackedScene" uid="uid://b33geddoau2us" path="res://scenes/parts/collisionpart/bubble02_light.tscn" id="14_fyjku"]
+[ext_resource type="PackedScene" uid="uid://ddrlacr3me6om" path="res://scenes/parts/egunpart/SpinFireCannon.tscn" id="15_2bvrd"]
+[ext_resource type="PackedScene" uid="uid://4lkt5bywiadn" path="res://scenes/parts/egunpart/ProximityMineDropper.tscn" id="16_ao4lw"]
+[ext_resource type="PackedScene" uid="uid://br5lc0sp3axdc" path="res://scenes/parts/egunpart/HealerBeam.tscn" id="17_lajpu"]
+[ext_resource type="PackedScene" uid="uid://ddbld2i4fe72w" path="res://scenes/parts/egunpart/3SpreadGun.tscn" id="18_q21en"]
+[ext_resource type="PackedScene" uid="uid://dontkt86nxle4" path="res://scenes/parts/behaviorpart/Spinner.tscn" id="18_tk8au"]
+
+[node name="Final Boss" type="Area2D" unique_id=493591574]
+monitoring = false
+script = ExtResource("1_inc1g")
+team = -1
+cluster_class = 5
+available_as_choice = false
+speed = 0.0
+turn_rate = 0.5
+drop_value = 1000
+max_progress = 10000
+boss_tier = 4
+die_to_border = false
+immune_to_knk = true
+
+[node name="Large Bubble" parent="." unique_id=878054447 instance=ExtResource("2_33ld0")]
+scale = Vector2(0.60250455, 0.60250455)
+
+[node name="Bubblefield" parent="." unique_id=1872830080 instance=ExtResource("4_b5tpo")]
+scale = Vector2(0.6, 0.6)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=582773021]
+
+[node name="Mine Dropper" parent="Node2D" unique_id=2033724048 instance=ExtResource("5_ek7j1")]
+position = Vector2(2210, 1097)
+scale = Vector2(1.5869517, 1.5869517)
+
+[node name="Mine Dropper2" parent="Node2D" unique_id=131658476 instance=ExtResource("5_ek7j1")]
+position = Vector2(2210, -1097)
+scale = Vector2(1.5869517, 1.5869517)
+
+[node name="Long Dark Wiggle Cluster" parent="Node2D" unique_id=320907701 instance=ExtResource("6_dbpmm")]
+position = Vector2(2633.9998, -431.99997)
+rotation = -3.1415927
+scale = Vector2(2.119705, 2.119705)
+
+[node name="Long Dark Wiggle Cluster3" parent="Node2D" unique_id=1590793726 instance=ExtResource("6_dbpmm")]
+position = Vector2(2546, 663)
+rotation = -3.1415927
+scale = Vector2(2.119705, 2.119705)
+
+[node name="Long Dark Wiggle Cluster4" parent="Node2D" unique_id=981844436 instance=ExtResource("6_dbpmm")]
+position = Vector2(2546, -663)
+rotation = -3.1415927
+scale = Vector2(2.119705, 2.119705)
+
+[node name="Long Dark Wiggle Cluster5" parent="Node2D" unique_id=1316478300 instance=ExtResource("6_dbpmm")]
+position = Vector2(2463, 861)
+rotation = -3.1415927
+scale = Vector2(2.119705, 2.119705)
+
+[node name="Long Dark Wiggle Cluster6" parent="Node2D" unique_id=489459913 instance=ExtResource("6_dbpmm")]
+position = Vector2(2463, -861)
+rotation = -3.1415927
+scale = Vector2(2.119705, 2.119705)
+
+[node name="Long Dark Wiggle Cluster2" parent="Node2D" unique_id=188227098 instance=ExtResource("6_dbpmm")]
+position = Vector2(2634, 432)
+rotation = -3.1415927
+scale = Vector2(2.119705, 2.119705)
+
+[node name="Super Shock Node" parent="Node2D" unique_id=338931736 instance=ExtResource("7_0m28v")]
+position = Vector2(2181.9998, -253.99994)
+rotation = 3.403392
+scale = Vector2(1.9505606, 1.9505606)
+
+[node name="Super Shock Node2" parent="Node2D" unique_id=1760175614 instance=ExtResource("7_0m28v")]
+position = Vector2(2182, 254)
+rotation = -3.403392
+scale = Vector2(1.9505606, 1.9505606)
+
+[node name="Large Dark Bubble" parent="Node2D" unique_id=1010515217 instance=ExtResource("8_lojis")]
+position = Vector2(2089, 510)
+scale = Vector2(0.82342434, 0.82342434)
+
+[node name="Large Dark Bubble2" parent="Node2D" unique_id=495170344 instance=ExtResource("8_lojis")]
+position = Vector2(2089, -510)
+scale = Vector2(0.82342434, 0.82342434)
+
+[node name="Large Dark Bubble9" parent="Node2D" unique_id=1427813478 instance=ExtResource("8_lojis")]
+position = Vector2(2243, -1201)
+scale = Vector2(0.82342434, 0.82342434)
+
+[node name="Large Dark Bubble11" parent="Node2D" unique_id=855244553 instance=ExtResource("8_lojis")]
+position = Vector2(2243, 1201)
+scale = Vector2(0.82342434, 0.82342434)
+
+[node name="Large Dark Bubble10" parent="Node2D" unique_id=1753406959 instance=ExtResource("8_lojis")]
+position = Vector2(2202, -1272.0001)
+scale = Vector2(0.6362311, 0.6362311)
+
+[node name="Large Dark Bubble12" parent="Node2D" unique_id=778777985 instance=ExtResource("8_lojis")]
+position = Vector2(2202, 1272)
+scale = Vector2(0.6362311, 0.6362311)
+
+[node name="Huge Dark Bubble5" parent="Node2D" unique_id=367062556 instance=ExtResource("9_h7osb")]
+position = Vector2(2143.0002, -598)
+scale = Vector2(0.76711535, 0.76711535)
+
+[node name="Huge Dark Bubble6" parent="Node2D" unique_id=1294408552 instance=ExtResource("9_h7osb")]
+position = Vector2(2143, 598)
+scale = Vector2(0.76711535, 0.76711535)
+
+[node name="Huge Dark Bubble" parent="Node2D" unique_id=1618990461 instance=ExtResource("9_h7osb")]
+position = Vector2(2296, -1094)
+scale = Vector2(0.90667975, 0.90667975)
+
+[node name="Huge Dark Bubble3" parent="Node2D" unique_id=2060085249 instance=ExtResource("9_h7osb")]
+position = Vector2(2259, 671)
+scale = Vector2(0.90667975, 0.90667975)
+
+[node name="Huge Dark Bubble4" parent="Node2D" unique_id=1382624526 instance=ExtResource("9_h7osb")]
+position = Vector2(2259, -671)
+scale = Vector2(0.90667975, 0.90667975)
+
+[node name="Huge Dark Bubble7" parent="Node2D" unique_id=76151757 instance=ExtResource("9_h7osb")]
+position = Vector2(2336, -375)
+scale = Vector2(1.471938, 1.471938)
+
+[node name="Huge Dark Bubble8" parent="Node2D" unique_id=1360626683 instance=ExtResource("9_h7osb")]
+position = Vector2(2336, 375)
+scale = Vector2(1.471938, 1.471938)
+
+[node name="Huge Dark Bubble9" parent="Node2D" unique_id=214815322 instance=ExtResource("9_h7osb")]
+position = Vector2(2715, 194.99997)
+scale = Vector2(1.471938, 1.471938)
+
+[node name="Huge Dark Bubble10" parent="Node2D" unique_id=1857143326 instance=ExtResource("9_h7osb")]
+position = Vector2(2715, -195)
+scale = Vector2(1.471938, 1.471938)
+
+[node name="Huge Dark Bubble2" parent="Node2D" unique_id=245731639 instance=ExtResource("9_h7osb")]
+position = Vector2(2296, 1094)
+scale = Vector2(0.90667975, 0.90667975)
+
+[node name="Bubble83" parent="Node2D" unique_id=47056937 instance=ExtResource("10_dgthj")]
+position = Vector2(1587, -63.99999)
+scale = Vector2(0.7788413, 0.7788413)
+
+[node name="Bubble84" parent="Node2D" unique_id=687912623 instance=ExtResource("10_dgthj")]
+position = Vector2(1683, -63.99999)
+scale = Vector2(0.94699496, 0.94699496)
+
+[node name="Bubble85" parent="Node2D" unique_id=207474432 instance=ExtResource("10_dgthj")]
+position = Vector2(1787, -63.99999)
+scale = Vector2(0.9469952, 0.9469952)
+
+[node name="Bubble86" parent="Node2D" unique_id=1916969293 instance=ExtResource("10_dgthj")]
+position = Vector2(1891, -63.99999)
+scale = Vector2(0.9469952, 0.9469952)
+
+[node name="Bubble88" parent="Node2D" unique_id=426892403 instance=ExtResource("10_dgthj")]
+position = Vector2(2011.0005, -72.999985)
+scale = Vector2(1.2193509, 1.2193509)
+
+[node name="Bubble89" parent="Node2D" unique_id=151563390 instance=ExtResource("10_dgthj")]
+position = Vector2(2147.0002, -104)
+scale = Vector2(1.8216928, 1.8216928)
+
+[node name="Bubble90" parent="Node2D" unique_id=1918977065 instance=ExtResource("10_dgthj")]
+position = Vector2(2323.0002, -200)
+scale = Vector2(2.4174187, 2.4174187)
+
+[node name="Bubble105" parent="Node2D" unique_id=734067720 instance=ExtResource("10_dgthj")]
+position = Vector2(1587, 64)
+scale = Vector2(0.7788413, 0.7788413)
+
+[node name="Bubble106" parent="Node2D" unique_id=324053753 instance=ExtResource("10_dgthj")]
+position = Vector2(1683, 64)
+scale = Vector2(0.94699496, 0.94699496)
+
+[node name="Bubble107" parent="Node2D" unique_id=1490650156 instance=ExtResource("10_dgthj")]
+position = Vector2(1787, 64)
+scale = Vector2(0.9469952, 0.9469952)
+
+[node name="Bubble108" parent="Node2D" unique_id=1182266386 instance=ExtResource("10_dgthj")]
+position = Vector2(1891, 64)
+scale = Vector2(0.9469952, 0.9469952)
+
+[node name="Bubble110" parent="Node2D" unique_id=131149867 instance=ExtResource("10_dgthj")]
+position = Vector2(2011.0005, 74)
+scale = Vector2(1.2193509, 1.2193509)
+
+[node name="Bubble111" parent="Node2D" unique_id=309253735 instance=ExtResource("10_dgthj")]
+position = Vector2(2147.0002, 104)
+scale = Vector2(1.8216928, 1.8216928)
+
+[node name="Bubble112" parent="Node2D" unique_id=354349412 instance=ExtResource("10_dgthj")]
+position = Vector2(2323.0002, 200)
+scale = Vector2(2.4174187, 2.4174187)
+
+[node name="Bubble47" parent="Node2D" unique_id=358012660 instance=ExtResource("10_dgthj")]
+position = Vector2(131, 0)
+scale = Vector2(1.2226698, 1.2226698)
+
+[node name="Bubble48" parent="Node2D" unique_id=472830100 instance=ExtResource("10_dgthj")]
+position = Vector2(243.00005, 0)
+scale = Vector2(1.2723732, 1.2723732)
+
+[node name="Bubble49" parent="Node2D" unique_id=1458668535 instance=ExtResource("10_dgthj")]
+position = Vector2(347.00003, 0)
+scale = Vector2(1.1486763, 1.1486763)
+
+[node name="Bubble50" parent="Node2D" unique_id=431250041 instance=ExtResource("10_dgthj")]
+position = Vector2(459.00003, 0)
+scale = Vector2(1.0684409, 1.0684409)
+
+[node name="Bubble51" parent="Node2D" unique_id=1941312571 instance=ExtResource("10_dgthj")]
+position = Vector2(563, 0)
+scale = Vector2(1.0449963, 1.0449963)
+
+[node name="Bubble52" parent="Node2D" unique_id=991233655 instance=ExtResource("10_dgthj")]
+position = Vector2(667, 0)
+scale = Vector2(1.114902, 1.114902)
+
+[node name="Bubble53" parent="Node2D" unique_id=1322175048 instance=ExtResource("10_dgthj")]
+position = Vector2(771, 0)
+scale = Vector2(1.1857914, 1.1857914)
+
+[node name="Bubble54" parent="Node2D" unique_id=949649376 instance=ExtResource("10_dgthj")]
+position = Vector2(867.00006, 0)
+scale = Vector2(1.1857913, 1.1857913)
+
+[node name="Bubble55" parent="Node2D" unique_id=1751160103 instance=ExtResource("10_dgthj")]
+position = Vector2(971.00006, 0)
+scale = Vector2(1.114902, 1.114902)
+
+[node name="Bubble56" parent="Node2D" unique_id=1424123361 instance=ExtResource("10_dgthj")]
+position = Vector2(1075, 0)
+scale = Vector2(1.0449963, 1.0449963)
+
+[node name="Bubble57" parent="Node2D" unique_id=1352817058 instance=ExtResource("10_dgthj")]
+position = Vector2(1179, 0)
+scale = Vector2(1.0684409, 1.0684409)
+
+[node name="Bubble58" parent="Node2D" unique_id=314864512 instance=ExtResource("10_dgthj")]
+position = Vector2(1275, 0)
+scale = Vector2(1.2551842, 1.2551842)
+
+[node name="Bubble59" parent="Node2D" unique_id=744537548 instance=ExtResource("10_dgthj")]
+position = Vector2(1379, 0)
+scale = Vector2(1.3922236, 1.3922236)
+
+[node name="Bubble60" parent="Node2D" unique_id=1088997236 instance=ExtResource("10_dgthj")]
+position = Vector2(1483, 0)
+scale = Vector2(1.8364873, 1.8364873)
+
+[node name="Bubble61" parent="Node2D" unique_id=685412480 instance=ExtResource("10_dgthj")]
+position = Vector2(1587, 0)
+scale = Vector2(1.0684409, 1.0684409)
+
+[node name="Bubble62" parent="Node2D" unique_id=1431167789 instance=ExtResource("10_dgthj")]
+position = Vector2(1683, 0)
+scale = Vector2(1.0684409, 1.0684409)
+
+[node name="Bubble63" parent="Node2D" unique_id=660139144 instance=ExtResource("10_dgthj")]
+position = Vector2(1787, 0)
+scale = Vector2(1.0684409, 1.0684409)
+
+[node name="Bubble64" parent="Node2D" unique_id=283284759 instance=ExtResource("10_dgthj")]
+position = Vector2(1891, 0)
+scale = Vector2(1.0684409, 1.0684409)
+
+[node name="Bubble66" parent="Node2D" unique_id=1631107811 instance=ExtResource("10_dgthj")]
+position = Vector2(2011, 0)
+scale = Vector2(1.3757228, 1.3757228)
+
+[node name="Bubble67" parent="Node2D" unique_id=95480572 instance=ExtResource("10_dgthj")]
+position = Vector2(2147.0002, 0)
+scale = Vector2(2.0553162, 2.0553162)
+
+[node name="Bubble68" parent="Node2D" unique_id=1328874398 instance=ExtResource("10_dgthj")]
+position = Vector2(2323, 0)
+scale = Vector2(2.7274377, 2.7274377)
+
+[node name="Huge Bubble Base9" parent="Node2D" unique_id=142083032 instance=ExtResource("11_bk1e5")]
+position = Vector2(2364.9998, -928.9999)
+scale = Vector2(1.1236515, 1.1236515)
+
+[node name="Huge Bubble Base10" parent="Node2D" unique_id=1195029499 instance=ExtResource("11_bk1e5")]
+position = Vector2(2365, 929)
+scale = Vector2(1.1236515, 1.1236515)
+
+[node name="Huge Bubble Base6" parent="Node2D" unique_id=1795972880 instance=ExtResource("11_bk1e5")]
+position = Vector2(2422, 730)
+scale = Vector2(1.351987, 1.351987)
+
+[node name="Huge Bubble Base5" parent="Node2D" unique_id=274515801 instance=ExtResource("11_bk1e5")]
+position = Vector2(2485.0002, 506)
+scale = Vector2(1.65826, 1.65826)
+
+[node name="Huge Bubble Base7" parent="Node2D" unique_id=262949152 instance=ExtResource("11_bk1e5")]
+position = Vector2(2422, -730)
+scale = Vector2(1.351987, 1.351987)
+
+[node name="Huge Bubble Base8" parent="Node2D" unique_id=1417013304 instance=ExtResource("11_bk1e5")]
+position = Vector2(2485, -506)
+scale = Vector2(1.65826, 1.65826)
+
+[node name="Huge Bubble Base3" parent="Node2D" unique_id=132464276 instance=ExtResource("11_bk1e5")]
+position = Vector2(2522.0002, -272.00003)
+scale = Vector2(1.9586544, 1.9586544)
+
+[node name="Huge Bubble Base4" parent="Node2D" unique_id=1697723141 instance=ExtResource("11_bk1e5")]
+position = Vector2(2522, 272)
+scale = Vector2(1.9586544, 1.9586544)
+
+[node name="Large Dark Bubble5" parent="Node2D" unique_id=127781557 instance=ExtResource("8_lojis")]
+position = Vector2(2408, 271)
+scale = Vector2(0.74122775, 0.74122775)
+
+[node name="Large Dark Bubble8" parent="Node2D" unique_id=1963122912 instance=ExtResource("8_lojis")]
+position = Vector2(2408, -271)
+scale = Vector2(0.74122775, 0.74122775)
+
+[node name="Huge Bubble Base2" parent="Node2D" unique_id=1719795279 instance=ExtResource("11_bk1e5")]
+position = Vector2(2498, 7.152558e-07)
+scale = Vector2(1.8881484, 1.8881484)
+
+[node name="Huge Bubble Base11" parent="Node2D" unique_id=1060799963 instance=ExtResource("11_bk1e5")]
+position = Vector2(2329, 0)
+scale = Vector2(1.6716624, 1.6716624)
+
+[node name="Large Dark Bubble3" parent="Node2D" unique_id=1335971488 instance=ExtResource("8_lojis")]
+position = Vector2(2357, 182)
+
+[node name="Large Dark Bubble6" parent="Node2D" unique_id=1792726039 instance=ExtResource("8_lojis")]
+position = Vector2(2357, -182)
+
+[node name="Large Dark Bubble4" parent="Node2D" unique_id=649153041 instance=ExtResource("8_lojis")]
+position = Vector2(2261, 145)
+scale = Vector2(0.74122775, 0.74122775)
+
+[node name="Large Dark Bubble7" parent="Node2D" unique_id=1675544673 instance=ExtResource("8_lojis")]
+position = Vector2(2261, -145)
+scale = Vector2(0.74122775, 0.74122775)
+
+[node name="Medium Bubble" parent="Node2D" unique_id=2027069739 instance=ExtResource("12_pw17m")]
+position = Vector2(2259, -764)
+
+[node name="Medium Bubble2" parent="Node2D" unique_id=529062692 instance=ExtResource("12_pw17m")]
+position = Vector2(2259, 764)
+
+[node name="Medium Bubble3" parent="Node2D" unique_id=1580960073 instance=ExtResource("12_pw17m")]
+position = Vector2(2115, 672)
+
+[node name="Medium Bubble4" parent="Node2D" unique_id=1066444063 instance=ExtResource("12_pw17m")]
+position = Vector2(2115, -672)
+
+[node name="Medium Bubble5" parent="Node2D" unique_id=1941107494 instance=ExtResource("12_pw17m")]
+position = Vector2(2037, -551.00006)
+scale = Vector2(0.8812689, 0.8812689)
+
+[node name="Medium Bubble6" parent="Node2D" unique_id=246321401 instance=ExtResource("12_pw17m")]
+position = Vector2(2037, 551)
+scale = Vector2(0.8812689, 0.8812689)
+
+[node name="Small Light Bubble" parent="Node2D" unique_id=707153099 instance=ExtResource("13_os6nu")]
+position = Vector2(2280, 797)
+
+[node name="Small Light Bubble2" parent="Node2D" unique_id=478593757 instance=ExtResource("13_os6nu")]
+position = Vector2(2280, -797)
+
+[node name="Small Light Bubble3" parent="Node2D" unique_id=712998130 instance=ExtResource("13_os6nu")]
+position = Vector2(2111, 709)
+
+[node name="Small Light Bubble4" parent="Node2D" unique_id=847022351 instance=ExtResource("13_os6nu")]
+position = Vector2(2009, 576)
+scale = Vector2(0.85862005, 0.85862005)
+
+[node name="Small Light Bubble5" parent="Node2D" unique_id=1178320935 instance=ExtResource("13_os6nu")]
+position = Vector2(2009, -576)
+scale = Vector2(0.85862005, 0.85862005)
+
+[node name="Medium Light Bubble" parent="Node2D" unique_id=371596006 instance=ExtResource("14_fyjku")]
+position = Vector2(2375, -390)
+
+[node name="Medium Light Bubble4" parent="Node2D" unique_id=2074283298 instance=ExtResource("14_fyjku")]
+position = Vector2(2375, 390)
+
+[node name="Medium Light Bubble5" parent="Node2D" unique_id=1765673319 instance=ExtResource("14_fyjku")]
+position = Vector2(2340, 830)
+
+[node name="Medium Light Bubble6" parent="Node2D" unique_id=1523483139 instance=ExtResource("14_fyjku")]
+position = Vector2(2340, -830)
+
+[node name="Medium Light Bubble2" parent="Node2D" unique_id=1971989015 instance=ExtResource("14_fyjku")]
+position = Vector2(2487, -456)
+
+[node name="Medium Light Bubble3" parent="Node2D" unique_id=366038999 instance=ExtResource("14_fyjku")]
+position = Vector2(2487, 456)
+
+[node name="Small Light Bubble6" parent="Node2D" unique_id=186778752 instance=ExtResource("13_os6nu")]
+position = Vector2(2430, 856)
+
+[node name="Small Light Bubble7" parent="Node2D" unique_id=1915334438 instance=ExtResource("13_os6nu")]
+position = Vector2(2430, -856)
+
+[node name="Small Light Bubble8" parent="Node2D" unique_id=190975189 instance=ExtResource("13_os6nu")]
+position = Vector2(2296, -1007)
+
+[node name="Small Light Bubble9" parent="Node2D" unique_id=1845788443 instance=ExtResource("13_os6nu")]
+position = Vector2(2266, -907)
+
+[node name="Small Light Bubble11" parent="Node2D" unique_id=904195206 instance=ExtResource("13_os6nu")]
+position = Vector2(2266, 907)
+
+[node name="Small Light Bubble10" parent="Node2D" unique_id=918945557 instance=ExtResource("13_os6nu")]
+position = Vector2(2296, 1007)
+
+[node name="Spin-Fire Cannon" parent="Node2D" unique_id=1360176581 instance=ExtResource("15_2bvrd")]
+position = Vector2(2327, 0)
+rotation = -3.1415925
+scale = Vector2(2.009318, 2.009318)
+
+[node name="Healer Beam" parent="Node2D" unique_id=1333159013 instance=ExtResource("17_lajpu")]
+position = Vector2(2259, -671)
+rotation = -3.1415925
+scale = Vector2(1.348825, 1.348825)
+
+[node name="Healer Beam2" parent="Node2D" unique_id=1200261028 instance=ExtResource("17_lajpu")]
+position = Vector2(2259, 671)
+rotation = -3.1415925
+scale = Vector2(1.348825, 1.348825)
+
+[node name="Proximity Mine Dropper" parent="Node2D" unique_id=122091808 instance=ExtResource("16_ao4lw")]
+position = Vector2(2365, -929)
+rotation = -3.1415925
+scale = Vector2(1.7972441, 1.7972441)
+
+[node name="Proximity Mine Dropper2" parent="Node2D" unique_id=29535080 instance=ExtResource("16_ao4lw")]
+position = Vector2(2365, 929)
+rotation = -3.1415925
+scale = Vector2(1.7972441, 1.7972441)
+
+[node name="Enemy 3 Spread Gun" parent="Node2D" unique_id=902341562 instance=ExtResource("18_q21en")]
+position = Vector2(2422, 730)
+rotation = 3.1415925
+scale = Vector2(1.5323477, 1.5323477)
+
+[node name="Enemy 3 Spread Gun2" parent="Node2D" unique_id=913687359 instance=ExtResource("18_q21en")]
+position = Vector2(2422, -730)
+rotation = 3.1415925
+scale = Vector2(1.5323477, 1.5323477)
+
+[node name="Huge Bubble Base" parent="." unique_id=226180770 instance=ExtResource("11_bk1e5")]
+scale = Vector2(1.2875596, 1.2875596)
+
+[node name="Spinner" parent="." unique_id=1961699606 instance=ExtResource("18_tk8au")]
+scale = Vector2(2.0849307, 2.0849307)

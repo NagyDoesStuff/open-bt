@@ -11,7 +11,7 @@ radius = 20.0
 [node name="PoisonTrailProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_xi8ef")
 lifetime = 2.0
-spin_rate = 100.0
+spin_rate = 2.0
 grow_rate = 2.0
 fade_in_time = 0.25
 fade_out_time = 1.0

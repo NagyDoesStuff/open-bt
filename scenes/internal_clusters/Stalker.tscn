@@ -140,16 +140,6 @@ scale = Vector2(0.58946514, 0.58946514)
 disabled = true
 editor_mode = true
 
-[node name="Small Dark Bubble" parent="." unique_id=1521607229 instance=ExtResource("12_4swu6")]
-position = Vector2(856.2814, -113.395355)
-disabled = true
-editor_mode = true
-
-[node name="@Node2D@255" parent="." unique_id=181132317 instance=ExtResource("12_4swu6")]
-position = Vector2(856.2814, 113.395386)
-disabled = true
-editor_mode = true
-
 [node name="@Node2D@260" parent="." unique_id=753420462 instance=ExtResource("12_4swu6")]
 position = Vector2(-170.302, -36.621277)
 scale = Vector2(0.9077763, 0.9077763)

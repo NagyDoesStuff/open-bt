@@ -20,12 +20,12 @@ point_count = 2
 
 [node name="SmallShockProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_01wj8")
-peer_cooldown_remove = 0.95
 shock_cooldown = 0.75
 min_shock_cooldown = 0.25
 hitscan_line = ExtResource("2_wc3x2")
+peer_cooldown_remove = 0.95
 phase = true
-spin_rate = 20.0
+spin_rate = 2.0
 hit_sfx = "uid://c0y11c0kk467y"
 metadata/_custom_type_script = "uid://cnks88tcy6mbk"
 

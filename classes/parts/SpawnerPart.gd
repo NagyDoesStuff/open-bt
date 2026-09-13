@@ -6,6 +6,7 @@ class_name SpawnerPart
 @export var spawned_cluster: PackedScene
 @export var spawned_amount: int = 1
 @export var limit: int = 1
+@export var spawn_on_field_center: bool = false
 var can_spawn: bool = true
 
 var spawned_clusters: Array[Cluster] = []
@@ -29,7 +30,10 @@ func spawn() -> void:
 		cluster.team = user.team
 		cluster.force_ai = true
 		cluster.force_full_progress = true
-		cluster.global_position = global_position
+		if !spawn_on_field_center:
+			cluster.global_position = global_position
+		elif GlobalClass.current_arena:
+			cluster.global_position = GlobalClass.current_arena.global_position
 		cluster.global_rotation = randf_range(0, TAU)
 		GlobalClass.world.add_child(cluster)
 		spawned_clusters.append(cluster)

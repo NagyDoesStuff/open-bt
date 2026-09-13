@@ -6,5 +6,6 @@ class_name BehaviorPart
 	"Wall Flower",
 	"Skittish",
 	"Flocking",
-	"Lock On"
+	"Lock On",
+	"Spinner"
 ) var type: String = "Agressive" 

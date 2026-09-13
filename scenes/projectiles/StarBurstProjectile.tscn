@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ctyhvtst8xbrq"]
 
 [ext_resource type="Script" uid="uid://bth81h4ilr7w4" path="res://classes/game/Projectile.gd" id="1_jmsda"]
-[ext_resource type="Texture2D" uid="uid://cyhs8n8we5vvn" path="res://img/bubbles/1796.png" id="2_bpj3u"]
 [ext_resource type="PackedScene" uid="uid://sd5qea1cnyxd" path="res://scenes/projectiles/StarBurstFragProjectile.tscn" id="2_p8a77"]
 [ext_resource type="Texture2D" uid="uid://bjce7goblie3y" path="res://img/bubbles/1716.png" id="3_p8a77"]
 [ext_resource type="Texture2D" uid="uid://cdfvvgsk6yy6n" path="res://img/bubbles/1810.png" id="4_bpj3u"]
@@ -27,7 +26,6 @@ shape = SubResource("CircleShape2D_ymrjv")
 [node name="PLAYER" type="Sprite2D" parent="." unique_id=930781987]
 visible = false
 scale = Vector2(0.50823534, 0.2636401)
-texture = ExtResource("2_bpj3u")
 
 [node name="OTHER" type="Sprite2D" parent="." unique_id=1558002201]
 visible = false

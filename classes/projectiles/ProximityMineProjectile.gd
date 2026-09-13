@@ -17,8 +17,6 @@ func _subready() -> void:
 	activate_col.shape = CircleShape2D.new()
 	activate_col.shape.radius = sensor_radius
 	activate_area.add_child(activate_col)
-	
-	velocity += Vector2.from_angle(global_rotation) * prj_info["speed"]
 
 func detonate(area: Area2D) -> void:
 	if area is Cluster and area.team != team:

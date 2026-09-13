@@ -9,6 +9,8 @@
 script = ExtResource("1_wisg7")
 split_into = ExtResource("2_wisg7")
 split_amount = 3
+min_split_velocity = 1.0
+max_split_velocity = 2.0
 category = "Enemy Weapons"
 summary = "When the tank is destroyed, this spawns three light fighter enemies."
 flavor_text = "It's like squishing a mother spider. Except the babies bite!"

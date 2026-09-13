@@ -27,9 +27,11 @@ signal killed()
 @export var max_spawn_amount: int = 3
 @export_subgroup("Bosses")
 @export var boss_tier: int = 1
+@export var boss_field_size_mult: float = 1.0
 
 @export_group("Miscellanious")
 @export var die_to_border: bool = true
+@export var immune_to_knk: bool = false
 
 var dist_from_center: float = 0.0
 var damage_taken: float = 1.0
@@ -129,7 +131,7 @@ func recieve_hit(dmg_info: Dictionary, from_angle: float = 0.0) -> void:
 	if !enabled: return
 	match dmg_info["type"]:
 		"punch":
-			velocity += Vector2.RIGHT.rotated(from_angle) * dmg_info["knk"]
+			if !immune_to_knk: velocity += Vector2.RIGHT.rotated(from_angle) * dmg_info["knk"]
 			hurt(dmg_info["amount"] * damage_taken)
 		"slowdown":
 			status_fx_manager.slow_down(dmg_info["amount"], dmg_info["duration"])
@@ -203,14 +205,15 @@ func drop_points(amount: int, follow: bool = false, remove: bool = false) -> voi
 		GlobalClass.world.call_deferred("add_child", pt)
 
 func hurt(dmg: float) -> void:
+	if dmg <= 0.0: return
 	if dmg >= 1.0:
 		GlobalClass.make_dmg_num_text(self, max(1, clampf(dmg, 0, progress)))
 	else:
 		GlobalClass.make_dmg_num_text(self, dmg, true)
 	progress -= dmg
 	if self == GlobalClass.player_cluster:
-		GlobalClass.play_sound("uid://c2wjfumwdpyo")
-		GlobalClass.world.dynamic_cam.add_shake(0.05)
+		GlobalClass.play_sound("uid://c2wjfumwdpyo", min(0.0, dmg))
+		GlobalClass.world.dynamic_cam.add_shake(dmg * 0.01)
 
 func get_used_gp() -> int:
 	var gp: int = 0
@@ -227,6 +230,7 @@ func search_and_apply_behavior_parts() -> void:
 				"Skittish": controller = SkittishAI.new()
 				"Flocking": controller = FlockingAI.new()
 				"Lock On": controller = LockOnAI.new()
+				"Spinner": controller = SpinnerAI.new()
 			return
 	controller = WanderAI.new()
 

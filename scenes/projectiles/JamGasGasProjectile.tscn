@@ -11,7 +11,7 @@ radius = 20.0
 [node name="JamGasGasProjectile" type="Node2D" unique_id=1253201984]
 script = ExtResource("1_46dmu")
 lifetime = 3.0
-spin_rate = 100.0
+spin_rate = 1.0
 grow_rate = 2.5
 fade_in_time = 0.25
 fade_out_time = 1.0

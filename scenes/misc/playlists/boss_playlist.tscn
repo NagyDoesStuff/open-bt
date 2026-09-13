@@ -4,5 +4,6 @@
 
 [node name="BossPlaylist" type="Node" unique_id=618537568]
 script = ExtResource("1_xx15c")
-tracks = Array[String](["uid://d3oq15pkpyaho"])
+volume_db = 1.0
+tracks = Array[String](["uid://cdttfwjp1p7wh"])
 metadata/_custom_type_script = "uid://da0v0njs2gwal"

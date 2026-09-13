@@ -18,14 +18,13 @@
 
 [node name="Bubblasphemy" type="Area2D" unique_id=1343795486]
 script = ExtResource("1_baryd")
-team = 1
+team = -1
 cluster_class = 6
 speed = 1.0
 turn_rate = 0.5
-drop_value = 120
+drop_value = 220
 max_progress = 800
-min_to_available = 120
-max_spawn_amount = 1
+boss_tier = 2
 
 [node name="Medium Dark Bubble4" parent="." unique_id=878054447 instance=ExtResource("4_a3gqj")]
 position = Vector2(438, -3)
@@ -145,24 +144,14 @@ disabled = true
 editor_mode = true
 
 [node name="Enemy Sticky Seeker Launcher" parent="." unique_id=122091808 instance=ExtResource("2_nvj5w")]
-position = Vector2(-215.99994, -121.000015)
-rotation = -2.3561945
-scale = Vector2(0.7285015, 0.7285015)
-
-[node name="Enemy Sticky Seeker Launcher2" parent="." unique_id=1629353228 instance=ExtResource("2_nvj5w")]
-position = Vector2(-190.99997, -129.00003)
+position = Vector2(-207.99997, -137.99998)
 rotation = -1.8325958
-scale = Vector2(0.72850156, 0.72850156)
+scale = Vector2(1.1857911, 1.1857911)
 
 [node name="Enemy Seeker Launcher" parent="." unique_id=57676561 instance=ExtResource("3_ncmbd")]
-position = Vector2(173, 126)
-rotation = 1.5707964
-scale = Vector2(0.6558601, 0.6558601)
-
-[node name="Enemy Seeker Launcher2" parent="." unique_id=380843346 instance=ExtResource("3_ncmbd")]
-position = Vector2(197, 121)
-rotation = 1.3089969
-scale = Vector2(0.65586025, 0.65586025)
+position = Vector2(187, 127)
+rotation = 1.4487419
+scale = Vector2(0.8582731, 0.8582731)
 
 [node name="Black Bubble" parent="." unique_id=1016185 instance=ExtResource("2_xl5hd")]
 position = Vector2(202, -156.00003)

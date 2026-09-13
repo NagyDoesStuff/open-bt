@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_63emi"]
 [ext_resource type="PackedScene" uid="uid://rikf2j1ak5v6" path="res://scenes/decorations/bubble12.tscn" id="2_lo2j6"]
 [ext_resource type="Script" uid="uid://o0m4f66riwtm" path="res://classes/misc/Barrel.gd" id="3_lo2j6"]
-[ext_resource type="PackedScene" uid="uid://2fp82y2qu0kh" path="res://scenes/parts/egunpart/SeekerLauncher.tscn" id="5_lo2j6"]
 
 [node name="Enemy Sticky Seeker Launcher" type="Node2D" unique_id=122091808]
 script = ExtResource("1_wmf06")
@@ -67,6 +66,3 @@ prj_info = {
 "turn_rate": 6.0
 }
 metadata/_custom_type_script = "uid://o0m4f66riwtm"
-
-[node name="Enemy Seeker Launcher" parent="." unique_id=1718917277 instance=ExtResource("5_lo2j6")]
-position = Vector2(1, 50)

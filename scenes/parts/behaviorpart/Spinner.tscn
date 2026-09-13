@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dontkt86nxle4"]
+
+[ext_resource type="Script" uid="uid://dny073s7n1p00" path="res://classes/parts/BehaviorPart.gd" id="1_316fg"]
+[ext_resource type="PackedScene" uid="uid://ccjvfmlp5emvv" path="res://scenes/decorations/bubble11.tscn" id="2_ss6j4"]
+
+[sub_resource type="Animation" id="Animation_316fg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spin:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ss6j4"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spin:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.281439977927592]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjlhd"]
+_data = {
+&"RESET": SubResource("Animation_316fg"),
+&"default": SubResource("Animation_ss6j4")
+}
+
+[node name="Spinner" type="Node2D" unique_id=1961699606]
+script = ExtResource("1_316fg")
+type = "Spinner"
+category = "Enemy Behaviors"
+summary = "Causes the enemy to spin in place."
+flavor_text = "Ouhh... That makes me dizzy..."
+metadata/_custom_type_script = "uid://dny073s7n1p00"
+
+[node name="Spin" type="Node2D" parent="." unique_id=1789343237]
+
+[node name="Bubble11" parent="Spin" unique_id=1039353022 instance=ExtResource("2_ss6j4")]
+scale = Vector2(0.17079456, 0.17079456)
+
+[node name="Bubble12" parent="Spin" unique_id=1733102440 instance=ExtResource("2_ss6j4")]
+position = Vector2(0, -14.684448)
+scale = Vector2(0.074755736, 0.074755736)
+
+[node name="Bubble14" parent="Spin" unique_id=1078895261 instance=ExtResource("2_ss6j4")]
+position = Vector2(-6, -21.684448)
+scale = Vector2(0.074755736, 0.074755736)
+
+[node name="Bubble13" parent="Spin" unique_id=1031728583 instance=ExtResource("2_ss6j4")]
+position = Vector2(0, 14.684442)
+scale = Vector2(0.074755736, 0.074755736)
+
+[node name="Bubble15" parent="Spin" unique_id=68489482 instance=ExtResource("2_ss6j4")]
+position = Vector2(6, 21.684)
+scale = Vector2(0.074755736, 0.074755736)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1739403670]
+libraries/ = SubResource("AnimationLibrary_wjlhd")
+autoplay = &"default"

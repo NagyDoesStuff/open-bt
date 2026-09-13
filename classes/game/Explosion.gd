@@ -29,4 +29,4 @@ func _ready() -> void:
 func deal_dmg(area: Node2D):
 	if area is Cluster and area.team != team:
 		area.recieve_hit(dmg_info)
-		area.velocity += (area.global_position - global_position).normalized() * knk
+		if !area.immune_to_knk: area.velocity += (area.global_position - global_position).normalized() * knk

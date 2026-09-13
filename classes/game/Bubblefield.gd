@@ -21,7 +21,7 @@ func start_spawning() -> void:
 			var boss: Cluster = spawn(valid_bosses.pick_random())
 			GlobalClass.world.turn_into_boss(boss)
 			boss.global_position = global_position
-			resize_arena(0.5 + (boss.boss_tier * 0.05), true)
+			resize_arena(0.5 * boss.boss_field_size_mult, true)
 			return
 	spawn_normally()
 

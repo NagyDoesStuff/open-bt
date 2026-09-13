@@ -196,3 +196,6 @@ func on_boss_completed() -> void:
 		load("res://scenes/misc/playlists/world_playlist.tscn").instantiate()
 	)
 	GlobalClass.current_arena.locked = false
+	for c in get_clusters():
+		if c != GlobalClass.player_cluster:
+			c.kill()

@@ -2,11 +2,11 @@ extends Camera2D
 class_name DynamicCamera
 
 var max_offset: Vector2 = Vector2(20, 10)
-var max_roll: float = 0.4
+var max_roll: float = 0.1
 
 var shake: float = 0.0
 var shake_power: float = 1.0
-var shake_decay: float = 0.3
+var shake_decay: float = 0.6
 
 var mouse_offset_mult: float = 0.1
 var mouse_offset_lerp_speed: float = 6.0

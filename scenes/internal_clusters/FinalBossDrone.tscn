@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bgxeqfs8lk57p"]
+
+[ext_resource type="Script" uid="uid://d15g5l4y55yvw" path="res://classes/game/Cluster.gd" id="1_vgldt"]
+[ext_resource type="PackedScene" uid="uid://c112j1bagf5s3" path="res://scenes/parts/behaviorpart/Agressor.tscn" id="2_cs6ms"]
+[ext_resource type="PackedScene" uid="uid://b47fm7xkmpwyw" path="res://scenes/parts/meleepart/Spike.tscn" id="3_2rbtu"]
+[ext_resource type="PackedScene" uid="uid://ciaxywhau22p8" path="res://scenes/parts/collisionpart/bubble03_normal.tscn" id="4_ham87"]
+[ext_resource type="PackedScene" uid="uid://c3my8qkoa4syr" path="res://scenes/parts/egunpart/3ParallelGun.tscn" id="7_pjlhv"]
+[ext_resource type="PackedScene" uid="uid://cbkp0m270hr57" path="res://scenes/parts/collisionpart/bubble03_dark.tscn" id="9_v6c5t"]
+[ext_resource type="PackedScene" uid="uid://dlksa068y211m" path="res://scenes/parts/collisionpart/bubble01_light.tscn" id="12_a5aty"]
+
+[node name="Final Boss Drone" type="Area2D" unique_id=493591574]
+monitoring = false
+script = ExtResource("1_vgldt")
+team = -2
+cluster_class = 6
+available_as_choice = false
+speed = 0.0
+turn_rate = 1.0
+drop_value = 50
+max_progress = 100
+die_to_border = false
+immune_to_knk = true
+
+[node name="Spike3" parent="." unique_id=405763063 instance=ExtResource("3_2rbtu")]
+position = Vector2(2421, -25.000061)
+rotation = 2.8797932
+scale = Vector2(0.99709445, 0.99709445)
+
+[node name="Spike4" parent="." unique_id=134629244 instance=ExtResource("3_2rbtu")]
+position = Vector2(2421, 25)
+rotation = -2.8797932
+scale = Vector2(0.99709445, 0.99709445)
+
+[node name="Spike" parent="." unique_id=841522537 instance=ExtResource("3_2rbtu")]
+position = Vector2(2435.0002, 0)
+rotation = -3.1415925
+scale = Vector2(1.4631886, 1.4631886)
+
+[node name="Agressor" parent="." unique_id=1961699606 instance=ExtResource("2_cs6ms")]
+position = Vector2(2530, 0)
+
+[node name="Large Dark Bubble18" parent="." unique_id=1770538022 instance=ExtResource("9_v6c5t")]
+position = Vector2(2525, -95.000015)
+scale = Vector2(0.6362311, 0.6362311)
+
+[node name="Large Dark Bubble19" parent="." unique_id=878054447 instance=ExtResource("9_v6c5t")]
+position = Vector2(2525, 95.03)
+scale = Vector2(0.6362311, 0.6362311)
+
+[node name="Large Bubble" parent="." unique_id=2022531707 instance=ExtResource("4_ham87")]
+position = Vector2(2530.0002, 0)
+scale = Vector2(1.137616, 1.137616)
+
+[node name="Small Light Bubble" parent="." unique_id=1569157405 instance=ExtResource("12_a5aty")]
+position = Vector2(2539, -137)
+
+[node name="Small Light Bubble2" parent="." unique_id=1672017416 instance=ExtResource("12_a5aty")]
+position = Vector2(2539, 137)
+
+[node name="3 Parallel Gun" parent="." unique_id=122091808 instance=ExtResource("7_pjlhv")]
+position = Vector2(2529.9998, 0)
+rotation = 3.1415927
+scale = Vector2(1.4090183, 1.4090183)

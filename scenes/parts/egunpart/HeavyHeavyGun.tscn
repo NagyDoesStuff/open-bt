@@ -6,6 +6,7 @@
 
 [node name="Heavy Heavy Cannon" type="Node2D" unique_id=122091808]
 script = ExtResource("1_qhkh7")
+turn_rate = 6.0
 cooldown = 2.0
 category = "Enemy Weapons"
 summary = "Fires bigger, slower, more damaging bullets."
